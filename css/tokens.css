@@ -1,0 +1,57 @@
+/* GRK lo-fi — generated from tokens.json */
+:root, [data-theme="light"] {
+  --ink: #3f4c55;
+  --ink-2: #69757d;
+  --line: #dfe3e6;
+  --surface: #e8ebed;
+  --surface-2: #f4f5f6;
+  --line-strong: #b4bbc0;
+  --surface-dark: #252d32;
+  --white: #ffffff;
+  --accent: #f06800;
+  --gap: #f1efe4;
+  --tint: #f4f5f6;
+  --on-dark: #f4f5f6;
+  --on-dark-muted: #b4bbc0;
+  --on-dark-line: #4b575f;
+  --line-dark: #3f4c55;
+  --on-accent: #ffffff;
+  --ink-2-strong: #5f6a72;
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 96px;
+  --radius-0: 0;
+  --radius-card: 0;
+  --radius-field: 0;
+  --radius-button: 0;
+  --radius-note: 8px;
+  --page-width: 1440px;
+  --content-width: 1320px;
+  --text-width: 760px;
+  --nav-height: 82px;
+  --control-height: 56px;
+  --font-head: "Lofi Head", Archivo, Arial, sans-serif;
+  --font-sans: "Lofi Sans", Archivo, Arial, sans-serif;
+  --text-display: 700 96px/113px var(--font-head);
+  --text-h1: 700 80px/93px var(--font-head);
+  --text-h2: 700 64px/75px var(--font-head);
+  --text-h3: 700 40px/47px var(--font-head);
+  --text-h4: 700 28px/33px var(--font-head);
+  --text-stat: 700 80px/84px var(--font-head);
+  --text-eyebrow: 700 16px/20px var(--font-head);
+  --text-lead: 400 22px/34px var(--font-sans);
+  --text-body: 400 16px/25px var(--font-sans);
+  --text-small: 400 14px/20px var(--font-sans);
+  --text-label: 700 14px/20px var(--font-sans);
+  --text-button: 700 20px/23px var(--font-head);
+  --text-nav: 700 20px/20px var(--font-head);
+}

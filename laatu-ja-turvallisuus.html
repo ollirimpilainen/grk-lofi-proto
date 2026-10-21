@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Laatu ja turvallisuus · GRK lo-fi -prototyyppi</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+.lt-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:24px 96px;align-items:end;padding:24px 80px 72px}
+.lt-head .b-lead{margin:20px 0 0;max-width:52ch}
+.lt-head .b-btns{margin-top:32px}
+.lt-story{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:80px;align-items:start}
+.lt-story .b-h2{margin:0}
+.lt-story .b-lead{margin:0 0 32px}
+.lt-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:72px;padding-top:32px;border-top:2px solid var(--ink)}
+.lt-nums b{display:block;font:900 48px/1 var(--font-head);color:var(--accent)}
+.lt-nums b small{font-size:22px;margin-left:4px}
+.lt-nums span{display:block;margin-top:12px;font-size:16px;line-height:24px;color:var(--ink-2-strong);max-width:28ch}
+.lt-quote{display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px;align-items:center;margin-top:72px;padding-top:56px;border-top:1px solid var(--line)}
+.lt-quote .ph{aspect-ratio:1;background:var(--surface)}
+.lt-quote blockquote{margin:0;font:900 30px/38px var(--font-head);color:var(--ink);max-width:30ch}
+.lt-quote blockquote i{display:block;width:70%;height:12px;margin-top:14px;background:var(--line-strong);opacity:.6}
+.lt-quote figcaption{margin-top:20px;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.lt-quote figcaption b{display:block;color:var(--ink)}
+.lt-certs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.lt-cert{display:grid;gap:10px;align-content:start;padding:28px;background:#fff}
+.lt-cert__seal{width:56px;height:56px;border-radius:50%;border:1px dashed var(--ink-2);display:grid;place-items:center;font-size:11px;color:var(--ink-2-strong)}
+.lt-cert b{font:900 26px/30px var(--font-head)}
+.lt-cert span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.lt-cert a{justify-self:start;margin-top:8px;font-size:14px}
+.lt-quals{margin-top:48px;border-top:2px solid var(--ink)}
+.lt-quals div{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr) auto;gap:32px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:24px}
+.lt-quals dt{font-weight:700}
+.lt-quals dd{margin:0;color:var(--ink-2-strong)}
+.lt-quals a{font-size:14px}
+.lt-pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.lt-pillar{display:grid;gap:12px;align-content:start;padding:32px;background:#fff;text-decoration:none;color:var(--ink)}
+.lt-pillar em{font:700 13px/18px var(--font-sans);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2-strong)}
+.lt-pillar b{font:900 28px/34px var(--font-head)}
+.lt-pillar span{font-size:16px;line-height:26px;color:var(--ink-2-strong)}
+.lt-pillar::after{content:"";width:9px;height:9px;margin-top:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg)}
+.lt-pillar:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+.lt-co2{display:grid;grid-template-columns:repeat(2,120px);gap:40px;align-items:end;justify-content:start;height:300px;padding:0 0 0 8px;border-bottom:2px solid var(--ink)}
+.lt-co2 div{display:grid;gap:10px;justify-items:center;align-content:end;height:100%}
+.lt-co2 i{display:block;width:100%;background:var(--line-strong)}
+.lt-co2 div:last-child i{background:var(--ink)}
+.lt-co2 b{font:900 24px/1 var(--font-head)}
+.lt-co2-cap{display:grid;grid-template-columns:repeat(2,120px);gap:40px;padding:12px 0 0 8px;font-size:14px;line-height:20px;color:var(--ink-2-strong);text-align:center}
+.lt-cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:64px}
+.lt-case{display:grid;grid-template-columns:200px minmax(0,1fr);background:#fff;text-decoration:none;color:var(--ink)}
+.lt-case .ph{background:var(--surface);min-height:180px}
+.lt-case>div{display:grid;gap:8px;align-content:center;padding:28px}
+.lt-case em{font:700 13px/18px var(--font-sans);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2-strong)}
+.lt-case b{font:900 22px/28px var(--font-head)}
+.lt-case span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.lt-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;border-top:2px solid var(--ink)}
+.lt-links a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.lt-links a b{display:block;font:900 20px/26px var(--font-head)}
+.lt-links a span span{display:block;margin-top:4px;font-size:15px;line-height:22px;color:var(--ink-2-strong)}
+.lt-links a::after{content:"";flex:none;width:8px;height:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg)}
+.lt-links a:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.lt-docs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.lt-doc{display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px;align-items:center;padding:24px;border:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.lt-doc .ph{aspect-ratio:3/4;background:var(--surface)}
+.lt-doc b{display:block;font:900 20px/26px var(--font-head)}
+.lt-doc span{display:block;margin-top:6px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.lt-doc i{display:inline-block;width:40px;height:10px;background:var(--line-strong);opacity:.6;vertical-align:middle}
+.lt-contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:80px;align-items:center}
+.lt-contact .b-h2{margin:0}
+.lt-story .b-h2,.lt-contact .b-h2{font-size:48px;line-height:54px;text-wrap:balance}
+.lt-contact .b-lead{margin:16px 0 0}
+.lt-tbd{display:inline-block;width:160px;height:10px;background:var(--line-strong);opacity:.6;vertical-align:middle}
+@media (max-width:900px){.lt-head,.lt-story,.lt-nums,.lt-quote,.lt-certs,.lt-quals div,.lt-pillars,.lt-cases,.lt-case,.lt-links,.lt-docs,.lt-contact{grid-template-columns:1fr}.lt-head{padding:24px 20px 48px}}
+</style>
+</head>
+<body>
+<div class="b-root hf lofi" style="width: 100%;">
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
+      <a class="b-nav__item" href="#">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
+      <a class="b-nav__item b-nav__item--menu" href="#" aria-current="page">Yritys</a>
+      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+  </div>
+</header>
+<ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="#">Yritys</a></li><li aria-current="page">Laatu ja turvallisuus</li></ol>
+
+<header class="lt-head">
+  <div><h1 class="b-h1">Laatu ja turvallisuus</h1><p class="b-lead">Turvallisuus on meille ykkösasia. Laadun takaavat omat tekijät: sama porukka tekee työn ja vastaa sen jäljestä. Toimintajärjestelmämme on sertifioitu laadun, ympäristön ja työturvallisuuden standardeilla.</p>
+  <div class="b-btns"><a class="b-btn" href="#yhteyshenkilo">Ota yhteyttä</a><a class="b-btn b-btn--secondary" href="#sertifikaatit">Lataa sertifikaatit</a></div></div>
+  <nav class="b-toc" aria-label="Tällä sivulla"><p class="b-toc__label">Tällä sivulla</p><ul><li><a href="#turvallisuus">Turvallisuus edellä</a></li><li><a href="#laatu">Näin varmistamme laadun</a></li><li><a href="#sertifikaatit">Sertifikaatit ja pätevyydet</a></li><li><a href="#yhteyshenkilo">Yhteyshenkilö</a></li></ul></nav>
+</header>
+
+<section class="b-section b-section--gray" id="turvallisuus"><div class="b-inner">
+  <div class="lt-story">
+    <div><h2 class="b-h2">Turvallisuus edellä</h2></div>
+    <div><p class="b-lead">Tavoitteemme on nolla tapaturmaa. Turvallisuudesta emme jousta missään tilanteessa, ja sama vaatimus koskee aliurakoitsijoitamme.</p>
+    <ul class="b-check" style="grid-template-columns:1fr">
+      <li><div><b>Työturvallisuuskortti jokaisella</b><p>Jokaisella työmaalla työskentelevällä on voimassa oleva työturvallisuuskortti.</p></div></li>
+      <li><div><b>Riskit tunnistetaan ja poistetaan</b><p>Työvaiheen riskit käydään läpi ennen töiden alkua, ei vasta poikkeaman jälkeen.</p></div></li>
+      <li><div><b>Turvallisuushavainnot kaikilta työmailta</b><p>Havaintojen seuranta kattaa nyt kaikki GRK:n työmaat.</p></div></li>
+      <li><div><b>Perehdytys tehdasalueen sääntöihin</b><p>Teollisuuskohteissa jokainen tekijä perehdytetään tilaajan omiin turvallisuussääntöihin.</p></div></li>
+    </ul></div>
+  </div>
+  <div class="lt-nums">
+    <div><b>&lt; 5</b><span>TRIF-tavoite konsernissa vuoteen 2028 mennessä (sairauspoissaoloon johtaneet tapaturmat miljoonaa työtuntia kohden)</span></div>
+    <div><b>&lt; 7</b><span>tapaturmataajuuden tavoite, mukana myös aliurakoitsijoiden työntekijät</span></div>
+    <div><b>2 388</b><span>turvallisuushavaintoa vuonna 2025 (2 324 edellisenä vuonna)</span></div>
+  </div>
+  <figure class="lt-quote"><div class="ph"></div><div><blockquote>Työturvallisuus ei ole pelkkää välineurheilua.<i></i></blockquote><figcaption><b>Jenni Veijola</b>HSEQ-päällikkö (työterveys, turvallisuus, ympäristö ja laatu)</figcaption></div></figure>
+</div></section>
+
+<section class="b-section" id="laatu"><div class="b-inner">
+  <div class="lt-story">
+    <div><h2 class="b-h2">Näin varmistamme laadun</h2></div>
+    <div><p class="b-lead">Toimintatavat on kuvattu ja tarkastettu, joten laatu ei ole yksittäisen työnjohtajan varassa. Laatu alkaa jo suunnittelusta yhdessä tilaajan kanssa.</p>
+    <ul class="b-check" style="grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px">
+      <li><div><b>Suunnittelu yhdessä</b><p>Toteutettavuus, riskit ja menetelmät käydään läpi tilaajan kanssa ennen urakkaa.</p></div></li>
+      <li><div><b>Omat tekijät ja kalusto</b><p>Sama porukka tekee työn ja vastaa sen jäljestä.</p></div></li>
+      <li><div><b>Siisti ja järjestetty työmaa</b><p>Järjestys on osa turvallisuutta ja näkyy tilaajalle jokaisella käynnillä.</p></div></li>
+      <li><div><b>Poikkeamat raportoidaan tilaajalle</b><p>Kerromme poikkeamista suoraan ja tarkasti, emmekä siirrä ongelmia eteenpäin.</p></div></li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="b-section b-section--gray" id="sertifikaatit"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Sertifikaatit ja pätevyydet</h2><p class="b-body">Ulkopuolinen arvioija tarkastaa toimintamme säännöllisesti. Voit ladata todistukset tarjousvertailua varten.</p></div>
+  <div class="lt-certs">
+    <article class="lt-cert"><div class="lt-cert__seal">Merkki</div><b>ISO 9001</b><span><strong>Laatu.</strong> Toimintatavat on kuvattu ja tarkastettu.</span><a class="b-link" href="#">Lataa sertifikaatti (PDF)</a></article>
+    <article class="lt-cert"><div class="lt-cert__seal">Merkki</div><b>ISO 14001</b><span><strong>Ympäristö.</strong> Ympäristövaikutukset tunnistetaan ja niitä seurataan koko hankkeen ajan.</span><a class="b-link" href="#">Lataa sertifikaatti (PDF)</a></article>
+    <article class="lt-cert"><div class="lt-cert__seal">Merkki</div><b>ISO 45001</b><span><strong>Työterveys ja -turvallisuus.</strong> Riskit arvioidaan ennen töitä, ja jokainen poikkeama käsitellään.</span><a class="b-link" href="#">Lataa sertifikaatti (PDF)</a></article>
+    <article class="lt-cert"><div class="lt-cert__seal">Merkki</div><b>RALA</b><span><strong>Pätevyydet usealle toimialalle.</strong> Pätevyys on arvioitu ulkopuolisesti.</span><a class="b-link" href="#">Lataa pätevyystodistus (PDF)</a></article>
+  </div>
+  <dl class="lt-quals">
+    <div><dt>Siltaurakoitsijaluokitus R1 ja K1</dt><dd>Suuret ja erittäin vaativat siltatyöt sekä erittäin suuret ja vaativat siltojen korjaustyöt</dd><a class="b-link" href="#">PDF</a></div>
+    <div><dt>SFS-EN 13108</dt><dd>Asfalttimassojen valmistuksen laatujärjestelmä</dd><a class="b-link" href="#">PDF</a></div>
+    <div><dt>SFS-EN 13043</dt><dd>Kiviainestuotannon laatujärjestelmä</dd><a class="b-link" href="#">PDF</a></div>
+    <div><dt>ISO 3834-2</dt><dd>Kiskohitsauksen laatujärjestelmä</dd><a class="b-link" href="#">PDF</a></div>
+    <div><dt>Traficomin turvallisuustodistus</dt><dd>Rautatieliikennöinti Suomen rataverkolla</dd><a class="b-link" href="#">PDF</a></div>
+    <div><dt>Sähköurakointipätevyys S1</dt><dd>Tukesin myöntämä</dd><a class="b-link" href="#">PDF</a></div>
+  </dl>
+</div></section>
+
+<section class="b-section" id="yhteyshenkilo"><div class="b-inner lt-contact">
+  <div><h2 class="b-h2">Kysy laadusta ja turvallisuudesta</h2><p class="b-lead">Tarvitsetko todistuksia, turvallisuuslukuja tai selvityksen tarjousta varten?</p><p style="margin-top:20px"><a class="b-link" href="vastuullisuus.html">Vastuullisuus: ympäristö, ihmiset ja hallinto</a></p></div>
+  <div class="b-people" style="grid-template-columns:1fr"><div class="b-person"><div class="b-person__img" aria-hidden="true"></div><div><p class="b-person__name">Jenni Veijola</p><p class="b-person__role">HSEQ-päällikkö</p><p class="b-person__ch"><span class="lt-tbd"></span></p></div></div></div>
+</div></section>
+
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="#">Päällystys ja asfaltointi</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li><li><a href="#">Rautatiet ja raitiotiet</a></li><li><a href="#">Sähköverkot ja sähköasemat</a></li><li><a href="#">Kiertotalous ja vastaanotto</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="#">Energia</a></li><li><a href="#">Teollisuus</a></li><li><a href="#">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
+        <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="#">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="#">Tietosuoja</a><a href="#">Evästeasetukset</a><a href="#">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="#" aria-current="true">FI</a><a href="#" lang="sv">SE</a><a href="#" lang="et">EE</a><a href="#" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tätä sivua ei ole vielä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+})();
+</script>
+</body>
+</html>

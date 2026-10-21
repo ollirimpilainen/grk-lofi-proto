@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Yhteystiedot · GRK lo-fi -prototyyppi</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+.yt-hero{display:grid;gap:40px;padding:24px 80px 72px}
+.hf .yt-hero + .b-section{padding-top:32px;padding-bottom:64px}
+.hf .yt-hero + .b-section .b-head{margin-bottom:32px}
+.yt-hero__text{display:grid;gap:16px;max-width:820px}
+.yt-hero__text .b-lead{margin:0}
+.keyfacts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink)}
+.kf{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:24px 20px 8px 0}
+.kf+.kf{padding-left:20px;border-left:1px solid var(--surface)}
+.kf .b-ico{width:22px;height:22px;margin-top:1px;color:var(--accent)}
+.kf b{display:block;font-size:14px;line-height:20px;color:var(--ink-2)}
+.kf a:not(.b-link){display:block;font-size:18px;line-height:26px;font-weight:700;text-decoration:none;white-space:nowrap;color:var(--ink)}
+.kf span{display:block;font-size:16px;line-height:24px}
+.kf small{display:block;margin-top:2px;font-size:14px;line-height:20px;color:var(--ink-2)}
+.filters{display:grid;grid-template-columns:2fr 1.2fr 1fr;gap:16px;align-items:end;padding:28px;background:var(--surface-2)}
+.filters .b-field{min-width:0}
+.filters label{color:var(--ink)}
+.filters,.filters label,.filters .b-select{--ink-2:var(--ink-2-strong)}
+.searchbox{position:relative}
+.searchbox .b-ico{position:absolute;left:16px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:var(--ink-2-strong)}
+.searchbox .b-input{padding-left:48px}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px;font-size:14px;line-height:20px}
+.chips span{color:var(--ink-2);margin-right:4px}
+.chips a{padding:5px 12px;border:1px solid var(--line);border-radius:var(--radius-note);text-decoration:none;font-weight:500;color:var(--ink)}
+.chips a:hover{border-color:var(--ink)}
+.result-bar{display:flex;justify-content:space-between;gap:12px;margin:32px 0 8px;padding-top:16px;border-top:1px solid var(--line);font-size:16px;line-height:24px;color:var(--ink-2)}
+.result-bar a{color:var(--ink);font-weight:700}
+.yt-group{padding:40px 0;border-bottom:1px solid var(--surface)}
+.yt-group h3{margin:0 0 28px;font:900 28px/33px var(--font-head);color:var(--ink)}
+.yt-group h3 span{font:700 16px/24px var(--font-sans);color:var(--accent);margin-left:6px}
+.people3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 32px}
+.yt-note{margin-top:40px;font-size:16px;line-height:24px;color:var(--ink-2)}
+@media (max-width:900px){.keyfacts,.filters,.people3{grid-template-columns:1fr;gap:24px}.yt-hero{padding:24px 20px 48px}.kf+.kf{padding-left:0;border-left:0;border-top:1px solid var(--surface)}}
+.yt-find{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:end;margin-top:8px;padding:28px;background:var(--surface-2)}
+.yt-find label{display:block;margin-bottom:8px;font:900 20px/26px var(--font-head);color:var(--ink)}
+.yt-find__row{display:flex;gap:8px}.yt-find__row .b-input{flex:1}
+.yt-find p{margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.topic{display:grid;grid-template-rows:auto auto 1fr auto auto;gap:12px;padding:32px;background:#fff}
+.topic h3{margin:0;font:900 24px/29px var(--font-head)}
+.topic p{margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.topic__ch{display:block;padding-top:16px;border-top:1px solid var(--surface);font-size:16px;line-height:24px;color:var(--ink)}
+.topic__ch b{display:block}.topic__ch a{font-weight:700;text-decoration:none;color:var(--ink)}
+.countries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px;border-top:2px solid var(--ink)}
+.country{display:grid;gap:12px;align-content:start;padding:28px 0}
+.country h3{margin:0;font:900 24px/29px var(--font-head)}
+.country p{margin:0;font-size:16px;line-height:24px}
+.country small{font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.country a{font-weight:700;color:var(--ink);text-decoration:none}
+.offices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 32px}
+.office{padding:16px 0;border-top:1px solid var(--line);font-size:16px;line-height:24px}
+.office b{display:block;font:900 18px/24px var(--font-head)}
+.office-h{grid-column:1/-1;margin:40px 0 8px;font:900 22px/28px var(--font-head)}
+.office-h:first-child{margin-top:0}
+.office-h span{margin-left:8px;font:700 16px/24px var(--font-sans);color:var(--accent)}
+.billing{display:grid;grid-template-columns:4fr 8fr;gap:80px;align-items:start}
+.billing dl{display:grid;grid-template-columns:240px 1fr;margin:0;font-size:18px;line-height:28px}
+.billing dt,.billing dd{margin:0;padding:16px 0;border-top:1px solid var(--line)}
+.billing dt{font-weight:700}
+.billing dd small{display:block;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+@media (max-width:900px){.yt-find,.topics,.countries,.offices,.billing,.billing dl{grid-template-columns:1fr}.billing dd{border-top:0;padding-top:0}}
+.yt-recv{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;margin-top:64px;padding:40px;background:var(--surface-2)}
+.yt-recv__lead{display:grid;gap:16px;align-content:start}.yt-recv__lead .b-h3,.yt-recv__lead .b-body{margin:0}.yt-recv__lead .b-btn{justify-self:start}
+.yt-recv__list{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.yt-recv,.yt-recv__list{grid-template-columns:1fr}}
+.topic__ico{display:block;width:112px;height:112px;margin:-12px 0 -4px -12px}
+.topic{display:grid;grid-template-columns:72px 1fr 16px;grid-template-rows:auto;gap:16px;align-items:center;padding:16px 20px;background:#fff;text-decoration:none;color:var(--ink)}
+.topic__ico{width:72px;height:72px;margin:0}
+.topic__t{display:grid;gap:2px}
+.topic h3{font:700 18px/24px var(--font-head)}
+.topic p{font-size:14px;line-height:20px}
+.topic::after{content:"";width:8px;height:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg)}
+.topic:hover h3{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.topics{gap:16px}
+</style>
+</head>
+<body>
+<div class="b-root hf lofi" style="width: 100%;">
+
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
+      <a class="b-nav__item" href="#">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
+      <a class="b-nav__item b-nav__item--menu" href="#">Yritys</a>
+      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html" aria-current="page">Yhteystiedot</a>
+  </div>
+</header>
+<ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li aria-current="page">Yhteystiedot</li></ol>
+
+<section class="yt-hero">
+  <div class="yt-hero__text">
+    <h1 class="b-h1">Yhteystiedot</h1>
+    <p class="b-lead">Kerro, mitä asiaa sinulla on, niin ohjaamme sinut oikealle ihmiselle. Voit myös soittaa vaihteeseen tai <a href="#vastuuhenkilot">hakea yhteyshenkilöä</a>.</p>
+  </div>
+  <div class="keyfacts">
+    <div class="kf"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg><div><b>Puhelinvaihde</b><a href="tel:+358103214110">+358 10 321 4110</a><small>GRK Suomi Oy</small></div></div>
+    <div class="kf"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><div><b>Sähköpostit</b><span>etunimi.sukunimi@grk.fi</span><small>Kaikilla henkilöillä sama muoto</small></div></div>
+    <div class="kf"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><div><b>Pääkonttori</b><span>Jaakonkatu 2, 01620 Vantaa</span><a class="b-link b-link--sm" href="#toimipisteet">Kaikki toimipisteet</a></div></div>
+    <div class="kf"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M7 10h6M7 14h4"></path></svg><div><b>Laskutus</b><span>Y-tunnus 2810844-3</span><a class="b-link b-link--sm" href="#laskutus">Laskutustiedot</a></div></div>
+  </div>
+</section>
+
+<section class="b-section b-section--gray"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Mitä asiaa sinulla on?</h2></div>
+  <div class="topics">
+    <a class="topic" href="tarjouspyynto.html"><img class="topic__ico" src="assets/b4884cd42703f25b6c385e571466221f.svg" alt="" width="72" height="72"><span class="topic__t"><h3>Uusi hanke tai tarjouspyyntö</h3><p>Lähetä hankkeen tiedot ja asiakirjat, niin palvelun asiantuntija ottaa yhteyttä.</p></span></a>
+    <a class="topic" href="#"><img class="topic__ico" src="assets/3e4fdbd638f6f8e19ba748679f71e5d2.svg" alt="" width="72" height="72"><span class="topic__t"><h3>Kysy palvelun asiantuntijalta</h3><p>Liiketoimintojen vastuuhenkilöt vastaavat suoraan, myös jo suunnitteluvaiheessa.</p></span></a>
+    <a class="topic" href="vastaanottopaikat.html"><img class="topic__ico" src="assets/35ac60081c37c850214351b1baa3fc92.svg" alt="" width="72" height="72"><span class="topic__t"><h3>Tuon maa-aineksia</h3><p>14 vastaanottopaikkaa eri puolilla Suomea.</p></span></a>
+    <a class="topic" href="#laskutus"><img class="topic__ico" src="assets/42a141ccb04bd4bd84859179bed58973.svg" alt="" width="72" height="72"><span class="topic__t"><h3>Laskutus ja toimittajat</h3><p>Verkkolaskuosoitteet, laskun pakolliset tiedot ja toimittajien yritysvastuuvaatimukset.</p></span></a>
+    <a class="topic" href="avoimet-tyopaikat.html"><img class="topic__ico" src="assets/dc98a5af217b7173dbe617e45d1d6424.svg" alt="" width="72" height="72"><span class="topic__t"><h3>Työpaikat</h3><p>Avoimet työpaikat, kesätyöt ja avoin hakemus Suomessa, Ruotsissa ja Virossa.</p></span></a>
+    <a class="topic" href="#"><img class="topic__ico" src="assets/ff565af592649126486755b7e0be21ff.svg" alt="" width="72" height="72"><span class="topic__t"><h3>Media</h3><p>Haastattelut, kuvat, logot ja tiedotteet.</p></span></a>
+  </div>
+</div></section>
+
+<section class="b-section" id="vastuuhenkilot"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Hae yhteyshenkilöä</h2><p class="b-body">Hae nimellä, palvelulla tai paikkakunnalla, tai rajaa asian ja alueen mukaan.</p></div>
+    <form class="filters" role="search">
+    <div class="b-field"><label for="yt-haku">Hae nimellä, palvelulla tai paikkakunnalla</label><div class="searchbox"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input class="b-input" id="yt-haku" type="search" placeholder="Esim. päällystys Jyväskylä"></div></div>
+    <div class="b-field"><label for="yt-aihe">Asia</label><select class="b-select" id="yt-aihe"><option>Kaikki asiat</option><optgroup label="Palvelut"><option>Infra- ja maarakentaminen</option><option>Päällystys ja asfaltointi</option><option>Pohjarakentaminen ja paalutus</option><option>Rautatiet ja raitiotiet</option><option>Sähköverkot ja sähköasemat</option><option>Kiertotalous ja vastaanotto</option></optgroup><optgroup label="Muut asiat"><option>Tarjouspyyntö tai uusi hanke</option><option>Käynnissä oleva työmaa</option><option>Hankinnat ja alihankinta</option><option>Laatu, turvallisuus ja riskienhallinta</option><option>Media ja viestintä</option><option>Liiketoimintojen johto</option></optgroup></select></div>
+    <div class="b-field"><label for="yt-maa">Alue</label><select class="b-select" id="yt-maa"><option>Kaikki alueet</option><option>Suomi</option><option>Ruotsi</option><option>Viro</option></select></div>
+  </form>
+  <div class="chips" aria-label="Pikavalinnat"><span>Usein haettu:</span><a href="#">Päällystys</a><a href="#">Tarjouspyynnöt</a><a href="#">Rata</a><a href="#">Media</a><a href="#">Johto</a></div>
+  <p class="result-bar"><span>Näytetään 6 / 25 henkilöä: liiketoimintojen vastuuhenkilöt</span><a href="#">Tyhjennä valinnat</a></p>
+  <section class="yt-group"><h3>Liiketoimintojen vastuuhenkilöt <span>6</span></h3><div class="people3"><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Jaakko Mäkelä</p><p class="b-person__role">Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</p><p class="b-person__ch"><a href="tel:+358503775152"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jaakko.makela@grk.fi</a></p></div></div><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Heikki Keskinen</p><p class="b-person__role">Johtaja, Päällystys</p><p class="b-person__ch"><a href="tel:+358449015046"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 44 901 5046</a><a href="mailto:heikki.keskinen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>heikki.keskinen@grk.fi</a></p></div></div><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Mikko Nyhä</p><p class="b-person__role">Rataliiketoimintajohtaja</p><p class="b-person__ch"><a href="tel:+358408630450"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 863 0450</a><a href="mailto:mikko.nyha@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>mikko.nyha@grk.fi</a></p></div></div><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Joni Parkkinen</p><p class="b-person__role">Aluepäällikkö, Power</p><p class="b-person__ch"><a href="tel:+358505375837"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 537 5837</a><a href="mailto:joni.parkkinen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>joni.parkkinen@grk.fi</a></p></div></div><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Anneliina Kupiainen</p><p class="b-person__role">Liiketoimintajohtaja, ympäristöteknologia</p><p class="b-person__ch"><a href="tel:+46725843740"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+46 72 584 37 40</a><a href="mailto:anneliina.kupiainen@grksverige.se"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>anneliina.kupiainen@grksverige.se</a></p></div></div><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Petri Ilama</p><p class="b-person__role">Johtaja, kiertotalous</p><p class="b-person__ch"><a href="tel:+358407254435"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 725 4435</a><a href="mailto:petri.ilama@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>petri.ilama@grk.fi</a></p></div></div></div></section>
+  <p style="margin-top: 32px;"><a class="b-btn b-btn--secondary" href="#">Näytä kaikki 25 henkilöä</a></p>
+</div></section>
+
+<section class="b-section b-section--gray"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">GRK Suomessa, Ruotsissa ja Virossa</h2></div>
+  <div class="countries">
+    <div class="country"><h3>GRK Suomi Oy</h3><p>Jaakonkatu 2, 01620 Vantaa</p><p><a href="tel:+358103214110">+358 10 321 4110</a></p><small>Y-tunnus 2810844-3</small></div>
+    <div class="country"><h3>GRK Sverige AB</h3><p>Teknikvägen 13, 961 50 Boden</p><p>Carl Andersson, VD<br><a href="tel:+46703840099">+46 70 384 00 99</a></p><small>Org.nr 556859-2918</small><a class="b-link b-link--sm" href="#" lang="sv">Kontakt på svenska</a></div>
+    <div class="country"><h3>GRK Eesti AS</h3><p>Spektri 6, 50411 Tartu</p><p><a href="tel:+3727333250">+372 733 3250</a> · <a href="mailto:info@grk.ee">info@grk.ee</a></p><small>Registrikood 12579850</small><a class="b-link b-link--sm" href="#" lang="et">Kontaktandmed eesti keeles</a></div>
+  </div>
+</div></section>
+
+<section class="b-section" id="toimipisteet"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Toimipisteet</h2><p class="b-body">Toimistot Suomessa, Ruotsissa ja Virossa. Vastaanottopaikat ja asfalttiasemat omana ryhmänään alempana.</p></div>
+  <div class="offices">
+    <h3 class="office-h">Suomi<span>21</span></h3><div class="office"><b>Vantaa</b>Jaakonkatu 2, 01620 Vantaa<br><small>Pääkonttori</small></div><div class="office"><b>Helsinki</b>Postintaival 1, 00240 Helsinki</div><div class="office"><b>Helsinki</b>Veturitallinkuja 4 B, 00520 Helsinki</div><div class="office"><b>Vantaa</b>Nuolitie 6, 01740 Vantaa</div><div class="office"><b>Kerava</b>Jäspilänkatu 3, 04250 Kerava</div><div class="office"><b>Karjaa</b>Sysimiehenkatu 2, 10300 Karjaa</div><div class="office"><b>Riihimäki</b>Rautatietori 6, 11130 Riihimäki</div><div class="office"><b>Lahti</b>Mestarinkatu 12–14, 15800 Lahti</div><div class="office"><b>Turku</b>Köydenpunojankatu 14–16, 20100 Turku</div><div class="office"><b>Pirkkala</b>Turkkirata 20, 33960 Pirkkala</div><div class="office"><b>Jyväskylä</b>Kiilatie 1, 40320 Jyväskylä</div><div class="office"><b>Kotka</b>Kotkantie 2, 48100 Kotka</div><div class="office"><b>Mikkeli</b>Maaherrankatu 19, 50100 Mikkeli</div><div class="office"><b>Lappeenranta</b>Seponkatu 8, 53300 Lappeenranta</div><div class="office"><b>Seinäjoki</b>Vetoaisaväylä 3, 60100 Seinäjoki</div><div class="office"><b>Kuopio</b>Teräskatu 2, 70150 Kuopio</div><div class="office"><b>Sonkajärvi</b>Siikalammentie 4, 74300 Sonkajärvi</div><div class="office"><b>Joensuu</b>Alasintie 2, 80130 Joensuu</div><div class="office"><b>Kalajoki</b>Takojantie 19, 85100 Kalajoki</div><div class="office"><b>Kajaani</b>Riitetie 13 H 10, 87500 Kajaani</div><div class="office"><b>Oulu</b>Kangaskontiontie 12 B 1, 90240 Oulu</div>
+    <h3 class="office-h">Ruotsi<span>6</span></h3><div class="office"><b>Boden</b>Teknikvägen 13, 961 50 Boden<br><small>Huvudkontor</small></div><div class="office"><b>Umeå</b>Norra Obbolavägen 137, 904 22 Umeå</div><div class="office"><b>Tukholma</b>Liljeholmsvägen 14, 117 61 Stockholm</div><div class="office"><b>Gävle</b>Atlasgatan 8, 802 86 Gävle</div><div class="office"><b>Härnösand</b>Nybrogatan 19, 871 31 Härnösand</div><div class="office"><b>Skellefteå</b>Mossgatan 28, 931 70 Skellefteå</div>
+    <h3 class="office-h">Viro<span>2</span></h3><div class="office"><b>Tartto</b>Spektri 6, 50411 Tartu</div><div class="office"><b>Peetri</b>Sära tee 7, Rae vald, 75312 Harjumaa</div>
+  </div>
+  <div class="yt-recv"><div class="yt-recv__lead"><h3 class="b-h3">Vastaanottopaikat</h3><p class="b-body">Maa-ainesten ja teollisuuden sivuvirtojen vastaanotto 14 paikassa eri puolilla Suomea. Jakeet, aukioloajat ja yhteystiedot paikkakunnittain.</p><a class="b-btn" href="vastaanottopaikat.html">Vastaanottopaikat</a></div><div class="offices yt-recv__list"><h3 class="office-h">Asfalttiasemat<span>3</span></h3><div class="office"><b>Nurmijärvi</b>Hämeenlinnantie 55, 01940 Nurmijärvi</div><div class="office"><b>Jyväskylä</b>Oravasaarentie 577, 40800 Jyväskylä</div><div class="office"><b>Kajaani</b>Ruuhijärventie 91, 87100 Kajaani</div></div></div>
+</div></section>
+
+<section class="b-section b-section--gray" id="laskutus"><div class="b-inner billing">
+  <div class="b-head" style="margin: 0;"><h2 class="b-h2">Laskutustiedot</h2><p class="b-body">Rakentamisen laskut GRK Suomi Oy:lle. Ostolaskut: <a href="mailto:ostoreskontra@grk.fi">ostoreskontra@grk.fi</a> · Myyntilaskut: <a href="mailto:myyntilaskut@grk.fi">myyntilaskut@grk.fi</a></p></div>
+  <div>
+    <dl><dt>Yritys</dt><dd>GRK Suomi Oy<small>Y-tunnus 2810844-3</small></dd><dt>Verkkolaskuosoite (OVT)</dt><dd>003728108443</dd><dt>Operaattori</dt><dd>Maventa, 003721291126<small>Pankkiverkosta: Danske Bank, DABAFIHH</small></dd><dt>PDF-laskut</dt><dd>invoice-28108443@kollektor.fi<small>Lasku ja liitteet yhtenä tiedostona</small></dd><dt>Paperilaskut</dt><dd>GRK Suomi Oy, 28108443, PL 100, 80020 Kollektor Scan</dd><dt>Laskulla oltava</dt><dd>Työnumero ja alanumero (esim. 120000/1600), tilaajan nimi ja työn ajankohta<small>Puutteellinen lasku palautetaan</small></dd></dl>
+    <p style="margin-top: 24px;"><a class="b-link" href="#">Kaikki laskutustiedot, myös GRK Infra Oyj, GRK Sverige AB ja GRK Eesti AS</a></p>
+  </div>
+</div></section>
+
+<section class="b-section"><div class="b-inner b-lightform">
+  <div class="b-head" style="margin: 0; align-content: start;"><h2 class="b-h2">Etkö löytänyt oikeaa ihmistä?</h2><p class="b-body">Kerro asiasi, niin välitämme viestin oikealle ihmiselle.</p></div>
+  <form class="b-form">
+    <div class="b-field"><label for="yt-nimi">Nimi *</label><input class="b-input" id="yt-nimi" type="text"></div>
+    <div class="b-field"><label for="yt-email">Sähköposti *</label><input class="b-input" id="yt-email" type="email"></div>
+    <div class="b-field b-field--full"><label for="yt-asia">Asia</label><select class="b-select" id="yt-asia"><option>Valitse</option><option>Uusi hanke</option><option>Kysymys asiantuntijalle</option><option>Maa-ainesten vastaanotto</option><option>Laskutus</option><option>Työpaikat</option><option>Media</option><option>Muu</option></select></div>
+    <div class="b-field b-field--full"><label for="yt-viesti">Viesti *</label><textarea class="b-textarea" id="yt-viesti"></textarea></div>
+    <div class="b-form__foot"><button class="b-btn" type="button">Lähetä</button><span class="b-small">Käsittelemme tiedot <a href="#">tietosuojaselosteen</a> mukaisesti.</span></div>
+  </form>
+</div></section>
+
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="#">Päällystys ja asfaltointi</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li><li><a href="#">Rautatiet ja raitiotiet</a></li><li><a href="#">Sähköverkot ja sähköasemat</a></li><li><a href="#">Kiertotalous ja vastaanotto</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="#">Energia</a></li><li><a href="#">Teollisuus</a></li><li><a href="#">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
+        <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="#">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="#">Tietosuoja</a><a href="#">Evästeasetukset</a><a href="#">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="#" aria-current="true">FI</a><a href="#" lang="sv">SE</a><a href="#" lang="et">EE</a><a href="#" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tätä sivua ei ole vielä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+})();
+</script>
+</body>
+</html>

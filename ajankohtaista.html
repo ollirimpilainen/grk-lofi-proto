@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ajankohtaista · GRK lo-fi -prototyyppi</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+.aj-head{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:24px 80px;align-items:end;padding:24px 80px 40px}
+.aj-head .b-lead{margin:16px 0 0;max-width:58ch}
+.aj-quick{display:grid;gap:0;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.aj-quick a{display:grid;grid-template-columns:1fr 12px;align-items:center;gap:2px 16px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font:700 18px/24px var(--font-sans)}
+.aj-quick a::after{content:"";grid-row:1/3;grid-column:2;width:8px;height:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg)}
+.aj-quick a.aj-ext::after{content:"↗";width:auto;height:auto;border:0;transform:none;color:var(--accent);font-weight:700}
+.aj-quick small{grid-column:1;font:400 14px/20px var(--font-sans);color:var(--ink-2-strong)}
+.aj-find{display:grid;gap:20px;padding:28px;background:var(--surface-2)}
+.aj-find__row{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,3fr) minmax(0,2fr);gap:16px;align-items:end}
+.aj-search{position:relative}
+.aj-search .b-ico{position:absolute;left:16px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:var(--ink-2-strong)}
+.aj-search .b-input{padding-left:48px}
+.aj-type{display:flex;align-items:center;gap:16px}
+.aj-type>b{font:700 14px/20px var(--font-sans)}
+.aj-type .b-chips{margin:0}
+.aj-bar{display:flex;justify-content:space-between;align-items:center;margin:32px 0 0;padding:16px 0;border-top:1px solid var(--line);font-size:16px;line-height:24px}
+.aj-bar span{font-size:14px;color:var(--ink-2-strong)}
+.aj-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.aj-meta span{font-weight:700;color:var(--ink)}
+.aj-meta em{font-style:normal;font-weight:700;color:var(--accent)}
+.aj-tags{display:flex;flex-wrap:wrap;gap:8px}
+.aj-tag{display:inline-flex;align-items:center;gap:8px;padding:3px 10px;border:1px solid var(--line);font:500 13px/18px var(--font-sans);color:var(--ink-2-strong);text-decoration:none}
+.aj-tag:hover{border-color:var(--ink-2);color:var(--ink)}
+.aj-tag--ref{color:var(--ink)}
+.aj-tag--ref::before{content:"";width:6px;height:6px;background:var(--accent)}
+.aj-lead{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;margin-top:8px;padding-bottom:48px;border-bottom:1px solid var(--line)}
+.aj-lead__img{display:block;aspect-ratio:16/10;background:var(--surface-2)}
+.aj-lead__txt{display:grid;gap:16px;justify-items:start}
+.aj-lead h2{margin:0;font:900 36px/44px var(--font-head)}
+.aj-lead h2 a,.aj-row h3 a{color:var(--ink);text-decoration:none}
+.aj-lead h2 a:hover,.aj-row h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.aj-lead__txt>p:not(.aj-meta){margin:0;font-size:18px;line-height:28px;color:var(--ink-2-strong)}
+.aj-list{margin:0;padding:0;list-style:none}
+.aj-row{display:grid;grid-template-columns:150px minmax(0,1fr) 176px;gap:40px;align-items:start;padding:24px 0;border-bottom:1px solid var(--line)}
+.aj-row .aj-meta{flex-direction:column;align-items:flex-start;gap:4px;padding-top:4px}
+.aj-row>div{display:grid;gap:10px;justify-items:start}
+.aj-row h3{margin:0;font:900 22px/30px var(--font-head);max-width:56ch}
+.aj-row p:not(.aj-meta){margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.aj-ph{display:block;aspect-ratio:16/10;background:var(--surface-2)}
+.aj-bar-ph{display:block;width:420px;height:10px;margin:7px 0;background:var(--line-strong);opacity:.6}
+.aj-pager{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:48px;font:500 16px/24px var(--font-sans)}
+.aj-pager a,.aj-pager span{display:inline-grid;place-items:center;min-width:44px;height:44px;padding:0 12px;border:1px solid var(--line);color:var(--ink);text-decoration:none}
+.aj-pager span{border-color:transparent}
+.aj-pager a[aria-current]{background:var(--ink);border-color:var(--ink);color:#fff}
+.aj-pager a[aria-disabled]{color:var(--ink-2-strong);opacity:.5}
+.aj-pager__dir{padding:0 18px!important}
+.aj-media{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.aj-media__txt{display:grid;gap:20px;justify-items:start}
+.aj-media__txt p{margin:0;font-size:18px;line-height:28px;color:var(--ink-2-strong);max-width:44ch}
+.aj-media__cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.aj-mcard{display:grid;gap:8px;align-content:start;padding:24px;background:#fff;text-decoration:none;color:var(--ink)}
+.aj-mcard b{font:900 20px/26px var(--font-head)}
+.aj-mcard small{font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.aj-mcard__img{display:block;aspect-ratio:16/10;margin-bottom:8px;background:var(--surface-2)}
+.aj-person{grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:start}
+.aj-person__img{display:block;width:72px;height:72px;border-radius:50%;background:var(--surface-2)}
+.aj-person>div{display:grid;gap:10px;justify-items:start}
+.aj-person i:first-of-type{height:16px;margin-top:2px}.aj-person i{display:block;width:140px;height:10px;background:var(--line-strong);opacity:.6}
+.aj-person i+i{width:110px}
+@media (max-width:900px){.aj-head,.aj-find__row,.aj-lead,.aj-media,.aj-media__cards{grid-template-columns:1fr}.aj-head{padding:24px 20px 32px}.aj-row{grid-template-columns:1fr;gap:12px}.aj-row .aj-meta{flex-direction:row}.aj-ph{display:none}.aj-type{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="b-root hf lofi" style="width: 100%;">
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
+      <a class="b-nav__item" href="#">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html" aria-current="page">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
+      <a class="b-nav__item b-nav__item--menu" href="#">Yritys</a>
+      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+  </div>
+</header>
+<ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li aria-current="page">Ajankohtaista</li></ol>
+
+<header class="aj-head">
+  <div><h1 class="b-h1">Ajankohtaista</h1><p class="b-lead">Uutiset, tiedotteet ja artikkelit GRK:n hankkeista Suomessa, Ruotsissa ja Virossa. Jokainen uutinen kertoo, mihin hankkeeseen ja palveluun se liittyy.</p></div>
+  <ul class="aj-quick">
+    <li><a href="#">Media<small>Mediapankki ja mediayhteyshenkilö</small></a></li>
+    <li><a class="aj-ext" href="#">Pörssitiedotteet<small>Kaikki pörssitiedotteet sijoittajasivuilla</small></a></li>
+  </ul>
+</header>
+
+<section class="b-section" style="padding-top:0"><div class="b-inner">
+  <div class="aj-find">
+    <div class="aj-find__row">
+      <div class="b-field"><label for="aj-q">Hae uutisista</label><div class="aj-search"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input class="b-input" id="aj-q" type="search" placeholder="Esim. hanke, paikkakunta tai palvelu"></div></div>
+      <div class="b-field"><label for="aj-p">Palvelu tai toimiala</label><select class="b-select" id="aj-p"><option>Kaikki</option><option>Infra- ja maarakentaminen</option><option>Päällystys ja asfaltointi</option><option>Pohjarakentaminen ja paalutus</option><option>Rautatiet ja raitiotiet</option><option>Sähköverkot ja sähköasemat</option><option>Kiertotalous ja vastaanotto</option><option>Datakeskukset</option><option>Energia</option><option>Teollisuus</option><option>Kaupungit ja väylät</option></select></div>
+      <div class="b-field"><label for="aj-y">Vuosi</label><select class="b-select" id="aj-y"><option>Kaikki</option><option>2026</option><option>2025</option><option>2024</option></select></div>
+    </div>
+    <div class="aj-type"><b>Tyyppi</b>
+      <div class="b-chips"><button class="b-chip" type="button" aria-pressed="true">Kaikki</button><button class="b-chip" type="button">Uutinen</button><button class="b-chip" type="button">Tiedote</button><button class="b-chip" type="button">Artikkeli</button></div>
+    </div>
+  </div>
+
+  <div class="aj-bar"><b>Kaikki julkaisut</b><span>Uusin ensin</span></div>
+
+  <article class="aj-lead">
+    <a class="aj-lead__img" href="#" aria-label="Lue uutinen: GRK:lle lisätilaus Turun raitiotien arkeologisista töistä"></a>
+    <div class="aj-lead__txt">
+      <p class="aj-meta"><time datetime="2026-10-14">14.10.2026</time><span>Uutinen</span><em>Uusin</em></p>
+      <h2><a href="#">GRK:lle lisätilaus Turun raitiotien arkeologisista töistä</a></h2>
+      <p>Arkeologiset työt siirtyvät osaksi Turun Raitiotieallianssin hanketta. Raitiotiehankkeen kokonaiskustannusarvio ei muutu.</p>
+      <div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Turun raitiotie</a><a class="aj-tag" href="#">Rautatiet ja raitiotiet</a></div>
+      <a class="b-link" href="#">Lue uutinen</a>
+    </div>
+  </article>
+
+  <ol class="aj-list">
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-10-01">1.10.2026</time><span>Tiedote</span></p><div><h3><a href="#">GRK Infra Oyj on saattanut päätökseen Pirkan Rakentajapalvelu Oy:n hankinnan ja päättänyt suunnatusta osakeannista myyjälle</a></h3><p>Yrityskauppa vahvistaa GRK:n osaamista erikoispohjarakentamisessa.</p><div class="aj-tags"><a class="aj-tag" href="#">Pohjarakentaminen ja paalutus</a></div></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-09-30">30.9.2026</time><span>Tiedote</span></p><div><h3><a href="#">GRK on valittu toteuttamaan Kehä I Keilaniemi ja Länsiväylän sillat -hanke Espoossa – arvo GRK:lle noin 27 miljoonaa euroa</a></h3><p>Uudet rampit ja sillat pääkaupunkiseudun vilkkaimmille väylille, tilaajana Väylävirasto.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Kehä I Keilaniemi</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-09-28">28.9.2026</time><span>Tiedote</span></p><div><h3><a href="#">Turun raitiotien toteutusvaiheen allianssisopimus allekirjoitettu – ensimmäisen toteutusvaiheen arvo GRK:lle noin 12 miljoonaa euroa</a></h3><p>Turun Raitiotieallianssi allekirjoitti sopimuksen raitiotien toteutuksesta.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Turun raitiotie</a><a class="aj-tag" href="#">Rautatiet ja raitiotiet</a></div></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-09-28">28.9.2026</time><span>Uutinen</span></p><div><h3><a href="referenssi-hailuoto.html">Hailuodon kiinteä yhteys – GRK toteutti yhden Suomen merkittävimmistä liikennehankkeista</a></h3><p>Lauttavuoroista riippuvainen matka taittuu nyt autolla noin kahdeksassa minuutissa.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="referenssi-hailuoto.html">Hanke: Hailuodon kiinteä yhteys</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-09-21">21.9.2026</time><span>Uutinen</span></p><div><h3><a href="#">Vt 3 Moreenin eritasoliittymä avataan liikenteelle etuajassa Hämeenlinnassa</a></h3><p>Eritasoliittymä saadaan käyttöön etuajassa, aiempi arvio oli marraskuu 2026.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Vt 3 Moreeni</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-09-14">14.9.2026</time><span>Uutinen</span></p><div><h3><a href="#">Nurmijärven Mäntymäen asfalttiaseman hajutilannetta voi nyt seurata reaaliajassa</a></h3><p>Uusi verkkopalvelu näyttää hajun leviämisen ja ottaa vastaan naapureiden havainnot.</p><div class="aj-tags"><a class="aj-tag" href="#">Päällystys ja asfaltointi</a></div></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-09-14">14.9.2026</time><span>Tiedote</span></p><div><h3><a href="#">KSBR allekirjoitti uuden sopimuksen datakeskushankkeesta Suomessa</a></h3><p>Maanalaista tekniikkaa sekä infra- ja betonirakennetöitä teknologiayrityksen datakeskusalueelle.</p><div class="aj-tags"><a class="aj-tag" href="datakeskukset.html">Datakeskukset</a></div></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-09-11">11.9.2026</time><span>Uutinen</span></p><div><h3><a href="#">GRK on valittu toteuttamaan sähköasemahanke Kalkkimaan energiapuistoon Tornioon</a></h3><p>110/33 kV sähköasema suunnittele ja toteuta -urakkana, suunnittelu alkaa loppuvuodesta.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Kalkkimaan energiapuisto</a><a class="aj-tag" href="#">Sähköverkot ja sähköasemat</a></div></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-08-05">5.8.2026</time><span>Tiedote</span></p><div><h3><a href="#">GRK harkitsee Utajärven biohiili- ja pellettilaitosten toiminnan keskeyttämistä</a></h3><p>Syynä on haastava markkinatilanne.</p></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-08-03">3.8.2026</time><span>Tiedote</span></p><div><h3><a href="#">GRK mukana toteuttamassa datakeskushanketta Suomessa – arvo noin 66 miljoonaa euroa</a></h3><p>Valmistelevat työt, massansiirrot ja louhinta sekä logistiikka-alueiden rakentaminen.</p><div class="aj-tags"><a class="aj-tag" href="datakeskukset.html">Datakeskukset</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div><span class="aj-ph" aria-hidden="true"></span></li>
+    <li class="aj-row"><p class="aj-meta"><time datetime="2026-06-30">30.6.2026</time><span>Uutinen</span></p><div><h3><a href="#">GRK:n ja KSBR:n yhteinen matka alkaa – vahvempaa osaamista vaativiin hankkeisiin</a></h3><p><i class="aj-bar-ph"></i></p></div><span class="aj-ph" aria-hidden="true"></span></li>
+  </ol>
+
+  <nav class="aj-pager" aria-label="Sivutus"><a class="aj-pager__dir" href="#" aria-disabled="true">Edellinen</a><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><span>…</span><a href="#">52</a><a class="aj-pager__dir" href="#">Seuraava</a></nav>
+</div></section>
+
+<section class="b-section b-section--gray"><div class="b-inner">
+  <div class="aj-media">
+    <div class="aj-media__txt"><h2 class="b-h2">Toimittajalle</h2><p>Mediapankista saat GRK:n logot ja hankekuvat. Mediayhteyshenkilö vastaa haastattelupyyntöihin.</p><a class="b-btn" href="#">Media-sivulle</a></div>
+    <div class="aj-media__cards">
+      <a class="aj-mcard" href="#"><span class="aj-mcard__img" aria-hidden="true"></span><b>Mediapankki</b><small>Logot, hankekuvat ja johdon kuvat</small></a>
+      <div class="aj-mcard aj-person"><span class="aj-person__img" aria-hidden="true"></span><div><small>Mediayhteyshenkilö</small><i></i><i></i><a class="b-link" href="#">Soita</a></div></div>
+    </div>
+  </div>
+</div></section>
+
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="#">Päällystys ja asfaltointi</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li><li><a href="#">Rautatiet ja raitiotiet</a></li><li><a href="#">Sähköverkot ja sähköasemat</a></li><li><a href="#">Kiertotalous ja vastaanotto</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="#">Energia</a></li><li><a href="#">Teollisuus</a></li><li><a href="#">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
+        <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="#">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="#">Tietosuoja</a><a href="#">Evästeasetukset</a><a href="#">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="#" aria-current="true">FI</a><a href="#" lang="sv">SE</a><a href="#" lang="et">EE</a><a href="#" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tätä sivua ei ole vielä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+})();
+</script>
+</body>
+</html>

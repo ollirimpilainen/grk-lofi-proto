@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nurmijärven vastaanottopaikka · GRK lo-fi -prototyyppi</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+.vo-card{display:grid;gap:10px;padding:24px 28px 28px;border:1px solid var(--line);background:#fff}
+.vo-card__top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.vo-card__top a{display:flex;align-items:center;gap:12px;flex:1;text-decoration:none;color:var(--ink);font:900 22px/28px var(--font-head)}
+.vo-card__top a::after{content:"";width:8px;height:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg)}
+.vo-km{font-size:14px;line-height:20px;color:var(--ink-2-strong);white-space:nowrap}
+.vo-km i{display:inline-block;width:36px;height:10px;margin-right:6px;background:var(--line-strong);opacity:.6}
+.vo-state{display:flex;align-items:center;gap:8px;margin:0;font:700 14px/20px var(--font-sans)}
+.vo-state::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--ink)}
+.vo-state--closed{color:var(--ink-2-strong)}.vo-state--closed::before{background:none;border:2px solid var(--ink-2-strong);width:6px;height:6px}
+.vo-state i{display:inline-block;width:64px;height:10px;background:var(--line-strong);opacity:.6}
+.vo-acts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.vo-acts .b-btn{justify-content:center;min-height:52px}
+.pk-bar{display:inline-block;height:10px;background:var(--line-strong);opacity:.6;vertical-align:middle}
+.pk-hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px 80px;align-items:start;padding:24px 80px 56px}
+.pk-eyebrow{margin:0 0 12px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.pk-hero .b-h1{margin:0}
+.pk-state{display:flex;align-items:center;gap:10px;margin:24px 0 0;font:700 18px/26px var(--font-sans)}
+.pk-state::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--ink)}
+.pk-addr{display:flex;align-items:center;gap:10px;margin:10px 0 0;font-size:18px;line-height:28px;color:var(--ink-2-strong)}
+.pk-addr svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;flex:none}
+.pk-acts{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:12px;max-width:560px;margin-top:32px}
+.pk-acts .b-btn{min-height:56px;justify-content:center}
+.pk-acts .b-btn .pk-bar{width:96px;margin-left:10px;background:currentColor;opacity:.35}
+.pk-first{margin:16px 0 0;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.pk-ex{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px 20px;align-items:center;max-width:760px;margin-top:32px;padding:18px 22px;background:var(--ink);color:#fff;font-size:16px;line-height:24px}
+.pk-ex .pk-bar{width:100%;background:#fff;opacity:.35}
+.pk-ex a{color:#fff;font-weight:700;white-space:nowrap}
+.pk-map{position:relative;aspect-ratio:25/18;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}
+.pk-map::before,.pk-map::after{content:"";position:absolute;background:#fff}
+.pk-map::before{left:-10%;top:58%;width:120%;height:14px;transform:rotate(-14deg)}
+.pk-map::after{left:38%;top:-10%;width:12px;height:120%;transform:rotate(8deg)}
+.pk-map__pin{position:absolute;left:46%;top:50%;z-index:1;width:22px;height:22px;margin:-22px 0 0 -11px;border-radius:50% 50% 50% 0;background:var(--ink);transform:rotate(-45deg);box-shadow:0 0 0 4px #fff}
+.pk-map figcaption{position:absolute;left:16px;bottom:14px;z-index:1;font-size:13px;color:var(--ink-2-strong)}
+.pk-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.pk-col{display:grid;gap:14px;align-content:start;padding:28px 32px;border:1px solid var(--line);background:#fff}
+.pk-col h3{margin:0 0 4px;font:900 22px/28px var(--font-head)}
+.pk-col ul{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.pk-col li{display:flex;align-items:center;gap:14px}
+.pk-col li::before{flex:none;width:24px;font:700 18px/1 var(--font-sans);text-align:center}
+.pk-yes li::before{content:"✓"}
+.pk-no{background:var(--surface-2);border-color:transparent}
+.pk-no li::before{content:"✕";color:var(--ink-2-strong)}
+.pk-col li .pk-bar{width:70%}.pk-col li:nth-child(2) .pk-bar{width:55%}.pk-col li:nth-child(3) .pk-bar{width:62%}
+.pk-after{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;margin-top:24px;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.pk-hours{width:100%;border-collapse:collapse;font-size:18px;line-height:28px}
+.pk-hours th{padding:14px 0;text-align:left;font-weight:700;border-bottom:1px solid var(--line)}
+.pk-hours td{padding:14px 0;text-align:right;border-bottom:1px solid var(--line)}
+.pk-hours tr:first-child th,.pk-hours tr:first-child td{border-top:2px solid var(--ink)}
+.pk-hours .pk-bar{width:120px}
+.pk-svc{display:grid;gap:0;margin:0}
+.pk-svc div{display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.pk-svc div:first-child{border-top:2px solid var(--ink)}
+.pk-svc svg{grid-row:span 2;width:28px;height:28px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pk-svc dt{font-weight:700;font-size:18px;line-height:26px}
+.pk-svc dd{margin:0}
+.pk-svc dd .pk-bar{width:60%}
+.pk-faq{max-width:880px}
+.pk-faq .pk-bar{width:200px}
+.pk-office{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 80px;align-items:start}
+.pk-office .b-h2{margin:0}
+.pk-office .pk-addr{margin-top:16px}
+.pk-office .b-link{display:inline-block;margin-top:24px}
+.pk-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 40px}
+.pk-person{display:grid;grid-template-columns:80px minmax(0,1fr);gap:20px;align-items:start}
+.pk-person__img{width:80px;height:80px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;color:var(--ink-2-strong)}
+.pk-person__img svg{width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:1.5}
+.pk-person div{display:grid;gap:8px}
+.pk-person b .pk-bar{width:150px;height:14px}
+.pk-person span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.pk-person small{display:flex;align-items:center;gap:10px;font-size:15px}
+.pk-person small svg{width:18px;height:18px;fill:none;stroke:var(--ink-2-strong);stroke-width:1.8}
+.pk-person small .pk-bar{width:120px}.pk-person small+small .pk-bar{width:170px}
+.pk-near{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:960px}
+.pk-near+.b-link{display:inline-block;margin-top:24px}
+@media (max-width:900px){.pk-hero,.pk-two,.pk-office,.pk-people,.pk-near{grid-template-columns:1fr}.pk-hero{padding:16px 20px 40px}.pk-map{display:none}.pk-acts{grid-template-columns:1fr}.pk-ex{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="b-root hf lofi" style="width: 100%;">
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
+      <a class="b-nav__item" href="#">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html" aria-current="page">Vastaanottopaikat</a>
+      <a class="b-nav__item b-nav__item--menu" href="#">Yritys</a>
+      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+  </div>
+</header>
+<ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="vastaanottopaikat.html">Vastaanottopaikat</a></li><li aria-current="page">Nurmijärvi</li></ol>
+
+<section class="pk-hero">
+  <div>
+    <p class="pk-eyebrow">Vastaanottopaikka ja toimipiste</p>
+    <h1 class="b-h1">Nurmijärvi</h1>
+    <p class="pk-state">Auki nyt · sulkeutuu klo <i class="pk-bar" style="width:56px"></i></p>
+    <p class="pk-addr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><i class="pk-bar" style="width:300px"></i></p>
+    <div class="pk-acts"><a class="b-btn" href="#">Soita vastaanottoon<i class="pk-bar"></i></a><a class="b-btn b-btn--secondary" href="#">Reittiohje</a></div>
+    <p class="pk-first">Tuotko ensimmäistä kertaa? Katso <a href="#ennen">Ennen kuin tuot</a>.</p>
+    <div class="pk-ex"><b>Poikkeus</b><i class="pk-bar"></i><a href="#lahimmat">Lähin vaihtoehto →</a></div>
+  </div>
+  <figure class="pk-map" aria-label="Kartta: Nurmijärven vastaanottopaikka"><span class="pk-map__pin"></span><figcaption>Kartta</figcaption></figure>
+</section>
+
+<section class="b-section b-section--gray"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Mitä otamme vastaan</h2></div>
+  <div class="pk-two">
+    <div class="pk-col pk-yes"><h3>Otetaan vastaan</h3><ul><li><i class="pk-bar"></i></li><li><i class="pk-bar"></i></li><li><i class="pk-bar"></i></li><li><i class="pk-bar"></i></li></ul></div>
+    <div class="pk-col pk-no"><h3>Ei oteta vastaan</h3><ul><li><i class="pk-bar"></i></li><li><i class="pk-bar"></i></li></ul></div>
+  </div>
+  <div class="pk-after"><span>Haastava jae? Soita ennen tuontia, niin kerromme lähimmän paikan, jolla on lupa.</span><a class="b-link" href="#">Ympäristölupa (PDF)</a></div>
+</div></section>
+
+<section class="b-section"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Aukiolo ja palvelut</h2></div>
+  <div class="pk-two" style="gap:24px 80px">
+    <table class="pk-hours"><tbody>
+      <tr><th>ma–pe</th><td><i class="pk-bar"></i></td></tr>
+      <tr><th>la</th><td><i class="pk-bar"></i></td></tr>
+      <tr><th>su</th><td><i class="pk-bar"></i></td></tr>
+      <tr><th>arkipyhät</th><td><i class="pk-bar"></i></td></tr>
+    </tbody></table>
+    <dl class="pk-svc">
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 20V10h12v10M9 10V6h6v4"></path></svg><dt>Vaaka</dt><dd><i class="pk-bar" style="width:40px"></i></dd></div>
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg><dt>Kuormanseuranta</dt><dd><i class="pk-bar"></i></dd></div>
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18 9 8l4 6 3-4 5 8z"></path></svg><dt>Myynti täältä</dt><dd><i class="pk-bar"></i></dd></div>
+    </dl>
+  </div>
+</div></section>
+
+<section class="b-section b-section--gray" id="ennen"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Ennen kuin tuot</h2></div>
+  <div class="pk-faq">
+    <details class="b-acc" open><summary><span>Pilaantunut maa</span><i></i></summary><div class="b-acc__body">Lähetä analyysit ennen tuontia osoitteeseen <i class="pk-bar"></i>. Tarkistamme, että materiaali on ympäristöluvan mukainen, ja vahvistamme vastaanoton.</div></details>
+    <details class="b-acc"><summary><span>Puhdas maa-aines</span><i></i></summary></details>
+    <details class="b-acc"><summary><span>Betoni ja tiili</span><i></i></summary></details>
+    <details class="b-acc"><summary><span>Hinnat</span><i></i></summary></details>
+  </div>
+</div></section>
+
+<section class="b-section"><div class="b-inner">
+  <div class="pk-office">
+    <div><h2 class="b-h2">GRK:n toimipiste: Nurmijärvi</h2><p class="pk-addr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><i class="pk-bar" style="width:220px"></i></p><a class="b-link" href="yhteystiedot.html">Kaikki yhteyshenkilöt</a></div>
+    <div class="pk-people"><div class="pk-person"><span class="pk-person__img"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg></span><div><b><i class="pk-bar"></i></b><span>Vastaanoton vastaava</span><small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><i class="pk-bar"></i></small><small><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><i class="pk-bar"></i></small></div></div><div class="pk-person"><span class="pk-person__img"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg></span><div><b><i class="pk-bar"></i></b><span>Alueen myynti</span><small><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><i class="pk-bar"></i></small><small><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><i class="pk-bar"></i></small></div></div></div>
+  </div>
+</div></section>
+
+<section class="b-section b-section--gray" id="lahimmat"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Lähimmät muut paikat</h2></div>
+  <div class="pk-near"><article class="vo-card">
+  <div class="vo-card__top"><a href="#">Mäntsälä</a><span class="vo-km"><i></i>km</span></div>
+  <p class="vo-state">Auki nyt · sulkeutuu klo <i></i></p>
+  <div class="vo-acts"><a class="b-btn" href="#">Soita</a><a class="b-btn b-btn--secondary" href="#">Reittiohje</a></div>
+</article><article class="vo-card">
+  <div class="vo-card__top"><a href="#">Sipoo</a><span class="vo-km"><i></i>km</span></div>
+  <p class="vo-state vo-state--closed">Suljettu · avautuu <i></i></p>
+  <div class="vo-acts"><a class="b-btn" href="#">Soita</a><a class="b-btn b-btn--secondary" href="#">Reittiohje</a></div>
+</article></div>
+  <a class="b-link" href="vastaanottopaikat.html">Kaikki vastaanottopaikat</a>
+</div></section>
+
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="#">Päällystys ja asfaltointi</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li><li><a href="#">Rautatiet ja raitiotiet</a></li><li><a href="#">Sähköverkot ja sähköasemat</a></li><li><a href="#">Kiertotalous ja vastaanotto</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="#">Energia</a></li><li><a href="#">Teollisuus</a></li><li><a href="#">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
+        <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="#">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="#">Tietosuoja</a><a href="#">Evästeasetukset</a><a href="#">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="#" aria-current="true">FI</a><a href="#" lang="sv">SE</a><a href="#" lang="et">EE</a><a href="#" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tätä sivua ei ole vielä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+})();
+</script>
+</body>
+</html>

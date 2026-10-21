@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hailuodon kiinteä yhteys · GRK lo-fi -prototyyppi</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+.hf-hero>.b-crumbs{position:absolute;z-index:2;top:32px;left:0;right:0;margin:0;padding:0 80px;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.hf-hero>.b-crumbs a{color:#fff;text-decoration-color:rgba(255,255,255,.5)}
+.rh-tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;padding:0;list-style:none}
+.rh-tags li{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;background:rgba(22,28,32,.72);color:#fff;font:700 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase}
+.rh-tags li::before{content:"";width:6px;height:6px;background:var(--accent)}
+.rh-brief{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:80px;align-items:start}
+.rh-brief__tx{display:grid;gap:20px}
+.rh-brief__tx p{margin:0;font-size:18px;line-height:30px;max-width:62ch}
+.rh-facts{background:#fff;padding:32px}
+.rh-facts h3{margin:0 0 8px;font:900 22px/28px var(--font-head)}
+.rh-facts dl{margin:0}
+.rh-facts div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.rh-facts div:last-child{border-bottom:0}
+.rh-facts dt{font:700 14px/24px var(--font-sans);color:var(--ink-2-strong)}
+.rh-facts dd{margin:0;font-size:16px;line-height:24px}
+.rh-chal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.rh-chal article{display:grid;align-content:start;gap:12px;padding-top:20px;border-top:2px solid var(--ink)}
+.rh-chal b{font:900 20px/24px var(--font-head);color:var(--accent)}
+.rh-chal h3{margin:0;font:900 26px/31px var(--font-head)}
+.rh-chal p{margin:0;font-size:16px;line-height:26px;color:var(--ink-2-strong)}
+.rh-tl{margin:0;padding:0;list-style:none;display:grid;gap:0}
+.rh-tl>li{display:grid;grid-template-columns:160px minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start;padding:40px 0;border-top:1px solid var(--line)}
+.rh-tl>li:last-child{border-bottom:1px solid var(--line)}
+.rh-tl time{font:900 22px/28px var(--font-head);color:var(--accent)}
+.rh-tl h3{margin:0 0 12px;font:900 26px/31px var(--font-head)}
+.rh-tl p{margin:0;font-size:17px;line-height:28px;color:var(--ink-2-strong)}
+.rh-tl figure{margin:0}
+.rh-tl figure img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.rh-tl figcaption{margin-top:8px;font-size:13px;line-height:18px;color:var(--ink-2-strong)}
+.rh-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;border-top:2px solid var(--ink)}
+.rh-nums div{padding:28px 20px 0 0}
+.rh-nums p{margin:0;font:900 56px/1 var(--font-head);color:var(--accent);letter-spacing:-.02em;white-space:nowrap}
+.rh-nums small{display:block;margin-top:10px;font-size:16px;line-height:24px;color:var(--ink)}
+.rh-quote{margin:72px 0 0;display:grid;grid-template-columns:120px minmax(0,1fr);gap:32px;align-items:start}
+.rh-quote::before{content:"”";font:900 160px/0.8 var(--font-head);color:var(--accent)}
+.rh-quote blockquote{margin:0;font:900 32px/42px var(--font-head);color:var(--ink);max-width:30ch}
+.rh-quote figcaption{margin-top:20px;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.rh-quote figcaption b{color:var(--ink)}
+.rh-svcs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.rh-svcs a{display:grid;grid-template-columns:1fr 22px;gap:12px;align-items:start;height:100%;padding:24px;background:var(--surface-2);text-decoration:none;color:var(--ink)}
+.rh-svcs strong{display:block;font:900 22px/27px var(--font-head)}
+.rh-svcs small{display:block;margin-top:8px;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.rh-svcs svg{width:22px;height:22px;fill:none;stroke:var(--accent);stroke-width:2.25;margin-top:3px}
+.rh-svcs a:hover strong{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+.rh-contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.rh-person{display:grid;grid-template-columns:160px minmax(0,1fr);gap:28px;align-items:center;padding:28px;background:var(--surface-2)}
+.rh-person__ph{aspect-ratio:4/5;display:grid;place-items:end center;background:var(--surface);overflow:hidden}.rh-person__ph svg{width:80%;fill:none;stroke:var(--ink-2);stroke-width:1.2}
+.rh-person__name{margin:0;font:900 26px/32px var(--font-head)}.rh-person__role{margin:4px 0 14px;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.rf-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.rf-tags{display:flex;flex-wrap:wrap;gap:6px}
+.rf-tag{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;background:var(--surface-2);font-size:13px;line-height:18px;font-weight:500;color:var(--ink)}
+@media (max-width:900px){.hf-hero>.b-crumbs{padding:0 20px;top:20px}.rh-brief,.rh-contact,.rh-chal,.rh-svcs,.rf-grid{grid-template-columns:1fr!important;gap:32px}.rh-tl>li{grid-template-columns:1fr;gap:16px}.rh-nums{grid-template-columns:1fr 1fr}.rh-quote{grid-template-columns:1fr}.rh-person{grid-template-columns:100px 1fr}}
+.rh-work{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.rh-work article{display:flex;flex-direction:column;padding:32px;background:var(--surface-2)}
+.rh-work h3{margin:0;font:900 26px/31px var(--font-head)}
+.rh-work__sub{margin:8px 0 20px;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.rh-work dl{margin:0;border-top:1px solid var(--line)}
+.rh-work dl div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:22px}
+.rh-work dt{font-weight:700}
+.rh-work dd{margin:0;color:var(--ink-2-strong)}
+.rh-work__lbl{margin:auto 0 8px;padding-top:24px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.rh-work ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;align-content:start}
+.rh-work li a{display:inline-flex;align-items:center;gap:8px;font:700 16px/22px var(--font-sans);color:var(--ink);text-decoration:none}
+.rh-work li a::after{content:"";width:7px;height:7px;border:solid var(--accent);border-width:2px 2px 0 0;transform:rotate(45deg)}
+.rh-work li a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+@media (max-width:900px){.rh-work{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="b-root hf lofi" style="width: 100%;">
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
+      <a class="b-nav__item" href="#" aria-current="page">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
+      <a class="b-nav__item b-nav__item--menu" href="#">Yritys</a>
+      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+  </div>
+</header>
+
+<section class="hf-hero hf-hero--page">
+  <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="#">Referenssit</a></li><li aria-current="page">Hailuodon kiinteä yhteys</li></ol>
+  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Riutun silta meren yllä, kävelijä ja pyöräilijä sillalla">
+  <div class="hf-hero__text">
+    <ul class="rh-tags"><li>Sillat</li><li>Infra</li><li>Allianssi</li></ul>
+    <h1 class="b-h1">Hailuodon kiinteä yhteys: meripenger ja kaksi siltaa</h1>
+    <p class="b-lead">Lautan korvaava yhteys Oulun Riutunkarista Hailuotoon avattiin liikenteelle kesäkuussa 2026, alkuperäistä aikataulua aiemmin.</p>
+    <div class="b-btns"><a class="b-btn" href="#yhteyshenkilot">Ota yhteyttä</a></div>
+  </div>
+</section>
+
+<section class="b-section b-section--gray"><div class="b-inner">
+  <div class="rh-brief">
+    <div class="rh-brief__tx">
+      <h2 class="b-h2">Lyhyesti</h2>
+      <p>Hailuotoon kuljettiin vuosikymmenet lautalla. Nyt mantereelta saarelle ajaa autolla noin kahdeksassa minuutissa, ja kulku on auki ympäri vuorokauden.</p>
+      <p>GRK rakensi yhteyden osana allianssia, johon kuuluivat tilaaja Väylävirasto sekä suunnittelijat AFRY ja A-Insinöörit. Kokonaisuuteen kuului meren halki kulkeva pengertie sekä Riutun ja Huikun sillat.</p>
+      <p>Työ tehtiin avomerellä tuulessa, jäissä ja vaihtelevan vedenkorkeuden keskellä. Rakentaminen alkoi toukokuussa 2024 ja eteni suunnitellusti alusta loppuun.</p>
+    </div>
+    <aside class="rh-facts">
+      <h3>Hankkeen tiedot</h3>
+      <dl>
+        <div><dt>Tilaaja</dt><dd>Väylävirasto</dd></div>
+        <div><dt>Toteutusmalli</dt><dd>Allianssi: Väylävirasto, GRK Suomi Oy rakentajana, AFRY Finland Oy ja A-Insinöörit Suunnittelu Oy suunnittelijoina</dd></div>
+        <div><dt>Allianssin arvo</dt><dd>105,4 M€, josta GRK:n osuus 90 %</dd></div>
+        <div><dt>Laajuus</dt><dd>8,4 km: pengertie sekä Riutun ja Huikun sillat</dd></div>
+        <div><dt>Aikataulu</dt><dd>05/2024–06/2026</dd></div>
+        <div><dt>Sijainti</dt><dd>Oulu ja Hailuoto</dd></div>
+      </dl>
+    </aside>
+  </div>
+</div></section>
+
+<section class="b-section"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Mikä teki hankkeesta vaativan</h2></div>
+  <div class="rh-chal">
+    <article><b>01</b><h3>Avomeri</h3><p>Voimakkaat tuulet, jääolot, suuret vedenkorkeuden vaihtelut ja vaativa merilogistiikka koko rakentamisen ajan.</p></article>
+    <article><b>02</b><h3>Talvi työmaalla</h3><p>Tammikuussa 2025 työmaalla koettiin 25 asteen pakkasista plusasteisiin. Lauhalla meren pinnan nousu ja tuuli vaikeuttivat työtä.</p></article>
+    <article><b>03</b><h3>Suuret siltavalut</h3><p>Useita vuorokausia kestäneet yhtäjaksoiset valut. Riutun sillan kannessa tehtiin Suomen kaikkien aikojen suurin siltavalu.</p></article>
+  </div>
+</div></section>
+
+<section class="b-section"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Mitä teimme</h2></div>
+  <div class="rh-work"><article><h3>Meripenger ja pengertie</h3><p class="rh-work__sub">Penger meren halki Riutunkarista Huikun sillalle</p><dl><div><dt>Materiaali</dt><dd>2 miljoonaa tonnia kivilouhetta ja -mursketta</dd></div><div><dt>Työmenetelmä</dt><dd>Louhepenkereen rakentaminen ja levitys avomerellä</dd></div><div><dt>Kesto</dt><dd>05/2024–12/2024</dd></div></dl><p class="rh-work__lbl">Palvelut</p><ul><li><a href="infra.html">Infra- ja maarakentaminen</a></li></ul></article><article><h3>Riutun silta</h3><p class="rh-work__sub">Mantereen puoleinen silta</p><dl><div><dt>Rakenne</dt><dd>Betoninen jatkuva palkkisilta</dd></div><div><dt>Työmenetelmä</dt><dd>Välitukien paalutus, kannen laudoitus, raudoitus ja valu</dd></div><div><dt>Kesto</dt><dd>Paalutus 07/2024–01/2025, kansi keväällä 2025</dd></div></dl><p class="rh-work__lbl">Palvelut</p><ul><li><a href="https://www.grk.fi/palvelut/sillat/">Sillat</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li></ul></article><article><h3>Huikun silta</h3><p class="rh-work__sub">Hailuodon puoleinen, yhteyden pidempi silta</p><dl><div><dt>Rakenne</dt><dd>Teräksinen liittopalkkisilta, kansi 767 × 10,2 m</dd></div><div><dt>Työmenetelmä</dt><dd>Paalutus, kasuunit, lanseeraus ja kannen valu kahdessa vuorossa</dd></div><div><dt>Kesto</dt><dd>Kannen valu 04/2026</dd></div></dl><p class="rh-work__lbl">Palvelut</p><ul><li><a href="https://www.grk.fi/palvelut/sillat/">Sillat</a></li></ul></article></div>
+</div></section>
+
+<section class="b-section" style="padding-top:0"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Näin yhteys rakennettiin</h2></div>
+  <ol class="rh-tl">
+    <li><time>05/2024</time><div><h3>Rakentaminen alkaa Riutunkarista</h3><p>Penger lähti kasvamaan mantereen rannasta kohti saarta. Ensimmäisen vuoden aikana pengertä rakennettiin meren halki noin 5,5 kilometriä.</p></div><figure><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Pengertie ja sillan muottirakenteet merellä ilmasta kuvattuna"><figcaption>Työmaa joulukuussa 2024</figcaption></figure></li>
+    <li><time>12/2024</time><div><h3>Penger kohtaa Huikun työsillan</h3><p>Koko yhteysväli Oulunsalosta Hailuotoon oli rakennettu niin, että työmaa-ajoneuvot pääsivät kulkemaan sitä pitkin. Pengertiehen käytettiin 2 miljoonaa tonnia kivilouhetta ja -mursketta.</p></div><figure><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Louhepenger ja työsilta jäätyneellä merellä"><figcaption>Louhepenger ja Huikun työsilta 20.12.2024</figcaption></figure></li>
+    <li><time>2025</time><div><h3>Riutun silta</h3><p>Paalutukset valmistuivat tammikuussa, ja keväällä valettiin sillan kansi. Valu oli Suomen kaikkien aikojen suurin siltavalu.</p></div><div></div></li>
+    <li><time>04/2026</time><div><h3>Huikun sillan kansi</h3><p>Yhteyden pidemmän sillan 767 metrin ja 10,2 metrin levyinen kansi valettiin kolmessa–neljässä vuorokaudessa kahdessa vuorossa. Valuun osallistui yli sata ihmistä.</p></div><figure><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Betonipumput valavat Huikun sillan kantta, työntekijät raudoitetulla kannella"><figcaption>Huikun sillan kannen valu 13.4.2026</figcaption></figure></li>
+    <li><time>06/2026</time><div><h3>Yhteys avataan liikenteelle</h3><p>Yhteys otettiin käyttöön alkuperäistä aikataulua aiemmin ilman kompromisseja turvallisuudessa tai laadussa.</p></div><div></div></li>
+  </ol>
+</div></section>
+
+<section class="b-section b-section--gray"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Hanke lukuina</h2></div>
+  <div class="rh-nums">
+    <div><p>8,4 km</p><small>kiinteää yhteyttä mantereelta saarelle</small></div>
+    <div><p>767 m</p><small>Huikun sillan kansi, yhteyden pidempi silta</small></div>
+    <div><p>20 000 m³</p><small>betonia hankkeen rakenteisiin</small></div>
+    <div><p>8 min</p><small>automatka, ennen lauttavuoron varassa</small></div>
+  </div>
+  <figure class="rh-quote"><div><blockquote>Tämä ei ole yhden organisaation saavutus, vaan koko allianssin yhteinen onnistuminen.</blockquote><figcaption><b>Timo Takala</b>, projektipäällikkö, GRK</figcaption></div></figure>
+</div></section>
+
+
+
+<section class="b-section b-section--gray" id="yhteyshenkilot"><div class="b-inner">
+  <div class="rh-contact">
+    <div class="b-head" style="margin:0"><h2 class="b-h2">Samanlainen hanke suunnitteilla?</h2><p class="b-lead" style="margin-top:16px">Kerro hankkeesta, niin kerromme, miten vastaava toteutetaan. Puolivalmiskin suunnitelma käy.</p><div class="b-btns" style="margin-top:24px"><a class="b-btn" href="#">Lähetä tarjouspyyntö</a></div></div>
+    <div class="rh-person" style="background:#fff"><div class="rh-person__ph" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="rh-person__name">Jaakko Mäkelä</p><p class="rh-person__role">Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</p><p class="b-person__ch"><a href="tel:+358503775152"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jaakko.makela@grk.fi</a></p></div></div>
+  </div>
+</div></section>
+
+<section class="b-section"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Muita siltakohteita</h2></div>
+  <div class="hf-cards rf-grid"><a class="hf-card" href="https://www.grk.fi/projektit/tornionjoen-ylittava-uusi-silta/"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Tornionjoen sillan työmaa Pajalassa"><span class="hf-status">Käynnissä</span></div><p class="meta">Pajala, Ruotsi · Trafikverket · 2024–2027</p><h3>Tornionjoen silta</h3><p>Uusi silta Tornionjoen yli. Pääurakoitsijana GRK Sverige, urakan arvo noin 12 M€.</p><div class="rf-tags"><span class="rf-tag">Sillat</span></div></a><a class="hf-card" href="https://www.grk.fi/projektit/jatkasaarenkannaksen-silta/"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jätkäsaaren kannaksen sillan työmaa"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki · Helsingin kaupunki · 2025–2026</p><h3>Jätkäsaaren kannaksen silta</h3><p>Projektinjohtourakka: purku, uusi silta, rantamuurit, kunnallistekniikka ja raitiotiesiirrot.</p><div class="rf-tags"><span class="rf-tag">Sillat</span><span class="rf-tag">Infra</span></div></a><a class="hf-card" href="https://www.grk.fi/projektit/kayrajoen-sillan-rakentaminen/"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Käyräjoen puukannellinen teräspalkkisilta"></div><p class="meta">Kouvola · Kouvolan kaupunki · 2023</p><h3>Käyräjoen silta</h3><p>Kevyen liikenteen silta Käyräjoen yli valaistuksineen ja yhteyksineen.</p><div class="rf-tags"><span class="rf-tag">Sillat</span></div></a></div>
+  <p class="b-linkrow"><a class="b-link" href="#">Kaikki referenssit</a></p>
+</div></section>
+
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="#">Päällystys ja asfaltointi</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li><li><a href="#">Rautatiet ja raitiotiet</a></li><li><a href="#">Sähköverkot ja sähköasemat</a></li><li><a href="#">Kiertotalous ja vastaanotto</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="#">Energia</a></li><li><a href="#">Teollisuus</a></li><li><a href="#">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
+        <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="#">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="#">Tietosuoja</a><a href="#">Evästeasetukset</a><a href="#">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="#" aria-current="true">FI</a><a href="#" lang="sv">SE</a><a href="#" lang="et">EE</a><a href="#" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tätä sivua ei ole vielä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+})();
+</script>
+</body>
+</html>
