@@ -915,7 +915,7 @@ mark.b-gap { background: var(--gap); color: var(--ink); padding: 1px .3em; borde
 .b-svcmap--leads .b-svcmap__pin.b-svcmap__pin--sub b{width:12px;height:12px;outline-width:2px;box-shadow:0 0 0 3px var(--surface-dark)}
 .b-svcmap__pin--sub span{position:absolute;left:14px;bottom:10px;padding:2px 8px;background:var(--surface-dark);color:#fff;font:700 13px/18px var(--font-sans);white-space:nowrap;pointer-events:none}
 /* 14.10.2026 (Olli): merkit ilman numeroita, pelkät oranssit pallot; hakemistossa sama pallo viivan päässä */
-.b-svcmap--leads .b-svcmap__pin b{min-width:0;width:16px;height:16px;padding:0;border-radius:50%;font-size:0;outline:3px solid #fff;box-shadow:0 0 0 4px var(--surface-dark)}
+.b-svcmap--leads .b-svcmap__pin b{min-width:0;width:10px;height:10px;padding:0;border-radius:50%;font-size:0;outline:2px solid #fff;box-shadow:0 0 0 3px var(--surface-dark)}
 .b-svcmap--leads .b-svcmap__index--row h3 .b-svcmap__no{min-width:0;width:12px;height:12px;padding:0;margin:6px 6px 0;border-radius:50%;font-size:0}
 .b-svcmap__pin:hover b{background:var(--ink);color:#fff}
 /* Viiva merkistä hakemiston sarakkeeseen GRK:n 40° kulmalla: pysty alas – vino 40° – pysty numeroon.
@@ -1044,8 +1044,9 @@ mark.b-gap { background: var(--gap); color: var(--ink); padding: 1px .3em; borde
 /* Palvelukartan viivat (Olli 19.10.): oranssit (näkyvät tummassa kuvassa ja vaalealla pohjalla), jokaisella pallolla viiva,
    alakohtien pallot samankokoisia. Viivan pää sarakkeen pallon kohdalle 40 px:n sarakevälillä. */
 .b-svcmap--leads .b-svcmap__lead{--lc:var(--accent);--w:2px;--cx:calc(var(--c) * (100cqw + 40px) / 6 + 12px)}
-.b-svcmap--leads .b-svcmap__pin.b-svcmap__pin--sub b{width:16px;height:16px;outline-width:3px;box-shadow:0 0 0 4px var(--surface-dark)}
-.b-svcmap__pin--sub span{left:18px;bottom:12px}
+/* 23.10. (Olli: pallot liian isoja kuvan päällä): kaikki pallot 10 px, 2 px valkoinen ja 3 px tumma rengas */
+.b-svcmap--leads .b-svcmap__pin.b-svcmap__pin--sub b{width:10px;height:10px;outline-width:2px;box-shadow:0 0 0 3px var(--surface-dark)}
+.b-svcmap__pin--sub span{left:12px;bottom:8px}
 
 /* t3: kolme kuvapaneelia toimialoille (etusivun Main-helmetistä yhteiseksi lohkoksi 19.10., Olli: Palvelut-sivulle "se blokki, jossa on kuva"). Merkkaus: div.t3 > a.t3__p > img + div.t3__c > h3 + p */
 .t3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;height:560px}
@@ -1243,6 +1244,11 @@ mark.b-gap { background: var(--gap); color: var(--ink); padding: 1px .3em; borde
 .hf-pins__pin{width:auto;min-width:32px;padding:0 6px;border-radius:16px;box-sizing:border-box}
 .hf-pins__pin{margin:-76px 0 0;transform:translateX(-50%)}
 .hf-pins__pin::after{left:calc(50% - 1px)}
+/* 26.10. (Olli: merkit liian isoja kuvan päällä): pienempi numeromerkki, ohuempi varsi ja piste kohteessa */
+.hf-pins__pin{min-width:24px;height:24px;margin:-52px 0 0;padding:0 5px;border-radius:12px;font-size:12px;box-shadow:0 0 0 2px var(--surface-dark)}
+.hf-pins__pin::after{top:24px;height:28px;width:1.5px;left:calc(50% - .75px)}
+.hf-pins__pin::before{content:"";position:absolute;left:calc(50% - 3px);top:49px;width:6px;height:6px;border-radius:50%;background:inherit}
+.hf-pins--light .hf-pins__pin{box-shadow:0 0 0 2px var(--white)}
 
 /* hf-mx: menetelmähaitari palvelun laskeutumissivulle (Olli 20.10.: "monta melko korkeaa accordionia, ja jos käyttäjä avaa sen, aukeaa full width näkymä").
    Korvaa erillisen Menetelmät-sivun ja valintataulukon. Yksi auki kerrallaan (details name).
@@ -1841,3 +1847,35 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 .b-nav__sites,.b-nav__util-r{display:flex;align-items:center;gap:20px}
 .b-nav__country{display:inline-flex;align-items:center;gap:6px}
 .b-nav__country::after{content:"";width:6px;height:6px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:translateY(-2px) rotate(45deg)}
+
+/* Vaaleat pinnat (Olli 26.10. kankaalla: "vaihda tähän, ja kaikkiin muihin tummiin elementteihin vaalea tausta"):
+   ylätunniste, Miksi GRK, alatunniste, tumma nostorivi sekä datakeskuksen kuvapaikat vaaleiksi. Teksti graniittia, viivat line-sävyä. */
+.lofi .b-nav { background: var(--white); border-bottom: 1px solid var(--line); }
+.lofi .b-nav__util { color: var(--ink-2); }
+.lofi .b-nav__util a, .lofi .b-nav__item, .lofi .b-nav__item:hover, .lofi .b-nav__item[aria-current], .lofi .b-nav__search, .lofi .b-nav__contact { color: var(--ink); }
+.lofi .b-nav__item:hover { border-bottom-color: var(--line-strong); }
+.lofi .b-nav__search:hover { background: var(--surface); }
+.lofi .b-nav__util-sep { background: var(--line); border-color: var(--line); }
+.lofi .b-nav__brand::after, .lofi .hf-foot__logo::after, .lofi .b-footer__top > div:first-child::before { border-color: var(--line-strong); color: var(--ink-2); }
+.lofi .b-why, .lofi .hf-why, .lofi #miksi-grk.b-why { background: var(--white); color: var(--ink); }
+.lofi #miksi-grk > .vx-bg { display: none; }
+.lofi .b-why .b-h2, .lofi .hf-why .hf-h2, .lofi .b-why__title, .lofi .b-why__label, .lofi .b-why__cert { color: var(--ink); }
+.lofi .b-why .b-head .b-body, .lofi #miksi-grk .b-head .b-body { color: var(--ink-2) !important; }
+.lofi .b-why__text, .lofi #miksi-grk .b-why__text, .lofi .hf-why .hf-lead { color: var(--ink-2); }
+.lofi .b-why__label, .lofi #miksi-grk .b-why__label, .lofi .b-why__certs, .lofi #miksi-grk .b-why__certs { border-color: var(--line); }
+.lofi .hf-why .b-tag, .lofi .b-section--dark .b-tag { border-color: var(--line-strong); color: var(--ink); }
+.lofi .b-footer, .lofi .hf-foot { background: var(--white); color: var(--ink); border-top: 1px solid var(--line); }
+.lofi .hf-foot a, .lofi .hf-foot__nav li a, .lofi .hf-foot__legal a, .lofi .hf-foot .hf-foot__langs a, .lofi .hf-foot__tel { color: var(--ink-2); }
+.lofi .hf-foot a:hover, .lofi .hf-foot__nav li a:hover { color: var(--ink); }
+.lofi .hf-foot__tag, .lofi .hf-foot__h a, .lofi .hf-foot__tel a, .lofi .hf-foot__langs a[aria-current], .lofi .hf-foot__more, .lofi .b-footer h4, .lofi .hf .b-footer h2.hf-fh { color: var(--ink); }
+.lofi .hf-foot__acts .b-btn { color: var(--white); }
+.lofi .hf-foot__bottom, .lofi .b-footer__bottom { border-top-color: var(--line); }
+.lofi .hf-foot .hf-foot__some a { border-color: var(--line-strong); color: var(--ink); }
+.lofi .hf-foot__some a:hover { color: var(--white); }
+.lofi .hf-strip--dark { background: var(--surface); color: var(--ink); }
+.lofi .hf-stack__fig { background: var(--surface); }
+.lofi .hf-pins { background: var(--white); }
+.lofi .hf-pins__pin { box-shadow: 0 0 0 2px var(--white); }
+.lofi .hf-pins__pin--k { background: var(--ink); color: var(--white); }
+.lofi .hf-pins__pin--k::after { background: var(--ink); }
+.lofi .hf-foot__legal, .lofi .hf-foot__legal span { color: var(--ink-2); }

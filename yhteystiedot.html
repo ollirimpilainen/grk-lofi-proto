@@ -18,11 +18,11 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .yt-hero__text{display:grid;gap:16px;max-width:820px}
 .yt-hero__text .b-lead{margin:0}
 .keyfacts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink)}
-.kf{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:24px 20px 8px 0}
+.kf{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:start;padding:24px 20px 8px 0}
 .kf+.kf{padding-left:20px;border-left:1px solid var(--surface)}
-.kf .b-ico{width:22px;height:22px;margin-top:1px;color:var(--accent)}
+.kf .kf__ic{display:block;width:64px;height:64px;margin:-10px 0 0 -8px}
 .kf b{display:block;font-size:14px;line-height:20px;color:var(--ink-2)}
-.kf a:not(.b-link){display:block;font-size:18px;line-height:26px;font-weight:700;text-decoration:none;white-space:nowrap;color:var(--ink)}
+.kf a:not(.b-link){display:block;font-size:18px;line-height:28px;font-weight:700;text-decoration:none;white-space:nowrap;color:var(--ink)}
 .kf span{display:block;font-size:16px;line-height:24px}
 .kf small{display:block;margin-top:2px;font-size:14px;line-height:20px;color:var(--ink-2)}
 .filters{display:grid;grid-template-columns:2fr 1.2fr 1fr;gap:16px;align-items:end;padding:28px;background:var(--surface-2)}
@@ -45,18 +45,18 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .yt-note{margin-top:40px;font-size:16px;line-height:24px;color:var(--ink-2)}
 @media (max-width:900px){.keyfacts,.filters,.people3{grid-template-columns:1fr;gap:24px}.yt-hero{padding:24px 20px 48px}.kf+.kf{padding-left:0;border-left:0;border-top:1px solid var(--surface)}}
 .yt-find{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:end;margin-top:8px;padding:28px;background:var(--surface-2)}
-.yt-find label{display:block;margin-bottom:8px;font:900 20px/26px var(--font-head);color:var(--ink)}
+.yt-find label{display:block;margin-bottom:8px;font:900 22px/28px var(--font-head);color:var(--ink)}
 .yt-find__row{display:flex;gap:8px}.yt-find__row .b-input{flex:1}
 .yt-find p{margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
 .topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .topic{display:grid;grid-template-rows:auto auto 1fr auto auto;gap:12px;padding:32px;background:#fff}
-.topic h3{margin:0;font:900 24px/29px var(--font-head)}
+.topic h3{margin:0;font:900 22px/28px var(--font-head)}
 .topic p{margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
 .topic__ch{display:block;padding-top:16px;border-top:1px solid var(--surface);font-size:16px;line-height:24px;color:var(--ink)}
 .topic__ch b{display:block}.topic__ch a{font-weight:700;text-decoration:none;color:var(--ink)}
 .countries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px;border-top:2px solid var(--ink)}
 .country{display:grid;gap:12px;align-content:start;padding:28px 0}
-.country h3{margin:0;font:900 24px/29px var(--font-head)}
+.country h3{margin:0;font:900 22px/28px var(--font-head)}
 .country p{margin:0;font-size:16px;line-height:24px}
 .country small{font-size:14px;line-height:20px;color:var(--ink-2-strong)}
 .country a{font-weight:700;color:var(--ink);text-decoration:none}
@@ -85,6 +85,22 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .topic::after{content:"";width:8px;height:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg)}
 .topic:hover h3{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
 .topics{gap:16px}
+/* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
+.hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
+/* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
+.hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
+.hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
+.hf .hf-card h3,.hf .b-step h3,.hf .b-why__title,.hf .hf-work__group,.hf .hf-news h3{font-size:22px;line-height:28px}
+.hf .b-why__num,.hf .why-num,.hf .hf-herostats b{font-size:64px;line-height:1}
+.hf .hf-strip h2{font-weight:900;font-size:40px;line-height:48px}
+.hf .hf-work__group{font-weight:900}
+.hf .b-person__name,.hf .me-contact b{font-size:22px;line-height:28px;font-weight:900}
+.hf .en-co__name{font-size:28px;line-height:33px}
+.hf .b-lead,.hf .lead{font-size:22px;line-height:34px}
+.hf .b-head .b-body{font-size:18px;line-height:28px}
+.hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
+.hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
+.hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
 </style>
 </head>
 <body>
@@ -94,7 +110,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <header class="b-nav">
   <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
   <div class="b-nav__bar">
-    <a class="b-nav__brand" href="index.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="99" height="32"></a>
+    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
     <nav class="b-nav__menu" aria-label="Päävalikko">
       <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
       <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
@@ -115,10 +131,10 @@ a{color:#3f4c55}a:hover{color:#252d32}
     <p class="b-lead">Kerro, mitä asiaa sinulla on, niin ohjaamme sinut oikealle ihmiselle. Voit myös soittaa vaihteeseen tai <a href="#vastuuhenkilot">hakea yhteyshenkilöä</a>.</p>
   </div>
   <div class="keyfacts">
-    <div class="kf"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg><div><b>Puhelinvaihde</b><a href="tel:+358103214110">+358 10 321 4110</a><small>GRK Suomi Oy</small></div></div>
-    <div class="kf"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><div><b>Sähköpostit</b><span>etunimi.sukunimi@grk.fi</span><small>Kaikilla henkilöillä sama muoto</small></div></div>
-    <div class="kf"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><div><b>Pääkonttori</b><span>Jaakonkatu 2, 01620 Vantaa</span><a class="b-link b-link--sm" href="#toimipisteet">Kaikki toimipisteet</a></div></div>
-    <div class="kf"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M7 10h6M7 14h4"></path></svg><div><b>Laskutus</b><span>Y-tunnus 2810844-3</span><a class="b-link b-link--sm" href="#laskutus">Laskutustiedot</a></div></div>
+    <div class="kf"><svg class="kf__ic" aria-hidden="true" viewBox="-10 -10 68 68" xmlns="http://www.w3.org/2000/svg"><path d="M28 5 H41 C42.1 5 43 5.9 43 7 V15 C43 16.1 42.1 17 41 17 H35 L31 21 V17 H28 C26.9 17 26 16.1 26 15 V7 C26 5.9 26.9 5 28 5 Z" fill="#f06800"/><path d="M28 5 H41 C42.1 5 43 5.9 43 7 V15 C43 16.1 42.1 17 41 17 H35 L31 21 V17 H28 C26.9 17 26 16.1 26 15 V7 C26 5.9 26.9 5 28 5 Z" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 9 H27 A3 3 0 0 1 30 12 V42 A3 3 0 0 1 27 45 H12 A3 3 0 0 1 9 42 V12 A3 3 0 0 1 12 9 Z " fill="#fff"/><path d="M12 9 H27 A3 3 0 0 1 30 12 V42 A3 3 0 0 1 27 45 H12 A3 3 0 0 1 9 42 V12 A3 3 0 0 1 12 9 Z " fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 14 H26 A1 1 0 0 1 27 15 V37 A1 1 0 0 1 26 38 H13 A1 1 0 0 1 12 37 V15 A1 1 0 0 1 13 14 Z M17 11.5 H22" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.3 41.5 a1.2 1.2 0 1 0 2.4 0 a1.2 1.2 0 1 0 -2.4 0 " fill="#3f4c55"/></svg><div><b>Puhelinvaihde</b><a href="tel:+358103214110">+358 10 321 4110</a><small>GRK Suomi Oy</small></div></div>
+    <div class="kf"><svg class="kf__ic" aria-hidden="true" viewBox="-10 -10 68 68" xmlns="http://www.w3.org/2000/svg"><path d="M6 11 H42 A2 2 0 0 1 44 13 V37 A2 2 0 0 1 42 39 H6 A2 2 0 0 1 4 37 V13 A2 2 0 0 1 6 11 Z " fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 12.5 L24 27 L43 12.5 M5 37.5 L18.5 23 M43 37.5 L29.5 23" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 27 a3.5 3.5 0 1 0 7 0 a3.5 3.5 0 1 0 -7 0 " fill="#f06800"/><path d="M20.5 27 a3.5 3.5 0 1 0 7 0 a3.5 3.5 0 1 0 -7 0 " fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Sähköpostit</b><span>etunimi.sukunimi@grk.fi</span><small>Kaikilla henkilöillä sama muoto</small></div></div>
+    <div class="kf"><svg class="kf__ic" aria-hidden="true" viewBox="-10 -10 68 68" xmlns="http://www.w3.org/2000/svg"><path d="M24 40 C24 40 12 28.5 12 18 A12 12 0 0 1 36 18 C36 28.5 24 40 24 40 Z" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 18 a4.5 4.5 0 1 0 9 0 a4.5 4.5 0 1 0 -9 0 " fill="#f06800"/><path d="M19.5 18 a4.5 4.5 0 1 0 9 0 a4.5 4.5 0 1 0 -9 0 " fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 44 H33" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Pääkonttori</b><span>Jaakonkatu 2, 01620 Vantaa</span><a class="b-link b-link--sm" href="#toimipisteet">Kaikki toimipisteet</a></div></div>
+    <div class="kf"><svg class="kf__ic" aria-hidden="true" viewBox="-10 -10 68 68" xmlns="http://www.w3.org/2000/svg"><path d="M10 24 V8 C10 6.9 10.9 6 12 6 H36 C37.1 6 38 6.9 38 8 V24" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11.5 H24 M14 15.5 H22 M14 20 H34" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M27.8 13.5 a4.2 4.2 0 1 0 8.4 0 a4.2 4.2 0 1 0 -8.4 0 " fill="#f06800"/><path d="M27.8 13.5 a4.2 4.2 0 1 0 8.4 0 a4.2 4.2 0 1 0 -8.4 0 " fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.7 11.6 C32.4 10.6 30.1 11.1 30.1 13.5 C30.1 15.9 32.4 16.4 33.7 15.4 M29 12.8 H32 M29 14.2 H32" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 24 H42 A2 2 0 0 1 44 26 V42 A2 2 0 0 1 42 44 H6 A2 2 0 0 1 4 42 V26 A2 2 0 0 1 6 24 Z M4.6 25 L24 37 L43.4 25 M4.8 43.2 L18.5 33.6 M43.2 43.2 L29.5 33.6" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Laskutus</b><span>Y-tunnus 2810844-3</span><a class="b-link b-link--sm" href="#laskutus">Laskutustiedot</a></div></div>
   </div>
 </section>
 
@@ -135,10 +151,10 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </div></section>
 
 <section class="b-section" id="vastuuhenkilot"><div class="b-inner">
-  <div class="b-head"><h2 class="b-h2">Hae yhteyshenkilöä</h2><p class="b-body">Hae nimellä, palvelulla tai paikkakunnalla, tai rajaa asian ja alueen mukaan.</p></div>
+  <div class="b-head"><h2 class="b-h2">Hae yhteyshenkilöä</h2><p class="b-body">Hae nimellä, palvelulla tai paikkakunnalla, tai rajaa palvelun, aiheen ja alueen mukaan.</p></div>
     <form class="filters" role="search">
     <div class="b-field"><label for="yt-haku">Hae nimellä, palvelulla tai paikkakunnalla</label><div class="searchbox"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input class="b-input" id="yt-haku" type="search" placeholder="Esim. päällystys Jyväskylä"></div></div>
-    <div class="b-field"><label for="yt-aihe">Asia</label><select class="b-select" id="yt-aihe"><option>Kaikki asiat</option><optgroup label="Palvelut"><option>Infra- ja maarakentaminen</option><option>Päällystys ja asfaltointi</option><option>Pohjarakentaminen ja paalutus</option><option>Rautatiet ja raitiotiet</option><option>Sähköverkot ja sähköasemat</option><option>Kiertotalous ja vastaanotto</option></optgroup><optgroup label="Muut asiat"><option>Tarjouspyyntö tai uusi hanke</option><option>Käynnissä oleva työmaa</option><option>Hankinnat ja alihankinta</option><option>Laatu, turvallisuus ja riskienhallinta</option><option>Media ja viestintä</option><option>Liiketoimintojen johto</option></optgroup></select></div>
+    <div class="b-field"><label for="yt-aihe">Palvelu tai aihe</label><select class="b-select" id="yt-aihe"><option>Kaikki palvelut ja aiheet</option><optgroup label="Palvelut"><option>Infra- ja maarakentaminen</option><option>Päällystys ja asfaltointi</option><option>Pohjarakentaminen ja paalutus</option><option>Rautatiet ja raitiotiet</option><option>Sähköverkot ja sähköasemat</option><option>Kiertotalous ja vastaanotto</option></optgroup><optgroup label="Muut aiheet"><option>Tarjouspyyntö tai uusi hanke</option><option>Käynnissä oleva työmaa</option><option>Hankinnat ja alihankinta</option><option>Laatu, turvallisuus ja riskienhallinta</option><option>Media ja viestintä</option><option>Liiketoimintojen johto</option></optgroup></select></div>
     <div class="b-field"><label for="yt-maa">Alue</label><select class="b-select" id="yt-maa"><option>Kaikki alueet</option><option>Suomi</option><option>Ruotsi</option><option>Viro</option></select></div>
   </form>
   <div class="chips" aria-label="Pikavalinnat"><span>Usein haettu:</span><a href="#">Päällystys</a><a href="#">Tarjouspyynnöt</a><a href="#">Rata</a><a href="#">Media</a><a href="#">Johto</a></div>
@@ -157,13 +173,10 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </div></section>
 
 <section class="b-section" id="toimipisteet"><div class="b-inner">
-  <div class="b-head"><h2 class="b-h2">Toimipisteet</h2><p class="b-body">Toimistot Suomessa, Ruotsissa ja Virossa. Vastaanottopaikat ja asfalttiasemat omana ryhmänään alempana.</p></div>
-  <div class="offices">
-    <h3 class="office-h">Suomi<span>21</span></h3><div class="office"><b>Vantaa</b>Jaakonkatu 2, 01620 Vantaa<br><small>Pääkonttori</small></div><div class="office"><b>Helsinki</b>Postintaival 1, 00240 Helsinki</div><div class="office"><b>Helsinki</b>Veturitallinkuja 4 B, 00520 Helsinki</div><div class="office"><b>Vantaa</b>Nuolitie 6, 01740 Vantaa</div><div class="office"><b>Kerava</b>Jäspilänkatu 3, 04250 Kerava</div><div class="office"><b>Karjaa</b>Sysimiehenkatu 2, 10300 Karjaa</div><div class="office"><b>Riihimäki</b>Rautatietori 6, 11130 Riihimäki</div><div class="office"><b>Lahti</b>Mestarinkatu 12–14, 15800 Lahti</div><div class="office"><b>Turku</b>Köydenpunojankatu 14–16, 20100 Turku</div><div class="office"><b>Pirkkala</b>Turkkirata 20, 33960 Pirkkala</div><div class="office"><b>Jyväskylä</b>Kiilatie 1, 40320 Jyväskylä</div><div class="office"><b>Kotka</b>Kotkantie 2, 48100 Kotka</div><div class="office"><b>Mikkeli</b>Maaherrankatu 19, 50100 Mikkeli</div><div class="office"><b>Lappeenranta</b>Seponkatu 8, 53300 Lappeenranta</div><div class="office"><b>Seinäjoki</b>Vetoaisaväylä 3, 60100 Seinäjoki</div><div class="office"><b>Kuopio</b>Teräskatu 2, 70150 Kuopio</div><div class="office"><b>Sonkajärvi</b>Siikalammentie 4, 74300 Sonkajärvi</div><div class="office"><b>Joensuu</b>Alasintie 2, 80130 Joensuu</div><div class="office"><b>Kalajoki</b>Takojantie 19, 85100 Kalajoki</div><div class="office"><b>Kajaani</b>Riitetie 13 H 10, 87500 Kajaani</div><div class="office"><b>Oulu</b>Kangaskontiontie 12 B 1, 90240 Oulu</div>
-    <h3 class="office-h">Ruotsi<span>6</span></h3><div class="office"><b>Boden</b>Teknikvägen 13, 961 50 Boden<br><small>Huvudkontor</small></div><div class="office"><b>Umeå</b>Norra Obbolavägen 137, 904 22 Umeå</div><div class="office"><b>Tukholma</b>Liljeholmsvägen 14, 117 61 Stockholm</div><div class="office"><b>Gävle</b>Atlasgatan 8, 802 86 Gävle</div><div class="office"><b>Härnösand</b>Nybrogatan 19, 871 31 Härnösand</div><div class="office"><b>Skellefteå</b>Mossgatan 28, 931 70 Skellefteå</div>
-    <h3 class="office-h">Viro<span>2</span></h3><div class="office"><b>Tartto</b>Spektri 6, 50411 Tartu</div><div class="office"><b>Peetri</b>Sära tee 7, Rae vald, 75312 Harjumaa</div>
-  </div>
-  <div class="yt-recv"><div class="yt-recv__lead"><h3 class="b-h3">Vastaanottopaikat</h3><p class="b-body">Maa-ainesten ja teollisuuden sivuvirtojen vastaanotto 14 paikassa eri puolilla Suomea. Jakeet, aukioloajat ja yhteystiedot paikkakunnittain.</p><a class="b-btn" href="vastaanottopaikat.html">Vastaanottopaikat</a></div><div class="offices yt-recv__list"><h3 class="office-h">Asfalttiasemat<span>3</span></h3><div class="office"><b>Nurmijärvi</b>Hämeenlinnantie 55, 01940 Nurmijärvi</div><div class="office"><b>Jyväskylä</b>Oravasaarentie 577, 40800 Jyväskylä</div><div class="office"><b>Kajaani</b>Ruuhijärventie 91, 87100 Kajaani</div></div></div>
+  <div class="b-head"><h2 class="b-h2">Toimipisteet</h2><p class="b-body">Pääkonttorit ja suurimmat toimipisteet Suomessa, Ruotsissa ja Virossa. Vastaanottopaikat ja asfalttiasemat omana ryhmänään alempana.</p></div>
+  <div class="offices"><div class="office"><b>Vantaa</b>Jaakonkatu 2, 01620 Vantaa<br><small>Suomi · Pääkonttori</small></div><div class="office"><b>Turku</b>Köydenpunojankatu 14–16, 20100 Turku<br><small>Suomi</small></div><div class="office"><b>Jyväskylä</b>Kiilatie 1, 40320 Jyväskylä<br><small>Suomi</small></div><div class="office"><b>Oulu</b>Kangaskontiontie 12 B 1, 90240 Oulu<br><small>Suomi</small></div><div class="office"><b>Boden</b>Teknikvägen 13, 961 50 Boden<br><small>Ruotsi · Huvudkontor</small></div><div class="office"><b>Tukholma</b>Liljeholmsvägen 14, 117 61 Stockholm<br><small>Ruotsi</small></div><div class="office"><b>Peetri</b>Sära tee 7, Rae vald, 75312 Harjumaa<br><small>Viro</small></div><div class="office"><b>Tartto</b>Spektri 6, 50411 Tartu<br><small>Viro</small></div></div>
+  <p class="b-linkrow"><a class="b-link" href="#">Kaikki 29 toimipistettä</a></p>
+  <div class="yt-recv"><div class="yt-recv__lead"><h3 class="b-h3">Vastaanottopaikat</h3><p class="b-body">Maa-ainesten ja teollisuuden sivuvirtojen vastaanotto 20 paikassa eri puolilla Suomea. Jakeet, aukioloajat ja yhteystiedot paikkakunnittain.</p><a class="b-btn" href="vastaanottopaikat.html">Vastaanottopaikat</a></div><div class="offices yt-recv__list"><h3 class="office-h">Asfalttiasemat<span>3</span></h3><div class="office"><b>Nurmijärvi</b>Hämeenlinnantie 55, 01940 Nurmijärvi</div><div class="office"><b>Jyväskylä</b>Oravasaarentie 577, 40800 Jyväskylä</div><div class="office"><b>Kajaani</b>Ruuhijärventie 91, 87100 Kajaani</div></div></div>
 </div></section>
 
 <section class="b-section b-section--gray" id="laskutus"><div class="b-inner billing">
@@ -188,7 +201,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <footer class="b-footer hf-foot">
   <div class="hf-foot__top">
     <div class="hf-foot__brand">
-      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="96" height="72"></a>
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="assets/dd89f49e86320a5c7298b6a8f8e527bf.svg" alt="GRK" width="96" height="72"></a>
       <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
       <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
       <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>

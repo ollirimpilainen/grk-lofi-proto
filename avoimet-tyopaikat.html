@@ -28,7 +28,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .tp-sort .b-select{min-height:44px;width:auto;font-size:16px}
 .tp-table{border-top:2px solid var(--ink)}
 .tp-th,.tp-row{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,2fr) minmax(0,2.2fr) minmax(0,1.8fr) 24px;gap:32px;align-items:center}
-.tp-th{padding:14px 16px;font:700 13px/18px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2-strong);border-bottom:1px solid var(--line)}
+.tp-th{padding:14px 16px;font:700 12px/16px var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2-strong);border-bottom:1px solid var(--line)}
 .tp-row{padding:26px 16px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:16px;line-height:24px;transition:background .15s}
 .tp-row:hover{background:var(--surface-2)}
 .tp-row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
@@ -41,23 +41,23 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .tp-go{justify-self:end;width:9px;height:9px;border:solid var(--accent);border-width:2px 2px 0 0;transform:rotate(45deg)}
 @media (max-width:900px){.tp-th{display:none}.tp-row{grid-template-columns:1fr 24px;gap:4px 12px}.tp-row .tp-tcell{grid-column:1;margin-bottom:6px}.tp-row span[data-l]{grid-column:1;font-size:14px}.tp-row span[data-l]::before{content:attr(data-l) ": ";font-weight:700}.tp-go{grid-column:2;grid-row:1}}
 .tp-more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:16px}
-.tp-group{margin-top:48px}.tp-group h3{margin:0;font:900 24px/30px var(--font-head)}
+.tp-group{margin-top:48px}.tp-group h3{margin:0;font:900 22px/28px var(--font-head)}
 .tp-more a{display:grid;gap:8px;align-content:start;padding:28px;background:#fff;text-decoration:none;color:var(--ink)}
 .tp-more b{font:900 22px/28px var(--font-head)}
 .tp-more span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
 .tp-more a:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
 .tp-paths{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px;align-items:stretch}
 .tp-open{display:grid;align-content:center;gap:20px;padding:64px;background:#252d32;color:#fff}
-.tp-open__eyebrow{margin:0;display:inline-flex;align-items:center;gap:10px;font:700 13px/18px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.tp-open__eyebrow{margin:0;display:inline-flex;align-items:center;gap:10px;font:700 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:#fff}
 .tp-open__eyebrow::before{content:"";width:8px;height:8px;background:var(--accent)}
-.tp-open__h{margin:0;font:900 44px/50px var(--font-head);text-wrap:balance}
+.tp-open__h{margin:0;font:900 40px/48px var(--font-head);text-wrap:balance}
 .tp-open__p{margin:0;max-width:46ch;font-size:18px;line-height:28px;color:#d3d8db}
 .tp-open .b-btns{margin-top:8px}
 .tp-side2{display:grid;gap:24px;grid-template-rows:1fr 1fr}
 .tp-summer{display:grid;grid-template-columns:1fr;background:#fff;text-decoration:none;color:var(--ink);position:relative}
 .tp-summer__ph{aspect-ratio:16/6;overflow:hidden}.tp-summer__ph img{width:100%;height:100%;object-fit:cover;display:block}
 .tp-summer__tx{display:grid;gap:6px;padding:24px 72px 24px 28px}
-.tp-summer b,.tp-link b{font:900 24px/30px var(--font-head)}
+.tp-summer b,.tp-link b{font:900 22px/28px var(--font-head)}
 .tp-summer span,.tp-link span span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
 .tp-summer>svg{position:absolute;right:28px;bottom:32px}
 .tp-link{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 28px;background:#fff;text-decoration:none;color:var(--ink)}
@@ -69,15 +69,31 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .tp-link .tp-li svg{width:22px;height:22px;fill:#fff;stroke:none}
 .tp-paths svg,.tp-link svg{width:24px;height:24px;flex:none;fill:none;stroke:var(--accent);stroke-width:2.25}
 .tp-summer:hover b,.tp-link:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
-@media (max-width:900px){.tp-paths{grid-template-columns:1fr}.tp-open{padding:40px 24px}.tp-open__h{font-size:32px;line-height:38px}}
+@media (max-width:900px){.tp-paths{grid-template-columns:1fr}.tp-open{padding:40px 24px}.tp-open__h{font-size:40px;line-height:48px}}
 .tp-why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
 .tp-why div{display:grid;gap:10px;align-content:start;padding-top:20px;border-top:2px solid var(--ink)}
-.tp-why h3{margin:0;font:900 22px/27px var(--font-head)}
+.tp-why h3{margin:0;font:900 22px/28px var(--font-head)}
 .tp-why p{margin:0;font-size:16px;line-height:26px;color:var(--ink-2-strong)}
 .tp-quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:64px}
-.tp-quotes blockquote{margin:0;display:grid;gap:12px;font:900 24px/32px var(--font-head);color:var(--ink)}
+.tp-quotes blockquote{margin:0;display:grid;gap:12px;font:900 22px/28px var(--font-head);color:var(--ink)}
 .tp-quotes blockquote::before{content:"”";font:900 72px/0.6 var(--font-head);color:var(--accent)}
 @media (max-width:900px){.tp-head,.tp-filters,.tp-job,.tp-more,.tp-why,.tp-quotes{grid-template-columns:1fr}.tp-head{padding:24px 20px 32px}.tp-count{justify-self:start;text-align:left}}
+/* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
+.hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
+/* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
+.hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
+.hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
+.hf .hf-card h3,.hf .b-step h3,.hf .b-why__title,.hf .hf-work__group,.hf .hf-news h3{font-size:22px;line-height:28px}
+.hf .b-why__num,.hf .why-num,.hf .hf-herostats b{font-size:64px;line-height:1}
+.hf .hf-strip h2{font-weight:900;font-size:40px;line-height:48px}
+.hf .hf-work__group{font-weight:900}
+.hf .b-person__name,.hf .me-contact b{font-size:22px;line-height:28px;font-weight:900}
+.hf .en-co__name{font-size:28px;line-height:33px}
+.hf .b-lead,.hf .lead{font-size:22px;line-height:34px}
+.hf .b-head .b-body{font-size:18px;line-height:28px}
+.hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
+.hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
+.hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
 </style>
 </head>
 <body>
@@ -86,7 +102,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <header class="b-nav">
   <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
   <div class="b-nav__bar">
-    <a class="b-nav__brand" href="index.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="99" height="32"></a>
+    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
     <nav class="b-nav__menu" aria-label="Päävalikko">
       <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
       <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
@@ -157,7 +173,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <footer class="b-footer hf-foot">
   <div class="hf-foot__top">
     <div class="hf-foot__brand">
-      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="96" height="72"></a>
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="assets/dd89f49e86320a5c7298b6a8f8e527bf.svg" alt="GRK" width="96" height="72"></a>
       <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
       <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
       <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>

@@ -44,7 +44,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .pk-map::before{left:-10%;top:58%;width:120%;height:14px;transform:rotate(-14deg)}
 .pk-map::after{left:38%;top:-10%;width:12px;height:120%;transform:rotate(8deg)}
 .pk-map__pin{position:absolute;left:46%;top:50%;z-index:1;width:22px;height:22px;margin:-22px 0 0 -11px;border-radius:50% 50% 50% 0;background:var(--ink);transform:rotate(-45deg);box-shadow:0 0 0 4px #fff}
-.pk-map figcaption{position:absolute;left:16px;bottom:14px;z-index:1;font-size:13px;color:var(--ink-2-strong)}
+.pk-map figcaption{position:absolute;left:16px;bottom:14px;z-index:1;font-size:14px;color:var(--ink-2-strong)}
 .pk-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .pk-col{display:grid;gap:14px;align-content:start;padding:28px 32px;border:1px solid var(--line);background:#fff}
 .pk-col h3{margin:0 0 4px;font:900 22px/28px var(--font-head)}
@@ -65,7 +65,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .pk-svc div{display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 16px;padding:16px 0;border-bottom:1px solid var(--line)}
 .pk-svc div:first-child{border-top:2px solid var(--ink)}
 .pk-svc svg{grid-row:span 2;width:28px;height:28px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.pk-svc dt{font-weight:700;font-size:18px;line-height:26px}
+.pk-svc dt{font-weight:700;font-size:18px;line-height:28px}
 .pk-svc dd{margin:0}
 .pk-svc dd .pk-bar{width:60%}
 .pk-faq{max-width:880px}
@@ -81,12 +81,32 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .pk-person div{display:grid;gap:8px}
 .pk-person b .pk-bar{width:150px;height:14px}
 .pk-person span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
-.pk-person small{display:flex;align-items:center;gap:10px;font-size:15px}
+.pk-person small{display:flex;align-items:center;gap:10px;font-size:16px}
 .pk-person small svg{width:18px;height:18px;fill:none;stroke:var(--ink-2-strong);stroke-width:1.8}
 .pk-person small .pk-bar{width:120px}.pk-person small+small .pk-bar{width:170px}
 .pk-near{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:960px}
 .pk-near+.b-link{display:inline-block;margin-top:24px}
 @media (max-width:900px){.pk-hero,.pk-two,.pk-office,.pk-people,.pk-near{grid-template-columns:1fr}.pk-hero{padding:16px 20px 40px}.pk-map{display:none}.pk-acts{grid-template-columns:1fr}.pk-ex{grid-template-columns:1fr}}
+/* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
+.hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
+.pk-two:not([style]){gap:0 56px}
+.pk-col{padding:20px 0 0;border:0;border-top:2px solid var(--ink);background:none}
+.pk-no li::before{content:"–"}
+.pk-faq{max-width:none}
+/* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
+.hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
+.hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
+.hf .hf-card h3,.hf .b-step h3,.hf .b-why__title,.hf .hf-work__group,.hf .hf-news h3{font-size:22px;line-height:28px}
+.hf .b-why__num,.hf .why-num,.hf .hf-herostats b{font-size:64px;line-height:1}
+.hf .hf-strip h2{font-weight:900;font-size:40px;line-height:48px}
+.hf .hf-work__group{font-weight:900}
+.hf .b-person__name,.hf .me-contact b{font-size:22px;line-height:28px;font-weight:900}
+.hf .en-co__name{font-size:28px;line-height:33px}
+.hf .b-lead,.hf .lead{font-size:22px;line-height:34px}
+.hf .b-head .b-body{font-size:18px;line-height:28px}
+.hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
+.hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
+.hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
 </style>
 </head>
 <body>
@@ -95,7 +115,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <header class="b-nav">
   <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
   <div class="b-nav__bar">
-    <a class="b-nav__brand" href="index.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="99" height="32"></a>
+    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
     <nav class="b-nav__menu" aria-label="Päävalikko">
       <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
       <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
@@ -183,7 +203,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <footer class="b-footer hf-foot">
   <div class="hf-foot__top">
     <div class="hf-foot__brand">
-      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK" width="96" height="72"></a>
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="assets/dd89f49e86320a5c7298b6a8f8e527bf.svg" alt="GRK" width="96" height="72"></a>
       <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
       <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
       <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
