@@ -151,3 +151,15 @@
     })();
   });
 })();
+/* Palvelukartta (Olli 28.10.): otsikon hover tai kohdistus korostaa vyöhykkeen ja käynnistää sen koneet. */
+(function () {
+  'use strict';
+  document.querySelectorAll('.b-svcmap--tasa').forEach(function (m) {
+    var cols = m.querySelectorAll('.b-svcmap__index--row > section');
+    cols.forEach(function (c, i) {
+      var on = function () { m.dataset.hot = i; }, off = function () { delete m.dataset.hot; };
+      c.addEventListener('mouseenter', on); c.addEventListener('mouseleave', off);
+      c.addEventListener('focusin', on); c.addEventListener('focusout', off);
+    });
+  });
+})();
