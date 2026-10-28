@@ -146,6 +146,12 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .km-acc__l b{font-weight:700}
 .km-acc__l span{color:var(--ink-2-strong)}
 .km-acc__p{margin:0 0 12px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+/* 28.10. (Olli): etusivun herossa video (grkfi-header-video.mp4, kankaalla 540p, protossa 720p). Tumma pinta ja vaalea otsikko videon päällä. */
+#hero.hf-hero{background:var(--surface-dark);color:#fff}
+#hero>.hf-hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lofi #hero.hf-hero::after{content:"";display:block;position:absolute;inset:0;z-index:0;background:linear-gradient(0deg,rgba(37,45,50,.7) 0%,rgba(37,45,50,.2) 55%,rgba(37,45,50,0) 100%);background-image:linear-gradient(0deg,rgba(37,45,50,.7) 0%,rgba(37,45,50,.2) 55%,rgba(37,45,50,0) 100%)}
+#hero .hf-hero__text{z-index:1}
+.lofi #hero h1{color:#fff}
 #miksi-grk.b-why{background:var(--surface-dark)}
 @media (max-width:900px){
   .km-c{grid-template-columns:1fr!important;gap:32px!important}
@@ -181,7 +187,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </header>
 
 <section class="hf-hero" id="hero">
-  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n työntekijät Hailuodon maayhteyden työmaalla">
+  <video class="hf-hero__video" src="assets/f84a47a16df1c9488109cbf098a7ab09.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
   <div class="hf-hero__text">
     <h1>Rakennamme toimivaa yhteiskuntaa</h1>
   </div>
