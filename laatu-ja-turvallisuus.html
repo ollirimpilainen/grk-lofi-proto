@@ -80,6 +80,11 @@ a{color:#3f4c55}a:hover{color:#252d32}
 @media (max-width:900px){.lt-head,.lt-story,.lt-nums,.lt-quote,.lt-certs,.lt-quals div,.lt-pillars,.lt-cases,.lt-case,.lt-links,.lt-docs,.lt-contact{grid-template-columns:1fr}.lt-head{padding:24px 20px 48px}}
 /* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
 .hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
+.lt-cert__seal{border:1px solid var(--line-strong)}
+.lt-cert__seal svg{width:28px;height:28px;fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.lt-cert{grid-template-rows:auto auto 1fr auto}
+.lt-cert a{align-self:end}
+.lt-nums__note{margin-top:16px;color:var(--ink-2-strong)}
 /* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
 .hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
 .hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
@@ -135,11 +140,11 @@ a{color:#3f4c55}a:hover{color:#252d32}
     </ul></div>
   </div>
   <div class="lt-nums">
-    <div><b>&lt; 5</b><span>TRIF-tavoite konsernissa vuoteen 2028 mennessä (sairauspoissaoloon johtaneet tapaturmat miljoonaa työtuntia kohden)</span></div>
+    <div><b>&lt; 5</b><span>TRIF-tavoite konsernissa vuoteen 2028 mennessä</span></div>
     <div><b>&lt; 7</b><span>tapaturmataajuuden tavoite, mukana myös aliurakoitsijoiden työntekijät</span></div>
     <div><b>2 388</b><span>turvallisuushavaintoa vuonna 2025 (2 324 edellisenä vuonna)</span></div>
   </div>
-  <figure class="lt-quote"><div class="ph"></div><div><blockquote>Työturvallisuus ei ole pelkkää välineurheilua.<i></i></blockquote><figcaption><b>Jenni Veijola</b>HSEQ-päällikkö (työterveys, turvallisuus, ympäristö ja laatu)</figcaption></div></figure>
+  <figure class="lt-quote"><div class="ph"></div><div><blockquote>Työturvallisuus ei ole pelkkää välineurheilua.</blockquote><figcaption><b>Jenni Veijola</b>HSEQ-päällikkö (työterveys, turvallisuus, ympäristö ja laatu)</figcaption></div></figure>
 </div></section>
 
 <section class="b-section" id="laatu"><div class="b-inner">
@@ -158,10 +163,10 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <section class="b-section b-section--gray" id="sertifikaatit"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Sertifikaatit ja pätevyydet</h2><p class="b-body">Ulkopuolinen arvioija tarkastaa toimintamme säännöllisesti. Voit ladata todistukset tarjousvertailua varten.</p></div>
   <div class="lt-certs">
-    <article class="lt-cert"><div class="lt-cert__seal">Merkki</div><b>ISO 9001</b><span><strong>Laatu.</strong> Toimintatavat on kuvattu ja tarkastettu.</span><a class="b-link" href="#">Lataa sertifikaatti (PDF)</a></article>
-    <article class="lt-cert"><div class="lt-cert__seal">Merkki</div><b>ISO 14001</b><span><strong>Ympäristö.</strong> Ympäristövaikutukset tunnistetaan ja niitä seurataan koko hankkeen ajan.</span><a class="b-link" href="#">Lataa sertifikaatti (PDF)</a></article>
-    <article class="lt-cert"><div class="lt-cert__seal">Merkki</div><b>ISO 45001</b><span><strong>Työterveys ja -turvallisuus.</strong> Riskit arvioidaan ennen töitä, ja jokainen poikkeama käsitellään.</span><a class="b-link" href="#">Lataa sertifikaatti (PDF)</a></article>
-    <article class="lt-cert"><div class="lt-cert__seal">Merkki</div><b>RALA</b><span><strong>Pätevyydet usealle toimialalle.</strong> Pätevyys on arvioitu ulkopuolisesti.</span><a class="b-link" href="#">Lataa pätevyystodistus (PDF)</a></article>
+    <article class="lt-cert"><div class="lt-cert__seal" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="6.5"></circle><path d="m9.2 9.6 2 2 3.6-3.8"></path><path d="M8.6 15.2 7 22l5-2.6 5 2.6-1.6-6.8"></path></svg></div><b>ISO 9001</b><span><strong>Laatu.</strong> Toimintatavat on kuvattu ja tarkastettu.</span><a class="b-link" href="#">Lataa sertifikaatti (PDF)</a></article>
+    <article class="lt-cert"><div class="lt-cert__seal" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="6.5"></circle><path d="m9.2 9.6 2 2 3.6-3.8"></path><path d="M8.6 15.2 7 22l5-2.6 5 2.6-1.6-6.8"></path></svg></div><b>ISO 14001</b><span><strong>Ympäristö.</strong> Ympäristövaikutukset tunnistetaan ja niitä seurataan koko hankkeen ajan.</span><a class="b-link" href="#">Lataa sertifikaatti (PDF)</a></article>
+    <article class="lt-cert"><div class="lt-cert__seal" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="6.5"></circle><path d="m9.2 9.6 2 2 3.6-3.8"></path><path d="M8.6 15.2 7 22l5-2.6 5 2.6-1.6-6.8"></path></svg></div><b>ISO 45001</b><span><strong>Työterveys ja -turvallisuus.</strong> Riskit arvioidaan ennen töitä, ja jokainen poikkeama käsitellään.</span><a class="b-link" href="#">Lataa sertifikaatti (PDF)</a></article>
+    <article class="lt-cert"><div class="lt-cert__seal" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="6.5"></circle><path d="m9.2 9.6 2 2 3.6-3.8"></path><path d="M8.6 15.2 7 22l5-2.6 5 2.6-1.6-6.8"></path></svg></div><b>RALA</b><span><strong>Pätevyydet usealle toimialalle.</strong> Pätevyys on arvioitu ulkopuolisesti.</span><a class="b-link" href="#">Lataa pätevyystodistus (PDF)</a></article>
   </div>
   <dl class="lt-quals">
     <div><dt>Siltaurakoitsijaluokitus R1 ja K1</dt><dd>Suuret ja erittäin vaativat siltatyöt sekä erittäin suuret ja vaativat siltojen korjaustyöt</dd><a class="b-link" href="#">PDF</a></div>
@@ -175,7 +180,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 <section class="b-section" id="yhteyshenkilo"><div class="b-inner lt-contact">
   <div><h2 class="b-h2">Kysy laadusta ja turvallisuudesta</h2><p class="b-lead">Tarvitsetko todistuksia, turvallisuuslukuja tai selvityksen tarjousta varten?</p><p style="margin-top:20px"><a class="b-link" href="vastuullisuus.html">Vastuullisuus: ympäristö, ihmiset ja hallinto</a></p></div>
-  <div class="b-people" style="grid-template-columns:1fr"><div class="b-person"><div class="b-person__img" aria-hidden="true"></div><div><p class="b-person__name">Jenni Veijola</p><p class="b-person__role">HSEQ-päällikkö</p><p class="b-person__ch"><span class="lt-tbd"></span></p></div></div></div>
+  <div class="b-people" style="grid-template-columns:1fr"><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Jenni Veijola</p><p class="b-person__role">HSEQ-päällikkö</p><p class="b-person__ch"><a href="tel:+358103214110"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 10 321 4110 (vaihde)</a><a href="mailto:jenni.veijola@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jenni.veijola@grk.fi</a></p></div></div></div>
 </div></section>
 
 <footer class="b-footer hf-foot">
@@ -194,7 +199,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
         <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="tyhja.html?s=Energia">Energia</a></li><li><a href="tyhja.html?s=Teollisuus">Teollisuus</a></li><li><a href="tyhja.html?s=Kaupungit%20ja%20v%C3%A4yl%C3%A4t">Kaupungit ja väylät</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="tyhja.html?s=Yritys">Yritys</a></h2><ul>
-        <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
+        <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="tyhja.html?s=Ura%20ja%20ty%C3%B6paikat">Ura ja työpaikat</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
         <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Media">Media</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>

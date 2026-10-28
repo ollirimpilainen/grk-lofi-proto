@@ -29,11 +29,12 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .tp-next b{font:900 22px/28px var(--font-head);color:var(--accent)}
 .tp-trust{display:flex;flex-wrap:wrap;gap:12px 32px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px;line-height:20px;font-weight:700}
 .tp-trust span:first-child{color:var(--ink-2-strong)}
+.tp-trust span:last-child{margin-left:auto;font-weight:400;color:var(--ink-2-strong)}
 @media (max-width:900px){.tp-head{padding:24px 20px 40px}.tp-grid,.tp-grid .b-form{grid-template-columns:1fr;gap:32px}.tp-aside{position:static}}
 /* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
 .hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
 .tp-head{max-width:none}
-.tp-head .b-h1{max-width:none;text-wrap:nowrap}
+.tp-head .b-h1{max-width:none}
 .tp-head .b-lead{max-width:760px}
 .tp-head{padding-bottom:32px}
 /* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
@@ -81,7 +82,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 <section class="b-section" style="padding-top: 0;"><div class="b-inner tp-grid">
   <form class="b-form">
-    <div class="b-field b-field--full"><label for="tp-palvelu">Palvelu *</label><select class="b-select" id="tp-palvelu"><option>Infra- ja maarakentaminen</option><option>Päällystys ja asfaltointi</option><option>Pohjarakentaminen ja paalutus</option><option>Rautatiet ja raitiotiet</option><option>Sähköverkot ja sähköasemat</option><option>Kiertotalous ja vastaanotto</option><option>Kokonainen hanke tai en tiedä vielä</option></select><small>Valittu valmiiksi, kun tulet palvelusivulta.</small></div>
+    <div class="b-field b-field--full"><label for="tp-palvelu">Palvelu *</label><select class="b-select" id="tp-palvelu"><option>Valitse</option><option>Infra- ja maarakentaminen</option><option>Päällystys ja asfaltointi</option><option>Pohjarakentaminen ja paalutus</option><option>Rautatiet ja raitiotiet</option><option>Sähköverkot ja sähköasemat</option><option>Kiertotalous ja vastaanotto</option><option>Kokonainen hanke tai en tiedä vielä</option></select></div>
     <div class="b-field b-field--full"><label for="tp-kuvaus">Hankkeen kuvaus *</label><textarea class="b-textarea" id="tp-kuvaus" placeholder="Mitä rakennetaan, laajuus ja tärkeimmät reunaehdot"></textarea></div>
     <div class="b-field"><label for="tp-sijainti">Sijainti *</label><input class="b-input" id="tp-sijainti" type="text" placeholder="Paikkakunta"></div>
     <div class="b-field"><label for="tp-maa">Maa</label><select class="b-select" id="tp-maa"><option>Suomi</option><option>Ruotsi</option><option>Viro</option></select></div>
@@ -103,7 +104,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
   </aside>
 </div></section>
 
-<section class="b-section b-section--tight" style="padding-top: 0;"><div class="b-inner"><p class="tp-trust"><span>Sertifioitu</span><span>ISO 9001</span><span>ISO 14001</span><span>ISO 45001</span><span>Suomi · Ruotsi · Viro</span></p></div></section>
+<section class="b-section b-section--tight" style="padding-top: 0;"><div class="b-inner"><p class="tp-trust"><span>Sertifioitu</span><span>ISO 9001</span><span>ISO 14001</span><span>ISO 45001</span><span>Toimimme Suomessa, Ruotsissa ja Virossa</span></p></div></section>
 
 <section class="b-section b-section--gray" id="yhteyshenkilot"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Hanke vasta ajatus? Soita ensin</h2><p class="b-body">Liiketoimintojen vastuuhenkilöt kertovat, kannattaako tarjouspyyntö tehdä nyt vai keskustella ensin suunnittelusta.</p></div>

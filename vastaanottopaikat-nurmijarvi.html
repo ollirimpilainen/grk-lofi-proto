@@ -37,9 +37,9 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .pk-acts .b-btn{min-height:56px;justify-content:center}
 .pk-acts .b-btn .pk-bar{width:96px;margin-left:10px;background:currentColor;opacity:.35}
 .pk-first{margin:16px 0 0;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
-.pk-ex{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px 20px;align-items:center;max-width:760px;margin-top:32px;padding:18px 22px;background:var(--ink);color:#fff;font-size:16px;line-height:24px}
-.pk-ex .pk-bar{width:100%;background:#fff;opacity:.35}
-.pk-ex a{color:#fff;font-weight:700;white-space:nowrap}
+.pk-ex{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px 20px;align-items:center;max-width:760px;margin-top:32px;padding:18px 22px;background:var(--surface-2);color:var(--ink);border:1px solid var(--line);font-size:16px;line-height:24px}
+.pk-ex .pk-bar{width:100%;background:var(--line-strong);opacity:.6}
+.pk-ex a{color:var(--ink);font-weight:700;white-space:nowrap}
 .pk-map{position:relative;aspect-ratio:25/18;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}
 .pk-map::before,.pk-map::after{content:"";position:absolute;background:#fff}
 .pk-map::before{left:-10%;top:58%;width:120%;height:14px;transform:rotate(-14deg)}
@@ -137,7 +137,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
     <h1 class="b-h1">Nurmijärvi</h1>
     <p class="pk-state">Auki nyt · sulkeutuu klo <i class="pk-bar" style="width:56px"></i></p>
     <p class="pk-addr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><i class="pk-bar" style="width:300px"></i></p>
-    <div class="pk-acts"><a class="b-btn" href="#">Soita vastaanottoon<i class="pk-bar"></i></a><a class="b-btn b-btn--secondary" href="#">Reittiohje</a></div>
+    <div class="pk-acts"><a class="b-btn" href="#">Soita vastaanottoon</a><a class="b-btn b-btn--secondary" href="#">Reittiohje</a></div>
     <p class="pk-first">Tuotko ensimmäistä kertaa? Katso <a href="#ennen">Ennen kuin tuot</a>.</p>
     <div class="pk-ex"><b>Poikkeus</b><i class="pk-bar"></i><a href="#lahimmat">Lähin vaihtoehto →</a></div>
   </div>
@@ -174,9 +174,9 @@ a{color:#3f4c55}a:hover{color:#252d32}
   <div class="b-head"><h2 class="b-h2">Ennen kuin tuot</h2></div>
   <div class="pk-faq">
     <details class="b-acc" open><summary><span>Pilaantunut maa</span><i></i></summary><div class="b-acc__body">Lähetä analyysit ennen tuontia osoitteeseen <i class="pk-bar"></i>. Tarkistamme, että materiaali on ympäristöluvan mukainen, ja vahvistamme vastaanoton.</div></details>
-    <details class="b-acc"><summary><span>Puhdas maa-aines</span><i></i></summary></details>
-    <details class="b-acc"><summary><span>Betoni ja tiili</span><i></i></summary></details>
-    <details class="b-acc"><summary><span>Hinnat</span><i></i></summary></details>
+    <details class="b-acc"><summary><span>Puhdas maa-aines</span><i></i></summary><div class="b-acc__body">Puhtaat kaivumaat, kuten savi, hiekka ja moreeni. Kerro kuorman koko ja maan alkuperä, kun soitat.</div></details>
+    <details class="b-acc"><summary><span>Betoni ja tiili</span><i></i></summary><div class="b-acc__body">Betoni- ja tiilijäte lajiteltuna. Kysy vastaanotosta, otetaanko raudoitettu betoni vastaan.</div></details>
+    <details class="b-acc"><summary><span>Hinnat</span><i></i></summary><div class="b-acc__body">Hinta määräytyy jakeen ja kuorman koon mukaan. Kysy hinta myynnistä.</div></details>
   </div>
 </div></section>
 

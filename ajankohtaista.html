@@ -52,7 +52,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .aj-row h3{margin:0;font:900 22px/28px var(--font-head);max-width:56ch}
 .aj-row p:not(.aj-meta){margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
 .aj-ph{display:block;aspect-ratio:16/10;background:var(--surface-2)}
-.aj-bar-ph{display:block;width:420px;height:10px;margin:7px 0;background:var(--line-strong);opacity:.6}
+.aj-bar-ph{display:block;width:min(420px,100%);height:10px;margin:7px 0;background:var(--line-strong);opacity:.6}
 .aj-pager{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:48px;font:500 16px/24px var(--font-sans)}
 .aj-pager a,.aj-pager span{display:inline-grid;place-items:center;min-width:44px;height:44px;padding:0 12px;border:1px solid var(--line);color:var(--ink);text-decoration:none}
 .aj-pager span{border-color:transparent}
@@ -77,6 +77,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
 @media (min-width:901px){.aj-row{grid-template-columns:240px minmax(0,1fr)}}
 .aj-row .aj-meta{flex-direction:row;gap:12px;padding:0;margin:0}
+@media (max-width:600px){.aj-pager a:not(.aj-pager__dir):not([aria-current]),.aj-pager span{display:none}}
 /* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
 .hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
 .hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
@@ -115,7 +116,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li aria-current="page">Ajankohtaista</li></ol>
 
 <header class="aj-head">
-  <div><h1 class="b-h1">Ajankohtaista</h1><p class="b-lead">Uutiset, tiedotteet ja artikkelit GRK:n hankkeista Suomessa, Ruotsissa ja Virossa. Jokainen uutinen kertoo, mihin hankkeeseen ja palveluun se liittyy.</p></div>
+  <div><h1 class="b-h1">Ajankohtaista</h1><p class="b-lead">Uutiset, tiedotteet ja artikkelit GRK:n hankkeista Suomessa, Ruotsissa ja Virossa. Hankeuutisista näet, mihin hankkeeseen ja palveluun ne liittyvät.</p></div>
 </header>
 
 <section class="b-section" style="padding-top:0"><div class="b-inner">
@@ -154,7 +155,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
     <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-11">11.9.2026</time><span>Uutinen</span></p><h3><a href="tyhja.html?s=GRK%20on%20valittu%20toteuttamaan%20s%C3%A4hk%C3%B6asemahanke%20Kalkkimaan%20energiapuistoon%20Tornioon">GRK on valittu toteuttamaan sähköasemahanke Kalkkimaan energiapuistoon Tornioon</a></h3><p>110/33 kV sähköasema suunnittele ja toteuta -urakkana, suunnittelu alkaa loppuvuodesta.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="tyhja.html?s=Kalkkimaan%20energiapuisto">Hanke: Kalkkimaan energiapuisto</a><a class="aj-tag" href="tyhja.html?s=S%C3%A4hk%C3%B6verkot%20ja%20s%C3%A4hk%C3%B6asemat">Sähköverkot ja sähköasemat</a></div></div></li>
     <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-08-05">5.8.2026</time><span>Tiedote</span></p><h3><a href="tyhja.html?s=GRK%20harkitsee%20Utaj%C3%A4rven%20biohiili-%20ja%20pellettilaitosten%20toiminnan%20keskeytt%C3%A4mist%C3%A4">GRK harkitsee Utajärven biohiili- ja pellettilaitosten toiminnan keskeyttämistä</a></h3><p>Syynä on haastava markkinatilanne.</p></div></li>
     <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-08-03">3.8.2026</time><span>Tiedote</span></p><h3><a href="tyhja.html?s=GRK%20mukana%20toteuttamassa%20datakeskushanketta%20Suomessa%20%E2%80%93%20arvo%20noin%2066%20miljoonaa%20euroa">GRK mukana toteuttamassa datakeskushanketta Suomessa – arvo noin 66 miljoonaa euroa</a></h3><p>Valmistelevat työt, massansiirrot ja louhinta sekä logistiikka-alueiden rakentaminen.</p><div class="aj-tags"><a class="aj-tag" href="datakeskukset.html">Datakeskukset</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div></li>
-    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-06-30">30.6.2026</time><span>Uutinen</span></p><h3><a href="tyhja.html?s=GRK%3An%20ja%20KSBR%3An%20yhteinen%20matka%20alkaa%20%E2%80%93%20vahvempaa%20osaamista%20vaativiin%20hankkeisiin">GRK:n ja KSBR:n yhteinen matka alkaa – vahvempaa osaamista vaativiin hankkeisiin</a></h3><p><i class="aj-bar-ph"></i></p></div></li>
+    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-06-30">30.6.2026</time><span>Uutinen</span></p><h3><a href="tyhja.html?s=GRK%3An%20ja%20KSBR%3An%20yhteinen%20matka%20alkaa%20%E2%80%93%20vahvempaa%20osaamista%20vaativiin%20hankkeisiin">GRK:n ja KSBR:n yhteinen matka alkaa – vahvempaa osaamista vaativiin hankkeisiin</a></h3><p>KSBR on nyt osa GRK-konsernia. Yhdessä toteutamme hankkeita maanrakennuksesta betonirakenteisiin.</p></div></li>
   </ol>
 
   <nav class="aj-pager" aria-label="Sivutus"><a class="aj-pager__dir" href="#" aria-disabled="true">Edellinen</a><a href="#" aria-current="page">1</a><a href="#">2</a><a href="#">3</a><span>…</span><a href="#">52</a><a class="aj-pager__dir" href="#">Seuraava</a></nav>
@@ -162,7 +163,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 <section class="b-section b-section--gray"><div class="b-inner">
   <div class="aj-media">
-    <div class="aj-media__txt"><h2 class="b-h2">Toimittajalle</h2><p>Mediapankista saat GRK:n logot ja hankekuvat. Mediayhteyshenkilö vastaa haastattelupyyntöihin.</p><a class="b-btn" href="tyhja.html?s=Media">Media-sivulle</a></div>
+    <div class="aj-media__txt"><h2 class="b-h2">Medialle</h2><p>Mediapankista saat GRK:n logot ja hankekuvat. Mediayhteyshenkilö vastaa haastattelupyyntöihin.</p><a class="b-btn" href="tyhja.html?s=Media">Media-sivulle</a></div>
     <div class="aj-media__cards">
       <a class="aj-mcard" href="tyhja.html?s=Mediapankki"><span class="aj-mcard__img" aria-hidden="true"></span><b>Mediapankki</b><small>Logot, hankekuvat ja johdon kuvat</small></a>
       <div class="aj-mcard aj-person"><span class="aj-person__img" aria-hidden="true"></span><div><small>Mediayhteyshenkilö</small><i></i><i></i><a class="b-link" href="#">Soita</a></div></div>

@@ -1882,3 +1882,9 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 .lofi .hf-pins__pin--k { background: var(--ink); color: var(--white); }
 .lofi .hf-pins__pin--k::after { background: var(--ink); }
 .lofi .hf-foot__legal, .lofi .hf-foot__legal span { color: var(--ink-2); }
+
+/* 28.10.: ei tavutusta otsikoissa, linkeissä, painikkeissa ja nimikkeissä (mobiili "Jär-jes-tä", "Reittioh-je") */
+.b-root :where(h1,h2,h3,h4,h5,h6,a,button,label,dt,b,strong,.b-btn,.b-link,.b-tag){hyphens:manual;-webkit-hyphens:manual}
+/* 28.10.: sähköpostiosoite ei tavuudu, lo-fin heron kuvamerkki ei peitä otsikkoa mobiilissa */
+.b-person__ch a,a[href^="mailto:"]{hyphens:none;-webkit-hyphens:none}
+@media (max-width:900px){.lofi .hf-hero::after{display:none}}
