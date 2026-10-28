@@ -49,6 +49,11 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
 .hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
 .hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
+/* 28.10. hierarkia: ryhmäotsikko (H3 28/33) on suurempi kuin ryhmän kohta (H4 22/28) */
+.hf .hf-work__group{font-size:28px;line-height:33px}
+.hf .hf-mx__t h3{font-size:22px;line-height:28px}
+.hf .hf-work__group{margin:0;padding:0 0 16px;border-bottom:2px solid var(--ink)}
+.hf .hf-work__group:not(:first-child){margin-top:96px}
 #toihin.hf-edge{min-height:400px}
 #toihin .tx{padding:64px 80px}
 .sh-list{border-bottom:1px solid var(--line)}
@@ -58,6 +63,8 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .sh-row span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
 .sh-row i{width:9px;height:9px;border:solid var(--accent);border-width:2.5px 2.5px 0 0;transform:rotate(45deg)}
 .sh-row:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.tp-drop{display:grid;place-items:center;gap:4px;padding:32px;border:1px dashed var(--ink-2);text-align:center;font-size:16px;line-height:24px;color:var(--ink-2-strong);background:#fff}
+.tp-drop b{color:var(--ink)}
 @media (max-width:900px){
   .km-c{grid-template-columns:1fr!important;gap:32px!important}
   .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr 1fr!important;row-gap:40px}
@@ -76,7 +83,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 
 <header class="b-nav">
-  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="https://ollirimpilainen.github.io/ksbr-proto/">KSBR ↗</a></span><span class="b-nav__util-r"><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="tyhja.html?s=Media">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__util-r"><a href="https://ollirimpilainen.github.io/ksbr-proto/">KSBR ↗</a><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="tyhja.html?s=Media">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
   <div class="b-nav__bar">
     <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
     <nav class="b-nav__menu" aria-label="Päävalikko">
@@ -84,9 +91,8 @@ a{color:#3f4c55}a:hover{color:#252d32}
       <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Toimialat">Toimialat</a>
       <a class="b-nav__item" href="tyhja.html?s=Referenssit">Referenssit</a>
       <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
-      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
       <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys">Yritys</a>
-      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Ura">Ura</a>
     </nav>
     <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
   </div>
@@ -107,68 +113,89 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <section class="b-section" id="mita-teemme"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Mitä teemme</h2></div>
   <div class="hf-mx">
-    <h3 class="hf-work__group hf-mx__group">Alueet ja väylät</h3>
-    <details class="hf-mx__i" name="tyolaji" id="tie">
-      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/4a6a055ce27224090d09a987e2ffc339.svg" alt=""></span><span class="hf-mx__t"><h3>Tie- ja katurakentaminen</h3><p>Kadut, tiet ja liittymät sekä niiden perusparannus, myös liikenteen keskellä.</p></span><span class="hf-mx__tags"><span>Kadut ja tiet</span></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
-      <div class="hf-mx__b"><article class="b-method hf-sm" data-palvelu="tie" data-tyyppi="urakka">
-        <div class="hf-sm__l"><dl class="b-method__rows"><div><dt>Mitä saa aikaan</dt><dd>Kadut, tiet ja liittymät sekä niiden perusparannus, myös liikenteen keskellä.</dd></div><div><dt>Sopii, kun</dt><dd>Katu tai tie rakennetaan tai perusparannetaan, ja liikenteen pitää kulkea työn aikana.</dd></div></dl></div>
-        <figure class="b-method__fig hf-sm__fig"><a class="hf-card" href="tyhja.html?s=M%C3%A4kel%C3%A4nkadun%20peruskorjaus"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mäkelänkatu ja raitiotie"></div><p class="meta">Helsinki · 10/2025–10/2027</p><h3>Tie- ja katurakentaminen · Mäkelänkadun peruskorjaus</h3><p>Noin 1,3 kilometriä katua: kunnallistekniikka, pinnat, raitiokiskot ja pyörätiet.</p><span class="b-link b-link--sm">Lue kohteesta</span></a><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Janne Mononen</b><span>Työpäällikkö, tie- ja katurakentaminen</span><span class="me-contact__ch"><a href="tel:+358401634908">+358 40 163 4908</a><a href="mailto:janne.mononen@grk.fi">janne.mononen@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
+    <h3 class="hf-work__group hf-mx__group">Maan alla: kallio, pohja ja verkostot</h3>
+    <details class="hf-mx__i" name="tyolaji" id="louhinta" open>
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/b19489cfc41c1a726ad78b0f34ca6da2.svg" alt=""></span><span class="hf-mx__t"><h3>Louhinta ja kalliorakentaminen</h3><p>Louhinta räjäyttäen tai ilman räjähteitä, kallioankkuroinnit, lujitus ja ruiskubetonointi.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><p class="ve-lead">Louhimme kalliota räjäyttäen tai ilman räjähteitä, myös asutuksen ja liikenteen keskellä. Lujitamme ja injektoimme kallion samassa urakassa.</p><dl class="ve-facts"><div><dt>Työt</dt><dd>Louhinta, tarkkuuslouhinta, kallioankkuroinnit, injektointi ja ruiskubetonointi</dd></div><div><dt>Urakoiden koko</dt><dd>Kaivantojen louhinnasta metroasemiin</dd></div><div><dt>Tilaajat</dt><dd>Kaupungit, pääurakoitsijat, teollisuus ja energiayhtiöt</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Arto Korhonen</p><p class="b-person__role">Työpäällikkö, louhinta ja kalliorakentaminen</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358504302352"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 430 2352</a><a href="mailto:arto.korhonen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>arto.korhonen@grk.fi</a></p><a class="b-link b-link--sm" href="infra.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+        <p class="pk-label ve-h">Kohteita</p>
+        <div class="ve-refs ve-refs--tasa"><a class="ve-card" href="tyhja.html?s=2011%E2%80%932014"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Matinkylän metroaseman louhinta"></div><p class="meta">Espoo · Strabag Oy · 2011–2014</p><h4>Matinkylän metroaseman louhinta</h4></a><a class="ve-card" href="tyhja.html?s=2016%E2%80%932017"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2016–2017</p><h4>Tynnyripuiston tarkkuuslouhinta, Espoo</h4></a><a class="ve-card" href="tyhja.html?s=2025%E2%80%932026"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2025–2026</p><h4>Helsingin telakan altaan louhinta ja lujitus</h4></a></div>
       </article></div>
     </details>
     <details class="hf-mx__i" name="tyolaji" id="maa">
-      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/dd51e50adb92e6c47a388fc01518479b.svg" alt=""></span><span class="hf-mx__t"><h3>Maarakentaminen ja pohjatyöt</h3><p>Kaivu, täytöt ja pohjanvahvistus teollisuus-, logistiikka- ja asuinalueille.</p></span><span class="hf-mx__tags"><span>Teollisuus- ja asuinalueet</span></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
-      <div class="hf-mx__b"><article class="b-method hf-sm" data-palvelu="maa" data-tyyppi="urakka">
-        <div class="hf-sm__l"><dl class="b-method__rows"><div><dt>Mitä saa aikaan</dt><dd>Kaivu, täytöt ja pohjanvahvistus teollisuus-, logistiikka- ja asuinalueille.</dd></div><div><dt>Sopii, kun</dt><dd>Alue pitää saada rakennuskelpoiseksi ennen rakennuksia, kenttiä tai katuja.</dd></div></dl></div>
-        <figure class="b-method__fig hf-sm__fig"><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Jaakko Mäkelä</b><span>Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</span><span class="me-contact__ch"><a href="tel:+358503775152">+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi">jaakko.makela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/dd51e50adb92e6c47a388fc01518479b.svg" alt=""></span><span class="hf-mx__t"><h3>Maarakentaminen ja pohjatyöt</h3><p>Kaivu, täytöt ja pohjanvahvistus teollisuus-, logistiikka- ja asuinalueille.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><p class="ve-lead">Teemme tontista rakennuskelpoisen: kaivut, täytöt, massanvaihdot ja pohjanvahvistukset teollisuus-, logistiikka- ja asuinalueille.</p><dl class="ve-facts"><div><dt>Työt</dt><dd>Kaivut, massanvaihdot, stabilointi sekä paalulaattojen ja perustusten paikallavalut</dd></div><div><dt>Urakoiden koko</dt><dd>Urheiluhallin pohjatöistä 24 hehtaarin logistiikkatonttiin</dd></div><div><dt>Tilaajat</dt><dd>Kauppa ja logistiikka, teollisuus ja kaupungit</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Jaakko Mäkelä</p><p class="b-person__role">Liiketoimintajohtaja, taito- ja väylärakentaminen</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358503775152"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jaakko.makela@grk.fi</a></p><a class="b-link b-link--sm" href="infra.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+        <p class="pk-label ve-h">Kohteita</p>
+        <div class="ve-refs ve-refs--tasa"><a class="ve-card" href="tyhja.html?s=2016%E2%80%932018"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Lidlin Järvenpään jakelukeskus"></div><p class="meta">Järvenpää · Lidl Suomi Ky · 2016–2018</p><h4>Lidlin Järvenpään jakelukeskus</h4></a><a class="ve-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2021</p><h4>Kameleonten urheiluhallin stabilointi, Espoo</h4></a><a class="ve-card" href="tyhja.html?s=2017%E2%80%932018"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2017–2018</p><h4>Hanhikiven laitosalueen maanrakennus, Pyhäjoki</h4></a></div>
       </article></div>
     </details>
     <details class="hf-mx__i" name="tyolaji" id="kunnallis">
-      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/34f5dfbd9e6aff74a01fca81b66ca615.svg" alt=""></span><span class="hf-mx__t"><h3>Kunnallistekniikka</h3><p>Vesi-, viemäri- ja hulevesiverkostot sekä kaapelireitit alueen rakentamisen yhteydessä.</p></span><span class="hf-mx__tags"><span>Uudet alueet</span></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
-      <div class="hf-mx__b"><article class="b-method hf-sm" data-palvelu="kunnallis" data-tyyppi="urakka">
-        <div class="hf-sm__l"><dl class="b-method__rows"><div><dt>Mitä saa aikaan</dt><dd>Vesi-, viemäri- ja hulevesiverkostot sekä kaapelireitit alueen rakentamisen yhteydessä.</dd></div><div><dt>Sopii, kun</dt><dd>Uusi alue tarvitsee vesi-, viemäri- ja hulevesiverkostot, tai vanhat verkostot uusitaan kadun alla.</dd></div></dl></div>
-        <figure class="b-method__fig hf-sm__fig"><a class="hf-card" href="tyhja.html?s=J%C3%A4tk%C3%A4saaren%20kannas"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jätkäsaaren kannaksen sillan työmaa"></div><p class="meta">Helsinki · Helsingin kaupunki · 01/2025–12/2026</p><h3>Kunnallistekniikka · Jätkäsaaren kannas</h3><p>Vanhan sillan purku, uusi silta, rantamuurit, kunnallistekniikka ja raitiotiesiirrot keskellä kaupunkia.</p><span class="b-link b-link--sm">Lue kohteesta</span></a><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Jaakko Mäkelä</b><span>Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</span><span class="me-contact__ch"><a href="tel:+358503775152">+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi">jaakko.makela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/34f5dfbd9e6aff74a01fca81b66ca615.svg" alt=""></span><span class="hf-mx__t"><h3>Kunnallistekniikka</h3><p>Vesi-, viemäri- ja hulevesiverkostot sekä kaapelireitit alueen rakentamisen yhteydessä.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><p class="ve-lead">Rakennamme ja saneeraamme vesi-, viemäri- ja hulevesiverkostot sekä kaapelireitit, myös asuttujen katujen alla vaiheittain.</p><dl class="ve-facts"><div><dt>Työt</dt><dd>Vesihuolto, viemäröinti, hulevedet sekä kaukolämpö- ja kaapelireitit</dd></div><div><dt>Urakoiden koko</dt><dd>Yksittäisistä kaduista kokonaisiin asuinalueisiin</dd></div><div><dt>Tilaajat</dt><dd>Vesilaitokset, kaupungit ja aluerakentajat</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Jaakko Mäkelä</p><p class="b-person__role">Liiketoimintajohtaja, taito- ja väylärakentaminen</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358503775152"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jaakko.makela@grk.fi</a></p><a class="b-link b-link--sm" href="infra.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+        <p class="pk-label ve-h">Kohteita</p>
+        <div class="ve-refs ve-refs--tasa"><a class="ve-card" href="tyhja.html?s=2022%E2%80%932023"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Haukilahden vesihuolto"></div><p class="meta">Espoo · HSY · 2022–2023</p><h4>Haukilahden vesihuolto</h4></a><a class="ve-card" href="tyhja.html?s=2022%E2%80%932023"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2022–2023</p><h4>Tikkurilan vesihuoltoverkosto, Vantaa</h4></a><a class="ve-card" href="tyhja.html?s=2018%E2%80%932019"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2018–2019</p><h4>Suurpelto III:n kadut ja vesihuolto, Espoo</h4></a></div>
+      </article></div>
+    </details>
+    <h3 class="hf-work__group hf-mx__group">Maan päällä: kadut, sillat ja alueet</h3>
+    <details class="hf-mx__i" name="tyolaji" id="tie">
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/4a6a055ce27224090d09a987e2ffc339.svg" alt=""></span><span class="hf-mx__t"><h3>Tie- ja katurakentaminen</h3><p>Kadut, tiet ja liittymät sekä niiden perusparannus, myös liikenteen keskellä.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><p class="ve-lead">Rakennamme ja perusparannamme katuja, teitä ja liittymiä niin, että liikenne kulkee työn ajan.</p><dl class="ve-facts"><div><dt>Työt</dt><dd>Kadut, valtatiet, eritasoliittymät, pyörätiet ja pinnat</dd></div><div><dt>Urakoiden koko</dt><dd>Kevyen liikenteen väylistä valtatieurakoihin</dd></div><div><dt>Tilaajat</dt><dd>Väylävirasto, ELY-keskukset, kaupungit ja yritysalueet</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Janne Mononen</p><p class="b-person__role">Työpäällikkö, tie- ja katurakentaminen</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358401634908"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 163 4908</a><a href="mailto:janne.mononen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>janne.mononen@grk.fi</a></p><a class="b-link b-link--sm" href="infra.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+        <p class="pk-label ve-h">Kohteita</p>
+        <div class="ve-refs ve-refs--tasa"><a class="ve-card" href="tyhja.html?s=2025%E2%80%932027"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mäkelänkadun peruskorjaus"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki · 2025–2027</p><h4>Mäkelänkadun peruskorjaus</h4></a><a class="ve-card" href="tyhja.html?s=2025%E2%80%932026"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2025–2026</p><h4>VT 3, Moreenin eritasoliittymä, Hämeenlinna</h4></a><a class="ve-card" href="tyhja.html?s=2025%E2%80%932027"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2025–2027</p><h4>VT 4, Leivonmäki, Joutsa</h4></a></div>
+      </article></div>
+    </details>
+    <details class="hf-mx__i" name="tyolaji" id="sillat">
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/01aae9b4e4f9a5753cf137f1f42e7375.svg" alt=""></span><span class="hf-mx__t"><h3>Sillat</h3><p>Uudet sillat, siltojen korjaukset ja muut taitorakenteet.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><p class="ve-lead">Rakennamme ja korjaamme siltoja Suomessa, Ruotsissa ja Virossa: betonista, teräksestä, puusta ja niiden yhdistelmistä.</p><dl class="ve-facts"><div><dt>Työt</dt><dd>Siltojen suunnittelu, rakentaminen ja korjaus</dd></div><div><dt>Urakoiden koko</dt><dd>Alle 100 000 eurosta kymmeniin miljooniin euroihin</dd></div><div><dt>Tilaajat</dt><dd>Väylävirasto, ELY-keskukset, kaupungit, teollisuus ja yksityistiekunnat</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Roope Korpela</p><p class="b-person__role">Työpäällikkö, sillat</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358504472914"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 447 2914</a><a href="mailto:roope.korpela@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>roope.korpela@grk.fi</a></p><a class="b-link b-link--sm" href="infra.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+        <p class="pk-label ve-h">Kohteita</p>
+        <div class="ve-refs ve-refs--tasa"><a class="ve-card" href="tyhja.html?s=noin%2018%2C4%20M%E2%82%AC"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Vekarasalmen silta"></div><p class="meta">2018–2019 · noin 18,4 M€</p><h4>Vekarasalmen silta</h4></a><a class="ve-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2024–2026</p><h4>Hailuodon kiinteä yhteys</h4></a><a class="ve-card" href="tyhja.html?s=2018%E2%80%932021"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2018–2021</p><h4>Saimaan kanavan ratasillat</h4></a></div>
       </article></div>
     </details>
     <details class="hf-mx__i" name="tyolaji" id="viher">
-      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/456a06c78820cb6f4d48e4084e1ffefc.svg" alt=""></span><span class="hf-mx__t"><h3>Viherrakentaminen</h3><p>Puistot, viheralueet ja pihat osana alueen rakentamista.</p></span><span class="hf-mx__tags"><span>Puistot ja pihat</span></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
-      <div class="hf-mx__b"><article class="b-method hf-sm" data-palvelu="viher" data-tyyppi="urakka">
-        <div class="hf-sm__l"><dl class="b-method__rows"><div><dt>Mitä saa aikaan</dt><dd>Puistot, viheralueet ja pihat osana alueen rakentamista.</dd></div><div><dt>Sopii, kun</dt><dd>Puisto, piha tai viheralue rakennetaan saman hankkeen osana.</dd></div></dl></div>
-        <figure class="b-method__fig hf-sm__fig"><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Sari Rinne</b><span>Vihertyön johto</span><span class="me-contact__ch"><a href="tel:+358503728011">+358 50 372 8011</a><a href="mailto:sari.rinne@grk.fi">sari.rinne@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
-      </article></div>
-    </details>
-    <h3 class="hf-work__group hf-mx__group">Vaativat rakenteet</h3>
-    <details class="hf-mx__i" name="tyolaji" id="sillat" open>
-      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/01aae9b4e4f9a5753cf137f1f42e7375.svg" alt=""></span><span class="hf-mx__t"><h3>Sillat</h3><p>Uudet sillat, siltojen korjaukset ja muut taitorakenteet.</p></span><span class="hf-mx__tags"><span>Vesistöt ja väylät</span></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
-      <div class="hf-mx__b"><article class="b-method hf-sm" data-palvelu="sillat" data-tyyppi="urakka">
-        <div class="hf-sm__l"><dl class="b-method__rows">
-          <div><dt>Mitä saa aikaan</dt><dd>Rakennamme ja korjaamme kaikenlaisia siltoja Suomessa, Ruotsissa ja Virossa: betonista, teräksestä, puusta ja niiden yhdistelmistä.</dd></div>
-          <div><dt>Mitä teemme</dt><dd>Siltojen suunnittelu, rakentaminen ja korjaus, tavallisimmin kokonaisurakkana. Suunnittelun ja rakentamisen jälkeisen kunnossapidon tarjoamme pitkäaikaisten kumppanien kanssa.</dd></div>
-          <div><dt>Urakoiden koko</dt><dd>Alle 100 000 eurosta kymmeniin miljooniin euroihin.</dd></div>
-          <div><dt>Toteutusmallit</dt><dd>Kokonaisurakka, ST-urakka ja elinkaarihankkeet.</dd></div>
-          <div><dt>Tilaajat</dt><dd>Valtio ja Väylävirasto, ELY-keskukset, teollisuus ja yksityistiekunnat.</dd></div>
-          <div><dt>Muut referenssit</dt><dd><ul><li>Saimaan kanavan ratasillat · 2018–2020</li><li>Matinkartanon kiertoliittymä ja silta, Vuoden silta 2019 · 2017–2018</li></ul></dd></div>
-        </dl></div>
-        <figure class="b-method__fig hf-sm__fig"><a class="hf-card" href="tyhja.html?s=Vekarasalmen%20silta"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Vekarasalmen silta"></div><p class="meta">2018–2019 · noin 18,4 M€</p><h3>Sillat · Vekarasalmen silta</h3><p>Teräs-betoniliittorakenteinen silta salmen yli: pituus 622 metriä, suurin jänneväli 120 metriä.</p><span class="b-link b-link--sm">Lue kohteesta</span></a><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Roope Korpela</b><span>Työpäällikkö</span><span class="me-contact__ch"><a href="tel:+358504472914">+358 50 447 2914</a><a href="mailto:roope.korpela@grk.fi">roope.korpela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
-      </article></div>
-    </details>
-    <details class="hf-mx__i" name="tyolaji" id="louhinta">
-      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/b19489cfc41c1a726ad78b0f34ca6da2.svg" alt=""></span><span class="hf-mx__t"><h3>Louhinta ja kalliorakentaminen</h3><p>Louhinta räjäyttäen tai ilman räjähteitä, kallioankkuroinnit, lujitus ja ruiskubetonointi.</p></span><span class="hf-mx__tags"><span>Kallioiset kohteet</span></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
-      <div class="hf-mx__b"><article class="b-method hf-sm" data-palvelu="louhinta" data-tyyppi="urakka">
-        <div class="hf-sm__l"><dl class="b-method__rows"><div><dt>Mitä saa aikaan</dt><dd>Louhinta räjäyttäen tai ilman räjähteitä, kallioankkuroinnit, lujitus ja ruiskubetonointi.</dd></div><div><dt>Sopii, kun</dt><dd>Kohteessa on kalliota, tai louhinta pitää tehdä ilman räjähteitä asutuksen keskellä.</dd></div></dl></div>
-        <figure class="b-method__fig hf-sm__fig"><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Arto Korhonen</b><span>Työpäällikkö, louhinta ja kalliorakentaminen</span><span class="me-contact__ch"><a href="tel:+358504302352">+358 50 430 2352</a><a href="mailto:arto.korhonen@grk.fi">arto.korhonen@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/456a06c78820cb6f4d48e4084e1ffefc.svg" alt=""></span><span class="hf-mx__t"><h3>Viherrakentaminen</h3><p>Puistot, viheralueet ja pihat osana alueen rakentamista.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><p class="ve-lead">Rakennamme puistot, viherkaistat ja pihat osana katu- ja aluehanketta, samalla kalustolla ja samassa aikataulussa.</p><dl class="ve-facts"><div><dt>Työt</dt><dd>Puistot, viherkaistat, istutukset, pihat ja vihersillat</dd></div><div><dt>Urakoiden koko</dt><dd>Puistosilloista kaupunginosien katuvihreään</dd></div><div><dt>Tilaajat</dt><dd>Kaupungit, väylähankkeet ja aluerakentajat</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Sari Rinne</p><p class="b-person__role">Vihertyön johto</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358503728011"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 372 8011</a><a href="mailto:sari.rinne@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>sari.rinne@grk.fi</a></p><a class="b-link b-link--sm" href="infra.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+        <p class="pk-label ve-h">Kohteita</p>
+        <div class="ve-refs ve-refs--tasa"><a class="ve-card" href="tyhja.html?s=2020%E2%80%932024"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Kalasatamasta Pasilaan"></div><p class="meta">Helsinki · Kaupunkiliikenne Oy ja Helsingin kaupunki · 2020–2024</p><h4>Kalasatamasta Pasilaan</h4></a><a class="ve-card" href="tyhja.html?s=2021%E2%80%932022"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2021–2022</p><h4>Urge-vihersilta, Rail Baltica, Viro</h4></a><a class="ve-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2023</p><h4>Latokasken puistosilta, Espoo</h4></a></div>
       </article></div>
     </details>
     <details class="hf-mx__i" name="tyolaji" id="teollisuus">
-      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/c4c9896c0a4d634501e978427b31ba81.svg" alt=""></span><span class="hf-mx__t"><h3>Teollisuusrakentaminen</h3><p>Tehdas- ja teollisuusalueiden infra pohjatöistä kenttiin.</p></span><span class="hf-mx__tags"><span>Tehdasalueet</span></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
-      <div class="hf-mx__b"><article class="b-method hf-sm" data-palvelu="teollisuus" data-tyyppi="urakka">
-        <div class="hf-sm__l"><dl class="b-method__rows"><div><dt>Mitä saa aikaan</dt><dd>Tehdas- ja teollisuusalueiden infra pohjatöistä kenttiin.</dd></div><div><dt>Sopii, kun</dt><dd>Tehdas- tai teollisuusalue tarvitsee pohjatyöt, kentät ja kunnallistekniikan yhdeltä toimijalta.</dd></div></dl></div>
-        <figure class="b-method__fig hf-sm__fig"><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Jaakko Mäkelä</b><span>Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</span><span class="me-contact__ch"><a href="tel:+358503775152">+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi">jaakko.makela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/c4c9896c0a4d634501e978427b31ba81.svg" alt=""></span><span class="hf-mx__t"><h3>Teollisuusrakentaminen</h3><p>Tehdas- ja teollisuusalueiden infra pohjatöistä kenttiin.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><p class="ve-lead">Rakennamme tehdas- ja teollisuusalueiden infran pohjatöistä putkistoihin, kenttiin ja perustuksiin.</p><dl class="ve-facts"><div><dt>Työt</dt><dd>Maanrakennus, maanalaiset putkistot, paikallavalut ja kentät</dd></div><div><dt>Urakoiden koko</dt><dd>Yksittäisistä urakoista koko tehdasalueeseen</dd></div><div><dt>Tilaajat</dt><dd>Metsä-, energia- ja telakkateollisuus</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Jaakko Mäkelä</p><p class="b-person__role">Liiketoimintajohtaja, taito- ja väylärakentaminen</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358503775152"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jaakko.makela@grk.fi</a></p><a class="b-link b-link--sm" href="infra.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+        <p class="pk-label ve-h">Kohteita</p>
+        <div class="ve-refs ve-refs--tasa"><a class="ve-card" href="tyhja.html?s=2015%E2%80%932018"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Metsä Fibren biotuotetehdas"></div><p class="meta">Äänekoski · Metsä Fibre Oy · 2015–2018</p><h4>Metsä Fibren biotuotetehdas</h4></a><a class="ve-card" href="tyhja.html?s=2025%E2%80%932026"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2025–2026</p><h4>Helsingin telakan väliportit</h4></a><a class="ve-card" href="tyhja.html?s=2017%E2%80%932018"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><p class="meta">2017–2018</p><h4>Hanhikiven laitosalue, Pyhäjoki</h4></a></div>
       </article></div>
     </details>
   </div>
 </div></section>
 
-<section class="b-section b-section--gray" id="nain-hanke-etenee"><div class="b-inner">
+<section class="b-section" id="nain-hanke-etenee" style="padding-top:0"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Näin hanke etenee</h2></div>
   <ol class="b-steps">
     <li class="b-step"><h3>Keskustelu jo ennen suunnitteluvaihetta</h3><p>Kerro hankkeesta, niin arvioimme toteutettavuuden, aikataulun ja vaihtoehdot.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="infra.html#yhteyshenkilot">Soita asiantuntijalle</a></p></li>
@@ -178,7 +205,24 @@ a{color:#3f4c55}a:hover{color:#252d32}
   </ol>
 </div></section>
 
-<section class="hf-strip hf-strip--dark" id="suunnittelu"><div><h2>Suunnitelma vielä kesken? Soita meille</h2><p>Arvioimme rakennettavuuden, menetelmät ja kustannukset jo ennen kuin suunnitelma lyödään lukkoon. Puolivalmiskin suunnitelma käy.</p></div><div class="acts"><a class="b-btn" href="yhteystiedot.html#vastuuhenkilot">Soita asiantuntijalle</a></div></section>
+<section class="b-section sy" id="suunnittelu"><div class="b-inner">
+  <div class="sy-top">
+    <div class="sy-intro">
+      <h2 class="b-h2">Suunnitelma vielä kesken? Suunnitellaan yhdessä</h2>
+      <p class="b-lead">Arvioimme rakennettavuuden, menetelmät ja kustannukset ennen kuin suunnitelma lyödään lukkoon. Puolivalmiskin suunnitelma käy.</p>
+    </div>
+    <aside class="sy-person" aria-label="Suunnitteluapu">
+      <p class="sy-label">Suunnitteluapu</p>
+      <div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Sami Immonen</p><p class="b-person__role">Johtaja, tekniset palvelut</p><p class="b-person__ch"><a href="tel:+358504147236"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 414 7236</a><a href="mailto:sami.immonen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>sami.immonen@grk.fi</a></p></div></div>
+      <div class="b-btns"><a class="b-btn" href="tel:+358504147236">Soita asiantuntijalle</a><a class="b-link" href="tarjouspyynto.html">Lähetä luonnos</a></div>
+    </aside>
+  </div>
+  <ul class="sy-ways">
+    <li><h3>Apua suunnitteluun</h3><p>Käymme luonnoksen läpi kanssasi ja ehdotamme ratkaisuja, jotka on helpompi ja edullisempi rakentaa.</p></li>
+    <li><h3>Suunnittelukumppani koko hankkeeseen</h3><p>KVR- ja ST-urakassa suunnittelemme itse tai yhdessä suunnittelijasi kanssa. Suunnittelijamme on mukana käyttöönottoon asti.</p></li>
+    <li><h3>Sopiiko menetelmä suunnitelmaasi?</h3><p>Suunnittelijana voit tarkistaa menetelmän suoraan asiantuntijalta ennen kuin kirjoitat sen suunnitelmaan.</p></li>
+  </ul>
+</div></section>
 
 <section class="b-section" id="toteutusmallit"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Toteutusmallit</h2><p class="b-body">Sovimme toteutusmallin hankkeen mukaan. Mitä aiemmin olemme mukana, sitä enemmän voimme vaikuttaa ratkaisuihin ja kustannuksiin.</p></div>
@@ -192,9 +236,11 @@ a{color:#3f4c55}a:hover{color:#252d32}
     <div class="b-why__col"><p class="b-why__num">1&nbsp;320</p><p class="b-why__label">henkilöä, keskimäärin 4–6/2026</p><h3 class="b-why__title">Omat tekijät</h3><p class="b-why__text">Omat osaajat Suomessa, Ruotsissa ja Virossa.</p></div>
     <div class="b-why__col"><p class="b-why__num">3</p><p class="b-why__label">maata: Suomi, Ruotsi ja Viro</p><h3 class="b-why__title">Nimetty asiantuntija</h3><p class="b-why__text">Yksi ihminen vastaa hankkeestasi alusta loppuun.</p></div>
   </div>
-  <div class="b-why__certs"><span class="b-why__certs-label">Sertifioitu</span><span class="b-why__cert">ISO 45001 Työterveys ja -turvallisuus</span><span class="b-why__cert">ISO 9001 Laatu</span><span class="b-why__cert">ISO 14001 Ympäristö</span></div>
+  <div class="b-why__certs"><span class="b-why__cert">ISO 45001 Työterveys ja -turvallisuus</span><span class="b-why__cert">ISO 9001 Laatu</span><span class="b-why__cert">ISO 14001 Ympäristö</span></div>
   <p class="b-linkrow"><a class="b-link" href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></p>
 </div></section>
+
+
 
 <section class="b-section" id="vaativat-kohteet"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Vaativat kohteet</h2></div>
@@ -206,8 +252,6 @@ a{color:#3f4c55}a:hover{color:#252d32}
   </div>
   <p class="b-linkrow"><a class="b-link" href="tyhja.html?s=Referenssit">Kaikki infrakohteet Referensseissä</a></p>
 </div></section>
-
-
 
 <section class="b-section b-section--gray" id="toimialat"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Datakeskus-, energia- tai teollisuushanke?</h2><p class="b-body">Katso kokonaistoteutus toimialoittain.</p></div>
@@ -232,33 +276,30 @@ a{color:#3f4c55}a:hover{color:#252d32}
   </div>
   <p style="margin-top: 32px;"><a class="b-link" href="yhteystiedot.html#vastuuhenkilot">Kaikki yhteyshenkilöt</a></p>
   <div class="b-lightform">
-    <div class="b-head" style="margin: 0; align-content: start;"><h3 class="b-h3">Kerro hankkeestasi</h3><p class="b-body">Kerro hankkeesta, niin asiantuntija ottaa yhteyttä. Mitä aiemmin, sen parempi.</p>
-    </div>
-    <form class="b-form">
-      <div class="b-field"><label for="in-nimi">Nimi *</label><input class="b-input" id="in-nimi" type="text" autocomplete="name"></div>
-      <div class="b-field"><label for="in-email">Sähköposti *</label><input class="b-input" id="in-email" type="email" autocomplete="email"></div>
-      <div class="b-field b-field--full"><label for="in-malli">Toteutusmalli</label><select class="b-select" id="in-malli"><option>En tiedä vielä</option><option>Kokonaisurakka</option><option>KVR-urakka</option><option>ST-urakka</option><option>Allianssi</option><option>Projektinjohtourakka</option></select></div>
-      <div class="b-field b-field--full"><label for="in-hanke">Hankkeesi lyhyesti *</label><textarea class="b-textarea" id="in-hanke" placeholder="Esimerkiksi sijainti, laajuus, aikataulu ja hankkeen vaihe."></textarea></div>
-      <div class="b-field b-field--full"><label for="in-liite">Liite (vapaaehtoinen)</label><input class="b-input" id="in-liite" type="file"><small>Lisää suunnitelma tai kartta</small></div>
-      <p class="b-small b-field--full">Käsittelemme tietoja <a href="tyhja.html?s=Tietosuojaseloste">tietosuojaselosteen</a> mukaisesti.</p>
-      <div class="b-form__foot"><button class="b-btn" type="button">Lähetä</button></div>
-    </form>
-  </div>
+  <div class="b-head" style="margin: 0; align-content: start;"><h3 class="b-h3">Kerro hankkeestasi</h3><p class="b-body">Muutama lause riittää. Oikea asiantuntija ottaa yhteyttä.</p></div>
+  <form class="b-form">
+    <div class="b-field"><label for="in-nimi">Nimi *</label><input class="b-input" id="in-nimi" type="text" autocomplete="name"></div>
+    <div class="b-field"><label for="in-yht">Puhelin tai sähköposti *</label><input class="b-input" id="in-yht" type="text" autocomplete="email"></div>
+    <div class="b-field b-field--full"><label for="in-hanke">Hankkeesi lyhyesti *</label><textarea class="b-textarea" id="in-hanke" placeholder="Esimerkiksi sijainti, laajuus ja aikataulu."></textarea></div>
+    <p class="b-small b-field--full">Käsittelemme tietoja <a href="tyhja.html?s=Tietosuojaseloste">tietosuojaselosteen</a> mukaisesti.</p>
+    <div class="b-form__foot"><button class="b-btn" type="button">Lähetä</button></div>
+  </form>
+</div>
 </div></section>
-
-<section class="hf-edge hf-edge--flip" id="toihin">
-  <div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n työmaa Hailuodossa"></div>
-  <div class="tx">
-    <h2 class="hf-h2">Töihin infrarakentamiseen?</h2>
-    <p class="hf-lead">Katso avoimet työpaikat ja ammattipolut.</p>
-    <div class="acts acts--stack"><a class="b-btn b-btn--secondary" href="avoimet-tyopaikat.html">Avoimet työpaikat</a></div>
-  </div>
-</section>
 
 <section class="b-section" id="samaan-hankkeeseen"><div class="b-inner">
-  <div class="b-head"><h2 class="b-h2">Samaan hankkeeseen</h2></div>
+  <div class="b-head"><h2 class="b-h2">Muut palvelut samaan hankkeeseen</h2><p class="b-body">Kun hankkeessa tarvitaan muutakin, toteutamme sen samalla sopimuksella.</p></div>
   <div class="sh-list"><a class="sh-row" href="tyhja.html?s=P%C3%A4%C3%A4llystys%20ja%20asfaltointi"><img src="assets/e39f285fc472e8290f0df3294d899fd2.svg" alt="" width="64" height="64"><b>Päällystys ja asfaltointi</b><span>Asfaltointi ja päällystysurakat omilta asfalttiasemilta.</span><i aria-hidden="true"></i></a><a class="sh-row" href="tyhja.html?s=Pohjarakentaminen%20ja%20paalutus"><img src="assets/4a7ed9116290cd1984fa22826d4444ba.svg" alt="" width="64" height="64"><b>Pohjarakentaminen ja paalutus</b><span>Porapaalutus, stabilointi ja kaivantojen tuennat vaativille pohjille.</span><i aria-hidden="true"></i></a><a class="sh-row" href="tyhja.html?s=S%C3%A4hk%C3%B6verkot%20ja%20s%C3%A4hk%C3%B6asemat"><img src="assets/f984903e822f9f98877f2bd0f5e00c9c.svg" alt="" width="64" height="64"><b>Sähköverkot ja sähköasemat</b><span>Kaapeloinnit, sähköasemat ja liittymät.</span><i aria-hidden="true"></i></a><a class="sh-row" href="tyhja.html?s=Kiertotalous%20ja%20vastaanotto"><img src="assets/e0235ec8a773e97fbce353cd9d2c975d.svg" alt="" width="64" height="64"><b>Kiertotalous ja vastaanotto</b><span>Ylijäämämaiden ja louheen vastaanotto sekä kiertomateriaalit.</span><i aria-hidden="true"></i></a><a class="sh-row" href="tyhja.html?s=Rautatiet%20ja%20raitiotiet"><img src="assets/7edcf350f74dddcc72719f2156a33481.svg" alt="" width="64" height="64"><b>Rautatiet ja raitiotiet</b><span>Raiteet teollisuusalueille ja kaupunkeihin.</span><i aria-hidden="true"></i></a></div>
 </div></section>
+
+<section class="hf-edge hf-edge--dark" id="toihin">
+  <div class="tx">
+    <h2 class="hf-h2">Töihin GRK:lle</h2>
+    <p class="hf-lead">Infra on kasvuala, jossa työllä on merkitys. Meillä saa vastuuta niin paljon kuin uskaltaa ottaa.</p>
+    <div class="acts acts--stack"><a class="b-btn b-btn--secondary" href="avoimet-tyopaikat.html">Avoimet työpaikat</a><ul class="hf-linklist"><li><a href="tyhja.html?s=Harjoittelu%20ja%20kes%C3%A4ty%C3%B6">Harjoittelu ja kesätyö</a></li><li><a href="tyhja.html?s=Ty%C3%B6%20GRK%3Alla">Työ GRK:lla</a></li></ul></div>
+  </div>
+  <div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n asfalttityöntekijät päällystystyössä"></div>
+</section>
 
 <footer class="b-footer hf-foot">
   <div class="hf-foot__top">
@@ -272,14 +313,14 @@ a{color:#3f4c55}a:hover{color:#252d32}
       <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
         <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="tyhja.html?s=P%C3%A4%C3%A4llystys%20ja%20asfaltointi">Päällystys ja asfaltointi</a></li><li><a href="tyhja.html?s=Pohjarakentaminen%20ja%20paalutus">Pohjarakentaminen ja paalutus</a></li><li><a href="tyhja.html?s=Rautatiet%20ja%20raitiotiet">Rautatiet ja raitiotiet</a></li><li><a href="tyhja.html?s=S%C3%A4hk%C3%B6verkot%20ja%20s%C3%A4hk%C3%B6asemat">Sähköverkot ja sähköasemat</a></li><li><a href="tyhja.html?s=Kiertotalous%20ja%20vastaanotto">Kiertotalous ja vastaanotto</a></li>
       </ul></div>
-      <div><h2 class="hf-foot__h"><a href="tyhja.html?s=Toimialat">Toimialat</a></h2><ul>
+      <div><h2 class="hf-foot__h">Toimialat</h2><ul>
         <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="tyhja.html?s=Energia">Energia</a></li><li><a href="tyhja.html?s=Teollisuus">Teollisuus</a></li><li><a href="tyhja.html?s=Kaupungit%20ja%20v%C3%A4yl%C3%A4t">Kaupungit ja väylät</a></li>
       </ul></div>
-      <div><h2 class="hf-foot__h"><a href="tyhja.html?s=Yritys">Yritys</a></h2><ul>
+      <div><h2 class="hf-foot__h">Yritys</h2><ul>
         <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="tyhja.html?s=Ura%20ja%20ty%C3%B6paikat">Ura ja työpaikat</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
-        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Media">Media</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
+        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
       </ul></div>
     </nav>
   </div>

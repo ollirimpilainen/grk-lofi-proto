@@ -1888,3 +1888,129 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 /* 28.10.: sähköpostiosoite ei tavuudu, lo-fin heron kuvamerkki ei peitä otsikkoa mobiilissa */
 .b-person__ch a,a[href^="mailto:"]{hyphens:none;-webkit-hyphens:none}
 @media (max-width:900px){.lofi .hf-hero::after{display:none}}
+/* Töihin-lohko 28.10.: jokaisen sivun viimeinen osio, tumma tekstipuoli erottuu valkoisesta alatunnisteesta ja harmaista osioista */
+.hf-edge--dark .tx{background:var(--surface-dark);color:var(--on-dark)}
+.hf-edge--dark :is(h2,.hf-h2){color:var(--white)}
+.hf-edge--dark .hf-lead{color:#d3d8db}
+.hf-edge--dark .b-btn--secondary{border-color:var(--white);color:var(--white);background:transparent}
+.hf-edge--dark .b-btn--secondary:hover{background:var(--white);color:var(--surface-dark)}
+.hf-edge--dark .hf-linklist{border-bottom-color:var(--on-dark-line)}
+.hf-edge--dark .hf-linklist li{border-top-color:var(--on-dark-line)}
+.hf-edge--dark .hf-linklist a{color:var(--white)}
+/* Palvelukortti 28.10. (benchmark: Castrén, Stripe, Destia): pääpalsta lause → faktat → pääreferenssi → muut kohteet, oikealla yhteyshenkilö heti näkyvissä */
+.pk{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:64px;align-items:start}
+.pk-lead{margin:0 0 32px;max-width:62ch;font-size:18px;line-height:28px;color:var(--ink)}
+.pk-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0 0 40px;padding:20px 0 0;border-top:1px solid var(--line-strong)}
+.pk-facts dt{margin:0 0 6px;font:700 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2-strong)}
+.pk-facts dd{margin:0;font-size:16px;line-height:24px;color:var(--ink)}
+.pk-ref{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);background:var(--surface-2);color:var(--ink);text-decoration:none}
+.pk-ref .ph{position:relative;min-height:264px;overflow:hidden;background:var(--surface)}
+.pk-ref .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pk-ref:hover .ph img,.pk-ref:focus-visible .ph img{transform:scale(1.03)}
+.pk-ref:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.pk-ref__tx{display:flex;flex-direction:column;padding:32px}
+.pk-ref__tx .meta{margin:0 0 12px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.pk-ref__tx h4{margin:0 0 12px;font:900 18px/24px var(--font-head);color:var(--ink)}
+.pk-ref__tx p:not(.meta){margin:0 0 24px;font-size:16px;line-height:24px;color:var(--ink)}
+.pk-ref__tx .b-link{margin-top:auto;align-self:flex-start}
+.pk-ref:hover h4{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:6px}
+.pk-label{margin:0 0 16px;font:700 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2-strong)}
+.pk-more{margin-top:32px}
+.pk-more ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line-strong)}
+.pk-more li{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:14px 0;border-bottom:1px solid var(--line-strong)}
+.pk-more li a{font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+.pk-more li span{flex:none;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.pk-person{position:sticky;top:24px;padding:32px;background:var(--surface-2)}
+.pk-person .b-person{margin:0 0 20px}
+.pk-ch{display:grid;gap:10px;margin:0 0 24px}
+.pk-ch a{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.pk-ch .pk-tel{font:900 22px/28px var(--font-head)}
+.pk-ch a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+@media (max-width:900px){.pk,.pk-ref{grid-template-columns:1fr}.pk{gap:32px}.pk-facts{grid-template-columns:1fr;gap:16px}.pk-ref .ph{min-height:220px}.pk-person{position:static}}
+/* Yrityssivujen dokumenttitaulukko ja turvallisuuslohko 28.10. (Laatu ja turvallisuus, Vastuullisuus) */
+.lt-filter{margin:0 0 24px}
+.lt-table{margin:0}
+.lt-table th[scope=col]{white-space:nowrap}
+.lt-table .lt-group th{padding:32px 0 12px;border-bottom:1px solid var(--line-strong);font:900 18px/24px var(--font-head);color:var(--ink)}
+.lt-table td:first-child{width:28%;font-weight:700}
+.lt-table td:nth-child(2){width:46%}
+.lt-table td.lt-svc{padding-top:18px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.lt-table td:last-child{text-align:right;white-space:nowrap}
+.lt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.lt-more{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin:32px 0 0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.lt-safe{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:80px;align-items:start}
+.lt-h{margin:0 0 20px;font:900 22px/28px var(--font-head);color:var(--ink)}
+.lt-list{margin:0;padding:0;list-style:none;border-top:1px solid var(--line-strong)}
+.lt-list li{padding:16px 0;border-bottom:1px solid var(--line-strong);font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.lt-list b{display:block;margin-bottom:4px;font-size:18px;line-height:24px;color:var(--ink)}
+.lt-nums-t td{vertical-align:top}
+.lt-nums-t td span{display:block;margin-top:4px;font-weight:400;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.lt-nums-t td:last-child{text-align:right;font:900 22px/28px var(--font-head);color:var(--ink)}
+.lt-q{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line-strong)}
+.lt-q p{margin:0;font:900 22px/28px var(--font-head);color:var(--ink)}
+.lt-q cite{display:block;margin-top:8px;font-style:normal;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+@media (max-width:900px){.lt-safe{grid-template-columns:1fr;gap:48px}.lt-table td:first-child,.lt-table td:nth-child(2){width:auto}}
+/* Sivun otsikko 28.10. (yksi lohko kaikille kuvattomille alasivuille): H1, ingressi, painikkeet; oikealla valinnainen sisällysluettelo */
+.b-pagehead{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:24px 80px;align-items:end;padding:24px 80px 56px}
+.b-pagehead .b-h1{margin:0}
+.b-pagehead .b-lead{margin:20px 0 0;max-width:58ch}
+.b-pagehead .b-btns{margin-top:32px}
+.b-pagehead>.keyfacts{grid-column:1/-1;margin-top:16px}
+@media (max-width:900px){.b-pagehead{grid-template-columns:1fr;padding:24px 20px 40px}}
+.b-pagehead>div:only-child{grid-column:1/-1}
+/* Yksittäisen yhteyshenkilön osio 28.10. (sama lohko kaikilla sivuilla): teksti vasemmalla, henkilö oikealla */
+.lt-contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:80px;align-items:center}
+.lt-contact .b-h2{margin:0}
+.lt-contact .b-h2{font-size:40px;line-height:48px;text-wrap:balance}
+.lt-contact .b-lead{margin:16px 0 0}
+.lt-contact .b-h2{font-size:40px;line-height:48px}
+@media (max-width:900px){.lt-contact{grid-template-columns:1fr}}
+/* Suunnitteluapu 28.10. (sama lohko Infrassa ja hubeissa): otsikko, ingressi, henkilö ja kolme tapaa auttaa */
+.sy{background:var(--surface)}
+.sy-top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:start}
+.sy-intro .b-h2{margin:0 0 24px}
+.sy-intro .b-lead{margin:0;max-width:46ch;color:var(--ink)}
+.sy-person{background:var(--white);padding:32px}
+.sy-label{margin:0 0 20px;font:700 12px/16px var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2-strong)}
+.sy-person .b-person{margin:0}
+.sy-person .b-btns{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px}
+.sy-ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin:72px 0 0;padding:40px 0 0;list-style:none;border-top:1px solid var(--line-strong)}
+.sy-ways h3{margin:0 0 12px;font:900 22px/28px var(--font-head);color:var(--ink)}
+.sy-ways h3::before{content:"";display:block;width:32px;height:4px;margin-bottom:16px;background:var(--accent)}
+.sy-ways p{margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+@media (max-width:900px){.sy-top,.sy-ways{grid-template-columns:1fr}.sy-ways{gap:32px;margin-top:48px}}
+/* Miksi meille -lohko 28.10. (Ura ja Avoimet työpaikat samana) */
+.tp-why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.tp-why div{display:grid;gap:10px;align-content:start;padding-top:20px;border-top:2px solid var(--ink)}
+.tp-why h3{margin:0;font:900 22px/28px var(--font-head)}
+.tp-why p{margin:0;font-size:16px;line-height:26px;color:var(--ink-2-strong)}
+.tp-quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:64px}
+.tp-quotes blockquote{margin:0;display:grid;gap:12px;font:900 22px/28px var(--font-head);color:var(--ink)}
+.tp-quotes blockquote::before{content:"”";font:900 72px/0.6 var(--font-head);color:var(--accent)}
+@media (max-width:900px){.tp-why,.tp-quotes{grid-template-columns:1fr}}
+/* Palvelukortti E 28.10. (Olli: "tämä on hyvä"): teksti ja ihminen rinnakkain, kohteet rivinä */
+.ve{display:grid;gap:40px}
+.ve-top{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:64px;align-items:start}
+.ve-lead{margin:0 0 28px;max-width:56ch;font-size:22px;line-height:34px;color:var(--ink)}
+.ve-facts{margin:0;border-top:1px solid var(--line-strong)}
+.ve-facts div{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--line-strong)}
+.ve-facts dt{font:700 14px/24px var(--font-sans);color:var(--ink-2-strong)}
+.ve-facts dd{margin:0;font-size:16px;line-height:24px;color:var(--ink)}
+.ve-h{margin:0 0 -16px}
+.ve-refs{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;align-items:start}
+.ve-card{display:grid;gap:0;color:var(--ink);text-decoration:none}
+.ve-card .ph{position:relative;aspect-ratio:3/2;background:var(--surface);overflow:hidden;margin-bottom:16px}
+.ve-card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ve-card .meta{margin:0 0 6px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.ve-card h4{margin:0;font:900 18px/24px var(--font-head)}
+.ve-card--main h4{font-size:22px;line-height:28px}
+.ve-card--main p:not(.meta){margin:8px 0 0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.ve-card:hover h4{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+.ve-card .ph{position:relative}
+.ve-card .hf-status{z-index:1}
+@media (max-width:900px){.ve-top,.ve-refs{grid-template-columns:1fr}.ve-facts div{grid-template-columns:1fr;gap:4px}}
+/* 28.10. kohteet tasa-arvoisina (Olli: ei lippulaivahanketta) */
+.ve-refs--tasa{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* 28.10. GRK-sivuvalitsin pois, KSBR muiden linkkien joukkoon oikealle */
+.b-nav__util-r{margin-left:auto}

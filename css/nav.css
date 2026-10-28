@@ -7,6 +7,10 @@ header.b-nav{position:relative;z-index:50}
 .nv-panel{position:absolute;left:0;right:0;top:100%;background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   box-shadow:0 24px 40px -24px rgba(37,45,50,.28)}
 .nv-in{max-width:var(--page-width);margin:0 auto;padding:32px 80px 48px}
+.nv-panel--drop{width:max-content;min-width:280px;max-width:640px;border:1px solid var(--line)}
+.nv-panel--drop .nv-in{max-width:none;padding:20px 24px 24px}
+.nv-panel--drop .nv-hub{margin:0 0 12px;font:900 18px/24px var(--font-head)}
+.nv-panel--drop .nv-list{padding-top:12px;max-width:none}
 .nv-panel a,.nv-sheet a{color:var(--ink);text-decoration:none}
 .nv-hub{display:inline-flex;align-items:center;gap:10px;margin:0 0 28px;font:900 22px/28px var(--font-head);color:var(--ink)}
 .nv-hub:hover,.nv-hub:focus-visible{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:6px}

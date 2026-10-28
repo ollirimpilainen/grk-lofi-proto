@@ -98,6 +98,20 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
 .hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
 .hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
+/* Vastuullisuus 28.10.: ensin mitä tilaaja hyötyy, sitten luvut taulukkona ja raportit (työpaja: vastuullisuus perusoletus, hankinta kysyy päästötietoja) */
+.vs-acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin:0;padding:0;list-style:none}
+.vs-acts li{display:flex;flex-direction:column;align-items:flex-start;padding-top:20px;border-top:1px solid var(--line-strong)}
+.vs-acts h3{margin:0 0 12px;font:900 22px/28px var(--font-head);color:var(--ink)}
+.vs-acts p{margin:0 0 20px;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.vs-acts .b-link{margin-top:auto}
+.vs-table td span{display:block;margin-top:4px;font-weight:400;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.vs-table th:not(:first-child),.vs-table td:not(:first-child){text-align:right}
+.vs-table td:nth-child(2),.vs-table td:nth-child(3){font:900 22px/28px var(--font-head);color:var(--ink)}
+.vs-table td:nth-child(2){color:var(--ink-2-strong)}
+.vs-table td:first-child{width:44%}
+.vs-docs td:first-child{width:36%}
+.vs-docs td:nth-child(2){width:46%;font-weight:400}
+@media (max-width:900px){.vs-acts{grid-template-columns:1fr}}
 @media (max-width:900px){
   .km-c{grid-template-columns:1fr!important;gap:32px!important}
   .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr 1fr!important;row-gap:40px}
@@ -115,7 +129,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <div class="b-root hf lofi" style="width: 100%;">
 
 <header class="b-nav">
-  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="https://ollirimpilainen.github.io/ksbr-proto/">KSBR ↗</a></span><span class="b-nav__util-r"><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="tyhja.html?s=Media">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__util-r"><a href="https://ollirimpilainen.github.io/ksbr-proto/">KSBR ↗</a><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="tyhja.html?s=Media">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
   <div class="b-nav__bar">
     <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
     <nav class="b-nav__menu" aria-label="Päävalikko">
@@ -123,65 +137,78 @@ a{color:#3f4c55}a:hover{color:#252d32}
       <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Toimialat">Toimialat</a>
       <a class="b-nav__item" href="tyhja.html?s=Referenssit">Referenssit</a>
       <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
-      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
       <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys" aria-current="page">Yritys</a>
-      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Ura">Ura</a>
     </nav>
     <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
   </div>
 </header>
 <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="tyhja.html?s=Yritys">Yritys</a></li><li aria-current="page">Vastuullisuus</li></ol>
 
-<header class="lt-head">
-  <div><h1 class="b-h1">Vastuullisuus</h1><p class="b-lead">Rakennamme ja ylläpidämme yhteiskunnalle elintärkeää infrastruktuuria. Vastuullisuus on osa strategiaamme, ja tavoitteemme on oman toimintamme nettonolla vuoteen 2035 mennessä.</p>
-  <div class="b-btns"><a class="b-btn" href="#yhteyshenkilo">Ota yhteyttä</a><a class="b-btn b-btn--secondary" href="#raportit">Vastuullisuusraportit</a></div></div>
-  <nav class="b-toc" aria-label="Tällä sivulla"><p class="b-toc__label">Tällä sivulla</p><ul><li><a href="#ymparisto">Ympäristö</a></li><li><a href="#ihmiset">Ihmiset</a></li><li><a href="#raportit">Raportit ja arviot</a></li></ul></nav>
+<header class="b-pagehead">
+  <div><h1 class="b-h1">Vastuullisuus</h1><p class="b-lead">Päästötiedot, raportit ja arviot hankintaa varten. Tavoitteemme on oman toimintamme nettonolla vuoteen 2035 mennessä.</p>
+  <div class="b-btns"><a class="b-btn" href="#yhteyshenkilo">Ota yhteyttä</a><a class="b-btn b-btn--secondary" href="#raportit">Raportit ja arviot</a></div></div>
+  <nav class="b-toc" aria-label="Tällä sivulla"><p class="b-toc__label">Tällä sivulla</p><ul><li><a href="#hankkeessasi">Hankkeessasi</a></li><li><a href="#luvut">Luvut</a></li><li><a href="#raportit">Raportit ja arviot</a></li><li><a href="#ihmiset">Ihmiset</a></li><li><a href="#yhteyshenkilo">Yhteyshenkilö</a></li></ul></nav>
 </header>
 
-<section class="b-section" id="ymparisto"><div class="b-inner">
-  <div class="lt-story">
-    <div><h2 class="b-h2">Ympäristö</h2><p class="b-body" style="margin-top:16px">Edistämme kestävää rakentamista arjen konkreettisilla teoilla: uusiutuvilla polttoaineilla, vähähiilisillä materiaaleilla ja maa-ainesten logistiikkaa optimoimalla. Seuraamme hankkeiden päästöjä omalla laskurilla.</p></div>
-    <figure style="margin:0"><div class="lt-co2"><div><b>27,3</b><i style="height:220px"></i></div><div><b>20,5</b><i style="height:165px"></i></div></div><div class="lt-co2-cap"><span>2024</span><span>2025</span></div><figcaption class="b-small" style="margin-top:16px">Scope 1 ja 2 -päästöt, t CO₂e miljoonaa euroa liikevaihtoa kohden</figcaption></figure>
-  </div>
-  <div class="lt-nums">
-    <div><b>93<small>%</small></b><span>ostetusta sähköstä uusiutuvaa</span></div>
-    <div><b>27<small>%</small></b><span>polttoaineista uusiutuvia (1 288 359 litraa)</span></div>
-    <div><b>882 045<small>t</small></b><span>kierrätysmateriaaleja käytetty 2025. Tavoite 1,5 miljoonaa tonnia vuoteen 2035.</span></div>
-  </div>
-  <div class="lt-cases">
-    <a class="lt-case" href="tyhja.html?s=Kiertotalouden%20Green%20Deal"><div class="ph"></div><div><em>Case</em><b>Kiertotalouden Green Deal</b><span>GRK on sitoutunut vapaaehtoiseen kiertotalouden Green Deal -sopimukseen.</span></div></a>
-    <a class="lt-case" href="tyhja.html?s=Oma%20p%C3%A4%C3%A4st%C3%B6laskuri"><div class="ph"></div><div><em>Case</em><b>Oma päästölaskuri</b><span>Sitowisen kanssa kehitetty laskuri seuraa työmaan sähkön, koneiden ja ajoneuvojen polttoaineen kulutusta.</span></div></a>
-  </div>
+<section class="b-section b-section--gray" id="hankkeessasi"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Mitä teemme hankkeessasi</h2><p class="b-body">Vastuullisuus näkyy työmaalla teoina, joista on hyötyä myös tilaajalle.</p></div>
+  <ul class="vs-acts">
+    <li><h3>Hankkeen päästöt mitattuina</h3><p>Sitowisen kanssa kehitetty laskuri seuraa työmaan sähkön sekä koneiden ja ajoneuvojen polttoaineen kulutusta. Saat hankkeen päästötiedot raportointiisi.</p></li>
+    <li><h3>Kiertomateriaalit luonnonkiven tilalle</h3><p>Betonimurske ja muut kiertomateriaalit korvaavat luonnonkiveä, ja ne ovat usein myös edullisempia.</p><a class="b-link b-link--sm" href="tyhja.html?s=Kiertotalous%20ja%20vastaanotto">Kiertotalous ja vastaanotto</a></li>
+    <li><h3>Haastavat maat hallitusti</h3><p>Otamme vastaan pilaantuneita ja happamia sulfaattimaita voimassa olevien ympäristölupien mukaisesti.</p><a class="b-link b-link--sm" href="vastaanottopaikat.html">Vastaanottopaikat</a></li>
+  </ul>
 </div></section>
 
-<section class="b-section b-section--gray" id="ihmiset"><div class="b-inner">
-  <div class="lt-story">
-    <div><h2 class="b-h2">Ihmiset</h2></div>
-    <div><p class="b-lead">Turvallisuus on meille ykkösasia. Työntekijöillämme on laajat työterveyspalvelut, ja ongelmista kannustetaan kertomaan ajoissa.</p>
-    <ul class="b-check" style="grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px">
-      <li><div><b>Nolla tapaturmaa</b><p>Tavoite koskee myös aliurakoitsijoiden työntekijöitä.</p></div></li>
-      <li><div><b>Koulutus</b><p>Työ- ja ratatyöturvallisuuden pätevyydet ulkopuolisten kouluttajien kanssa.</p></div></li>
-      <li><div><b>Harjoittelijat</b><p>Kesällä jopa 10 % henkilöstöstä on harjoittelijoita, Suomessa noin 100 kesätyöntekijää.</p></div></li>
-      <li><div><b>Työterveys</b><p>Laajat työterveyspalvelut ja sairauskuluvakuutus.</p></div></li>
-    </ul>
-    <p style="margin-top:24px;display:flex;gap:32px"><a class="b-link" href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a><a class="b-link" href="avoimet-tyopaikat.html">Avoimet työpaikat</a></p></div>
-  </div>
+<section class="b-section" id="luvut"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Luvut</h2><p class="b-body">Tiedot, joita hankinnassa tavallisimmin kysytään.</p></div>
+  <div class="b-tablebox"><table class="b-table vs-table">
+    <thead><tr><th scope="col">Mittari</th><th scope="col">2024</th><th scope="col">2025</th><th scope="col">Tavoite</th></tr></thead>
+    <tbody>
+      <tr><td>Scope 1 ja 2 -päästöt<span>t CO₂e miljoonaa euroa liikevaihtoa kohden</span></td><td>27,3</td><td>20,5</td><td>Nettonolla 2035</td></tr>
+      <tr><td>Uusiutuva osuus ostetusta sähköstä</td><td></td><td>93 %</td><td></td></tr>
+      <tr><td>Uusiutuvat polttoaineet<span>1 288 359 litraa vuonna 2025</span></td><td></td><td>27 %</td><td></td></tr>
+      <tr><td>Kierrätysmateriaalit käytössä</td><td></td><td>882 045 t</td><td>1,5 milj. t vuonna 2035</td></tr>
+    </tbody>
+    <caption>Lähde: GRK:n vuosi- ja vastuullisuuskertomus 2025</caption>
+  </table></div>
 </div></section>
 
-<section class="b-section" id="raportit"><div class="b-inner">
+<section class="b-section b-section--gray" id="raportit"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Raportit ja arviot</h2><p class="b-body">Kestävyysraportointimme noudattaa EU:n kestävyysraportointidirektiiviä (CSRD).</p></div>
-  <div class="lt-docs">
-    <a class="lt-doc" href="tyhja.html?s=Vuosi-%20ja%20vastuullisuuskertomus"><div class="ph"></div><div><b>Vuosi- ja vastuullisuuskertomus</b><span>2025 · PDF</span></div></a>
-    <a class="lt-doc" href="tyhja.html?s=EcoVadis-arvio"><div class="ph"></div><div><b>EcoVadis-arvio</b><span>Ympäristö, työolot, etiikka ja kestävät hankinnat</span></div></a>
-    <a class="lt-doc" href="tyhja.html?s=World%20Sustainability%20Awards%202022"><div class="ph"></div><div><b>World Sustainability Awards 2022</b><span>Finalisti, päästövähennykset</span></div></a>
-  </div>
-  <p style="margin-top:32px"><a class="b-link" href="tyhja.html?s=Kaikki%20raportit%20ja%20esitykset">Kaikki raportit ja esitykset</a></p>
+  <div class="b-tablebox"><table class="b-table lt-table vs-docs">
+    <tbody>
+      <tr><td>Vuosi- ja vastuullisuuskertomus 2025</td><td>Kestävyysraportti CSRD:n mukaisesti</td><td><a class="b-link b-link--sm" href="tyhja.html?s=Lataa%20PDF">Lataa PDF</a></td></tr>
+      <tr><td>EcoVadis-arvio</td><td>Ympäristö, työolot, etiikka ja kestävät hankinnat</td><td><a class="b-link b-link--sm" href="tyhja.html?s=Lataa%20PDF">Lataa PDF</a></td></tr>
+      <tr><td>Kiertotalouden Green Deal</td><td>Vapaaehtoinen sitoumus kiertomateriaalien käytön lisäämiseksi</td><td><a class="b-link b-link--sm" href="tyhja.html?s=Lue%20sitoumus">Lue sitoumus</a></td></tr>
+      <tr><td>World Sustainability Awards 2022</td><td>Finalisti, päästövähennykset</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <p class="lt-more"><a class="b-link b-link--ext" href="tyhja.html?s=Kaikki%20raportit%20ja%20esitykset%20sijoittajasivuilla">Kaikki raportit ja esitykset sijoittajasivuilla</a></p>
 </div></section>
 
-<section class="b-section" id="yhteyshenkilo"><div class="b-inner lt-contact">
+<section class="b-section" id="ihmiset"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Ihmiset</h2><p class="b-body">Turvallisuus on ykkösasia, ja ongelmista kannustetaan kertomaan ajoissa.</p></div>
+  <ul class="vs-acts">
+    <li><h3>Nolla tapaturmaa</h3><p>Tavoite koskee myös aliurakoitsijoiden työntekijöitä. Turvallisuusluvut ovat Laatu ja turvallisuus -sivulla.</p><a class="b-link b-link--sm" href="laatu-ja-turvallisuus.html#turvallisuus">Turvallisuus</a></li>
+    <li><h3>Koulutus ja pätevyydet</h3><p>Työ- ja ratatyöturvallisuuden pätevyydet koulutetaan yhdessä ulkopuolisten kouluttajien kanssa.</p></li>
+    <li><h3>Harjoittelijat</h3><p>Kesällä jopa 10 % henkilöstöstä on harjoittelijoita, Suomessa noin 100 kesätyöntekijää.</p><a class="b-link b-link--sm" href="tyhja.html?s=Harjoittelu%20ja%20kes%C3%A4ty%C3%B6">Harjoittelu ja kesätyö</a></li>
+  </ul>
+</div></section>
+
+<section class="b-section b-section--gray" id="yhteyshenkilo"><div class="b-inner lt-contact">
   <div><h2 class="b-h2">Kysy vastuullisuudesta</h2><p class="b-lead">Tarvitsetko päästötietoja, raportteja tai selvityksen hankintaa varten?</p></div>
   <div class="b-people" style="grid-template-columns:1fr"><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Riina Rantsi</p><p class="b-person__role">Liiketoiminnan kehitysjohtaja</p><p class="b-person__ch"><a href="tel:+358407258999"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 725 8999</a><a href="mailto:riina.rantsi@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>riina.rantsi@grk.fi</a></p></div></div></div>
 </div></section>
+
+<section class="hf-edge hf-edge--dark" id="toihin">
+  <div class="tx">
+    <h2 class="hf-h2">Töihin GRK:lle</h2>
+    <p class="hf-lead">Infra on kasvuala, jossa työllä on merkitys. Meillä saa vastuuta niin paljon kuin uskaltaa ottaa.</p>
+    <div class="acts acts--stack"><a class="b-btn b-btn--secondary" href="avoimet-tyopaikat.html">Avoimet työpaikat</a><ul class="hf-linklist"><li><a href="tyhja.html?s=Harjoittelu%20ja%20kes%C3%A4ty%C3%B6">Harjoittelu ja kesätyö</a></li><li><a href="tyhja.html?s=Ty%C3%B6%20GRK%3Alla">Työ GRK:lla</a></li></ul></div>
+  </div>
+  <div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n asfalttityöntekijät päällystystyössä"></div>
+</section>
 
 <footer class="b-footer hf-foot">
   <div class="hf-foot__top">
@@ -195,14 +222,14 @@ a{color:#3f4c55}a:hover{color:#252d32}
       <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
         <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="tyhja.html?s=P%C3%A4%C3%A4llystys%20ja%20asfaltointi">Päällystys ja asfaltointi</a></li><li><a href="tyhja.html?s=Pohjarakentaminen%20ja%20paalutus">Pohjarakentaminen ja paalutus</a></li><li><a href="tyhja.html?s=Rautatiet%20ja%20raitiotiet">Rautatiet ja raitiotiet</a></li><li><a href="tyhja.html?s=S%C3%A4hk%C3%B6verkot%20ja%20s%C3%A4hk%C3%B6asemat">Sähköverkot ja sähköasemat</a></li><li><a href="tyhja.html?s=Kiertotalous%20ja%20vastaanotto">Kiertotalous ja vastaanotto</a></li>
       </ul></div>
-      <div><h2 class="hf-foot__h"><a href="tyhja.html?s=Toimialat">Toimialat</a></h2><ul>
+      <div><h2 class="hf-foot__h">Toimialat</h2><ul>
         <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="tyhja.html?s=Energia">Energia</a></li><li><a href="tyhja.html?s=Teollisuus">Teollisuus</a></li><li><a href="tyhja.html?s=Kaupungit%20ja%20v%C3%A4yl%C3%A4t">Kaupungit ja väylät</a></li>
       </ul></div>
-      <div><h2 class="hf-foot__h"><a href="tyhja.html?s=Yritys">Yritys</a></h2><ul>
+      <div><h2 class="hf-foot__h">Yritys</h2><ul>
         <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="tyhja.html?s=Ura%20ja%20ty%C3%B6paikat">Ura ja työpaikat</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
-        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Media">Media</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
+        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
       </ul></div>
     </nav>
   </div>
