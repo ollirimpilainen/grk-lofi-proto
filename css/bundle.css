@@ -1873,6 +1873,9 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 .lofi .hf-foot .hf-foot__some a { border-color: var(--line-strong); color: var(--ink); }
 .lofi .hf-foot__some a:hover { color: var(--white); }
 .lofi .hf-strip--dark { background: var(--surface); color: var(--ink); }
+.lofi .hf-strip--dark h2 { color: var(--ink); }
+.lofi .hf-strip--dark p { color: var(--ink-2-strong); }
+.lofi .hf-strip--dark .b-link { color: var(--ink); }
 .lofi .hf-stack__fig { background: var(--surface); }
 .lofi .hf-pins { background: var(--white); }
 .lofi .hf-pins__pin { box-shadow: 0 0 0 2px var(--white); }
