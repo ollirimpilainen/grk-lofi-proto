@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>GRK lo-fi -prototyyppi</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<link rel="stylesheet" href="css/nav.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+.b-svcmap__pin--sub span{opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s}
+.b-svcmap__pin--sub:hover span,.b-svcmap__pin--sub:focus-visible span{opacity:1;transform:none}
+#miksi-grk .b-why__num{white-space:nowrap}
+#miksi-grk .b-why__grid{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:40px}
+.hf #miksi-grk .b-why__num{font-size:64px;line-height:1}
+#miksi-grk.b-why{position:relative;overflow:hidden}
+#miksi-grk>.vx-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#miksi-grk>.b-inner{position:relative;z-index:1}
+#miksi-grk.b-why{background:#252d32}
+#miksi-grk .b-head .b-body{color:#e9ebec!important}
+#miksi-grk .b-why__label{border-bottom-color:rgba(255,255,255,.22)}
+#miksi-grk .b-why__text{color:#d3d8db}
+#miksi-grk .b-why__title::before{content:"";display:block;width:32px;height:4px;margin-bottom:16px;background:var(--accent)}
+#miksi-grk .b-why__certs{border-top-color:rgba(255,255,255,.22)}
+#miksi-grk .b-why__certs-label{color:var(--accent)}
+#miksi-grk .b-why__cert{display:inline-flex;align-items:center;gap:8px}
+#miksi-grk .b-why__cert::before{content:"";width:8px;height:8px;background:var(--accent)}
+.b-svcmap__index .b-tag{display:inline-flex;align-items:center;gap:6px;padding:0;border:0;border-radius:0;background:none;color:var(--ink-2-strong);font:700 12px/16px var(--font-sans);letter-spacing:.1em;text-transform:uppercase}
+.b-svcmap__index .b-tag::before{content:"";width:6px;height:6px;background:var(--accent)}
+.b-svcmap--leads .b-svcmap__index--row h3{display:block}
+.b-svcmap--leads .b-svcmap__index--row h3 .b-svcmap__no{display:block;margin:6px 0 16px 6px}
+.b-svcmap--leads .b-svcmap__index--row h3 > a{display:block}
+.b-svcmap--leads .b-svcmap__index h3 .b-tag{margin-top:8px}
+.b-svcmap__index li a{display:flex;align-items:baseline;justify-content:space-between;gap:8px;width:100%}
+.b-svcmap__index li a::after{content:"";flex:none;width:7px;height:7px;border:solid var(--accent);border-width:2px 2px 0 0;transform:translateY(-2px) rotate(45deg);margin-right:4px;transition:transform .2s}
+.b-svcmap__index li a:hover::after{transform:translate(3px,-2px) rotate(45deg)}
+.b-svcmap__index li{border-top:1px solid var(--line)}
+.b-svcmap__index li a{padding:8px 0}
+.t3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;height:560px}
+.t3__p{position:relative;min-width:0;overflow:hidden;color:#fff;text-decoration:none}
+.t3__p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.t3__p:hover img,.t3__p:focus-visible img{transform:scale(1.04)}
+.t3__p:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.t3__p::after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(0deg,rgba(22,28,32,.88) 0,rgba(22,28,32,.6) 40%,rgba(22,28,32,0))}
+.hf .t3__p img{filter:none}
+.t3__c{position:absolute;z-index:1;left:28px;right:28px;bottom:28px;display:grid;gap:10px}
+.t3__c h3{margin:0;font:900 28px/33px var(--font-head)}
+.t3__c h3::after{content:"";display:inline-block;width:10px;height:10px;margin-left:12px;border:solid var(--accent);border-width:3px 3px 0 0;transform:translateY(-4px) rotate(45deg)}
+.t3__c p{margin:0;font-size:16px;line-height:24px;color:#d3d8db;max-width:40ch}
+.t3__c>p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:none}
+@media (max-width:900px){.t3{grid-template-columns:1fr;height:auto}.t3__p{height:420px}}
+/* Karttaosio 28.10.: variantti C3 etusivulle */
+.km-c{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:80px;align-items:start}
+.km-c .b-head{margin-bottom:32px}
+.km-c .b-search{max-width:none;margin-bottom:32px}
+.km-layers{margin:0;padding:0;list-style:none}
+.km-layers li+li{margin-top:8px}
+.km-layers button{display:grid;grid-template-columns:20px minmax(0,1fr) auto;align-items:center;gap:16px;width:100%;padding:16px 20px;border:1px solid var(--line-strong);background:#fff;font:inherit;text-align:left;color:var(--ink);cursor:pointer}
+.km-layers button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.km-layers i{width:12px;height:12px;border-radius:50%;background:var(--line-strong)}
+.km-layers [aria-pressed="true"] i{background:var(--accent)}
+.km-layers b{display:block;font-size:16px;line-height:24px}
+.km-layers small{display:block;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.km-layers em{font:900 28px/33px var(--font-head);font-style:normal}
+.km-frame{display:flex;justify-content:center;padding:40px 0}
+.km-map{position:relative;width:560px;aspect-ratio:476/702}
+.km-map svg{display:block;width:100%;height:100%}
+.km-map path{stroke-width:1.2;stroke-linejoin:round}
+.km-pin{position:absolute;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%}
+.km-pin--hq{width:16px;height:16px;margin:-8px 0 0 -8px}
+.km-lab{position:absolute;transform:translate(14px,-50%);padding:2px 6px;font:700 12px/16px var(--font-sans);white-space:nowrap}
+.km-key{display:flex;gap:24px;margin-top:16px;font-size:14px;line-height:20px}
+.km-key span{display:inline-flex;align-items:center;gap:8px}
+.km-key i{width:10px;height:10px;border-radius:50%}.km-key i.hq{width:14px;height:14px}
+.km-span{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.km-span line{stroke:var(--km-span);stroke-width:2;stroke-dasharray:6 6;vector-effect:non-scaling-stroke}
+.km-span__lab{position:absolute;transform:translate(-50%,-50%);padding:4px 10px;background:var(--km-span);color:var(--km-span-tx);font:700 14px/20px var(--font-sans);white-space:nowrap}
+.km-frame{background:#fff;--km-span:var(--surface-dark);--km-span-tx:#fff}
+.km-map path{fill:var(--surface);stroke:#fff;stroke-width:2}
+.km-pin{background:var(--accent);box-shadow:0 0 0 2px #fff}.km-pin--hq{background:var(--surface-dark);box-shadow:0 0 0 2px #fff}
+.km-lab{background:var(--surface-dark);color:#fff}
+.km-key{color:var(--ink-2-strong)}.km-key i{background:var(--accent)}.km-key i.hq{background:var(--surface-dark)}
+/* 28.10.: Miksi GRK vaalean harmaalle, ettei kahta valkoista osiota (kartta) tule peräkkäin */
+.hf.lofi #miksi-grk.b-why{background:var(--surface)}
+/* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
+.hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
+/* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
+.hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
+.hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
+.hf .hf-card h3,.hf .b-step h3,.hf .b-why__title,.hf .hf-work__group,.hf .hf-news h3{font-size:22px;line-height:28px}
+.hf .b-why__num,.hf .why-num,.hf .hf-herostats b{font-size:64px;line-height:1}
+.hf .hf-strip h2{font-weight:900;font-size:40px;line-height:48px}
+.hf .hf-work__group{font-weight:900}
+.hf .b-person__name,.hf .me-contact b{font-size:22px;line-height:28px;font-weight:900}
+.hf .en-co__name{font-size:28px;line-height:33px}
+.hf .b-lead,.hf .lead{font-size:22px;line-height:34px}
+.hf .b-head .b-body{font-size:18px;line-height:28px}
+.hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
+.hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
+.hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
+#miksi-grk.b-why{background:var(--surface-dark)}
+</style>
+</head>
+<body>
+<div class="b-root hf hf-home lofi" style="width: 100%;">
+
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="https://ollirimpilainen.github.io/ksbr-proto/">KSBR ↗</a></span><span class="b-nav__util-r"><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="tyhja.html?s=Media">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Toimialat">Toimialat</a>
+      <a class="b-nav__item" href="tyhja.html?s=Referenssit">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys">Yritys</a>
+      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+  </div>
+</header>
+<section class="b-section ty"><div class="b-inner">
+<ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li aria-current="page" id="ty-crumb"></li></ol>
+<h1 class="b-h1" id="ty-h1"></h1>
+<p class="b-body ty-note">Tätä sivua ei ole vielä tehty prototyyppiin.</p>
+</div></section>
+<style>.ty{min-height:56vh}.ty .b-crumbs{padding:0;margin:0 0 32px}.ty .b-h1{margin:0 0 16px}.ty-note{font-size:18px;line-height:28px;color:var(--ink-2-strong)}</style>
+<script>(function(){var q=new URLSearchParams(location.search),s=q.get('s')||'Sivu',y=q.get('y');
+document.getElementById('ty-h1').textContent=s;document.getElementById('ty-crumb').textContent=s;document.title=s+' · GRK lo-fi -prototyyppi';
+document.querySelectorAll('.b-nav__item,.b-nav__contact').forEach(function(a){a.removeAttribute('aria-current');if(y&&a.textContent.trim()===y)a.setAttribute('aria-current','page')});})();</script>
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="assets/dd89f49e86320a5c7298b6a8f8e527bf.svg" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="tyhja.html?s=P%C3%A4%C3%A4llystys%20ja%20asfaltointi">Päällystys ja asfaltointi</a></li><li><a href="tyhja.html?s=Pohjarakentaminen%20ja%20paalutus">Pohjarakentaminen ja paalutus</a></li><li><a href="tyhja.html?s=Rautatiet%20ja%20raitiotiet">Rautatiet ja raitiotiet</a></li><li><a href="tyhja.html?s=S%C3%A4hk%C3%B6verkot%20ja%20s%C3%A4hk%C3%B6asemat">Sähköverkot ja sähköasemat</a></li><li><a href="tyhja.html?s=Kiertotalous%20ja%20vastaanotto">Kiertotalous ja vastaanotto</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="tyhja.html?s=Toimialat">Toimialat</a></h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="tyhja.html?s=Energia">Energia</a></li><li><a href="tyhja.html?s=Teollisuus">Teollisuus</a></li><li><a href="tyhja.html?s=Kaupungit%20ja%20v%C3%A4yl%C3%A4t">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="tyhja.html?s=Yritys">Yritys</a></h2><ul>
+        <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="tyhja.html?s=Ura%20ja%20ty%C3%B6paikat">Ura ja työpaikat</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Media">Media</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="tyhja.html?s=Tietosuoja">Tietosuoja</a><a href="tyhja.html?s=Ev%C3%A4steasetukset">Evästeasetukset</a><a href="tyhja.html?s=Ilmoituskanava">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="index.html" aria-current="true">FI</a><a href="tyhja.html?s=GRK%20Sverige" lang="sv">SE</a><a href="tyhja.html?s=GRK%20Eesti" lang="et">EE</a><a href="tyhja.html?s=GRK%20Group%20%28English%29" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tämä toiminto ei ole käytössä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+})();
+</script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

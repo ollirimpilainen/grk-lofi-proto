@@ -112,22 +112,23 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </head>
 <body>
 <div class="b-root hf lofi" style="width: 100%;">
-<header class="hd" data-nav="/vastaanottopaikat/">
-  <div class="wrap util" id="util"></div>
-  <div class="wrap bar">
-    <a class="logo" id="logo" href="index.html"></a>
-    <nav class="nav" id="nav" aria-label="Päävalikko"></nav>
-    <button type="button" class="cta" id="cta"></button>
-    <div class="mob">
-      <button type="button" class="ib" aria-label="Haku"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
-      <button type="button" class="mb" id="mb" aria-expanded="false" aria-controls="sheet"></button>
-    </div>
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="https://ollirimpilainen.github.io/ksbr-proto/">KSBR ↗</a></span><span class="b-nav__util-r"><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="tyhja.html?s=Media">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Toimialat">Toimialat</a>
+      <a class="b-nav__item" href="tyhja.html?s=Referenssit">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html" aria-current="page">Vastaanottopaikat</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys">Yritys</a>
+      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
   </div>
-  <div class="panel" id="panel" hidden><div class="wrap pin" id="pin"></div></div>
-  <nav class="sheet" id="sheet" aria-label="Päävalikko" hidden></nav>
 </header>
-
-
 <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="vastaanottopaikat.html">Vastaanottopaikat</a></li><li aria-current="page">Nurmijärvi</li></ol>
 
 <section class="pk-hero">
@@ -136,7 +137,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
     <h1 class="b-h1">Nurmijärvi</h1>
     <p class="pk-state">Auki nyt · sulkeutuu klo <i class="pk-bar" style="width:56px"></i></p>
     <p class="pk-addr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><i class="pk-bar" style="width:300px"></i></p>
-    <div class="pk-acts"><a class="b-btn" href="#">Soita vastaanottoon<i class="pk-bar"></i></a><a class="b-btn b-btn--secondary" href="vastaanottopaikat-nurmijarvi.html">Reittiohje</a></div>
+    <div class="pk-acts"><a class="b-btn" href="#">Soita vastaanottoon<i class="pk-bar"></i></a><a class="b-btn b-btn--secondary" href="#">Reittiohje</a></div>
     <p class="pk-first">Tuotko ensimmäistä kertaa? Katso <a href="#ennen">Ennen kuin tuot</a>.</p>
     <div class="pk-ex"><b>Poikkeus</b><i class="pk-bar"></i><a href="#lahimmat">Lähin vaihtoehto →</a></div>
   </div>
@@ -189,13 +190,13 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <section class="b-section b-section--gray" id="lahimmat"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Lähimmät muut paikat</h2></div>
   <div class="pk-near"><article class="vo-card">
-  <div class="vo-card__top"><a href="vastaanottopaikat-nurmijarvi.html">Mäntsälä</a><span class="vo-km"><i></i>km</span></div>
+  <div class="vo-card__top"><a href="tyhja.html?s=M%C3%A4nts%C3%A4l%C3%A4">Mäntsälä</a><span class="vo-km"><i></i>km</span></div>
   <p class="vo-state">Auki nyt · sulkeutuu klo <i></i></p>
-  <div class="vo-acts"><a class="b-btn" href="#">Soita</a><a class="b-btn b-btn--secondary" href="vastaanottopaikat-nurmijarvi.html">Reittiohje</a></div>
+  <div class="vo-acts"><a class="b-btn" href="#">Soita</a><a class="b-btn b-btn--secondary" href="#">Reittiohje</a></div>
 </article><article class="vo-card">
-  <div class="vo-card__top"><a href="vastaanottopaikat-nurmijarvi.html">Sipoo</a><span class="vo-km"><i></i>km</span></div>
+  <div class="vo-card__top"><a href="tyhja.html?s=Sipoo">Sipoo</a><span class="vo-km"><i></i>km</span></div>
   <p class="vo-state vo-state--closed">Suljettu · avautuu <i></i></p>
-  <div class="vo-acts"><a class="b-btn" href="#">Soita</a><a class="b-btn b-btn--secondary" href="vastaanottopaikat-nurmijarvi.html">Reittiohje</a></div>
+  <div class="vo-acts"><a class="b-btn" href="#">Soita</a><a class="b-btn b-btn--secondary" href="#">Reittiohje</a></div>
 </article></div>
   <a class="b-link" href="vastaanottopaikat.html">Kaikki vastaanottopaikat</a>
 </div></section>
@@ -210,22 +211,22 @@ a{color:#3f4c55}a:hover{color:#252d32}
     </div>
     <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
       <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
-        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="infra.html">Päällystys ja asfaltointi</a></li><li><a href="infra.html">Pohjarakentaminen ja paalutus</a></li><li><a href="infra.html">Rautatiet ja raitiotiet</a></li><li><a href="infra.html">Sähköverkot ja sähköasemat</a></li><li><a href="infra.html">Kiertotalous ja vastaanotto</a></li>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="tyhja.html?s=P%C3%A4%C3%A4llystys%20ja%20asfaltointi">Päällystys ja asfaltointi</a></li><li><a href="tyhja.html?s=Pohjarakentaminen%20ja%20paalutus">Pohjarakentaminen ja paalutus</a></li><li><a href="tyhja.html?s=Rautatiet%20ja%20raitiotiet">Rautatiet ja raitiotiet</a></li><li><a href="tyhja.html?s=S%C3%A4hk%C3%B6verkot%20ja%20s%C3%A4hk%C3%B6asemat">Sähköverkot ja sähköasemat</a></li><li><a href="tyhja.html?s=Kiertotalous%20ja%20vastaanotto">Kiertotalous ja vastaanotto</a></li>
       </ul></div>
-      <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
-        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="datakeskukset.html">Energia</a></li><li><a href="datakeskukset.html">Teollisuus</a></li><li><a href="datakeskukset.html">Kaupungit ja väylät</a></li>
+      <div><h2 class="hf-foot__h"><a href="tyhja.html?s=Toimialat">Toimialat</a></h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="tyhja.html?s=Energia">Energia</a></li><li><a href="tyhja.html?s=Teollisuus">Teollisuus</a></li><li><a href="tyhja.html?s=Kaupungit%20ja%20v%C3%A4yl%C3%A4t">Kaupungit ja väylät</a></li>
       </ul></div>
-      <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
-        <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
+      <div><h2 class="hf-foot__h"><a href="tyhja.html?s=Yritys">Yritys</a></h2><ul>
+        <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="tyhja.html?s=Ura%20ja%20ty%C3%B6paikat">Ura ja työpaikat</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
-        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Media">Media</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
       </ul></div>
     </nav>
   </div>
   <div class="hf-foot__bottom">
-    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="#">Tietosuoja</a><a href="#">Evästeasetukset</a><a href="#">Ilmoituskanava</a></p>
-    <nav class="hf-foot__langs" aria-label="Kieli"><a href="#" aria-current="true">FI</a><a href="#" lang="sv">SE</a><a href="#" lang="et">EE</a><a href="#" lang="en">EN</a></nav>
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="tyhja.html?s=Tietosuoja">Tietosuoja</a><a href="tyhja.html?s=Ev%C3%A4steasetukset">Evästeasetukset</a><a href="tyhja.html?s=Ilmoituskanava">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="index.html" aria-current="true">FI</a><a href="tyhja.html?s=GRK%20Sverige" lang="sv">SE</a><a href="tyhja.html?s=GRK%20Eesti" lang="et">EE</a><a href="tyhja.html?s=GRK%20Group%20%28English%29" lang="en">EN</a></nav>
     <ul class="hf-foot__some">
       <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
       <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
@@ -244,7 +245,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <script>
 (function(){var n=document.querySelector('.proto-note'),t;
 function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
-document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tätä sivua ei ole vielä prototyypissä.')}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tämä toiminto ei ole käytössä prototyypissä.')}
 var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
 document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
 })();
