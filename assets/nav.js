@@ -115,3 +115,39 @@
     piirraMob(); sh.scrollTop = 0;
   });
 })();
+/* Haitarit (Olli 28.10.): avautuvat ja sulkeutuvat animoituna, ja klikattu otsikko pysyy samassa kohdassa näyttöä,
+   vaikka saman ryhmän (details[name]) yläpuolinen kohta sulkeutuu. Natiivi name-ryhmä korvataan data-ryhmällä, jotta
+   sulkeminen voidaan animoida eikä sivu nytkähdä. */
+(function () {
+  'use strict';
+  var vahenna = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var KESTO = vahenna ? 0 : 320, EASE = 'cubic-bezier(.22,1,.36,1)';
+  document.querySelectorAll('details[name]').forEach(function (d) { d.dataset.ryhma = d.getAttribute('name'); d.removeAttribute('name'); });
+  function liiku(d, auki) {
+    var s = d.querySelector(':scope > summary'), h0 = d.offsetHeight;
+    if (auki) d.open = true;
+    var h1 = auki ? d.offsetHeight : s.offsetHeight;
+    if (!KESTO || !d.animate) { if (!auki) d.open = false; return; }
+    d.style.overflow = 'hidden';
+    var a = d.animate({ height: [h0 + 'px', h1 + 'px'] }, { duration: KESTO, easing: EASE });
+    a.onfinish = function () { if (!auki) d.open = false; d.style.overflow = ''; };
+  }
+  document.addEventListener('click', function (e) {
+    var s = e.target.closest('details > summary');
+    if (!s || e.target.closest('a')) return;
+    var d = s.parentElement;
+    e.preventDefault();
+    var y0 = s.getBoundingClientRect().top;
+    if (d.open) { liiku(d, false); }
+    else {
+      if (d.dataset.ryhma) document.querySelectorAll('details[data-ryhma="' + d.dataset.ryhma + '"]').forEach(function (o) { if (o !== d && o.open) liiku(o, false); });
+      liiku(d, true);
+    }
+    var loppu = performance.now() + KESTO + 60;
+    (function pida() {
+      var dy = s.getBoundingClientRect().top - y0;
+      if (Math.abs(dy) > .5) window.scrollBy(0, dy);
+      if (performance.now() < loppu) requestAnimationFrame(pida);
+    })();
+  });
+})();

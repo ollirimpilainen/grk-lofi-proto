@@ -94,9 +94,14 @@ a{color:#3f4c55}a:hover{color:#252d32}
 /* 28.10. kuva tasan sisältöalueen marginaaleihin (laatan näkyvä leveys 1,25–98,69 % kuvasta), vyöhykeväli = hakemiston sarakeväli */
 .b-svcmap--tasa .b-svcmap__fig{width:calc(100cqw * 1.026273);max-width:none;margin-left:calc(100cqw * -.012828)}
 .b-svcmap--tasa{grid-template-columns:minmax(0,1fr)}
-.b-svcmap--tasa .b-svcmap__index--row{width:calc(100cqw * .926664 - 24px);max-width:none;margin-left:calc(100cqw * .060006 - 12px);grid-template-columns:repeat(6,minmax(0,1fr));column-gap:24px}
-.b-svcmap--tasa .b-svcmap__lead::after,.b-svcmap--tasa .b-svcmap__lead i{display:none}
-.b-svcmap--tasa .b-svcmap__lead::before{left:calc(100cqw * .060006 + var(--c) * 100cqw * .154444 - 1px);top:calc(var(--y) / 100 * 100cqw * .444287);height:calc(100cqw * .444287 * (1 - var(--y) / 100) + 71px);border-left-width:2px}
+.b-svcmap--tasa .b-svcmap__index--row{width:calc(100cqw * .926664 - 24px);max-width:none;margin-left:0;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:24px}
+/* 28.10. ilta (Olli): hakemisto tasattu vasempaan reunaan; viivat merkistä sarakkeen palloon GRK:n vinossa kulmassa
+   (pysty – vino 50° vaakatasosta, kuten kirjaston b-svcmap__lead, multisite/hifi.css r. 383 – pysty). Sarakeväli = vyöhykeväli,
+   joten kaikki vinot ovat yhtä pitkiä ja samansuuntaisia. */
+.b-svcmap--tasa .b-svcmap__lead{--fh:calc(100cqw * .444287);--px2:calc(100cqw * .060006 + var(--c) * 100cqw * .154444);--dx:calc(100cqw * .060006 - var(--dot,13px));--dd:calc(var(--dx) * 1.1918);--ye:calc(var(--fh) + 71px - 18px);--ys:calc(var(--ye) - var(--dd))}
+.b-svcmap--tasa .b-svcmap__lead::before{left:calc(var(--px2) - 1px);top:calc(var(--y) / 100 * var(--fh));height:calc(var(--ys) - var(--y) / 100 * var(--fh));border-left-width:2px}
+.b-svcmap--tasa .b-svcmap__lead::after{display:block;left:var(--px2);top:var(--ys);width:calc(var(--dx) * 1.5557);border-top-width:2px;transform-origin:0 0;transform:rotate(130deg)}
+.b-svcmap--tasa .b-svcmap__lead i{display:block;left:calc(var(--px2) - var(--dx) - 1px);top:var(--ye);height:18px;border-left-width:2px}
 }
 /* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
 .hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
@@ -124,6 +129,23 @@ a{color:#3f4c55}a:hover{color:#252d32}
 /* 28.10. neljän kortin otsikot yhdelle riville: H4 22/28 */
 .hf .t3--4 .t3__c h3{font-size:22px;line-height:28px}
 #hero.hf-hero{min-height:720px}
+.t3__c p{min-height:48px} /* 28.10. otsikot samalle riville: kuvaukselle aina kahden rivin tila */
+/* 28.10. (Olli): karttatasot haitareina, avattuna kaikki kohteet. Lähde grk.fi/yhteystiedot ja grk.fi/se/kontaktinformation/vara-kontor (28.10.) */
+.km-acc{border:1px solid var(--line-strong);background:#fff}
+.km-acc--on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.km-acc>summary{display:grid;grid-template-columns:20px minmax(0,1fr) auto 24px;align-items:center;gap:16px;padding:16px 20px;cursor:pointer;list-style:none}
+.km-acc>summary::-webkit-details-marker{display:none}
+.km-acc>summary::after{content:"";justify-self:center;width:8px;height:8px;border:solid var(--ink);border-width:0 2px 2px 0;transform:translateY(-3px) rotate(45deg);transition:transform .2s}
+.km-acc[open]>summary::after{transform:translateY(2px) rotate(225deg)}
+.km-acc--on i{background:var(--accent)}
+.km-acc__b{padding:0 20px 20px 56px}
+.km-acc__h{margin:16px 0 4px;font:700 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2-strong)}
+.km-acc__h:first-child{margin-top:0}
+.km-acc__l{margin:0;padding:0;list-style:none}
+.km-acc__l li{display:grid;grid-template-columns:minmax(0,9fr) minmax(0,11fr);gap:12px;padding:6px 0;border-top:1px solid var(--line);font-size:14px;line-height:20px}
+.km-acc__l b{font-weight:700}
+.km-acc__l span{color:var(--ink-2-strong)}
+.km-acc__p{margin:0 0 12px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
 #miksi-grk.b-why{background:var(--surface-dark)}
 @media (max-width:900px){
   .km-c{grid-template-columns:1fr!important;gap:32px!important}
