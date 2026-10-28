@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Referenssit · GRK lo-fi -prototyyppi</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<link rel="stylesheet" href="css/nav.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+/* Referenssihaku: kopioitu GRK:n Referenssit-lohkosta (rf-*, "voittava blokki refe hakuun", Olli 17.10.) ilman otsikon lukuja */
+.rf-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px 80px;align-items:end;padding:24px 80px 48px}
+.rf-head .b-lead{margin:16px 0 0}
+.rf-ind{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-bottom:24px;border-bottom:1px solid var(--line)}
+.rf-ind span{margin-right:16px;font:700 14px/20px var(--font-sans);color:var(--ink-2-strong)}
+.rf-ind a{display:inline-flex;align-items:center;min-height:56px;padding:0 20px;border-bottom:3px solid transparent;margin-bottom:-1px;font:500 18px/24px var(--font-sans);color:var(--ink);text-decoration:none}
+.rf-ind a:hover{border-bottom-color:var(--line)}
+.rf-ind a[aria-current="true"]{font-weight:700;border-bottom-color:var(--accent)}
+.rf-filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:16px;align-items:end;padding:28px;background:var(--surface-2)}
+.rf-filters .b-field{min-width:0}
+.rf-filters label{color:var(--ink)}
+.rf-search{position:relative}
+.rf-search .b-ico{position:absolute;left:16px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:var(--ink-2-strong)}
+.rf-search .b-input{padding-left:48px}
+.rf-chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px;font-size:14px;line-height:20px}
+.rf-chips span{color:var(--ink-2-strong);margin-right:4px}
+.rf-chips a{padding:5px 12px;border:1px solid var(--line);text-decoration:none;font-weight:500;color:var(--ink)}
+.rf-chips a:hover{border-color:var(--ink)}
+.rf-chips a[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.rf-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:32px 0 24px;padding-top:16px;border-top:1px solid var(--line);font-size:16px;line-height:24px}
+.rf-bar b{font-weight:700}
+.rf-sort{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-2-strong)}
+.rf-sort .b-select{min-height:44px;width:auto;font-size:16px}
+.rf-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.rf-tags{display:flex;flex-wrap:wrap;gap:6px}
+.rf-tag{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;background:var(--surface-2);font-size:12px;line-height:16px;font-weight:500;color:var(--ink)}
+.rf-more{display:grid;justify-items:center;gap:12px;margin-top:48px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.rf-cta{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px 80px;align-items:center}
+.rf-cta .b-btns{justify-content:flex-end}
+@media (max-width:900px){.rf-head,.rf-filters,.rf-cta{grid-template-columns:1fr;padding-left:20px;padding-right:20px}.rf-grid{grid-template-columns:1fr!important}.rf-bar{flex-direction:column;align-items:flex-start}}
+/* UUSI 28.10. rf-filters--laaja: kuusi suodatinta + haku kahdella rivillä (haku 2 saraketta, muut 1). Toimiala on välilehdillä kuten voittajablokissa. */
+.rf-filters--laaja{grid-template-columns:repeat(4,minmax(0,1fr))}
+.rf-filters--laaja>.rf-q{grid-column:span 2}
+@media (max-width:900px){.rf-filters--laaja>.rf-q{grid-column:auto}}
+/* UUSI 28.10. rf-empty: 0 tulosta -tila (Olli 17.10.: vain viesti, kirjoitusasuvinkki ja yksi Ota yhteyttä -painike) */
+.rf-empty{display:grid;justify-items:start;gap:16px;max-width:720px;padding:64px 0 32px}
+.rf-empty h2{margin:0;font:900 28px/33px var(--font-head);color:var(--ink)}
+.rf-empty p{margin:0;font-size:18px;line-height:28px;color:var(--ink-2-strong)}
+.rf-empty .b-btn{margin-top:16px}
+/* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
+.hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
+/* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
+.hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
+.hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
+.hf .hf-card h3,.hf .b-step h3,.hf .b-why__title,.hf .hf-work__group,.hf .hf-news h3{font-size:22px;line-height:28px}
+.hf .b-why__num,.hf .why-num,.hf .hf-herostats b{font-size:64px;line-height:1}
+.hf .hf-strip h2{font-weight:900;font-size:40px;line-height:48px}
+.hf .hf-work__group{font-weight:900}
+.hf .b-person__name,.hf .me-contact b{font-size:22px;line-height:28px;font-weight:900}
+.hf .en-co__name{font-size:28px;line-height:33px}
+.hf .b-lead,.hf .lead{font-size:22px;line-height:34px}
+.hf .b-head .b-body{font-size:18px;line-height:28px}
+.hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
+.hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
+.hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
+@media (max-width:900px){
+  .km-c{grid-template-columns:1fr!important;gap:32px!important}
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr 1fr!important;row-gap:40px}
+  .hf-sm,.hf-mx__b .b-method{grid-template-columns:1fr!important}
+  .t3__c>p{white-space:normal}
+}
+@media (max-width:600px){
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr!important}
+  .b-root :where(h1,h2,h3),.b-root :where(h1,h2,h3) a{hyphens:auto;-webkit-hyphens:auto}
+}
+
+</style>
+</head>
+<body>
+<div class="b-root hf lofi" style="width: 100%;">
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__util-r"><a href="https://ollirimpilainen.github.io/ksbr-proto/">KSBR ↗</a><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="tyhja.html?s=Media">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Toimialat">Toimialat</a>
+      <a class="b-nav__item" href="referenssit.html" aria-current="page">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys">Yritys</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Ura">Ura</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+  </div>
+</header>
+<ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li aria-current="page">Referenssit</li></ol>
+
+<header class="b-pagehead">
+  <div><h1 class="b-h1">Referenssit</h1><p class="b-lead">Tiet, sillat, radat, sähköverkot ja teollisuuden infra Suomessa, Ruotsissa ja Virossa. Rajaa toimialan, palvelun tai toteutusmallin mukaan, tai hae kohteen, paikkakunnan tai tilaajan nimellä.</p></div>
+</header>
+
+<section class="b-section" style="padding-top: 0;"><div class="b-inner">
+  <nav class="rf-ind" aria-label="Toimiala"><span>Toimiala</span><a href="tyhja.html?s=Kaikki" aria-current="true">Kaikki</a><a href="datakeskukset.html">Datakeskukset</a><a href="tyhja.html?s=Energia">Energia</a><a href="tyhja.html?s=Teollisuus">Teollisuus</a><a href="tyhja.html?s=Kaupungit%20ja%20v%C3%A4yl%C3%A4t">Kaupungit ja väylät</a></nav>
+  <form class="rf-filters rf-filters--laaja" role="search" aria-label="Hae ja suodata referenssejä">
+    <div class="b-field rf-q"><label for="rf-q">Hae kohdetta</label><div class="rf-search"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input class="b-input" id="rf-q" type="search" placeholder="Kohde, paikkakunta tai tilaaja"></div></div>
+    <div class="b-field"><label for="rf-p">Palvelu</label><select class="b-select" id="rf-p"><option>Kaikki palvelut</option><option>Infra- ja maarakentaminen</option><option>Päällystys ja asfaltointi</option><option>Pohjarakentaminen ja paalutus</option><option>Rautatiet ja raitiotiet</option><option>Sähköverkot ja sähköasemat</option><option>Kiertotalous ja vastaanotto</option></select></div>
+    <div class="b-field"><label for="rf-tm">Toteutusmalli</label><select class="b-select" id="rf-tm"><option>Kaikki mallit</option><option>Kokonaisurakka</option><option>KVR-urakka</option><option>ST-urakka</option><option>Allianssi</option><option>Projektinjohtourakka</option></select></div>
+    <div class="b-field"><label for="rf-m">Maa</label><select class="b-select" id="rf-m"><option>Kaikki maat</option><option>Suomi</option><option>Ruotsi</option><option>Viro</option></select></div>
+    <div class="b-field"><label for="rf-a">Alue</label><select class="b-select" id="rf-a"><option>Kaikki alueet</option><option>Uusimaa</option><option>Pirkanmaa</option><option>Keski-Suomi</option><option>Pohjois-Pohjanmaa</option><option>Lappi</option><option>Norrbotten</option><option>Harjumaa</option></select></div>
+    <div class="b-field"><label for="rf-at">Asiakastyyppi</label><select class="b-select" id="rf-at"><option>Kaikki asiakkaat</option><option>Yksityinen yritys</option><option>Kunta tai kaupunki</option><option>Valtion virasto tai yhtiö</option><option>Pääurakoitsija</option></select></div>
+    <div class="b-field"><label for="rf-t">Tila</label><select class="b-select" id="rf-t"><option>Kaikki</option><option>Käynnissä</option><option>Valmistuneet</option></select></div>
+  </form>
+  <div class="rf-chips" aria-label="Pikavalinnat"><span>Usein haettu:</span><a href="infra.html#sillat" aria-pressed="false">Sillat</a><a href="tyhja.html?s=Raitiotiet" aria-pressed="false">Raitiotiet</a><a href="tyhja.html?s=V%C3%A4yl%C3%A4virasto" aria-pressed="false">Väylävirasto</a><a href="tyhja.html?s=Helsinki" aria-pressed="false">Helsinki</a><a href="tyhja.html?s=Espoo" aria-pressed="false">Espoo</a></div>
+  <div class="rf-bar" role="status"><span><b>232 kohdetta</b></span><span class="rf-sort"><label for="rf-s">Järjestä</label><select class="b-select" id="rf-s"><option>Uusimmat ensin</option><option>Käynnissä olevat ensin</option><option>Aakkosjärjestys</option></select></span></div>
+  <div class="hf-cards rf-grid"><a class="hf-card" href="tyhja.html?s=Datakeskushanke%20teknologiayritykselle"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Datakeskushankkeen työmaa"><span class="hf-status">Käynnissä</span></div><p class="meta">Suomi · Teknologiayritys · 2026</p><h3>Datakeskushanke teknologiayritykselle</h3><p>Datakeskusalueen valmistelevat työt, massansiirrot ja louhinta sekä logistiikka-alueiden rakentaminen.</p><div class="rf-tags"><span class="rf-tag">Infra- ja maarakentaminen</span><span class="rf-tag">Datakeskukset</span></div></a><a class="hf-card" href="tyhja.html?s=Helsingin%20telakan%20v%C3%A4liportit"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Helsingin telakan väliporttityömaa"></div><p class="meta">Helsinki · Helsingin telakka · 2025–2026</p><h3>Helsingin telakan väliportit</h3><p>Pääurakka: väliporttien betonirakenteet sekä altaan louhinta, lujitus ja injektointi.</p><div class="rf-tags"><span class="rf-tag">Infra- ja maarakentaminen</span><span class="rf-tag">Teollisuus</span></div></a><a class="hf-card" href="tyhja.html?s=M%C3%A4kel%C3%A4nkadun%20peruskorjaus"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mäkelänkadun peruskorjaus ja raitiotie"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki · 2025–2027</p><h3>Mäkelänkadun peruskorjaus</h3><p>Noin 1,3 kilometriä katua: kunnallistekniikka, pinnat, raitiokiskot ja pyörätiet.</p><div class="rf-tags"><span class="rf-tag">Infra- ja maarakentaminen</span><span class="rf-tag">Rautatiet ja raitiotiet</span></div></a><a class="hf-card" href="tyhja.html?s=Vt%203%20Moreenin%20eritasoliittym%C3%A4"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Moreenin eritasoliittymän työmaa valtatiellä 3"><span class="hf-status">Käynnissä</span></div><p class="meta">Hämeenlinna · 2025–2026</p><h3>Vt 3 Moreenin eritasoliittymä</h3><p>Uusi eritasoliittymä yritysalueelle: leikkaukset, penkereet ja sillat sekä levähdysalue.</p><div class="rf-tags"><span class="rf-tag">Infra- ja maarakentaminen</span></div></a><a class="hf-card" href="tyhja.html?s=J%C3%A4tk%C3%A4saaren%20kannaksen%20silta"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jätkäsaaren kannaksen sillan työmaa"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki · Helsingin kaupunki · 2025–2026</p><h3>Jätkäsaaren kannaksen silta</h3><p>Vanhan sillan purku, uusi silta, rantamuurit ja raitiotiesiirrot keskellä kaupunkia. Projektinjohtourakka.</p><div class="rf-tags"><span class="rf-tag">Infra- ja maarakentaminen</span><span class="rf-tag">Sillat</span></div></a><a class="hf-card" href="tyhja.html?s=ratapenger%20ja%20sillat"><div class="ph"><span class="hf-status">Käynnissä</span></div><p class="meta">Harjumaa ja Raplamaa, Viro · Rail Baltic Estonia · 2024–2027</p><h3>Rail Baltica: ratapenger ja sillat</h3><p>Noin 10,5 kilometriä ratapengertä, kolme rautatiesiltaa, vihersilta ja meluesteet.</p><div class="rf-tags"><span class="rf-tag">Rautatiet ja raitiotiet</span></div></a><a class="hf-card" href="tyhja.html?s=Tornionjoen%20silta"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Tornionjoen sillan työmaa Pajalassa"><span class="hf-status">Käynnissä</span></div><p class="meta">Pajala, Ruotsi · Trafikverket · 2024–2027</p><h3>Tornionjoen silta</h3><p>Uusi liittopalkkisilta, väliaikainen silta ja ohitustie. Urakoitsijana GRK Sverige.</p><div class="rf-tags"><span class="rf-tag">Infra- ja maarakentaminen</span><span class="rf-tag">Sillat</span></div></a><a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Hailuodon kiinteän yhteyden silta talvella jäätyneellä merellä"><span class="hf-status">Käynnissä</span></div><p class="meta">Hailuoto · Väylävirasto · 2024–2026</p><h3>Hailuodon kiinteä yhteys</h3><p>Lautan korvaava noin 8,4 kilometrin yhteys: pengertie sekä Huikun ja Riutun sillat.</p><div class="rf-tags"><span class="rf-tag">Infra- ja maarakentaminen</span><span class="rf-tag">Allianssi</span></div></a><a class="hf-card" href="tyhja.html?s=Fortumin%20s%C3%A4hk%C3%B6pohjainen%20kaukol%C3%A4mp%C3%B6laitos"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Fortumin kaukolämpölaitoksen työmaa Espoossa"></div><p class="meta">Espoo · Fortum · 2024–2025</p><h3>Fortumin sähköpohjainen kaukolämpölaitos</h3><p>Pääurakka laitokselle, jossa on 50 megawatin sähkökattila ja lämpöakku.</p><div class="rf-tags"><span class="rf-tag">Infra- ja maarakentaminen</span><span class="rf-tag">Energia</span></div></a><a class="hf-card" href="tyhja.html?s=Kantaverkon%20400%20kV%3An%20kaapeliyhteys"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Kantaverkon 400 kV:n kaapeliyhteyden rakennustöissä"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki ja Vantaa · Fingrid · 2023–2026</p><h3>Kantaverkon 400 kV:n kaapeliyhteys</h3><p>Ensimmäinen näin laaja 400 kilovoltin maakaapeliyhteys Suomessa.</p><div class="rf-tags"><span class="rf-tag">Sähköverkot ja sähköasemat</span><span class="rf-tag">Energia</span></div></a><a class="hf-card" href="tyhja.html?s=Raitiotie%20Kalasatamasta%20Pasilaan"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Raitiotien rakentamista Kalasataman ja Pasilan välillä"></div><p class="meta">Helsinki · Kaupunkiliikenne ja Helsingin kaupunki · 2020–2024</p><h3>Raitiotie Kalasatamasta Pasilaan</h3><p>Raitiotie, kadut, viherkaistat, pohjanvahvistukset ja kunnallistekniikka allianssina.</p><div class="rf-tags"><span class="rf-tag">Rautatiet ja raitiotiet</span><span class="rf-tag">Allianssi</span></div></a><a class="hf-card" href="tyhja.html?s=Mets%C3%A4%20Fibren%20biotuotetehdas"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Metsä Fibren biotuotetehdas"></div><p class="meta">Äänekoski · Metsä Fibre · 2015–2018</p><h3>Metsä Fibren biotuotetehdas</h3><p>Kuusi urakkaa maatöistä paikallavaluihin ja kahteen puukenttään.</p><div class="rf-tags"><span class="rf-tag">Infra- ja maarakentaminen</span><span class="rf-tag">Teollisuus</span></div></a></div>
+  <div class="rf-more"><button class="b-btn b-btn--secondary" type="button">Näytä lisää kohteita</button><span>Näytetään 12 / 232</span></div>
+</div></section>
+
+<section class="b-section b-section--gray"><div class="b-inner rf-cta">
+  <div><h2 class="b-h2">Samanlainen hanke suunnitteilla?</h2><p class="b-lead" style="margin-top: 16px;">Kerro hankkeesta, niin palvelun asiantuntija kertoo, missä vastaavissa kohteissa olemme olleet mukana. Puolivalmiskin suunnitelma käy.</p></div>
+  <div class="b-btns"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="b-btn b-btn--secondary" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+</div></section>
+
+<section class="hf-edge hf-edge--dark" id="toihin">
+  <div class="tx">
+    <h2 class="hf-h2">Töihin GRK:lle</h2>
+    <p class="hf-lead">Infra on kasvuala, jossa työllä on merkitys. Meillä saa vastuuta niin paljon kuin uskaltaa ottaa.</p>
+    <div class="acts acts--stack"><a class="b-btn b-btn--secondary" href="avoimet-tyopaikat.html">Avoimet työpaikat</a><ul class="hf-linklist"><li><a href="tyhja.html?s=Harjoittelu%20ja%20kes%C3%A4ty%C3%B6">Harjoittelu ja kesätyö</a></li><li><a href="tyhja.html?s=Ty%C3%B6%20GRK%3Alla">Työ GRK:lla</a></li></ul></div>
+  </div>
+  <div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n asfalttityöntekijät päällystystyössä"></div>
+</section>
+
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="assets/dd89f49e86320a5c7298b6a8f8e527bf.svg" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="tyhja.html?s=P%C3%A4%C3%A4llystys%20ja%20asfaltointi">Päällystys ja asfaltointi</a></li><li><a href="tyhja.html?s=Pohjarakentaminen%20ja%20paalutus">Pohjarakentaminen ja paalutus</a></li><li><a href="tyhja.html?s=Rautatiet%20ja%20raitiotiet">Rautatiet ja raitiotiet</a></li><li><a href="tyhja.html?s=S%C3%A4hk%C3%B6verkot%20ja%20s%C3%A4hk%C3%B6asemat">Sähköverkot ja sähköasemat</a></li><li><a href="tyhja.html?s=Kiertotalous%20ja%20vastaanotto">Kiertotalous ja vastaanotto</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h">Toimialat</h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="tyhja.html?s=Energia">Energia</a></li><li><a href="tyhja.html?s=Teollisuus">Teollisuus</a></li><li><a href="tyhja.html?s=Kaupungit%20ja%20v%C3%A4yl%C3%A4t">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h">Yritys</h2><ul>
+        <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="tyhja.html?s=Ura%20ja%20ty%C3%B6paikat">Ura ja työpaikat</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="tyhja.html?s=Tietosuoja">Tietosuoja</a><a href="tyhja.html?s=Ev%C3%A4steasetukset">Evästeasetukset</a><a href="tyhja.html?s=Ilmoituskanava">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="index.html" aria-current="true">FI</a><a href="tyhja.html?s=GRK%20Sverige" lang="sv">SE</a><a href="tyhja.html?s=GRK%20Eesti" lang="et">EE</a><a href="tyhja.html?s=GRK%20Group%20%28English%29" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tämä toiminto ei ole käytössä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+})();
+</script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

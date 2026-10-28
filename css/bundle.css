@@ -2017,3 +2017,8 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 
 /* 28.10. (Olli): Töihin-lohkon kuvapaikka eri harmaalla kuin vaaleat osiot, jotta edellinen harmaa lohko ja Töihin erottuvat */
 .lofi .hf-edge--dark .ph{background-color:var(--on-dark-line)}
+
+/* 28.10. (Olli): hf-asiden 2x2-ruudukossa ei yläreunan hiusviivaa; ensimmäisen rivin otsikot osion H2:n yläreunan tasolle */
+.hf-aside{align-items:start}
+.hf-aside .b-steps>.b-step:nth-child(-n+2){border-top:0;padding-top:0}
+@media (max-width:900px){.hf-aside .b-steps>.b-step:nth-child(2){border-top:1px solid var(--line);padding-top:var(--space-5)}}
