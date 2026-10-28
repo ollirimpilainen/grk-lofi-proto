@@ -7,6 +7,7 @@
 <title>Laatu ja turvallisuus · GRK lo-fi -prototyyppi</title>
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/bundle.css">
+<link rel="stylesheet" href="css/nav.css">
 <style>
 @font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
 @font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
@@ -97,23 +98,22 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </head>
 <body>
 <div class="b-root hf lofi" style="width: 100%;">
-
-<header class="b-nav">
-  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
-  <div class="b-nav__bar">
-    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
-    <nav class="b-nav__menu" aria-label="Päävalikko">
-      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
-      <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
-      <a class="b-nav__item" href="#">Referenssit</a>
-      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
-      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
-      <a class="b-nav__item b-nav__item--menu" href="#" aria-current="page">Yritys</a>
-      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
-    </nav>
-    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+<header class="hd" data-nav="/yritys/">
+  <div class="wrap util" id="util"></div>
+  <div class="wrap bar">
+    <a class="logo" id="logo" href="index.html"></a>
+    <nav class="nav" id="nav" aria-label="Päävalikko"></nav>
+    <button type="button" class="cta" id="cta"></button>
+    <div class="mob">
+      <button type="button" class="ib" aria-label="Haku"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+      <button type="button" class="mb" id="mb" aria-expanded="false" aria-controls="sheet"></button>
+    </div>
   </div>
+  <div class="panel" id="panel" hidden><div class="wrap pin" id="pin"></div></div>
+  <nav class="sheet" id="sheet" aria-label="Päävalikko" hidden></nav>
 </header>
+
+
 <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="#">Yritys</a></li><li aria-current="page">Laatu ja turvallisuus</li></ol>
 
 <header class="lt-head">
@@ -187,16 +187,16 @@ a{color:#3f4c55}a:hover{color:#252d32}
     </div>
     <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
       <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
-        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="#">Päällystys ja asfaltointi</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li><li><a href="#">Rautatiet ja raitiotiet</a></li><li><a href="#">Sähköverkot ja sähköasemat</a></li><li><a href="#">Kiertotalous ja vastaanotto</a></li>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="infra.html">Päällystys ja asfaltointi</a></li><li><a href="infra.html">Pohjarakentaminen ja paalutus</a></li><li><a href="infra.html">Rautatiet ja raitiotiet</a></li><li><a href="infra.html">Sähköverkot ja sähköasemat</a></li><li><a href="infra.html">Kiertotalous ja vastaanotto</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
-        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="#">Energia</a></li><li><a href="#">Teollisuus</a></li><li><a href="#">Kaupungit ja väylät</a></li>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="datakeskukset.html">Energia</a></li><li><a href="datakeskukset.html">Teollisuus</a></li><li><a href="datakeskukset.html">Kaupungit ja väylät</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
         <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
-        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="#">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
       </ul></div>
     </nav>
   </div>
@@ -226,5 +226,6 @@ var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.close
 document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
 })();
 </script>
+<script src="assets/nav.js"></script>
 </body>
 </html>

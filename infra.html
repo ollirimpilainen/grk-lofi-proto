@@ -7,6 +7,7 @@
 <title>Infra- ja maarakentaminen · GRK lo-fi -prototyyppi</title>
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/bundle.css">
+<link rel="stylesheet" href="css/nav.css">
 <style>
 @font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
 @font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
@@ -61,24 +62,23 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </head>
 <body>
 <div class="b-root hf lofi" style="width: 100%;">
-
-
-<header class="b-nav">
-  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
-  <div class="b-nav__bar">
-    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
-    <nav class="b-nav__menu" aria-label="Päävalikko">
-      <a class="b-nav__item b-nav__item--menu" href="palvelut.html" aria-current="page">Palvelut</a>
-      <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
-      <a class="b-nav__item" href="#">Referenssit</a>
-      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
-      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
-      <a class="b-nav__item b-nav__item--menu" href="#">Yritys</a>
-      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
-    </nav>
-    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+<header class="hd" data-nav="/palvelut/">
+  <div class="wrap util" id="util"></div>
+  <div class="wrap bar">
+    <a class="logo" id="logo" href="index.html"></a>
+    <nav class="nav" id="nav" aria-label="Päävalikko"></nav>
+    <button type="button" class="cta" id="cta"></button>
+    <div class="mob">
+      <button type="button" class="ib" aria-label="Haku"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+      <button type="button" class="mb" id="mb" aria-expanded="false" aria-controls="sheet"></button>
+    </div>
   </div>
+  <div class="panel" id="panel" hidden><div class="wrap pin" id="pin"></div></div>
+  <nav class="sheet" id="sheet" aria-label="Päävalikko" hidden></nav>
 </header>
+
+
+
 
 <section class="hf-hero hf-hero--page">
   <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="palvelut.html">Palvelut</a></li><li aria-current="page">Infra- ja maarakentaminen</li></ol>
@@ -100,7 +100,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
       <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/4a6a055ce27224090d09a987e2ffc339.svg" alt=""></span><span class="hf-mx__t"><h3>Tie- ja katurakentaminen</h3><p>Kadut, tiet ja liittymät sekä niiden perusparannus, myös liikenteen keskellä.</p></span><span class="hf-mx__tags"><span>Kadut ja tiet</span></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
       <div class="hf-mx__b"><article class="b-method hf-sm" data-palvelu="tie" data-tyyppi="urakka">
         <div class="hf-sm__l"><dl class="b-method__rows"><div><dt>Mitä saa aikaan</dt><dd>Kadut, tiet ja liittymät sekä niiden perusparannus, myös liikenteen keskellä.</dd></div><div><dt>Sopii, kun</dt><dd><span class="hf-sc__tbd" aria-label="Täydennetään"></span><br><span class="hf-sc__tbd" aria-label="Täydennetään"></span></dd></div></dl></div>
-        <figure class="b-method__fig hf-sm__fig"><a class="hf-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mäkelänkatu ja raitiotie"></div><p class="meta">Helsinki · 10/2025–10/2027</p><h3>Tie- ja katurakentaminen · Mäkelänkadun peruskorjaus</h3><p>Noin 1,3 kilometriä katua: kunnallistekniikka, pinnat, raitiokiskot ja pyörätiet.</p><span class="b-link b-link--sm">Lue kohteesta</span></a><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Jaakko Mäkelä</b><span>Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</span><span class="me-contact__ch"><a href="tel:+358503775152">+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi">jaakko.makela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
+        <figure class="b-method__fig hf-sm__fig"><a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mäkelänkatu ja raitiotie"></div><p class="meta">Helsinki · 10/2025–10/2027</p><h3>Tie- ja katurakentaminen · Mäkelänkadun peruskorjaus</h3><p>Noin 1,3 kilometriä katua: kunnallistekniikka, pinnat, raitiokiskot ja pyörätiet.</p><span class="b-link b-link--sm">Lue kohteesta</span></a><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Jaakko Mäkelä</b><span>Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</span><span class="me-contact__ch"><a href="tel:+358503775152">+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi">jaakko.makela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
       </article></div>
     </details>
     <details class="hf-mx__i" name="tyolaji" id="maa">
@@ -114,7 +114,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
       <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/34f5dfbd9e6aff74a01fca81b66ca615.svg" alt=""></span><span class="hf-mx__t"><h3>Kunnallistekniikka</h3><p>Vesi-, viemäri- ja hulevesiverkostot sekä kaapelireitit alueen rakentamisen yhteydessä.</p></span><span class="hf-mx__tags"><span>Uudet alueet</span></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
       <div class="hf-mx__b"><article class="b-method hf-sm" data-palvelu="kunnallis" data-tyyppi="urakka">
         <div class="hf-sm__l"><dl class="b-method__rows"><div><dt>Mitä saa aikaan</dt><dd>Vesi-, viemäri- ja hulevesiverkostot sekä kaapelireitit alueen rakentamisen yhteydessä.</dd></div><div><dt>Sopii, kun</dt><dd><span class="hf-sc__tbd" aria-label="Täydennetään"></span><br><span class="hf-sc__tbd" aria-label="Täydennetään"></span></dd></div></dl></div>
-        <figure class="b-method__fig hf-sm__fig"><a class="hf-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jätkäsaaren kannaksen sillan työmaa"></div><p class="meta">Helsinki · Helsingin kaupunki · 01/2025–12/2026</p><h3>Kunnallistekniikka · Jätkäsaaren kannas</h3><p>Vanhan sillan purku, uusi silta, rantamuurit, kunnallistekniikka ja raitiotiesiirrot keskellä kaupunkia.</p><span class="b-link b-link--sm">Lue kohteesta</span></a><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Jaakko Mäkelä</b><span>Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</span><span class="me-contact__ch"><a href="tel:+358503775152">+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi">jaakko.makela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
+        <figure class="b-method__fig hf-sm__fig"><a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jätkäsaaren kannaksen sillan työmaa"></div><p class="meta">Helsinki · Helsingin kaupunki · 01/2025–12/2026</p><h3>Kunnallistekniikka · Jätkäsaaren kannas</h3><p>Vanhan sillan purku, uusi silta, rantamuurit, kunnallistekniikka ja raitiotiesiirrot keskellä kaupunkia.</p><span class="b-link b-link--sm">Lue kohteesta</span></a><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Jaakko Mäkelä</b><span>Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</span><span class="me-contact__ch"><a href="tel:+358503775152">+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi">jaakko.makela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
       </article></div>
     </details>
     <details class="hf-mx__i" name="tyolaji" id="viher">
@@ -136,7 +136,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
           <div><dt>Tilaajat</dt><dd>Valtio ja Väylävirasto, ELY-keskukset, teollisuus ja yksityistiekunnat.</dd></div>
           <div><dt>Muut referenssit</dt><dd><ul><li>Saimaan kanavan ratasillat · 2018–2020</li><li>Matinkartanon kiertoliittymä ja silta, Vuoden silta 2019 · 2017–2018</li></ul></dd></div>
         </dl></div>
-        <figure class="b-method__fig hf-sm__fig"><a class="hf-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Vekarasalmen silta"></div><p class="meta">2018–2019 · noin 18,4 M€</p><h3>Sillat · Vekarasalmen silta</h3><p>Teräs-betoniliittorakenteinen silta salmen yli: pituus 622 metriä, suurin jänneväli 120 metriä.</p><span class="b-link b-link--sm">Lue kohteesta</span></a><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Roope Korpela</b><span>Työpäällikkö</span><span class="me-contact__ch"><a href="tel:+358504472914">+358 50 447 2914</a><a href="mailto:roope.korpela@grk.fi">roope.korpela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
+        <figure class="b-method__fig hf-sm__fig"><a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Vekarasalmen silta"></div><p class="meta">2018–2019 · noin 18,4 M€</p><h3>Sillat · Vekarasalmen silta</h3><p>Teräs-betoniliittorakenteinen silta salmen yli: pituus 622 metriä, suurin jänneväli 120 metriä.</p><span class="b-link b-link--sm">Lue kohteesta</span></a><div class="me-contact"><p>Kysy asiantuntijalta</p><b>Roope Korpela</b><span>Työpäällikkö</span><span class="me-contact__ch"><a href="tel:+358504472914">+358 50 447 2914</a><a href="mailto:roope.korpela@grk.fi">roope.korpela@grk.fi</a></span><a class="b-link b-link--sm hf-ask" href="#yhteyshenkilot">Ota yhteyttä</a></div></figure>
       </article></div>
     </details>
     <details class="hf-mx__i" name="tyolaji" id="louhinta">
@@ -166,7 +166,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
   </ol>
 </div></section>
 
-<section class="hf-strip hf-strip--dark" id="suunnittelu"><div><h2>Suunnitelma vielä kesken? Soita meille</h2><p>Arvioimme rakennettavuuden, menetelmät ja kustannukset jo ennen kuin suunnitelma lyödään lukkoon. Puolivalmiskin suunnitelma käy.</p></div><div class="acts"><a class="b-btn" href="#">Soita asiantuntijalle</a></div></section>
+<section class="hf-strip hf-strip--dark" id="suunnittelu"><div><h2>Suunnitelma vielä kesken? Soita meille</h2><p>Arvioimme rakennettavuuden, menetelmät ja kustannukset jo ennen kuin suunnitelma lyödään lukkoon. Puolivalmiskin suunnitelma käy.</p></div><div class="acts"><a class="b-btn" href="yhteystiedot.html">Soita asiantuntijalle</a></div></section>
 
 <section class="b-section" id="toteutusmallit"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Toteutusmallit</h2><p class="b-body">Sovimme toteutusmallin hankkeen mukaan. Mitä aiemmin olemme mukana, sitä enemmän voimme vaikuttaa ratkaisuihin ja kustannuksiin.</p></div>
@@ -188,9 +188,9 @@ a{color:#3f4c55}a:hover{color:#252d32}
   <div class="b-head"><h2 class="b-h2">Vaativat kohteet</h2></div>
   <a class="hf-feature" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Hailuodon kiinteän yhteyden silta talvella jäätyneellä merellä"><span class="hf-status">Käynnissä</span></div><div class="hf-feature__tx"><span class="hf-feature__tag">Sillat ja pengertiet</span><p class="meta">Hailuoto · Väylävirasto · 05/2024–12/2026 · Allianssi</p><h3>Hailuodon kiinteä yhteys</h3><dl><div><dt>Haaste</dt><dd>Lauttayhteys korvataan kiinteällä yhteydellä meren yli.</dd></div><div><dt>Ratkaisu</dt><dd>Pengertie sekä Huikun ja Riutun sillat allianssina Väyläviraston, GRK:n, AFRY:n ja A-Insinöörien kanssa.</dd></div><div><dt>Lopputulos</dt><dd>8,4 kilometriä kiinteää yhteyttä ja kaksi siltaa.</dd></div></dl><span class="b-link">Lue kohteesta</span></div></a>
   <div class="hf-cards">
-    <a class="hf-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Tornionjoen sillan työmaa Pajalassa"><span class="hf-status">Käynnissä</span></div><p class="meta">Pajala, Ruotsi · Trafikverket · 06/2024–08/2027</p><h3>Tornionjoen silta</h3><p>Uusi liittopalkkisilta, väliaikainen silta ja ohitustie. Urakoitsijana GRK Sverige.</p><span class="b-link b-link--sm">Lue kohteesta</span></a>
-    <a class="hf-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jätkäsaaren kannaksen sillan työmaa"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki · Helsingin kaupunki · 01/2025–12/2026</p><h3>Jätkäsaaren kannaksen silta</h3><p>Vanhan sillan purku, uusi silta, rantamuurit, kunnallistekniikka ja raitiotiesiirrot keskellä kaupunkia.</p><span class="b-link b-link--sm">Lue kohteesta</span></a>
-    <a class="hf-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mäkelänkatu ja raitiotie"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki · 10/2025–10/2027</p><h3>Mäkelänkadun peruskorjaus</h3><p>Noin 1,3 kilometriä katua: kunnallistekniikka, pinnat, raitiokiskot ja pyörätiet.</p><span class="b-link b-link--sm">Lue kohteesta</span></a>
+    <a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Tornionjoen sillan työmaa Pajalassa"><span class="hf-status">Käynnissä</span></div><p class="meta">Pajala, Ruotsi · Trafikverket · 06/2024–08/2027</p><h3>Tornionjoen silta</h3><p>Uusi liittopalkkisilta, väliaikainen silta ja ohitustie. Urakoitsijana GRK Sverige.</p><span class="b-link b-link--sm">Lue kohteesta</span></a>
+    <a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jätkäsaaren kannaksen sillan työmaa"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki · Helsingin kaupunki · 01/2025–12/2026</p><h3>Jätkäsaaren kannaksen silta</h3><p>Vanhan sillan purku, uusi silta, rantamuurit, kunnallistekniikka ja raitiotiesiirrot keskellä kaupunkia.</p><span class="b-link b-link--sm">Lue kohteesta</span></a>
+    <a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mäkelänkatu ja raitiotie"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki · 10/2025–10/2027</p><h3>Mäkelänkadun peruskorjaus</h3><p>Noin 1,3 kilometriä katua: kunnallistekniikka, pinnat, raitiokiskot ja pyörätiet.</p><span class="b-link b-link--sm">Lue kohteesta</span></a>
   </div>
   <p class="b-linkrow"><a class="b-link" href="#">Kaikki infrakohteet Referensseissä</a></p>
 </div></section>
@@ -199,7 +199,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 <section class="b-section b-section--gray" id="toimialat"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Datakeskus-, energia- tai teollisuushanke?</h2><p class="b-body">Katso kokonaistoteutus toimialoittain.</p></div>
-  <div class="t3"><a class="t3__p" href="datakeskukset.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Datakeskushankkeen työmaa"><div class="t3__c"><h3>Datakeskukset</h3><p>Tontin esirakentamisesta verkkoliityntään.</p></div></a><a class="t3__p" href="#"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Energiapuiston maisemaa"><div class="t3__c"><h3>Energia</h3><p>Tuuli- ja aurinkopuistot, akut ja sähköverkot.</p></div></a><a class="t3__p" href="#"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Helsingin telakan väliporttityömaa"><div class="t3__c"><h3>Teollisuus</h3><p>Tehtaat, sähköistys, raiteet ja satamat.</p></div></a></div>
+  <div class="t3"><a class="t3__p" href="datakeskukset.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Datakeskushankkeen työmaa"><div class="t3__c"><h3>Datakeskukset</h3><p>Tontin esirakentamisesta verkkoliityntään.</p></div></a><a class="t3__p" href="datakeskukset.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Energiapuiston maisemaa"><div class="t3__c"><h3>Energia</h3><p>Tuuli- ja aurinkopuistot, akut ja sähköverkot.</p></div></a><a class="t3__p" href="datakeskukset.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Helsingin telakan väliporttityömaa"><div class="t3__c"><h3>Teollisuus</h3><p>Tehtaat, sähköistys, raiteet ja satamat.</p></div></a></div>
 </div></section>
 
 <section class="b-section" id="usein-kysytyt"><div class="b-inner b-faq">
@@ -245,7 +245,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 <section class="b-section" id="samaan-hankkeeseen"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Samaan hankkeeseen</h2></div>
-  <div class="sh-list"><a class="sh-row" href="#"><img src="assets/e39f285fc472e8290f0df3294d899fd2.svg" alt="" width="64" height="64"><b>Päällystys ja asfaltointi</b><span>Asfaltointi ja päällystysurakat omilta asfalttiasemilta.</span><i aria-hidden="true"></i></a><a class="sh-row" href="#"><img src="assets/4a7ed9116290cd1984fa22826d4444ba.svg" alt="" width="64" height="64"><b>Pohjarakentaminen ja paalutus</b><span>Porapaalutus, stabilointi ja kaivantojen tuennat vaativille pohjille.</span><i aria-hidden="true"></i></a><a class="sh-row" href="#"><img src="assets/f984903e822f9f98877f2bd0f5e00c9c.svg" alt="" width="64" height="64"><b>Sähköverkot ja sähköasemat</b><span>Kaapeloinnit, sähköasemat ja liittymät.</span><i aria-hidden="true"></i></a><a class="sh-row" href="#"><img src="assets/e0235ec8a773e97fbce353cd9d2c975d.svg" alt="" width="64" height="64"><b>Kiertotalous ja vastaanotto</b><span>Ylijäämämaiden ja louheen vastaanotto sekä kiertomateriaalit.</span><i aria-hidden="true"></i></a><a class="sh-row" href="#"><img src="assets/7edcf350f74dddcc72719f2156a33481.svg" alt="" width="64" height="64"><b>Rautatiet ja raitiotiet</b><span>Raiteet teollisuusalueille ja kaupunkeihin.</span><i aria-hidden="true"></i></a></div>
+  <div class="sh-list"><a class="sh-row" href="infra.html"><img src="assets/e39f285fc472e8290f0df3294d899fd2.svg" alt="" width="64" height="64"><b>Päällystys ja asfaltointi</b><span>Asfaltointi ja päällystysurakat omilta asfalttiasemilta.</span><i aria-hidden="true"></i></a><a class="sh-row" href="infra.html"><img src="assets/4a7ed9116290cd1984fa22826d4444ba.svg" alt="" width="64" height="64"><b>Pohjarakentaminen ja paalutus</b><span>Porapaalutus, stabilointi ja kaivantojen tuennat vaativille pohjille.</span><i aria-hidden="true"></i></a><a class="sh-row" href="infra.html"><img src="assets/f984903e822f9f98877f2bd0f5e00c9c.svg" alt="" width="64" height="64"><b>Sähköverkot ja sähköasemat</b><span>Kaapeloinnit, sähköasemat ja liittymät.</span><i aria-hidden="true"></i></a><a class="sh-row" href="infra.html"><img src="assets/e0235ec8a773e97fbce353cd9d2c975d.svg" alt="" width="64" height="64"><b>Kiertotalous ja vastaanotto</b><span>Ylijäämämaiden ja louheen vastaanotto sekä kiertomateriaalit.</span><i aria-hidden="true"></i></a><a class="sh-row" href="infra.html"><img src="assets/7edcf350f74dddcc72719f2156a33481.svg" alt="" width="64" height="64"><b>Rautatiet ja raitiotiet</b><span>Raiteet teollisuusalueille ja kaupunkeihin.</span><i aria-hidden="true"></i></a></div>
 </div></section>
 
 <footer class="b-footer hf-foot">
@@ -258,16 +258,16 @@ a{color:#3f4c55}a:hover{color:#252d32}
     </div>
     <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
       <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
-        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="#">Päällystys ja asfaltointi</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li><li><a href="#">Rautatiet ja raitiotiet</a></li><li><a href="#">Sähköverkot ja sähköasemat</a></li><li><a href="#">Kiertotalous ja vastaanotto</a></li>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="infra.html">Päällystys ja asfaltointi</a></li><li><a href="infra.html">Pohjarakentaminen ja paalutus</a></li><li><a href="infra.html">Rautatiet ja raitiotiet</a></li><li><a href="infra.html">Sähköverkot ja sähköasemat</a></li><li><a href="infra.html">Kiertotalous ja vastaanotto</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
-        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="#">Energia</a></li><li><a href="#">Teollisuus</a></li><li><a href="#">Kaupungit ja väylät</a></li>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="datakeskukset.html">Energia</a></li><li><a href="datakeskukset.html">Teollisuus</a></li><li><a href="datakeskukset.html">Kaupungit ja väylät</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
         <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
-        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="#">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
       </ul></div>
     </nav>
   </div>
@@ -297,5 +297,6 @@ var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.close
 document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
 })();
 </script>
+<script src="assets/nav.js"></script>
 </body>
 </html>

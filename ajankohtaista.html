@@ -7,6 +7,7 @@
 <title>Ajankohtaista · GRK lo-fi -prototyyppi</title>
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/bundle.css">
+<link rel="stylesheet" href="css/nav.css">
 <style>
 @font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
 @font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
@@ -94,23 +95,22 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </head>
 <body>
 <div class="b-root hf lofi" style="width: 100%;">
-
-<header class="b-nav">
-  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
-  <div class="b-nav__bar">
-    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
-    <nav class="b-nav__menu" aria-label="Päävalikko">
-      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
-      <a class="b-nav__item b-nav__item--menu" href="#">Toimialat</a>
-      <a class="b-nav__item" href="#">Referenssit</a>
-      <a class="b-nav__item" href="ajankohtaista.html" aria-current="page">Ajankohtaista</a>
-      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
-      <a class="b-nav__item b-nav__item--menu" href="#">Yritys</a>
-      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
-    </nav>
-    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+<header class="hd" data-nav="/ajankohtaista/">
+  <div class="wrap util" id="util"></div>
+  <div class="wrap bar">
+    <a class="logo" id="logo" href="index.html"></a>
+    <nav class="nav" id="nav" aria-label="Päävalikko"></nav>
+    <button type="button" class="cta" id="cta"></button>
+    <div class="mob">
+      <button type="button" class="ib" aria-label="Haku"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+      <button type="button" class="mb" id="mb" aria-expanded="false" aria-controls="sheet"></button>
+    </div>
   </div>
+  <div class="panel" id="panel" hidden><div class="wrap pin" id="pin"></div></div>
+  <nav class="sheet" id="sheet" aria-label="Päävalikko" hidden></nav>
 </header>
+
+
 <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li aria-current="page">Ajankohtaista</li></ol>
 
 <header class="aj-head">
@@ -137,20 +137,20 @@ a{color:#3f4c55}a:hover{color:#252d32}
       <p class="aj-meta"><time datetime="2026-10-14">14.10.2026</time><span>Uutinen</span><em>Uusin</em></p>
       <h2><a href="#">GRK:lle lisätilaus Turun raitiotien arkeologisista töistä</a></h2>
       <p>Arkeologiset työt siirtyvät osaksi Turun Raitiotieallianssin hanketta. Raitiotiehankkeen kokonaiskustannusarvio ei muutu.</p>
-      <div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Turun raitiotie</a><a class="aj-tag" href="#">Rautatiet ja raitiotiet</a></div>
+      <div class="aj-tags"><a class="aj-tag aj-tag--ref" href="referenssi-hailuoto.html">Hanke: Turun raitiotie</a><a class="aj-tag" href="infra.html">Rautatiet ja raitiotiet</a></div>
       <a class="b-link" href="#">Lue uutinen</a>
     </div>
   </article>
 
   <ol class="aj-list">
-    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-10-01">1.10.2026</time><span>Tiedote</span></p><h3><a href="#">GRK Infra Oyj on saattanut päätökseen Pirkan Rakentajapalvelu Oy:n hankinnan ja päättänyt suunnatusta osakeannista myyjälle</a></h3><p>Yrityskauppa vahvistaa GRK:n osaamista erikoispohjarakentamisessa.</p><div class="aj-tags"><a class="aj-tag" href="#">Pohjarakentaminen ja paalutus</a></div></div></li>
-    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-30">30.9.2026</time><span>Tiedote</span></p><h3><a href="#">GRK on valittu toteuttamaan Kehä I Keilaniemi ja Länsiväylän sillat -hanke Espoossa – arvo GRK:lle noin 27 miljoonaa euroa</a></h3><p>Uudet rampit ja sillat pääkaupunkiseudun vilkkaimmille väylille, tilaajana Väylävirasto.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Kehä I Keilaniemi</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div></li>
-    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-28">28.9.2026</time><span>Tiedote</span></p><h3><a href="#">Turun raitiotien toteutusvaiheen allianssisopimus allekirjoitettu – ensimmäisen toteutusvaiheen arvo GRK:lle noin 12 miljoonaa euroa</a></h3><p>Turun Raitiotieallianssi allekirjoitti sopimuksen raitiotien toteutuksesta.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Turun raitiotie</a><a class="aj-tag" href="#">Rautatiet ja raitiotiet</a></div></div></li>
+    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-10-01">1.10.2026</time><span>Tiedote</span></p><h3><a href="#">GRK Infra Oyj on saattanut päätökseen Pirkan Rakentajapalvelu Oy:n hankinnan ja päättänyt suunnatusta osakeannista myyjälle</a></h3><p>Yrityskauppa vahvistaa GRK:n osaamista erikoispohjarakentamisessa.</p><div class="aj-tags"><a class="aj-tag" href="infra.html">Pohjarakentaminen ja paalutus</a></div></div></li>
+    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-30">30.9.2026</time><span>Tiedote</span></p><h3><a href="#">GRK on valittu toteuttamaan Kehä I Keilaniemi ja Länsiväylän sillat -hanke Espoossa – arvo GRK:lle noin 27 miljoonaa euroa</a></h3><p>Uudet rampit ja sillat pääkaupunkiseudun vilkkaimmille väylille, tilaajana Väylävirasto.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="referenssi-hailuoto.html">Hanke: Kehä I Keilaniemi</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div></li>
+    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-28">28.9.2026</time><span>Tiedote</span></p><h3><a href="#">Turun raitiotien toteutusvaiheen allianssisopimus allekirjoitettu – ensimmäisen toteutusvaiheen arvo GRK:lle noin 12 miljoonaa euroa</a></h3><p>Turun Raitiotieallianssi allekirjoitti sopimuksen raitiotien toteutuksesta.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="referenssi-hailuoto.html">Hanke: Turun raitiotie</a><a class="aj-tag" href="infra.html">Rautatiet ja raitiotiet</a></div></div></li>
     <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-28">28.9.2026</time><span>Uutinen</span></p><h3><a href="referenssi-hailuoto.html">Hailuodon kiinteä yhteys – GRK toteutti yhden Suomen merkittävimmistä liikennehankkeista</a></h3><p>Lauttavuoroista riippuvainen matka taittuu nyt autolla noin kahdeksassa minuutissa.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="referenssi-hailuoto.html">Hanke: Hailuodon kiinteä yhteys</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div></li>
-    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-21">21.9.2026</time><span>Uutinen</span></p><h3><a href="#">Vt 3 Moreenin eritasoliittymä avataan liikenteelle etuajassa Hämeenlinnassa</a></h3><p>Eritasoliittymä saadaan käyttöön etuajassa, aiempi arvio oli marraskuu 2026.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Vt 3 Moreeni</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div></li>
-    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-14">14.9.2026</time><span>Uutinen</span></p><h3><a href="#">Nurmijärven Mäntymäen asfalttiaseman hajutilannetta voi nyt seurata reaaliajassa</a></h3><p>Uusi verkkopalvelu näyttää hajun leviämisen ja ottaa vastaan naapureiden havainnot.</p><div class="aj-tags"><a class="aj-tag" href="#">Päällystys ja asfaltointi</a></div></div></li>
+    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-21">21.9.2026</time><span>Uutinen</span></p><h3><a href="#">Vt 3 Moreenin eritasoliittymä avataan liikenteelle etuajassa Hämeenlinnassa</a></h3><p>Eritasoliittymä saadaan käyttöön etuajassa, aiempi arvio oli marraskuu 2026.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="referenssi-hailuoto.html">Hanke: Vt 3 Moreeni</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div></li>
+    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-14">14.9.2026</time><span>Uutinen</span></p><h3><a href="#">Nurmijärven Mäntymäen asfalttiaseman hajutilannetta voi nyt seurata reaaliajassa</a></h3><p>Uusi verkkopalvelu näyttää hajun leviämisen ja ottaa vastaan naapureiden havainnot.</p><div class="aj-tags"><a class="aj-tag" href="infra.html">Päällystys ja asfaltointi</a></div></div></li>
     <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-14">14.9.2026</time><span>Tiedote</span></p><h3><a href="#">KSBR allekirjoitti uuden sopimuksen datakeskushankkeesta Suomessa</a></h3><p>Maanalaista tekniikkaa sekä infra- ja betonirakennetöitä teknologiayrityksen datakeskusalueelle.</p><div class="aj-tags"><a class="aj-tag" href="datakeskukset.html">Datakeskukset</a></div></div></li>
-    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-11">11.9.2026</time><span>Uutinen</span></p><h3><a href="#">GRK on valittu toteuttamaan sähköasemahanke Kalkkimaan energiapuistoon Tornioon</a></h3><p>110/33 kV sähköasema suunnittele ja toteuta -urakkana, suunnittelu alkaa loppuvuodesta.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="#">Hanke: Kalkkimaan energiapuisto</a><a class="aj-tag" href="#">Sähköverkot ja sähköasemat</a></div></div></li>
+    <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-09-11">11.9.2026</time><span>Uutinen</span></p><h3><a href="#">GRK on valittu toteuttamaan sähköasemahanke Kalkkimaan energiapuistoon Tornioon</a></h3><p>110/33 kV sähköasema suunnittele ja toteuta -urakkana, suunnittelu alkaa loppuvuodesta.</p><div class="aj-tags"><a class="aj-tag aj-tag--ref" href="referenssi-hailuoto.html">Hanke: Kalkkimaan energiapuisto</a><a class="aj-tag" href="infra.html">Sähköverkot ja sähköasemat</a></div></div></li>
     <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-08-05">5.8.2026</time><span>Tiedote</span></p><h3><a href="#">GRK harkitsee Utajärven biohiili- ja pellettilaitosten toiminnan keskeyttämistä</a></h3><p>Syynä on haastava markkinatilanne.</p></div></li>
     <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-08-03">3.8.2026</time><span>Tiedote</span></p><h3><a href="#">GRK mukana toteuttamassa datakeskushanketta Suomessa – arvo noin 66 miljoonaa euroa</a></h3><p>Valmistelevat työt, massansiirrot ja louhinta sekä logistiikka-alueiden rakentaminen.</p><div class="aj-tags"><a class="aj-tag" href="datakeskukset.html">Datakeskukset</a><a class="aj-tag" href="infra.html">Infra- ja maarakentaminen</a></div></div></li>
     <li class="aj-row"><span class="aj-ph" aria-hidden="true"></span><div><p class="aj-meta"><time datetime="2026-06-30">30.6.2026</time><span>Uutinen</span></p><h3><a href="#">GRK:n ja KSBR:n yhteinen matka alkaa – vahvempaa osaamista vaativiin hankkeisiin</a></h3><p><i class="aj-bar-ph"></i></p></div></li>
@@ -179,16 +179,16 @@ a{color:#3f4c55}a:hover{color:#252d32}
     </div>
     <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
       <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
-        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="#">Päällystys ja asfaltointi</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li><li><a href="#">Rautatiet ja raitiotiet</a></li><li><a href="#">Sähköverkot ja sähköasemat</a></li><li><a href="#">Kiertotalous ja vastaanotto</a></li>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="infra.html">Päällystys ja asfaltointi</a></li><li><a href="infra.html">Pohjarakentaminen ja paalutus</a></li><li><a href="infra.html">Rautatiet ja raitiotiet</a></li><li><a href="infra.html">Sähköverkot ja sähköasemat</a></li><li><a href="infra.html">Kiertotalous ja vastaanotto</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
-        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="#">Energia</a></li><li><a href="#">Teollisuus</a></li><li><a href="#">Kaupungit ja väylät</a></li>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="datakeskukset.html">Energia</a></li><li><a href="datakeskukset.html">Teollisuus</a></li><li><a href="datakeskukset.html">Kaupungit ja väylät</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
         <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
-        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="#">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
       </ul></div>
     </nav>
   </div>
@@ -218,5 +218,6 @@ var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.close
 document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
 })();
 </script>
+<script src="assets/nav.js"></script>
 </body>
 </html>

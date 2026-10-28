@@ -7,6 +7,7 @@
 <title>Datakeskukset · GRK lo-fi -prototyyppi</title>
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/bundle.css">
+<link rel="stylesheet" href="css/nav.css">
 <style>
 @font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
 @font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
@@ -28,9 +29,6 @@ a{color:#3f4c55}a:hover{color:#252d32}
 #miksi-grk .b-why__certs-label{color:var(--accent)}
 #miksi-grk .b-why__cert{display:inline-flex;align-items:center;gap:8px}
 #miksi-grk .b-why__cert::before{content:"";width:8px;height:8px;background:var(--accent)}
-/* Ei pinoutuvaa sticky-efektiä tällä sivulla: kortit vierivät normaalisti */
-.hf-stack__card{position:static;animation:none!important;transform:none;box-shadow:none}
-.hf-stack__bar span.on{animation:none!important}
 .hf-stack__c p{font-size:18px;line-height:28px}
 /* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
 .hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
@@ -60,24 +58,23 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </head>
 <body>
 <div class="b-root hf lofi" style="width: 100%;">
-
-
-<header class="b-nav">
-  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__sites"><a href="index.html" aria-current="true">GRK</a><a href="#">KSBR ↗</a></span><span class="b-nav__util-r"><a href="#">Sijoittajat ↗</a><a href="#">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
-  <div class="b-nav__bar">
-    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
-    <nav class="b-nav__menu" aria-label="Päävalikko">
-      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
-      <a class="b-nav__item b-nav__item--menu" href="#" aria-current="page">Toimialat</a>
-      <a class="b-nav__item" href="#">Referenssit</a>
-      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
-      <a class="b-nav__item b-nav__item--menu" href="vastaanottopaikat.html">Vastaanottopaikat</a>
-      <a class="b-nav__item b-nav__item--menu" href="#">Yritys</a>
-      <a class="b-nav__item b-nav__item--menu" href="avoimet-tyopaikat.html">Ura</a>
-    </nav>
-    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+<header class="hd" data-nav="/toimialat/">
+  <div class="wrap util" id="util"></div>
+  <div class="wrap bar">
+    <a class="logo" id="logo" href="index.html"></a>
+    <nav class="nav" id="nav" aria-label="Päävalikko"></nav>
+    <button type="button" class="cta" id="cta"></button>
+    <div class="mob">
+      <button type="button" class="ib" aria-label="Haku"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+      <button type="button" class="mb" id="mb" aria-expanded="false" aria-controls="sheet"></button>
+    </div>
   </div>
+  <div class="panel" id="panel" hidden><div class="wrap pin" id="pin"></div></div>
+  <nav class="sheet" id="sheet" aria-label="Päävalikko" hidden></nav>
 </header>
+
+
+
 
 <section class="hf-hero hf-hero--page">
   <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="#">Toimialat</a></li><li aria-current="page">Datakeskukset</li></ol>
@@ -93,7 +90,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 <section class="hf-stack" id="mita-toimitamme"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Koko datakeskuksen infra yhdeltä toimijalta</h2><p class="b-body">Datakeskushankkeessa aikataulu on tiukka ja työvaiheet riippuvat toisistaan. Kun yksi toimija vastaa koko ketjusta, rajapinnat eivät viivästytä hanketta.</p></div>
 </div>
-<ol class="hf-stack__list"><li class="hf-stack__card" style="--i:0"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">01 / 06</span><h3>Esirakentaminen ja maanrakennus</h3><p>Valmistelemme tontin rakennuskelpoiseksi: raivaus, kaivuu, louhinta, täytöt ja massanvaihdot. Käsittelemme myös pilaantuneet maat ja ohjaamme ylijäämämassat omiin vastaanottopaikkoihimme. Kun pohja on tehty oikein, seuraavat vaiheet pääsevät alkamaan aikataulussa.</p><a class="b-link" href="infra.html">Infra- ja maarakentaminen</a></div><div class="hf-stack__fig"><img src="assets/1de65c8a53ae0a88f0e3ede20f777a7e.svg" alt="Datakeskustontti, vaihe 1: Esirakentaminen ja maanrakennus" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:1"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">02 / 06</span><h3>Perustukset ja paalutus</h3><p>Datakeskuksen raskaat rakenteet ja laitteet vaativat kantavan pohjan. Teemme pohjanvahvistukset, porapaalutuksen ja perustukset rakennukselle, muuntamoille ja varavoimalle, myös heikosti kantaville maille.</p><a class="b-link" href="#">Pohjarakentaminen ja paalutus</a></div><div class="hf-stack__fig"><img src="assets/fd092b8592b34d11a304a38a626dc5d9.svg" alt="Datakeskustontti, vaihe 2: Perustukset ja paalutus" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:2"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">03 / 06</span><h3>Kunnallistekniikka</h3><p>Rakennamme tontin vesihuollon, viemäröinnin ja hulevesijärjestelmät sekä putkiyhteydet liittymiin. Jäähdytyksen vaatimat vesi- ja putkiyhteydet suunnitellaan samassa yhteydessä, jotta ne eivät myöhemmin risteä kaapelireittien kanssa.</p><a class="b-link" href="#">Kunnallistekniikka</a></div><div class="hf-stack__fig"><img src="assets/cd3f575548f352067785d604f62a64a0.svg" alt="Datakeskustontti, vaihe 3: Kunnallistekniikka" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:3"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">04 / 06</span><h3>Tiet ja kentät</h3><p>Työmaatiet palvelevat raskasta kalustoa koko rakentamisen ajan, ja valmiina ne muuttuvat huoltoliikenteen reiteiksi. Toteutamme piha-alueet, pysäköinnin, kentät ja päällystyksen omalla kalustolla.</p><a class="b-link" href="#">Päällystys ja asfaltointi</a></div><div class="hf-stack__fig"><img src="assets/453e2a6efa4d33548245410eb1c71a4d.svg" alt="Datakeskustontti, vaihe 4: Tiet ja kentät" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:4"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">05 / 06</span><h3>Kaapeloinnit</h3><p>Asennamme keski- ja suurjännitekaapeloinnit, kaapelikanavat ja suojaputkitukset sähköasemalta datakeskukselle. Kaapelireitit tehdään samassa urakassa maanrakennuksen kanssa, jolloin kaivantoja ei tarvitse avata uudelleen.</p><a class="b-link" href="#">Sähköverkot ja sähköasemat</a></div><div class="hf-stack__fig"><img src="assets/9cf2f87dcb71e1ea61728c0347564ed5.svg" alt="Datakeskustontti, vaihe 5: Kaapeloinnit" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:5"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">06 / 06</span><h3>Sähköasema ja verkkoliityntä</h3><p>Rakennamme sähköaseman ja liitynnän kantaverkkoon Fingridin vaatimusten mukaisesti. Tunnemme liittymisen vaiheet, joten verkkoliityntä etenee rinnakkain muiden töiden kanssa eikä jää hankkeen pullonkaulaksi.</p><a class="b-link" href="#">Sähköasemat ja voimajohdot</a></div><div class="hf-stack__fig"><img src="assets/d766344d46986361510facce7d310770.svg" alt="Datakeskustontti, vaihe 6: Sähköasema ja verkkoliityntä" width="2332" height="1343"></div></div></li></ol></section>
+<ol class="hf-stack__list"><li class="hf-stack__card" style="--i:0"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">01 / 06</span><h3>Esirakentaminen ja maanrakennus</h3><p>Valmistelemme tontin rakennuskelpoiseksi: raivaus, kaivuu, louhinta, täytöt ja massanvaihdot. Käsittelemme myös pilaantuneet maat ja ohjaamme ylijäämämassat omiin vastaanottopaikkoihimme. Kun pohja on tehty oikein, seuraavat vaiheet pääsevät alkamaan aikataulussa.</p><a class="b-link" href="infra.html">Infra- ja maarakentaminen</a></div><div class="hf-stack__fig"><img src="assets/1de65c8a53ae0a88f0e3ede20f777a7e.svg" alt="Datakeskustontti, vaihe 1: Esirakentaminen ja maanrakennus" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:1"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">02 / 06</span><h3>Perustukset ja paalutus</h3><p>Datakeskuksen raskaat rakenteet ja laitteet vaativat kantavan pohjan. Teemme pohjanvahvistukset, porapaalutuksen ja perustukset rakennukselle, muuntamoille ja varavoimalle, myös heikosti kantaville maille.</p><a class="b-link" href="infra.html">Pohjarakentaminen ja paalutus</a></div><div class="hf-stack__fig"><img src="assets/fd092b8592b34d11a304a38a626dc5d9.svg" alt="Datakeskustontti, vaihe 2: Perustukset ja paalutus" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:2"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">03 / 06</span><h3>Kunnallistekniikka</h3><p>Rakennamme tontin vesihuollon, viemäröinnin ja hulevesijärjestelmät sekä putkiyhteydet liittymiin. Jäähdytyksen vaatimat vesi- ja putkiyhteydet suunnitellaan samassa yhteydessä, jotta ne eivät myöhemmin risteä kaapelireittien kanssa.</p><a class="b-link" href="infra.html">Kunnallistekniikka</a></div><div class="hf-stack__fig"><img src="assets/cd3f575548f352067785d604f62a64a0.svg" alt="Datakeskustontti, vaihe 3: Kunnallistekniikka" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:3"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">04 / 06</span><h3>Tiet ja kentät</h3><p>Työmaatiet palvelevat raskasta kalustoa koko rakentamisen ajan, ja valmiina ne muuttuvat huoltoliikenteen reiteiksi. Toteutamme piha-alueet, pysäköinnin, kentät ja päällystyksen omalla kalustolla.</p><a class="b-link" href="infra.html">Päällystys ja asfaltointi</a></div><div class="hf-stack__fig"><img src="assets/453e2a6efa4d33548245410eb1c71a4d.svg" alt="Datakeskustontti, vaihe 4: Tiet ja kentät" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:4"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">05 / 06</span><h3>Kaapeloinnit</h3><p>Asennamme keski- ja suurjännitekaapeloinnit, kaapelikanavat ja suojaputkitukset sähköasemalta datakeskukselle. Kaapelireitit tehdään samassa urakassa maanrakennuksen kanssa, jolloin kaivantoja ei tarvitse avata uudelleen.</p><a class="b-link" href="infra.html">Sähköverkot ja sähköasemat</a></div><div class="hf-stack__fig"><img src="assets/9cf2f87dcb71e1ea61728c0347564ed5.svg" alt="Datakeskustontti, vaihe 5: Kaapeloinnit" width="2332" height="1343"></div></div></li><li class="hf-stack__card" style="--i:5"><div class="hf-stack__bar" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div><div class="hf-stack__body"><div class="hf-stack__c"><span class="hf-stack__no">06 / 06</span><h3>Sähköasema ja verkkoliityntä</h3><p>Rakennamme sähköaseman ja liitynnän kantaverkkoon Fingridin vaatimusten mukaisesti. Tunnemme liittymisen vaiheet, joten verkkoliityntä etenee rinnakkain muiden töiden kanssa eikä jää hankkeen pullonkaulaksi.</p><a class="b-link" href="infra.html">Sähköasemat ja voimajohdot</a></div><div class="hf-stack__fig"><img src="assets/d766344d46986361510facce7d310770.svg" alt="Datakeskustontti, vaihe 6: Sähköasema ja verkkoliityntä" width="2332" height="1343"></div></div></li></ol></section>
 
 <section class="b-section" id="nain-toimimme"><div class="b-inner hf-aside">
   <div class="b-head"><h2 class="b-h2">Ulkomaiselle hankeomistajalle</h2><p class="b-body">Moni datakeskushanke tulee Suomeen ulkomailta. Autamme siinä, miten Suomessa rakennetaan.</p></div>
@@ -110,7 +107,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
   <figure class="hf-pins"><div class="hf-pins__in"><img src="assets/eb7d93a677f47f6f7d354b5d530ef98a.svg" alt="Datakeskustontti valmiina leikkauskuvana: GRK:n massanvaihto, porapaalut kallioon, kunnallistekniikan kaivanto ja hulevesiallas, tiet ja kentät, kaapelireitti ja sähköasema voimajohtoineen sekä KSBR:n paalulaatta ja betonirunko" width="2332" height="1343"><span class="hf-pins__pin" style="left:6.9%;top:36.7%">1</span><span class="hf-pins__pin" style="left:26.1%;top:50.6%">2</span><span class="hf-pins__pin" style="left:48.1%;top:56.8%">3</span><span class="hf-pins__pin" style="left:55.9%;top:55.7%">4</span><span class="hf-pins__pin" style="left:61.5%;top:61.8%">5</span><span class="hf-pins__pin" style="left:91.8%;top:54.3%">6</span><span class="hf-pins__pin hf-pins__pin--k" style="left:36.9%;top:45.5%">K1</span><span class="hf-pins__pin hf-pins__pin--k" style="left:13.4%;top:21%">K2</span></div></figure>
   <div class="en-duo">
     <div class="en-co"><p class="en-co__name">GRK</p><p class="en-co__d">Tontti ja infra maan alla ja ympärillä: maanrakennuksesta sähköasemaan.</p><ol class="en-co__num"><li><b>1</b>Esirakentaminen ja maanrakennus</li><li><b>2</b>Perustukset ja paalutus</li><li><b>3</b>Kunnallistekniikka</li><li><b>4</b>Tiet ja kentät</li><li><b>5</b>Kaapeloinnit</li><li><b>6</b>Sähköasema ja verkkoliityntä</li></ol></div>
-    <div class="en-co"><p class="en-co__name">KSBR</p><p class="en-co__d">Datakeskusrakennus maan päällä: perustuksista betonirunkoon.</p><ol class="en-co__num en-co__num--k"><li><b>K1</b>Perustukset ja paalulaatat</li><li><b>K2</b>Betonirunko ja paikallavalu</li></ol><a class="b-link b-link--ext" href="#">ksbr.fi</a></div>
+    <div class="en-co"><p class="en-co__name">KSBR</p><p class="en-co__d">Datakeskusrakennus maan päällä: perustuksista betonirunkoon.</p><ol class="en-co__num en-co__num--k"><li><b>K1</b>Perustukset ja paalulaatat</li><li><b>K2</b>Betonirunko ja paikallavalu</li></ol><a class="b-link b-link--ext" href="https://ollirimpilainen.github.io/ksbr-proto/">ksbr.fi</a></div>
   </div>
 </div></section>
 
@@ -119,12 +116,12 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 <section class="b-section" id="toteutetut-hankkeet"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Toteutettuja hankkeita</h2></div>
-  <a class="hf-feature" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Työmaa, jolla GRK valmistelee datakeskushanketta"><span class="hf-status">Käynnissä</span></div><div class="hf-feature__tx"><span class="hf-feature__tag">Datakeskukset</span><p class="meta">Suomi · 2026</p><h3>Datakeskushanke Suomessa</h3><p>GRK on mukana toteuttamassa datakeskushanketta. Hankkeen arvo GRK:lle on noin 66 miljoonaa euroa.</p><span class="b-link">Lue uutinen</span></div></a>
+  <a class="hf-feature" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Työmaa, jolla GRK valmistelee datakeskushanketta"><span class="hf-status">Käynnissä</span></div><div class="hf-feature__tx"><span class="hf-feature__tag">Datakeskukset</span><p class="meta">Suomi · 2026</p><h3>Datakeskushanke Suomessa</h3><p>GRK on mukana toteuttamassa datakeskushanketta. Hankkeen arvo GRK:lle on noin 66 miljoonaa euroa.</p><span class="b-link">Lue uutinen</span></div></a>
   <h3 class="hf-work__group">Datakeskuksen osia, joita olemme rakentaneet</h3>
   <div class="hf-cards">
-    <a class="hf-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Kantaverkon 400 kV:n kaapeliyhteyden rakennustöissä"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki ja Vantaa · Fingrid · 2023–2026</p><h3>Kantaverkon 400 kV:n kaapeliyhteys</h3><p>Verkkoliityntä ja kaapelointi: Suomen ensimmäinen näin laaja 400 kV:n maakaapeliyhteys.</p><span class="b-link b-link--sm">Lue referenssi</span></a>
-    <a class="hf-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Fortumin kaukolämpölaitoksen työmaa Espoossa"></div><p class="meta">Espoo · Fortum · 2024–2025</p><h3>Fortumin tuotantolaitos</h3><p>Pääurakoitsijana sähköpohjaisessa laitoksessa: 50 MW:n sähkökattila ja 800 MWh:n lämpöakku.</p><span class="b-link b-link--sm">Lue referenssi</span></a>
-    <a class="hf-card" href="#"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Energiapuiston maisemaa"></div><p class="meta">Tornio · Uutinen 11.9.2026</p><h3>Sähköasema Kalkkimaan energiapuistoon</h3><p>GRK on valittu toteuttamaan energiapuiston sähköasemahanke.</p><span class="b-link b-link--sm">Lue uutinen</span></a>
+    <a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Kantaverkon 400 kV:n kaapeliyhteyden rakennustöissä"><span class="hf-status">Käynnissä</span></div><p class="meta">Helsinki ja Vantaa · Fingrid · 2023–2026</p><h3>Kantaverkon 400 kV:n kaapeliyhteys</h3><p>Verkkoliityntä ja kaapelointi: Suomen ensimmäinen näin laaja 400 kV:n maakaapeliyhteys.</p><span class="b-link b-link--sm">Lue referenssi</span></a>
+    <a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Fortumin kaukolämpölaitoksen työmaa Espoossa"></div><p class="meta">Espoo · Fortum · 2024–2025</p><h3>Fortumin tuotantolaitos</h3><p>Pääurakoitsijana sähköpohjaisessa laitoksessa: 50 MW:n sähkökattila ja 800 MWh:n lämpöakku.</p><span class="b-link b-link--sm">Lue referenssi</span></a>
+    <a class="hf-card" href="referenssi-hailuoto.html"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Energiapuiston maisemaa"></div><p class="meta">Tornio · Uutinen 11.9.2026</p><h3>Sähköasema Kalkkimaan energiapuistoon</h3><p>GRK on valittu toteuttamaan energiapuiston sähköasemahanke.</p><span class="b-link b-link--sm">Lue uutinen</span></a>
   </div>
   <p class="b-linkrow"><a class="b-link" href="#">Kaikki datakeskus- ja energiahankkeet</a></p>
 </div></section>
@@ -142,7 +139,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 <section class="b-section" id="samaan-hankkeeseen"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Samaan hankkeeseen</h2></div>
-  <div class="sh-list"><a class="sh-row" href="#"><img src="assets/d5c63f88da0779bb0c994573fe2d8a3b.svg" alt="" width="64" height="64"><b>Energia</b><span>Tuuli- ja aurinkopuistot, akkuvarastot ja verkkoliitynnät.</span><i aria-hidden="true"></i></a><a class="sh-row" href="#"><img src="assets/139d0d256a7e3658f9279e841a616d1f.svg" alt="" width="64" height="64"><b>Balance of Plant</b><span>Energiahankkeen infra maanrakennuksesta sähköasemaan.</span><i aria-hidden="true"></i></a><a class="sh-row" href="#"><img src="assets/4a7ed9116290cd1984fa22826d4444ba.svg" alt="" width="64" height="64"><b>Pohjarakentaminen ja paalutus</b><span>Vaativat pohjat ja raskaat perustukset.</span><i aria-hidden="true"></i></a><a class="sh-row" href="#"><img src="assets/f984903e822f9f98877f2bd0f5e00c9c.svg" alt="" width="64" height="64"><b>Sähköverkot ja sähköasemat</b><span>Sähköasemat, voimajohdot ja kaapeloinnit.</span><i aria-hidden="true"></i></a></div>
+  <div class="sh-list"><a class="sh-row" href="datakeskukset.html"><img src="assets/d5c63f88da0779bb0c994573fe2d8a3b.svg" alt="" width="64" height="64"><b>Energia</b><span>Tuuli- ja aurinkopuistot, akkuvarastot ja verkkoliitynnät.</span><i aria-hidden="true"></i></a><a class="sh-row" href="datakeskukset.html"><img src="assets/139d0d256a7e3658f9279e841a616d1f.svg" alt="" width="64" height="64"><b>Balance of Plant</b><span>Energiahankkeen infra maanrakennuksesta sähköasemaan.</span><i aria-hidden="true"></i></a><a class="sh-row" href="infra.html"><img src="assets/4a7ed9116290cd1984fa22826d4444ba.svg" alt="" width="64" height="64"><b>Pohjarakentaminen ja paalutus</b><span>Vaativat pohjat ja raskaat perustukset.</span><i aria-hidden="true"></i></a><a class="sh-row" href="infra.html"><img src="assets/f984903e822f9f98877f2bd0f5e00c9c.svg" alt="" width="64" height="64"><b>Sähköverkot ja sähköasemat</b><span>Sähköasemat, voimajohdot ja kaapeloinnit.</span><i aria-hidden="true"></i></a></div>
 </div></section>
 
 <section class="b-section b-section--gray" id="usein-kysytyt"><div class="b-inner b-faq">
@@ -161,7 +158,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
   <p style="margin-top: 32px;"><a class="b-link" href="yhteystiedot.html">Kaikki yhteyshenkilöt</a></p>
   <div class="b-lightform">
     <div class="b-head" style="margin: 0; align-content: start;"><h3 class="b-h3">Kerro hankkeestasi</h3><p class="b-body">Kerro hankkeen tyyppi ja vaihe, niin oikea asiantuntija ottaa yhteyttä.</p>
-      <div class="b-linklist"><p class="b-h4">Etsitkö jotain muuta?</p><a class="b-link b-link--sm" href="avoimet-tyopaikat.html">Työpaikat</a><a class="b-link b-link--sm" href="#">Toimittajille ja laskutus</a><a class="b-link b-link--sm" href="#">Sponsorointi</a></div>
+      <div class="b-linklist"><p class="b-h4">Etsitkö jotain muuta?</p><a class="b-link b-link--sm" href="avoimet-tyopaikat.html">Työpaikat</a><a class="b-link b-link--sm" href="yhteystiedot.html">Toimittajille ja laskutus</a><a class="b-link b-link--sm" href="#">Sponsorointi</a></div>
     </div>
     <form class="b-form">
       <div class="b-field"><label for="dk-nimi">Nimi *</label><input class="b-input" id="dk-nimi" type="text" autocomplete="name"></div>
@@ -196,16 +193,16 @@ a{color:#3f4c55}a:hover{color:#252d32}
     </div>
     <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
       <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
-        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="#">Päällystys ja asfaltointi</a></li><li><a href="#">Pohjarakentaminen ja paalutus</a></li><li><a href="#">Rautatiet ja raitiotiet</a></li><li><a href="#">Sähköverkot ja sähköasemat</a></li><li><a href="#">Kiertotalous ja vastaanotto</a></li>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="infra.html">Päällystys ja asfaltointi</a></li><li><a href="infra.html">Pohjarakentaminen ja paalutus</a></li><li><a href="infra.html">Rautatiet ja raitiotiet</a></li><li><a href="infra.html">Sähköverkot ja sähköasemat</a></li><li><a href="infra.html">Kiertotalous ja vastaanotto</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="#">Toimialat</a></h2><ul>
-        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="#">Energia</a></li><li><a href="#">Teollisuus</a></li><li><a href="#">Kaupungit ja väylät</a></li>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="datakeskukset.html">Energia</a></li><li><a href="datakeskukset.html">Teollisuus</a></li><li><a href="datakeskukset.html">Kaupungit ja väylät</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="#">Yritys</a></h2><ul>
         <li><a href="#">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="#">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="#">Sijoittajat</a></li><li><a href="avoimet-tyopaikat.html">Ura ja työpaikat</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
-        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="#">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
+        <li><a href="yhteystiedot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html">Toimittajille ja laskutus</a></li><li><a href="#">Media</a></li><li><a href="#">Työmaatiedotteet</a></li><li><a href="#">Sponsorointi</a></li>
       </ul></div>
     </nav>
   </div>
@@ -235,5 +232,6 @@ var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.close
 document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
 })();
 </script>
+<script src="assets/nav.js"></script>
 </body>
 </html>
