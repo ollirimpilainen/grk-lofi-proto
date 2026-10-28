@@ -2014,3 +2014,6 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 
 /* 28.10. GRK-sivuvalitsin pois, KSBR muiden linkkien joukkoon oikealle */
 .b-nav__util-r{margin-left:auto}
+
+/* 28.10. (Olli): Töihin-lohkon kuvapaikka eri harmaalla kuin vaaleat osiot, jotta edellinen harmaa lohko ja Töihin erottuvat */
+.lofi .hf-edge--dark .ph{background-color:var(--on-dark-line)}
