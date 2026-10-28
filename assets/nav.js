@@ -20,9 +20,13 @@
   var OIK = '<svg class="nv-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>';
   var kids = function (n) { return (n.kids || []).filter(function (k) { return D.pois.indexOf(k.url) < 0; }); };
   var sub = function (n) { return n.sub && D.subPois.indexOf(n.sub) < 0 ? n.sub : ''; };
+  // koontisivun rivi nimetään kaikkien sivujen linkiksi (Baymard: pelkkä osion nimi jää huomaamatta)
+  var HUB = { 'Palvelut': 'Kaikki palvelut', 'Toimialat': 'Kaikki toimialat', 'Vastaanottopaikat': 'Kaikki vastaanottopaikat ja kartta',
+    'Yritys': 'GRK yrityksenä', 'Ura': 'Ura GRK:lla', 'Yhteystiedot': 'Kaikki yhteystiedot' };
+  var hubNimi = function (n) { return HUB[n.label] || clean(n.label); };
 
   function paneeli(n) {
-    var ylin = n.label, h = '<div class="nv-in"><a class="nv-hub" href="' + href(n, ylin) + '">' + esc(n.label) + NUOLI + '</a>';
+    var ylin = n.label, h = '<div class="nv-in"><a class="nv-hub" href="' + href(n, ylin) + '">' + esc(hubNimi(n)) + NUOLI + '</a>';
     if (n.mega) {
       h += '<div class="nv-cols">' + kids(n).map(function (c) {
         return '<div class="nv-col"><a class="nv-h" href="' + href(c, ylin) + '">' + esc(clean(c.label)) + '</a>' +
@@ -79,8 +83,8 @@
     var taso = polku.length ? polku[polku.length - 1] : juuri, ylin = polku.length ? polku[0].label : '', h = '';
     if (polku.length) {
       h += '<button type="button" class="nv-back" data-back="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>' +
-        esc(polku.length > 1 ? polku[polku.length - 2].label : 'Valikko') + '</button>';
-      h += '<a class="nv-hub" href="' + href(taso, ylin) + '">' + esc(clean(taso.label)) + NUOLI + '</a>';
+        esc(polku.length > 1 ? polku[polku.length - 2].label : 'Päävalikko') + '</button>';
+      h += '<a class="nv-hub" href="' + href(taso, ylin) + '">' + esc(polku.length === 1 ? hubNimi(taso) : clean(taso.label)) + NUOLI + '</a>';
       if (sub(taso)) h += '<p class="nv-sub">' + esc(sub(taso)) + '</p>';
     }
     h += '<ul class="nv-mlist">' + kids(taso).map(function (k, i) {

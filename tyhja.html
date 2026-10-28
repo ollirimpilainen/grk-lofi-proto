@@ -87,6 +87,16 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .km-key{color:var(--ink-2-strong)}.km-key i{background:var(--accent)}.km-key i.hq{background:var(--surface-dark)}
 /* 28.10.: Miksi GRK vaalean harmaalle, ettei kahta valkoista osiota (kartta) tule peräkkäin */
 .hf.lofi #miksi-grk.b-why{background:var(--surface)}
+/* Palvelukartta 28.10. (Olli: "vertikaaliset viivat samalla etäisyydellä", ei merkkejä keskelle nurmea): kuva skaalataan niin,
+   että vyöhykkeiden väli (15,05 % kuvasta) on sama kuin hakemiston sarakkeiden väli, ja siirretään niin, että sarakkeen piste osuu
+   vyöhykkeen samaan kohtaan. Merkit ovat laatan etureunalla vyöhykkeensä kohteen edessä; viiva laskeutuu suoraan sarakkeen pisteeseen. */
+@media (min-width:901px){
+.b-svcmap--tasa .b-svcmap__fig{width:calc((100cqw + 40px) * 1.10749);max-width:none;margin-left:calc(12px - (100cqw + 40px) * .0786)}
+.b-svcmap--tasa{grid-template-columns:minmax(0,1fr)}
+.b-svcmap--tasa .b-svcmap__index--row{width:100cqw;max-width:100cqw}
+.b-svcmap--tasa .b-svcmap__lead::after,.b-svcmap--tasa .b-svcmap__lead i{display:none}
+.b-svcmap--tasa .b-svcmap__lead::before{left:calc(var(--c) * (100cqw + 40px) / 6 + 11px);top:calc(var(--y) / 100 * (100cqw + 40px) * .47944);height:calc((100cqw + 40px) * .47944 * (1 - var(--y) / 100) + 71px);border-left-width:2px}
+}
 /* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
 .hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
 /* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
@@ -104,6 +114,17 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
 .hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
 #miksi-grk.b-why{background:var(--surface-dark)}
+@media (max-width:900px){
+  .km-c{grid-template-columns:1fr!important;gap:32px!important}
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr 1fr!important;row-gap:40px}
+  .hf-sm,.hf-mx__b .b-method{grid-template-columns:1fr!important}
+  .t3__c>p{white-space:normal}
+}
+@media (max-width:600px){
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr!important}
+  .b-root :where(h1,h2,h3),.b-root :where(h1,h2,h3) a{hyphens:auto;-webkit-hyphens:auto}
+}
+
 </style>
 </head>
 <body>

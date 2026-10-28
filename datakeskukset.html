@@ -54,6 +54,17 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .sh-row span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
 .sh-row i{width:9px;height:9px;border:solid var(--accent);border-width:2.5px 2.5px 0 0;transform:rotate(45deg)}
 .sh-row:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+@media (max-width:900px){
+  .km-c{grid-template-columns:1fr!important;gap:32px!important}
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr 1fr!important;row-gap:40px}
+  .hf-sm,.hf-mx__b .b-method{grid-template-columns:1fr!important}
+  .t3__c>p{white-space:normal}
+}
+@media (max-width:600px){
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr!important}
+  .b-root :where(h1,h2,h3),.b-root :where(h1,h2,h3) a{hyphens:auto;-webkit-hyphens:auto}
+}
+
 /* --- näyttämö (Olli 20.10.: "kun kuva pysyy paikallaan, scroll-suunta neutraali", "näkymä paketoitu korttiin, voit lisätä korkeutta",
    "seuraava osio alhaalta tulee tämän reunuksen sisältä"). Kortti kiinnittyy näkymään; sen sisällä teksti rullaa
    ja kuva rakentuu. Viimeisen vaiheen jälkeen kortti vapautuu ja seuraava osio tulee tavallisella vierityksellä. --- */
@@ -328,14 +339,14 @@ html.dk-snap{scroll-snap-type:y mandatory}
 </div></section>
 
 <section class="b-section b-why" id="miksi-grk"><div class="b-inner">
-  <div class="b-head" style="margin-bottom: 64px;"><h2 class="b-h2" style="color: #ffffff;">Miksi GRK</h2><p class="b-body" style="color: #d0d0cf;">Iso konserni, joka vastaa koko hankkeesta ja jossa oikea ihminen on yhden puhelun päässä.</p></div>
+  <div class="b-head" style="margin-bottom: 64px;"><h2 class="b-h2">Miksi GRK</h2><p class="b-body">Iso konserni, joka vastaa koko hankkeesta ja jossa oikea ihminen on yhden puhelun päässä.</p></div>
   <div class="b-why__grid">
     <div class="b-why__col"><p class="b-why__num">1&nbsp;170</p><p class="b-why__label">M€ tilauskanta 30.6.2026</p><h3 class="b-why__title">Sovittu tehdään</h3><p class="b-why__text">Pidämme aikataulun ja vastaamme lopputuloksesta. Asiakkaan ei tarvitse huolehtia.</p></div>
     <div class="b-why__col"><p class="b-why__num">6</p><p class="b-why__label">palvelua samassa hankkeessa</p><h3 class="b-why__title">Kokonaisuus yhdeltä</h3><p class="b-why__text">Maanrakennus, perustukset, rata ja sähkö samassa hankkeessa ilman rajapintoja.</p></div>
     <div class="b-why__col"><p class="b-why__num">1&nbsp;320</p><p class="b-why__label">henkilöä, keskimäärin 4–6/2026</p><h3 class="b-why__title">Iso mutta notkea</h3><p class="b-why__text">Konsernin kantokyky ja nopeat päätökset. Oikea ihminen vastaa.</p></div>
   </div>
   <div class="b-why__certs"><span class="b-why__certs-label">Sertifioitu</span><span class="b-why__cert">ISO 9001 Laatu</span><span class="b-why__cert">ISO 14001 Ympäristö</span><span class="b-why__cert">ISO 45001 Työturvallisuus</span></div>
-  <p class="b-linkrow"><a class="b-link" href="tyhja.html?s=GRK%20lyhyesti" style="color:#fff">GRK lyhyesti</a></p>
+  <p class="b-linkrow"><a class="b-link" href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></p>
 </div></section>
 
 <section class="b-section" id="samaan-hankkeeseen"><div class="b-inner">
@@ -443,7 +454,7 @@ document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei
     ['Kunnallistekniikka', 'Rakennamme tontin vesihuollon, viemäröinnin ja hulevesijärjestelmät sekä putkiyhteydet liittymiin. Jäähdytyksen vaatimat vesi- ja putkiyhteydet suunnitellaan samassa yhteydessä, jotta ne eivät myöhemmin risteä kaapelireittien kanssa.', 'Kunnallistekniikka'],
     ['Tiet ja kentät', 'Työmaatiet palvelevat raskasta kalustoa koko rakentamisen ajan, ja valmiina ne muuttuvat huoltoliikenteen reiteiksi. Toteutamme piha-alueet, pysäköinnin, kentät ja päällystyksen omalla kalustolla.', 'Päällystys ja asfaltointi'],
     ['Kaapeloinnit', 'Asennamme keski- ja suurjännitekaapeloinnit, kaapelikanavat ja suojaputkitukset sähköasemalta datakeskukselle. Kaapelireitit tehdään samassa urakassa maanrakennuksen kanssa, jolloin kaivantoja ei tarvitse avata uudelleen.', 'Sähköverkot ja sähköasemat'],
-    ['Sähköasema ja verkkoliityntä', 'Rakennamme sähköaseman ja liitynnän kantaverkkoon Fingridin vaatimusten mukaisesti. Tunnemme liittymisen vaiheet, joten verkkoliityntä etenee rinnakkain muiden töiden kanssa eikä jää hankkeen pullonkaulaksi.', 'Sähköasemat ja voimajohdot'],
+    ['Sähköasema ja verkkoliityntä', 'Rakennamme sähköaseman ja liitynnän kantaverkkoon Fingridin vaatimusten mukaisesti. Tunnemme liittymisen vaiheet, joten verkkoliityntä etenee rinnakkain muiden töiden kanssa, jotta se ei jää hankkeen pullonkaulaksi.', 'Sähköasemat ja voimajohdot'],
   ];
   const KOHDE = {"Etusivu": "index.html", "Palvelut": "palvelut.html", "Kaikki palvelut": "palvelut.html", "Kaikki palvelut ja toteutusmallit": "palvelut.html", "Infra- ja maarakentaminen": "infra.html", "Datakeskukset": "datakeskukset.html", "Hailuodon kiinteä yhteys": "referenssi-hailuoto.html", "Ajankohtaista": "ajankohtaista.html", "Kaikki uutiset": "ajankohtaista.html", "Uutiset ja media": "ajankohtaista.html", "Vastaanottopaikat": "vastaanottopaikat.html", "Kaikki vastaanottopaikat": "vastaanottopaikat.html", "Näytä kaikki 20 paikkaa": "vastaanottopaikat.html", "Nurmijärvi": "vastaanottopaikat-nurmijarvi.html", "Laatu ja turvallisuus": "laatu-ja-turvallisuus.html", "Vastuullisuus": "vastuullisuus.html", "Avoimet työpaikat": "avoimet-tyopaikat.html", "Työpaikat": "avoimet-tyopaikat.html", "Tarjouspyyntö": "tarjouspyynto.html", "Pyydä tarjous": "tarjouspyynto.html", "Yhteystiedot": "yhteystiedot.html", "Ota yhteyttä": "yhteystiedot.html", "Yhteystiedot ja henkilöt": "yhteystiedot.html", "Yhteyshenkilöt": "yhteystiedot.html#vastuuhenkilot", "Kaikki yhteyshenkilöt": "yhteystiedot.html#vastuuhenkilot", "Näytä kaikki 25 henkilöä": "yhteystiedot.html#vastuuhenkilot", "Asiantuntijoiden yhteystiedot": "yhteystiedot.html#vastuuhenkilot", "Soita asiantuntijalle": "yhteystiedot.html#vastuuhenkilot", "Kysy palvelun asiantuntijalta": "yhteystiedot.html#vastuuhenkilot", "Toimittajille ja laskutus": "yhteystiedot.html#laskutus", "Kaikki 29 toimipistettä": "yhteystiedot.html#toimipisteet", "Tie- ja katurakentaminen": "infra.html#tie", "Maarakentaminen ja pohjatyöt": "infra.html#maa", "Sillat": "infra.html#sillat", "Kunnallistekniikka": "infra.html#kunnallis", "Louhinta ja kalliorakentaminen": "infra.html#louhinta", "Teollisuusrakentaminen": "infra.html#teollisuus", "Viherrakentaminen": "infra.html#viher", "KSBR": "https://ollirimpilainen.github.io/ksbr-proto/", "KSBR ↗": "https://ollirimpilainen.github.io/ksbr-proto/", "Tutustu KSBR:ään": "https://ollirimpilainen.github.io/ksbr-proto/", "ksbr.fi": "https://ollirimpilainen.github.io/ksbr-proto/", "FI": "index.html", "GRK": "index.html"};
   const N = VAIHEET.length;
@@ -528,7 +539,7 @@ document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei
   function pisteet() {
     const askel = innerHeight * ASKEL;
     track.querySelectorAll('.hf-stack__snap').forEach((m) => m.remove());
-    for (let k = 0; k < N; k++) { const m = document.createElement('i'); m.className = 'hf-stack__snap'; m.style.top = ((k + 0.2) * askel).toFixed(0) + 'px'; track.append(m); }
+    for (let k = 0; k <= N; k++) { const m = document.createElement('i'); m.className = 'hf-stack__snap'; m.style.top = ((k + 0.2) * askel).toFixed(0) + 'px'; track.append(m); }
   }
   pisteet();
   addEventListener('resize', pisteet);
