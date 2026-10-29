@@ -24,13 +24,15 @@
   var HUB = { 'Palvelut': 'Kaikki palvelut', 'Toimialat': 'Kaikki toimialat', 'Vastaanottopaikat': 'Kaikki vastaanottopaikat ja kartta',
     'Yritys': 'GRK yrityksenä', 'Ura': 'Ura GRK:lla', 'Yhteystiedot': 'Kaikki yhteystiedot' };
   var hubNimi = function (n) { return HUB[n.label] || clean(n.label); };
+  // liiketoiminnan nimi yläotsikkona kuten etusivun palvelukartassa; pitkä yhdyssana tavutetaan kapeaan sarakkeeseen
+  var subTavu = function (s) { return esc(s).replace('pohjarakentaminen', 'pohja&shy;rakentaminen'); };
 
   function paneeli(n) {
     var ylin = n.label, h = '<div class="nv-in">' + (n.nohub ? '' : '<a class="nv-hub" href="' + href(n, ylin) + '">' + esc(hubNimi(n)) + NUOLI + '</a>');
     if (n.mega) {
       h += '<div class="nv-cols">' + kids(n).map(function (c) {
-        return '<div class="nv-col"><a class="nv-h" href="' + href(c, ylin) + '">' + esc(clean(c.label)) + '</a>' +
-          (sub(c) ? '<span class="nv-sub">' + esc(sub(c)) + '</span>' : '') +
+        return '<div class="nv-col">' + (sub(c) ? '<span class="nv-sub">' + subTavu(sub(c)) + '</span>' : '') +
+          '<a class="nv-h" href="' + href(c, ylin) + '">' + esc(clean(c.label)) + '</a>' +
           '<ul>' + kids(c).map(function (k) { return '<li><a href="' + href(k, ylin, c) + '">' + esc(clean(k.label)) + ulos(k) + '</a></li>'; }).join('') + '</ul></div>';
       }).join('') + '</div>';
     } else {
@@ -91,8 +93,8 @@
     if (polku.length) {
       h += '<button type="button" class="nv-back" data-back="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>' +
         esc(polku.length > 1 ? polku[polku.length - 2].label : 'Päävalikko') + '</button>';
+      if (sub(taso)) h += '<p class="nv-sub">' + subTavu(sub(taso)) + '</p>';
       h += taso.nohub ? '<p class="nv-hub">' + esc(clean(taso.label)) + '</p>' : '<a class="nv-hub" href="' + href(taso, ylin) + '">' + esc(polku.length === 1 ? hubNimi(taso) : clean(taso.label)) + NUOLI + '</a>';
-      if (sub(taso)) h += '<p class="nv-sub">' + esc(sub(taso)) + '</p>';
     }
     h += '<ul class="nv-mlist">' + kids(taso).map(function (k, i) {
       var vanh = taso.juuri ? null : taso;

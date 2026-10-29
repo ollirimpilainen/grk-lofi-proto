@@ -19,7 +19,7 @@ header.b-nav{position:relative;z-index:50}
 .nv-cols{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:32px;border-top:1px solid var(--line);padding-top:28px}
 .nv-h{display:block;min-height:48px;font:900 18px/24px var(--font-head)}
 .nv-col{display:flex;flex-direction:column}
-.nv-sub{display:block;margin-top:4px;font:400 14px/20px var(--font-sans);color:var(--ink-2-strong)}
+.nv-sub{display:block;min-height:32px;margin:0 0 8px;font:700 12px/16px var(--font-sans);letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-2-strong)}
 .nv-col ul{list-style:none;margin:16px 0 0;padding:0}
 .nv-col li a,.nv-list a{display:block;padding:6px 0;font:400 16px/24px var(--font-sans)}
 .nv-col li a:hover,.nv-list a:hover,.nv-h:hover{text-decoration:underline;text-underline-offset:4px}
@@ -39,7 +39,7 @@ header.b-nav{position:relative;z-index:50}
   .nv-sheet:not([hidden]){display:block;position:absolute;left:0;right:0;top:100%;max-height:calc(100vh - 100%);overflow:auto;
     background:var(--white);border-top:1px solid var(--line);padding:16px 20px 32px;box-shadow:0 24px 40px -24px rgba(37,45,50,.28)}
   .nv-sheet .nv-hub{margin:8px 0 4px}
-  .nv-sheet .nv-sub{margin:0 0 8px}
+  .nv-sheet .nv-sub{min-height:0;margin:8px 0 4px}
   .nv-back{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0;border:0;background:none;color:var(--ink-2-strong);font:400 16px/24px var(--font-sans);cursor:pointer}
   .nv-back svg,.nv-chev{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .nv-mlist{list-style:none;margin:8px 0 0;padding:0}
