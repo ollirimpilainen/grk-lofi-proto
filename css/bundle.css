@@ -2024,5 +2024,8 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 @media (max-width:900px){.hf-aside .b-steps>.b-step:nth-child(2){border-top:1px solid var(--line);padding-top:var(--space-5)}}
 
 /* 29.10. (Olli): palvelukortin otsikkorivi on sama auki ja kiinni, jotta avausanimaatio ei nyki. Vain nuolipainikkeen väri vaihtuu. */
-@media (min-width:901px){.hf-mx__i[open]>summary{min-height:184px;padding:36px 0}.hf-mx__i[open]>summary .hf-mx__t p{display:block}}
+/* 29.10. työpaja: tiivistys. Ingressi otsikkorivillä vain kerran: kiinni yksi rivi, auki koko teksti. Rivi matalampi. */
+@media (min-width:901px){.hf-mx__i>summary,.hf-mx__i[open]>summary{min-height:120px;padding:24px 0}
+.hf-mx__t p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
+.hf-mx__i[open]>summary .hf-mx__t p{display:block;-webkit-line-clamp:unset}}
 .hf-mx__x{transition:background-color .3s cubic-bezier(.22,1,.36,1)}

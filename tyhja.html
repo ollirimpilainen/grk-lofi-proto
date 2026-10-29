@@ -167,7 +167,12 @@ a{color:#3f4c55}a:hover{color:#252d32}
 @keyframes k-syva-pitka{to{transform:translate(-56px,32px)}}
 @keyframes k-pora{to{transform:translateY(-3px)}}
 @keyframes k-kauha{0%,100%{transform:translate(0,0) rotate(0)}40%{transform:translate(22px,3px) rotate(-4deg)}60%{transform:translate(22px,3px) rotate(2deg)}}
-@media (prefers-reduced-motion:reduce){.b-svcmap__svg .kone{animation:none!important}}
+.b-svcmap[data-hot="0"] .az-0 .kone-kaivin{animation:k-kaiva 1.8s cubic-bezier(.45,0,.55,1) infinite}
+.b-svcmap[data-hot="3"] .az-3 .rakenne-muuntaja{animation:k-rakenna 1.6s cubic-bezier(.22,1,.36,1) both}
+.b-svcmap__svg .rakenne{transform-box:fill-box;transform-origin:50% 100%}
+@keyframes k-kaiva{0%,100%{transform:rotate(0)}35%{transform:rotate(-5deg)}55%{transform:rotate(3deg)}}
+@keyframes k-rakenna{0%{transform:scaleY(0);opacity:.3}100%{transform:scaleY(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.b-svcmap__svg .kone,.b-svcmap__svg .rakenne{animation:none!important}}
 /* 29.10. (Olli): hakemistorivin yläreunan hiusviiva pois */
 .b-svcmap--tasa .b-svcmap__index--row{border-top:0}
 /* 29.10. (Olli): pallo tunnisteen yläpuolelle, jotta tunniste ja otsikko alkavat samasta vasemmasta linjasta */
@@ -175,6 +180,12 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .b-svcmap--tasa .b-svcmap__index--row h3 .b-svcmap__no{order:0;margin:0 0 14px 6px!important}
 .b-svcmap--tasa .b-svcmap__index--row h3 .b-tag{order:1;margin:0 0 12px!important;min-height:32px;align-items:flex-start}
 .b-svcmap--tasa .b-svcmap__index--row h3>a{order:2}
+/* 29.10. työpaja: karttatasoille omat värit ("eriväriset pallurat"), Toimipisteet viimeisenä */
+.km-acc--toimi>summary i{background:var(--accent)}
+.km-acc--vo>summary i,.km-key i.vo{background:#2f8a5a}
+.km-acc--asf>summary i,.km-key i.asf{background:#5b6b7a}
+.km-acc--kivi>summary i,.km-key i.kivi{background:#c79a2e}
+.km-key{flex-wrap:wrap}
 #miksi-grk.b-why{background:var(--surface-dark)}
 @media (max-width:900px){
   .km-c{grid-template-columns:1fr!important;gap:32px!important}
@@ -203,7 +214,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
       <a class="b-nav__item" href="referenssit.html">Referenssit</a>
       <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
       <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys">Yritys</a>
-      <a class="b-nav__item b-nav__item--menu" href="ura.html">Ura</a>
+      <a class="b-nav__item" href="ura.html">Töihin meille</a>
     </nav>
     <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
   </div>
@@ -233,7 +244,7 @@ document.querySelectorAll('.b-nav__item,.b-nav__contact').forEach(function(a){a.
         <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="tyhja.html?s=Energia">Energia</a></li><li><a href="tyhja.html?s=Teollisuus">Teollisuus</a></li><li><a href="tyhja.html?s=Kaupungit%20ja%20v%C3%A4yl%C3%A4t">Kaupungit ja väylät</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h">Yritys</h2><ul>
-        <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="ura.html">Ura ja työpaikat</a></li>
+        <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="ura.html">Töihin meille</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
         <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Ura · GRK lo-fi -prototyyppi</title>
+<title>Töihin meille · GRK lo-fi -prototyyppi</title>
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/bundle.css">
 <link rel="stylesheet" href="css/nav.css">
@@ -102,6 +102,39 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .lofi .ura-strip .ph>img{opacity:1;filter:none}
 @keyframes ura-roll{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.ura-strip__in{animation:none}}
+/* Yhdistetty Töihin meille -sivu 29.10.: muiden urasivujen tyylit */
+/* Ryhmäsarakkeet ikonilla, tagilla ja linkkilistalla: kopioitu Palvelut.dc.html:stä (pa-*) */
+.pa-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 40px;padding-top:40px;border-top:1px solid var(--line)}
+.pa{display:flex;flex-direction:column;align-items:flex-start}.pa ul{width:100%;margin:0;padding:0;list-style:none}
+.pa-ic{display:block;width:88px;height:88px;margin:-10px 0 8px -12px}
+.pa h3{margin:0;font:900 22px/28px var(--font-head)}.pa h3 a{color:var(--ink);text-decoration:none}
+.pa .b-tag{display:inline-flex;align-items:center;gap:6px;margin:10px 0 12px;padding:0;border:0;background:none;color:var(--ink-2-strong);font:700 12px/16px var(--font-sans);letter-spacing:.1em;text-transform:uppercase}
+.pa .b-tag::before{content:"";width:6px;height:6px;background:var(--accent)}
+.pa__d{margin:0 0 16px;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.pa li{border-top:1px solid var(--line)}
+.pa li a{display:flex;justify-content:space-between;gap:8px;padding:10px 0;font-size:16px;line-height:24px;color:var(--ink);text-decoration:none}
+.pa li a::after{content:"";flex:none;width:7px;height:7px;border:solid var(--accent);border-width:2px 2px 0 0;transform:translateY(8px) rotate(45deg);margin-right:4px}
+@media (max-width:900px){.pa-grid{grid-template-columns:1fr}}
+/* UUSI 28.10. tp-why--3: tp-why kolmella palstalla (kolme ryhmää, ei orpopalstaa) */
+.tp-why--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+/* UUSI 28.10. hk-status: haun tila oranssilla merkillä (merkki, ei pinta) */
+.hk-status{display:inline-flex;align-items:center;gap:10px;margin:0 0 40px;padding:10px 16px;border:1px solid var(--line-strong);font:700 16px/24px var(--font-sans);color:var(--ink)}
+.hk-status::before{content:"";width:8px;height:8px;background:var(--accent)}
+.b-steps.hk-steps{--n:3}
+/* Listaussivun otsikko ja suodatinpalkki siruilla: kopioitu Ajankohtaista.dc.html:stä (aj-*) */
+.aj-head{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:24px 80px;align-items:end;padding:24px 80px 40px}
+.aj-head .b-lead{margin:16px 0 0;max-width:58ch}
+.aj-find{display:grid;gap:20px;padding:28px;background:var(--surface-2)}
+.aj-type{display:flex;align-items:center;gap:16px}
+.aj-type>b{font:700 14px/20px var(--font-sans)}
+.aj-type .b-chips{margin:0}
+.aj-bar{display:flex;justify-content:space-between;align-items:center;margin:32px 0 0;padding:16px 0;border-top:1px solid var(--line);font-size:16px;line-height:24px}
+.aj-bar span{font-size:14px;color:var(--ink-2-strong)}
+@media (max-width:900px){.aj-head{grid-template-columns:1fr;padding:24px 20px 32px}.aj-type{flex-direction:column;align-items:flex-start}}
+</style>
+<style>/* Töihin meille: Tällä sivulla -ankkurit heron oikealla (Laadun mallilla) */
+.ura-hero .hf-hero__text{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:64px;align-items:start}
+.ura-hero .b-toc{margin-top:8px}
 @media (max-width:900px){
   .km-c{grid-template-columns:1fr!important;gap:32px!important}
   .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr 1fr!important;row-gap:40px}
@@ -128,19 +161,19 @@ a{color:#3f4c55}a:hover{color:#252d32}
       <a class="b-nav__item" href="referenssit.html">Referenssit</a>
       <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
       <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys">Yritys</a>
-      <a class="b-nav__item b-nav__item--menu" href="ura.html" aria-current="page">Ura</a>
+      <a class="b-nav__item" href="ura.html" aria-current="page">Töihin meille</a>
     </nav>
     <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
   </div>
 </header>
 <section class="hf-hero hf-hero--page ura-hero">
-  <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li aria-current="page">Ura</li></ol>
-  <div class="hf-hero__text">
-    <h1 class="b-h1">Ura GRK:lla</h1>
+  <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li aria-current="page">Töihin meille</li></ol>
+  <div class="hf-hero__text"><div class="ura-hero__l">
+    <h1 class="b-h1">Töihin meille</h1>
     <p class="b-lead">Rakennamme teitä, siltoja, ratoja ja sähköverkkoja Suomessa, Ruotsissa ja Virossa. Meillä saat vastuuta heti, ja päätökset tehdään lähellä työmaata.</p>
     <div class="b-btns"><a class="b-btn" href="#yhteyshenkilo">Ota yhteyttä</a><a class="b-btn b-btn--secondary" href="#avoimet">Avoimet työpaikat</a></div>
     <ul class="b-facts"><li>Vastuuta heti alusta</li><li>Koulutamme itse</li><li>Työmaita Suomessa, Ruotsissa ja Virossa</li></ul>
-  </div>
+  </div><nav class="b-toc" aria-label="Tällä sivulla"><p class="b-toc__label">Tällä sivulla</p><ul><li><a href="#avoimet">Avoimet työpaikat</a></li><li><a href="#tehtavat">Tehtävät työmaalta toimistoon</a></li><li><a href="#harjoittelu">Harjoittelu ja kesätyö</a></li><li><a href="#uratarinat">Uratarinat</a></li><li><a href="#miksi">Miksi GRK:lle</a></li><li><a href="#usein-kysytyt">Usein kysytyt</a></li><li><a href="#yhteyshenkilo">Yhteyshenkilö</a></li></ul></nav></div>
   <div class="ura-strip"><div class="ura-strip__in"><div class="ph" style="width:320px;height:300px"><img src="assets/42074b40f2c9ca54133821aedfc07ee7.jpg" alt="Kaksi GRK:n työntekijää kalliotyömaalla" style="object-position:40% 25%"></div><div class="ph" style="width:240px;height:360px"><img src="assets/759cef0904bcccca40d5a43ca85ddf5f.jpg" alt="Jere Hänninen työmaalla" style="object-position:42% 40%"></div><div class="ph" style="width:360px;height:270px"><img src="assets/c8573e4c345e27fb136f4b5012734e24.jpg" alt="Asfalttityöntekijät päällystystyössä" style="object-position:72% 45%"></div><div class="ph" style="width:230px;height:310px"><img src="assets/b412132a9b413af94b650cdc90e25d27.jpg" alt="Jyrki kesätöissä GRK:lla" style="object-position:50% 35%"></div><div class="ph" style="width:380px;height:360px"><img src="assets/7c3f611dbffb8739a80b1a1ec45aac7b.jpg" alt="GRK:n työntekijät kättelevät työmaalla" style="object-position:50% 28%"></div><div class="ph" style="width:250px;height:320px"><img src="assets/e5dbfd08ed5bd70463e40b76112a4b2d.jpg" alt="Felix mittaustöissä radalla" style="object-position:74% 30%"></div><div class="ph" style="width:330px;height:270px"><img src="assets/54fa360db0b1f4faaaab536c8943f11c.jpg" alt="Hitsaaja raidetyössä" style="object-position:80% 50%"></div><div class="ph" style="width:280px;height:360px"><img src="assets/4d91f4ad1cee8cf976080cb7897d3e03.jpg" alt="Kaksi työnjohtajaa työmaalla" style="object-position:56% 28%"></div><div class="ph" style="width:340px;height:300px"><img src="assets/3b732ba83c2063dd9417850db758d78a.jpg" alt="Päällystystyömaa ja levitin" style="object-position:58% 60%"></div><div class="ph" aria-hidden="true" style="width:320px;height:300px"><img src="assets/42074b40f2c9ca54133821aedfc07ee7.jpg" alt="" style="object-position:40% 25%"></div><div class="ph" aria-hidden="true" style="width:240px;height:360px"><img src="assets/759cef0904bcccca40d5a43ca85ddf5f.jpg" alt="" style="object-position:42% 40%"></div><div class="ph" aria-hidden="true" style="width:360px;height:270px"><img src="assets/c8573e4c345e27fb136f4b5012734e24.jpg" alt="" style="object-position:72% 45%"></div><div class="ph" aria-hidden="true" style="width:230px;height:310px"><img src="assets/b412132a9b413af94b650cdc90e25d27.jpg" alt="" style="object-position:50% 35%"></div><div class="ph" aria-hidden="true" style="width:380px;height:360px"><img src="assets/7c3f611dbffb8739a80b1a1ec45aac7b.jpg" alt="" style="object-position:50% 28%"></div><div class="ph" aria-hidden="true" style="width:250px;height:320px"><img src="assets/e5dbfd08ed5bd70463e40b76112a4b2d.jpg" alt="" style="object-position:74% 30%"></div><div class="ph" aria-hidden="true" style="width:330px;height:270px"><img src="assets/54fa360db0b1f4faaaab536c8943f11c.jpg" alt="" style="object-position:80% 50%"></div><div class="ph" aria-hidden="true" style="width:280px;height:360px"><img src="assets/4d91f4ad1cee8cf976080cb7897d3e03.jpg" alt="" style="object-position:56% 28%"></div><div class="ph" aria-hidden="true" style="width:340px;height:300px"><img src="assets/3b732ba83c2063dd9417850db758d78a.jpg" alt="" style="object-position:58% 60%"></div></div></div>
 </section>
 
@@ -152,14 +185,62 @@ a{color:#3f4c55}a:hover{color:#252d32}
   <p class="b-linkrow"><a class="b-link" href="avoimet-tyopaikat.html#avoin-hakemus">Jätä avoin hakemus</a><a class="b-link b-link--ext" href="https://www.linkedin.com/company/grk-infra/">Seuraa uusia paikkoja LinkedInissä</a></p>
 </div></section>
 
-<section class="b-section b-section--gray" id="tutustu"><div class="b-inner">
-  <div class="b-head"><h2 class="b-h2">Tutustu ennen kuin haet</h2><p class="b-body">Millaista työ on, miten kesäksi haetaan ja mitä GRK:laiset itse kertovat.</p></div>
-  <div class="ura-routes">
-    <a class="tp-summer" href="tyhja.html?s=Ty%C3%B6%20GRK%3Alla"><div class="tp-summer__ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n työntekijät valavat Huikun sillan kantta Hailuodossa"></div><div class="tp-summer__tx"><b>Työ GRK:lla</b><span>Tehtävät, eteneminen, sijainnit ja edut.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="tp-summer" href="tyhja.html?s=Harjoittelu%20ja%20kes%C3%A4ty%C3%B6"><div class="tp-summer__ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n asfalttityöntekijät päällystystyössä"></div><div class="tp-summer__tx"><b>Harjoittelu ja kesätyö</b><span>Kenelle, milloin haetaan ja mitä kesällä tehdään.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="tp-summer" href="tyhja.html?s=Uratarinat"><div class="tp-summer__ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n ja KSBR:n työmaa"></div><div class="tp-summer__tx"><b>Uratarinat</b><span>Miten GRK:laiset päätyivät infra-alalle.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<section class="b-section" id="tehtavat"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Tehtävät työmaalta toimistoon</h2><p class="b-body">Etsimme sekä käsillä tekijöitä että johtajia. Moniin tehtäviin riittää oma ammatillinen tutkinto, eikä kaikkien tarvitse olla insinöörejä.</p></div>
+  <div class="pa-grid">
+    <section class="pa"><svg class="pa-ic" aria-hidden="true" viewBox="-10 -10 68 68" xmlns="http://www.w3.org/2000/svg"><path d="M17 6 C18.5 10 21 12 24 12 C27 12 29.5 10 31 6 L36 8 C35.5 12 36 15 38.5 17.5 V42 C38.5 43.1 37.6 44 36.5 44 H11.5 C10.4 44 9.5 43.1 9.5 42 V17.5 C12 15 12.5 12 12 8 Z" fill="#f06800"/><path d="M17 6 C18.5 10 21 12 24 12 C27 12 29.5 10 31 6 L36 8 C35.5 12 36 15 38.5 17.5 V42 C38.5 43.1 37.6 44 36.5 44 H11.5 C10.4 44 9.5 43.1 9.5 42 V17.5 C12 15 12.5 12 12 8 Z" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 27 H38.5 V30.5 H9.5 Z M9.5 34 H38.5 V37.5 H9.5 Z" fill="#fff"/><path d="M9.5 27 H38.5 V30.5 H9.5 Z M9.5 34 H38.5 V37.5 H9.5 Z" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 12 V44" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M28.5 18 H32.5 A1 1 0 0 1 33.5 19 V21.5 A1 1 0 0 1 32.5 22.5 H28.5 A1 1 0 0 1 27.5 21.5 V19 A1 1 0 0 1 28.5 18 Z " fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Työmaa</h3><span class="b-tag">Käsillä tekijät</span><p class="pa__d">Rakennat, asennat ja ajat koneita työmaalla. Moni oppii työn tekemällä kokeneen tekijän rinnalla.</p><ul>
+      <li><a href="avoimet-tyopaikat.html">Koneenkuljettajat ja operaattorit</a></li><li><a href="avoimet-tyopaikat.html">Rata- ja sähkörata-asentajat</a></li><li><a href="avoimet-tyopaikat.html">Termiittihitsaajat</a></li><li><a href="avoimet-tyopaikat.html">Sähkö- ja voimajohtoasentajat</a></li><li><a href="avoimet-tyopaikat.html">Asfalttityöntekijät</a></li><li><a href="avoimet-tyopaikat.html">Mittaajat</a></li></ul></section>
+    <section class="pa"><svg class="pa-ic" aria-hidden="true" viewBox="-10 -10 68 68" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 18.5 C16.5 12.8 19.8 9.5 24 9.5 C28.2 9.5 31.5 12.8 31.5 18.5 Z" fill="#f06800"/><path d="M16.5 18.5 C16.5 12.8 19.8 9.5 24 9.5 C28.2 9.5 31.5 12.8 31.5 18.5 Z" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M22.6 18.5 V9.9 C22.6 9.2 23.2 8.6 24 8.6 C24.8 8.6 25.4 9.2 25.4 9.9 V18.5 Z" fill="#f06800"/><path d="M22.6 18.5 V9.9 C22.6 9.2 23.2 8.6 24 8.6 C24.8 8.6 25.4 9.2 25.4 9.9 V18.5 Z" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.6 18.5 H32.4 C33.5 18.5 34.4 19.4 34.4 20.5 H13.6 C13.6 19.4 14.5 18.5 15.6 18.5 Z" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 20.5 C17.5 28 20.5 32.5 24 32.5 C27.5 32.5 30.5 28 30.5 20.5" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.400000000000002 24.6 a0.9 0.9 0 1 0 1.8 0 a0.9 0.9 0 1 0 -1.8 0 M25.8 24.6 a0.9 0.9 0 1 0 1.8 0 a0.9 0.9 0 1 0 -1.8 0 " fill="#3f4c55"/><path d="M22 28 C23.3 29 24.7 29 26 28" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 45 C7 39.8 10.8 36.6 17 35.6 L24 40.5 L31 35.6 C37.2 36.6 41 39.8 41 45" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Työnjohto</h3><span class="b-tag">Työmaan johtaminen</span><p class="pa__d">Vastaat työmaan aikataulusta, turvallisuudesta ja porukasta. Vastuuta saa niin paljon kuin uskaltaa ottaa.</p><ul>
+      <li><a href="avoimet-tyopaikat.html">Työnjohtajat</a></li><li><a href="avoimet-tyopaikat.html">Työmaainsinöörit</a></li><li><a href="avoimet-tyopaikat.html">Työmaapäälliköt</a></li><li><a href="avoimet-tyopaikat.html">Työpäälliköt</a></li><li><a href="avoimet-tyopaikat.html">Projektipäälliköt</a></li></ul></section>
+    <section class="pa"><svg class="pa-ic" aria-hidden="true" viewBox="-10 -10 68 68" xmlns="http://www.w3.org/2000/svg"><path d="M29 4 L38 13 H31 C29.9 13 29 12.1 29 11 Z" fill="#f06800"/><path d="M29 4 L38 13 H31 C29.9 13 29 12.1 29 11 Z" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4 H29 L38 13 V42 C38 43.1 37.1 44 36 44 H12 C10.9 44 10 43.1 10 42 V6 C10 4.9 10.9 4 12 4 Z" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 18 H32 A1 1 0 0 1 33 19 V29 A1 1 0 0 1 32 30 H16 A1 1 0 0 1 15 29 V19 A1 1 0 0 1 16 18 Z M15 24 H24 V30 M28 18 V24 H33" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 35 H33 M15 39.5 H26" fill="none" stroke="#3f4c55" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Asiantuntijat</h3><span class="b-tag">Toimisto ja tuki</span><p class="pa__d">Suunnittelet, lasket ja hankit tai pidät huolta turvallisuudesta, taloudesta ja ihmisistä. Työmaakokemus on etu.</p><ul>
+      <li><a href="avoimet-tyopaikat.html">Suunnittelijat</a></li><li><a href="avoimet-tyopaikat.html">Tarjouslaskenta</a></li><li><a href="avoimet-tyopaikat.html">Hankinta</a></li><li><a href="avoimet-tyopaikat.html">Laatu ja turvallisuus</a></li><li><a href="avoimet-tyopaikat.html">Talous ja tietohallinto</a></li></ul></section>
   </div>
+  <p class="ura-ask"><span>Mietitkö, mikä tehtävä sopisi sinulle?</span><span><b>Johanna Korhonen</b>, henkilöstöjohtaja</span><a href="tel:+358504761076"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 476 1076</a><a href="mailto:johanna.korhonen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>johanna.korhonen@grk.fi</a></p>
 </div></section>
+
+<section class="b-section" id="eteneminen" style="padding-top:0"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Näin etenet</h2><p class="b-body">Teemme sekä pieniä että suuria urakoita, joten vastuuta voi kasvattaa askel kerrallaan. Moni harjoittelijamme jatkaa seuraavina kesinä ja jää vakituiseen työhön.</p></div>
+  <ol class="b-steps">
+    <li class="b-step"><h3>Kesätyö tai harjoittelu</h3><p>Pääset oikeisiin töihin työmaalle tai toimistoon jo opiskeluaikana.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="tyhja.html?s=Harjoittelu%20ja%20kes%C3%A4ty%C3%B6">Harjoittelu ja kesätyö</a></p></li>
+    <li class="b-step"><h3>Oma vastuualue</h3><p>Kokeneempi kollega perehdyttää, ja vastuuta tulee sitä mukaa kuin otat sitä.</p></li>
+    <li class="b-step"><h3>Työnjohtoon</h3><p>Johdat työvaihetta, porukkaa ja aikataulua omalla työmaallasi.</p></li>
+    <li class="b-step"><h3>Hankkeen vetäjäksi</h3><p>Pienemmät urakat kasvattavat valmiuksia isojen hankkeiden johtamiseen.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="tyhja.html?s=Uratarinat">Uratarinat</a></p></li>
+  </ol>
+</div></section>
+
+<section class="hf-edge hf-edge--flip" id="harjoittelu">
+  <div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n työntekijät valavat Huikun sillan kantta Hailuodossa"></div>
+  <div class="tx">
+    <h2 class="hf-h2">Oikeita töitä oikeilla työmailla</h2>
+    <p class="hf-lead">Teet monipuolisia ja vastuullisia töitä alan osaajien rinnalla. Harjoittelualueita ovat taito- ja väylärakentaminen, radan kunnossapito, päällystys ja ympäristöteknologia.</p>
+    <div class="acts acts--stack"><p class="b-eyebrow" style="margin:0 0 -16px">Kesän 2025 työmaita</p><ul class="hf-linklist"><li><a href="referenssi-hailuoto.html">Hailuodon kiinteä yhteys</a></li><li><a href="referenssit.html">Jätkäsaaren kannaksen silta</a></li><li><a href="referenssit.html">Vantaan ratikan itäosa</a></li><li><a href="referenssit.html">Espoon kaupunkirata</a></li><li><a href="referenssit.html">Uudenmaan ratojen kunnossapito</a></li></ul></div>
+  </div>
+</section>
+
+<section class="b-section" id="haku"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Milloin haetaan</h2><p class="b-body">Harjoittelupaikat haetaan vuosittain harjoitteluhaussa. Viime haussa saimme ennätysmäärän hakemuksia, joten hae heti, kun haku aukeaa.</p></div>
+  <p class="hk-status">Kesän 2026 haku on päättynyt</p>
+  <ol class="b-steps hk-steps">
+    <li class="b-step"><h3>Haku aukeaa</h3><p>Ilmoitus julkaistaan Avoimet työpaikat -sivulla ja LinkedInissä.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="https://www.linkedin.com/company/grk-infra/">Seuraa LinkedInissä</a></p></li>
+    <li class="b-step"><h3>Hae TalentAdoressa</h3><p>Kerro hakemuksessa, millaisesta työstä ja miltä alueelta olet kiinnostunut.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="avoimet-tyopaikat.html">Avoimet työpaikat</a></p></li>
+    <li class="b-step"><h3>Sovitaan kesä</h3><p>Kun paikka löytyy, sovimme työmaan ja aloituksen. Harjoittelu pyritään järjestämään lähelle kotia.</p></li>
+  </ol>
+  <p class="ura-ask"><span>Kysyttävää hausta?</span><span><b>Jere Hänninen</b>, harjoittelu ja kesätyöt</span><a href="tel:+358405594046"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 559 4046</a><a href="mailto:jere.hanninen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jere.hanninen@grk.fi</a></p>
+</div></section>
+
+<section class="b-section" id="uratarinat" style="padding-top:0"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Uratarinat</h2><p class="b-body">Ihmiset kertovat omin sanoin, millaista työ GRK:lla on.</p></div>
+  <div class="aj-find" role="search" aria-label="Suodata tarinoita">
+    <div class="aj-type"><b>Rooli</b>
+      <div class="b-chips"><button class="b-chip" type="button" aria-pressed="true">Kaikki</button><button class="b-chip" type="button">Työmaa</button><button class="b-chip" type="button">Työnjohto</button><button class="b-chip" type="button">Asiantuntijat</button><button class="b-chip" type="button">Harjoittelijat ja kesätyöntekijät</button></div>
+    </div>
+  </div>
+  <div class="aj-bar" role="status"><b>9 tarinaa</b><span>Uusin ensin</span></div>
+  <div class="hf-cards" style="margin-top:24px"><a class="hf-card" href="tyhja.html?s=Ty%C3%B6njohtaja%2C%20aloitti%20kes%C3%A4ty%C3%B6ntekij%C3%A4n%C3%A4"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Jätkäsaaren kannaksen sillan työmaa"></div><p class="meta">Taito ja Väylä · Työnjohto</p><h3>Työnjohtaja, aloitti kesätyöntekijänä</h3><p>Ensimmäiset kesät sillan työmaalla ja miten harjoittelusta tuli vakituinen työ.</p><span class="b-link b-link--sm">Lue tarina</span></a><a class="hf-card" href="tyhja.html?s=Paalutuskoneen%20operaattori%2C%20koulutettiin%20talossa"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Maanrakennustyömaa Hämeenlinnan Moreenin eritasoliittymässä"></div><p class="meta">Erikoispohjarakentaminen · Työmaa</p><h3>Paalutuskoneen operaattori, koulutettiin talossa</h3><p>Kaivinkoneesta porapaalutukseen oman operaattorikoulutuksen kautta.</p><span class="b-link b-link--sm">Lue tarina</span></a><a class="hf-card" href="tyhja.html?s=Termiittihitsaaja%2C%20t%C3%B6iss%C3%A4%20Suomessa%20ja%20Virossa"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Raitiotien rakentamista Kalasataman ja Pasilan välillä"></div><p class="meta">Rata · Työmaa</p><h3>Termiittihitsaaja, töissä Suomessa ja Virossa</h3><p>Kiskojen hitsausta kahdessa maassa ja miten reissutyö järjestyy.</p><span class="b-link b-link--sm">Lue tarina</span></a><a class="hf-card" href="tyhja.html?s=Suunnittelija%2C%20vaihtoi%20alaa%20hoitoty%C3%B6st%C3%A4"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Pengertie ja sillan muottirakenteet merellä ilmasta kuvattuna"></div><p class="meta">Taito ja Väylä · Asiantuntijat</p><h3>Suunnittelija, vaihtoi alaa hoitotyöstä</h3><p>Mitä sairaanhoitajan työstä on hyötyä infran suunnittelussa.</p><span class="b-link b-link--sm">Lue tarina</span></a><a class="hf-card" href="tyhja.html?s=S%C3%A4hk%C3%B6asentaja%2C%20s%C3%A4hk%C3%B6asemat%20ja%20voimajohdot"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Kantaverkon 400 kV:n kaapeliyhteyden rakennustöissä"></div><p class="meta">Power · Työmaa</p><h3>Sähköasentaja, sähköasemat ja voimajohdot</h3><p>Energia-alan työmailla viikosta toiseen ja miten kuorma jaetaan tiimissä.</p><span class="b-link b-link--sm">Lue tarina</span></a><a class="hf-card" href="tyhja.html?s=Ty%C3%B6maap%C3%A4%C3%A4llikk%C3%B6%2C%20eteni%20pienist%C3%A4%20urakoista%20isoihin"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n työntekijät Hailuodon maayhteyden työmaalla"></div><p class="meta">Taito ja Väylä · Työnjohto</p><h3>Työmaapäällikkö, eteni pienistä urakoista isoihin</h3><p>Miten pienemmät urakat kasvattivat valmiuksia ison hankkeen johtamiseen.</p><span class="b-link b-link--sm">Lue tarina</span></a><a class="hf-card" href="tyhja.html?s=Haalariharjoittelija%2C%20ensimm%C3%A4inen%20kes%C3%A4%20radalla"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mäkelänkatu ja raitiotie"></div><p class="meta">Rata · Harjoittelijat</p><h3>Haalariharjoittelija, ensimmäinen kesä radalla</h3><p>Radan kunnossapitoa ensimmäisenä opiskelukesänä.</p><span class="b-link b-link--sm">Lue tarina</span></a><a class="hf-card" href="tyhja.html?s=Tarjouslaskija%2C%20siirtyi%20ty%C3%B6maalta%20toimistoon"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Helsingin telakan väliporttityömaa"></div><p class="meta">Taito ja Väylä · Asiantuntijat</p><h3>Tarjouslaskija, siirtyi työmaalta toimistoon</h3><p>Miksi työmaakokemuksesta on hyötyä tarjouslaskennassa.</p><span class="b-link b-link--sm">Lue tarina</span></a><a class="hf-card" href="tyhja.html?s=Ty%C3%B6maainsin%C3%B6%C3%B6riharjoittelija%2C%20kes%C3%A4%20p%C3%A4%C3%A4llystysty%C3%B6mailla"><div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n asfalttityöntekijät päällystystyössä"></div><p class="meta">Päällystys · Harjoittelijat</p><h3>Työmaainsinööriharjoittelija, kesä päällystystyömailla</h3><p>Päällystyskausi työnjohdon rinnalla ja mitä siitä jäi käteen.</p><span class="b-link b-link--sm">Lue tarina</span></a></div>
+</div></section>
+
+
+
 
 <section class="b-section" id="miksi"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Miksi GRK:lle</h2></div>
