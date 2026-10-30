@@ -1,5 +1,5 @@
 /* GENEROITU: GRK/multisite/build.py (base.css + hifi.css + skin-grk.css + skin-lofi.css). Älä muokkaa tätä tiedostoa. */
-/* GRK + KSBR multisite — yhteiset lohkot. Arvot vain semanttisista tokeneista; ilme tulee skin-tiedostosta.
+/* GRK + KSBR multisite, yhteiset lohkot. Arvot vain semanttisista tokeneista; ilme tulee skin-tiedostosta.
    Luokat b-*; rakenne vastaa GDS-lohkoja (GRK/DESIGN.md). */
 
 .b-root { margin: 0; background: var(--white); color: var(--ink); font-family: var(--font-sans); font-size: 18px; line-height: 28px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
@@ -125,7 +125,7 @@ mark.b-gap { background: var(--gap); color: var(--ink); padding: 1px .3em; borde
 .b-chain__desc { font-size: 16px; line-height: 24px; color: var(--ink-2); }
 .b-chain__step .b-link { font-size: 16px; min-height: 32px; }
 
-/* ---------- Vaiheet 01–04 */
+/* ---------- Vaiheet 01-04 */
 .b-steps { display: grid; grid-template-columns: repeat(var(--n, 4), 1fr); gap: var(--space-5); counter-reset: step; }
 .b-step { counter-increment: step; display: grid; gap: var(--space-3); align-content: start; padding-top: var(--space-5); border-top: 1px solid var(--line); }
 .b-step::before { content: counter(step, decimal-leading-zero); font: 700 14px/20px var(--font-sans); color: var(--accent); font-variant-numeric: tabular-nums; }
@@ -281,7 +281,7 @@ mark.b-gap { background: var(--gap); color: var(--ink); padding: 1px .3em; borde
 
 
 /* =====================================================================
-   YHTEISET SIVULOHKOT (8.10.2026) — nostettu KSBR-sivujen toistuvista
+   YHTEISET SIVULOHKOT (8.10.2026), nostettu KSBR-sivujen toistuvista
    paikallisista tyyleistä. Sama merkkaus GRK:lla ja KSBR:llä.
    ===================================================================== */
 
@@ -536,7 +536,7 @@ mark.b-gap { background: var(--gap); color: var(--ink); padding: 1px .3em; borde
   .b-career--flip > :first-child, .b-split--flip > :first-child { order: 0; }
 }
 
-/* GRK + KSBR multisite — hi-fi-kerros (hf-*).
+/* GRK + KSBR multisite, hi-fi-kerros (hf-*).
    Lähde: KSBR:n hi-fi-sivut (Design-kangas FqVUJpT5abVpXcLVRk6zje), koottu 9.10.2026 (gen: tools/hifi_alkuperainen_poiminta.py).
    Toimii b-*-lohkojen päällä: sivun juuri <div class="b-root hf">. Etusivun hienosäädöt: <div class="b-root hf hf-home">.
    Arvot semanttisista tokeneista (accent, ink, ink-2, tint, surface, surface-2, line, on-dark…), joten GRK:n ilme tulee skin-grk.css:stä.
@@ -852,12 +852,12 @@ mark.b-gap { background: var(--gap); color: var(--ink); padding: 1px .3em; borde
 }
 
 /* Tila-merkki kortin kuvan päällä (9.10.2026, GRK:n Käynnissä-tagin pohjalta). Merkkaus: <span class="hf-status">Käynnissä</span> .ph:n sisään.
-   Iso lihavoitu teksti (20 px), koska valkoinen korostusvärillä on 3.1–3.3:1. */
+   Iso lihavoitu teksti (20 px), koska valkoinen korostusvärillä on 3.1-3.3:1. */
 .hf-status{position:absolute;left:0;top:0;z-index:1;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:var(--accent);color:var(--white);font:700 20px/23px var(--font-head)}
 
 /* Reititin: hakukenttä + kuusi ovea (GRK etusivu 9.10.2026). Merkkaus:
    <nav class="hf-tasks hf-tasks--6"><div class="hf-tasks__search"><label for="…">…</label><form class="b-search">…</form></div><a class="hf-task">…</a> ×6</nav>
-   Haku on ensimmäinen lapsi, joten ovet ovat lapset 2–7. */
+   Haku on ensimmäinen lapsi, joten ovet ovat lapset 2-7. */
 .hf-tasks--6{grid-template-columns:repeat(3,minmax(0,1fr))}
 .hf-tasks__search{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(0,640px);gap:24px;align-items:center;padding:28px;border-bottom:1px solid var(--surface)}
 .hf-tasks__search label{font:700 20px/24px var(--font-head);color:var(--ink)}
@@ -918,8 +918,8 @@ mark.b-gap { background: var(--gap); color: var(--ink); padding: 1px .3em; borde
 .b-svcmap--leads .b-svcmap__pin b{min-width:0;width:10px;height:10px;padding:0;border-radius:50%;font-size:0;outline:2px solid #fff;box-shadow:0 0 0 3px var(--surface-dark)}
 .b-svcmap--leads .b-svcmap__index--row h3 .b-svcmap__no{min-width:0;width:12px;height:12px;padding:0;margin:6px 6px 0;border-radius:50%;font-size:0}
 .b-svcmap__pin:hover b{background:var(--ink);color:#fff}
-/* Viiva merkistä hakemiston sarakkeeseen GRK:n 40° kulmalla: pysty alas – vino 40° – pysty numeroon.
-   .b-svcmap--leads > span.b-svcmap__lead[style="--x:18.8;--y:14;--c:0"] > i ; --x/--y = merkin paikka % kuvasta, --c = sarake 0–5. Kuvan suhde 2064×1103. */
+/* Viiva merkistä hakemiston sarakkeeseen GRK:n 40° kulmalla: pysty alas, vino 40°, pysty numeroon.
+   .b-svcmap--leads > span.b-svcmap__lead[style="--x:18.8;--y:14;--c:0"] > i ; --x/--y = merkin paikka % kuvasta, --c = sarake 0-5. Kuvan suhde 2064×1103. */
 .b-svcmap--leads{position:relative;container-type:inline-size}
 .b-svcmap__lead{position:absolute;inset:0;z-index:1;pointer-events:none;--w:1.5px;--lc:var(--surface-dark);--fy:calc(100cqw * 1103 / 2064);--px:calc(var(--x) * 1cqw);--py:calc(var(--y) * var(--fy) / 100);--cx:calc(var(--c) * (100cqw + 24px) / 6 + 12px);--dx:calc(var(--px) - var(--cx));--ye:calc(var(--fy) + 12px);--ys:calc(var(--ye) - var(--dx) * var(--lk,1.1918))}
 .b-svcmap__lead::before,.b-svcmap__lead::after,.b-svcmap__lead i{content:"";position:absolute;border:0 solid var(--lc)}
@@ -1305,7 +1305,7 @@ mark.b-gap { background: var(--gap); color: var(--ink); padding: 1px .3em; borde
 
 /* hf-sc: palvelukortin avattu sisältö tietomallin mukaan (PRJ-269/270, GRK/tietomalli/palvelu.md). Kortti on ainoa paikka, jossa
    palvelusta kerrotaan; mahtuu 1440 × 900 -näkymään. Kaksi palstaa 12 sarakkeen ruudukossa (Olli 20.10.): vasemmalla tekstit
-   (sarakkeet 1–6), sarake 7 sisennys, oikealla tekniset, referenssi ja lopuksi yhteydenotto alhaalla oikealla, mihin lukeminen päättyy.
+   (sarakkeet 1-6), sarake 7 sisennys, oikealla tekniset, referenssi ja lopuksi yhteydenotto alhaalla oikealla, mihin lukeminen päättyy.
    .hf-sc__tbd = asiakkaalta täydennettävä (lo-fi). */
 .hf-mx__i[open]>summary{min-height:0;padding:16px 0 12px}
 .hf-mx__i[open]>summary .hf-mx__t p{display:none}
@@ -1701,7 +1701,7 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 .b-svcmap__index h3 small, .b-svcmap__legend small, .b-svc__biz { font-size: 14px; }
 /* 9. Aktiivinen kieli valkoisena + alleviivaus (oranssi 14 px tummalla oli 4,46:1). */
 .b-nav__util a[aria-current] { color: var(--white); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-/* 10. Toissijainen teksti harmailla pinnoilla vahvempana (ink-2 oli 4,0–4,3:1). */
+/* 10. Toissijainen teksti harmailla pinnoilla vahvempana (ink-2 oli 4,0-4,3:1). */
 .b-section--gray, .b-media, .hf-sec.b-section--gray { --ink-2: var(--ink-2-strong); }
 /* 11. Pitkät artikkelisivun pääotsikot 64/75. */
 .b-pagehead .b-h1 { font-size: 64px; line-height: 75px; }
@@ -1751,7 +1751,7 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
    layoutia" ja "harmaan sävyt eivät satu silmiin".
    - Mitat, välit ja koot GRK:n (skin-grk.css), vain ilme vaihtuu.
    - Yksi neutraali perhe: Archivo. Otsikot 700, leveys 104 % = rivitys
-     vastaa Raleway 900:aa (mitattu 0,99–1,00); leipä 400 / 100 % vastaa
+     vastaa Raleway 900:aa (mitattu 0,99-1,00); leipä 400 / 100 % vastaa
      Robotoa (0,99). @font-face tulee artboardin helmetistä: perhe
      "Lofi Head" lukitsee painon 700:aan ja leveyden 104 %:iin, jolloin
      skinien 900-painot eivät muutu mustiksi.
@@ -2029,3 +2029,10 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 .hf-mx__t p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
 .hf-mx__i[open]>summary .hf-mx__t p{display:block;-webkit-line-clamp:unset}}
 .hf-mx__x{transition:background-color .3s cubic-bezier(.22,1,.36,1)}
+/* 30.10. t3-laattojen määrävariantit (4 = yksi rivi, 5 tai 6 = kolme saraketta matalammilla riveillä) */
+.t3--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.t3--6{height:auto;grid-auto-rows:400px}
+.t3--4 .t3__c,.t3--6 .t3__c{left:24px;right:24px;bottom:24px}
+.t3--4 .t3__c>p,.t3--6 .t3__c>p{white-space:normal;overflow:visible}
+.t3--4 .t3__c h3,.t3--6 .t3__c h3{font-size:22px;line-height:28px}
+@media (max-width:900px){.t3--4,.t3--6{grid-template-columns:1fr}}

@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kiertotalous ja vastaanotto · GRK lo-fi -prototyyppi</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<link rel="stylesheet" href="css/nav.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+.hf-hero>.b-crumbs{position:absolute;z-index:2;top:32px;left:0;right:0;margin:0;padding:0 80px;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.hf-hero>.b-crumbs a{color:#fff;text-decoration-color:rgba(255,255,255,.5)}
+@media (max-width:900px){.hf-hero>.b-crumbs{padding:0 20px;top:20px}}
+#miksi-grk .b-why__num{white-space:nowrap}
+#miksi-grk.b-why{position:relative;overflow:hidden}
+#miksi-grk>.vx-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#miksi-grk>.b-inner{position:relative;z-index:1}
+#miksi-grk.b-why{background:#252d32}
+#miksi-grk .b-head .b-body{color:#e9ebec!important}
+#miksi-grk .b-why__label{border-bottom-color:rgba(255,255,255,.22)}
+#miksi-grk .b-why__text{color:#d3d8db}
+#miksi-grk .b-why__title::before{content:"";display:block;width:32px;height:4px;margin-bottom:16px;background:var(--accent)}
+#miksi-grk .b-why__certs{border-top-color:rgba(255,255,255,.22)}
+#miksi-grk .b-why__certs-label{color:var(--accent)}
+#miksi-grk .b-why__cert{display:inline-flex;align-items:center;gap:8px}
+#miksi-grk .b-why__cert::before{content:"";width:8px;height:8px;background:var(--accent)}
+.hf-mx__i>summary{grid-template-columns:80px minmax(0,1fr) auto 56px}
+.hf-mx__ic{display:grid;place-items:center;width:80px;height:80px}
+.hf-mx__ic img{width:80px;height:80px;display:block}
+/* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
+.hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
+.tm .b-panel__fig{padding:0!important;background:none!important}
+/* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
+.hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
+.hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
+.hf .hf-card h3,.hf .b-step h3,.hf .b-why__title,.hf .hf-work__group,.hf .hf-news h3{font-size:22px;line-height:28px}
+.hf .b-why__num,.hf .why-num,.hf .hf-herostats b{font-size:64px;line-height:1}
+.hf .hf-strip h2{font-weight:900;font-size:40px;line-height:48px}
+.hf .hf-work__group{font-weight:900}
+.hf .b-person__name,.hf .me-contact b{font-size:22px;line-height:28px;font-weight:900}
+.hf .en-co__name{font-size:28px;line-height:33px}
+.hf .b-lead,.hf .lead{font-size:22px;line-height:34px}
+.hf .b-head .b-body{font-size:18px;line-height:28px}
+.hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
+.hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
+.hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
+/* 28.10. hierarkia: ryhmäotsikko (H3 28/33) on suurempi kuin ryhmän kohta (H4 22/28) */
+.hf .hf-work__group{font-size:28px;line-height:33px}
+.hf .hf-mx__t h3{font-size:22px;line-height:28px}
+.hf .hf-work__group{margin:0;padding:0 0 16px;border-bottom:2px solid var(--ink)}
+.hf .hf-work__group:not(:first-child){margin-top:96px}
+#toihin.hf-edge{min-height:400px}
+#toihin .tx{padding:64px 80px}
+.sh-list{border-bottom:1px solid var(--line)}
+.sh-row{display:grid;grid-template-columns:64px minmax(0,4fr) minmax(0,7fr) 16px;gap:24px;align-items:center;padding:12px 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none}
+.sh-row img{display:block;width:64px;height:64px}
+.sh-row b{font:900 22px/28px var(--font-head)}
+.sh-row span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.sh-row i{width:9px;height:9px;border:solid var(--accent);border-width:2.5px 2.5px 0 0;transform:rotate(45deg)}
+.sh-row:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.tp-drop{display:grid;place-items:center;gap:4px;padding:32px;border:1px dashed var(--ink-2);text-align:center;font-size:16px;line-height:24px;color:var(--ink-2-strong);background:#fff}
+.tp-drop b{color:var(--ink)}
+.t3__c p{min-height:48px} /* 28.10. otsikot samalle riville: kuvaukselle aina kahden rivin tila */
+@media (max-width:900px){
+  .km-c{grid-template-columns:1fr!important;gap:32px!important}
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr 1fr!important;row-gap:40px}
+  .hf-sm,.hf-mx__b .b-method{grid-template-columns:1fr!important}
+  .t3__c>p{white-space:normal}
+}
+@media (max-width:600px){
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr!important}
+  .b-root :where(h1,h2,h3),.b-root :where(h1,h2,h3) a{hyphens:auto;-webkit-hyphens:auto}
+}
+
+</style>
+</head>
+<body>
+<div class="b-root hf lofi" style="width: 100%;">
+
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__util-r"><a href="https://ollirimpilainen.github.io/ksbr-proto/">KSBR ↗</a><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="tyhja.html?s=Media">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html" aria-current="page">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Toimialat">Toimialat</a>
+      <a class="b-nav__item" href="referenssit.html">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys">Yritys</a>
+      <a class="b-nav__item" href="ura.html">Töihin meille</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+  </div>
+</header>
+
+<section class="hf-hero hf-hero--page">
+  <ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="palvelut.html">Palvelut</a></li><li aria-current="page">Kiertotalous ja vastaanotto</li></ol>
+  <img src="assets/42074b40f2c9ca54133821aedfc07ee7.jpg" alt="Kaksi GRK:n työntekijää työmaalla">
+  <div class="hf-hero__text">
+    <h1 class="b-h1">Kiertotalous ja maa-ainesten vastaanotto</h1>
+    <p class="b-lead">Otamme vastaan ylijäämämaat, pilaantuneet maat, betoni- ja tiilijätteen sekä teollisuuden sivuvirrat ympäristöluvallisiin toimipisteisiimme. Jalostamme niistä kiertomateriaaleja ja rakennamme niillä alueita, meluvalleja ja kaatopaikkarakenteita.</p>
+    <div class="b-btns"><a class="b-btn" href="vastaanottopaikat.html">Etsi lähin vastaanottopaikka</a><a class="b-btn b-btn--secondary" href="tel:+358447234250">Soita myyntiin</a></div>
+    <ul class="b-facts"><li>Ympäristöluvalliset toimipisteet</li><li>Vastaanotto, jalostus ja rakentaminen samassa talossa</li><li>Myynti vastaa puhelimeen ja ohjaa oikeaan paikkaan</li></ul>
+  </div>
+</section>
+
+<section class="b-section" id="mita-teemme"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Mitä teemme</h2></div>
+  <div class="hf-mx">
+    <h3 class="hf-work__group hf-mx__group">Vastaanotto</h3>
+    <details class="hf-mx__i" name="tyolaji" id="maa-ainekset">
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/35ac60081c37c850214351b1baa3fc92.svg" alt=""></span><span class="hf-mx__t"><h3>Maa-ainesten vastaanotto</h3><p>Otamme vastaan työmaiden ja purkukohteiden ylijäämämaat, louheen ja stabiloidun maa-aineksen. Vastaanotto tapahtuu kunkin toimipisteen kapasiteetin mukaan.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><dl class="ve-facts"><div><dt>Jakeet</dt><dd>Ylijäämämaat (myös stabiloitu maa-aines), hiekoitus- ja raidesepeli</dd></div><div><dt>Vastaanottopaikat</dt><dd><a class="b-link b-link--sm" href="vastaanottopaikat.html">Etsi lähin vastaanottopaikka</a></dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Petri Kuutti</p><p class="b-person__role">Myyntipäällikkö</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358447234250"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 44 723 4250</a><a href="mailto:petri.kuutti@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>petri.kuutti@grk.fi</a></p><a class="b-link b-link--sm" href="kiertotalous-ja-vastaanotto.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+      </article></div>
+    </details>
+    <details class="hf-mx__i" name="tyolaji" id="pilaantuneet">
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/dd51e50adb92e6c47a388fc01518479b.svg" alt=""></span><span class="hf-mx__t"><h3>Pilaantuneet maat ja haastavat jakeet</h3><p>Otamme vastaan pilaantuneet maa-ainekset, vieraslaji- ja jätepitoiset maat, asbestin sekä tuhkat, kuonat ja petihiekat. Hyväksymme tuojan analyysit ympäristölupaa vasten ennen tuontia. Kaikilla paikoilla ei ole lupaa kaikille jakeille, joten soita ennen tuontia.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><dl class="ve-facts"><div><dt>Jakeet</dt><dd>Pilaantuneet maat, vieraslaji- ja jätepitoiset maat, asbesti, tuhkat, kuonat, petihiekat, orgaaniset jätejakeet</dd></div><div><dt>Vastaanottopaikat</dt><dd><a class="b-link b-link--sm" href="vastaanottopaikat.html">Etsi lähin vastaanottopaikka</a></dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Petri Kuutti</p><p class="b-person__role">Myyntipäällikkö</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358447234250"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 44 723 4250</a><a href="mailto:petri.kuutti@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>petri.kuutti@grk.fi</a></p><a class="b-link b-link--sm" href="kiertotalous-ja-vastaanotto.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+      </article></div>
+    </details>
+    <details class="hf-mx__i" name="tyolaji" id="betoni">
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/e0235ec8a773e97fbce353cd9d2c975d.svg" alt=""></span><span class="hf-mx__t"><h3>Betoni-, tiili- ja asfalttijäte</h3><p>Otamme vastaan purkukohteiden betoni-, tiili- ja asfalttijätteen ja kierrätämme uusiomateriaaliksi soveltuvan aineksen.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><dl class="ve-facts"><div><dt>Vastaanottopaikat</dt><dd><a class="b-link b-link--sm" href="vastaanottopaikat.html">Etsi lähin vastaanottopaikka</a></dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Tinja Harjunen</p><p class="b-person__role">Asiakaspäällikkö</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358405428712"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 542 8712</a><a href="mailto:tinja.harjunen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>tinja.harjunen@grk.fi</a></p><a class="b-link b-link--sm" href="kiertotalous-ja-vastaanotto.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+      </article></div>
+    </details>
+    <h3 class="hf-work__group hf-mx__group">Materiaalit ja rakentaminen</h3>
+    <details class="hf-mx__i" name="tyolaji" id="kiertomateriaalit">
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/b19489cfc41c1a726ad78b0f34ca6da2.svg" alt=""></span><span class="hf-mx__t"><h3>Kiertomateriaalit ja kiviainekset</h3><p>Toimitamme jalostettuja kiertomateriaaleja, kuten EEJ-betonimursketta, MARA-materiaaleja ja lannoitevalmisteita. Kiviainesta myymme Loviisan, Nurmijärven Röykän ja Rantakulman sekä Sipoon kiviainespisteistä.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><dl class="ve-facts"><div><dt>Laatu</dt><dd>Kiviaines on CE-merkittyä. EEJ-betonimurskeelle on CE-todistus, Nurmijärvi. Kiviaineksen laatujärjestelmä SFS-EN 13043.</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Sami Seppälä</p><p class="b-person__role">Kiviainespalvelut</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358407734030"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 773 4030</a><a href="mailto:sami.seppala@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>sami.seppala@grk.fi</a></p><a class="b-link b-link--sm" href="kiertotalous-ja-vastaanotto.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+        <p class="pk-label ve-h">Kohteita</p>
+        <div class="ve-refs ve-refs--tasa"><a class="ve-card" href="tyhja.html?s=04/2018-07/2024"><div class="ph"></div><p class="meta">Ruutikangas Oy · 04/2018-07/2024</p><h4>Ruutikankaan ampumaurheilukeskus</h4></a></div>
+      </article></div>
+    </details>
+    <details class="hf-mx__i" name="tyolaji" id="sivuvirrat">
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/c4c9896c0a4d634501e978427b31ba81.svg" alt=""></span><span class="hf-mx__t"><h3>Sivuvirtojen käsittely asiakkaan toimipisteessä</h3><p>Käsittelemme jätteet ja teollisuuden sivuvirrat suoraan asiakkaan toimipisteessä. Näin kuljetuskustannukset pienenevät, ja jätehuolto hoituu paikan päällä. Jalostustuotteet jäävät sopimuksen mukaan GRK:lle tai asiakkaalle.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><dl class="ve-facts"><div><dt>Sivuvirrat</dt><dd>Teollisuuden mineraaliset rejektit, lento- ja pohjatuhkat, pohja- ja valimohiekat</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Tinja Harjunen</p><p class="b-person__role">Asiakaspäällikkö</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358405428712"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 542 8712</a><a href="mailto:tinja.harjunen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>tinja.harjunen@grk.fi</a></p><a class="b-link b-link--sm" href="kiertotalous-ja-vastaanotto.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+      </article></div>
+    </details>
+    <details class="hf-mx__i" name="tyolaji" id="ymparistorakentaminen">
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/456a06c78820cb6f4d48e4084e1ffefc.svg" alt=""></span><span class="hf-mx__t"><h3>Ympäristörakentaminen</h3><p>Rakennamme alueita ja melusuojauksia kiertomateriaaleista kokonaispalveluna. Lisäksi teemme kaatopaikka- ja hiilinielurakentamista ja vastaamme tarvittaessa täydentävästä suunnittelusta ja luvituksesta.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <div class="hf-mx__b"><article class="ve">
+        <div class="ve-top">
+          <div><dl class="ve-facts"><div><dt>Työt</dt><dd>Aluerakennus kiertomateriaaleista, melusuojaukset, materiaalien jalostus, hiilinielurakennus, kaatopaikkarakentaminen</dd></div></dl></div>
+          <aside class="pk-person" aria-label="Yhteyshenkilö"><p class="pk-label">Kysy asiantuntijalta</p><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Petri Ilama</p><p class="b-person__role">Johtaja</p></div></div><p class="pk-ch"><a class="pk-tel" href="tel:+358407254435"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 725 4435</a><a href="mailto:petri.ilama@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>petri.ilama@grk.fi</a></p><a class="b-link b-link--sm" href="kiertotalous-ja-vastaanotto.html#yhteyshenkilot">Kaikki yhteyshenkilöt</a></aside>
+        </div>
+        <p class="pk-label ve-h">Kohteita</p>
+        <div class="ve-refs ve-refs--tasa"><a class="ve-card" href="tyhja.html?s=Sipoo"><div class="ph"></div><p class="meta">Sipoo</p><h4>Sipoon ampumaradan melusuojaukset</h4></a></div>
+      </article></div>
+    </details>
+  </div>
+</div></section>
+
+<section class="b-section" id="vaativat-kohteet" style="padding-top:0"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Vaativat kohteet</h2></div>
+  <a class="hf-feature" href="tyhja.html?s=Sipoon%20ampumaradan%20melusuojaukset"><div class="ph"></div><div class="hf-feature__tx"><span class="hf-feature__tag">Ympäristörakentaminen</span><p class="meta">Sipoo</p><h3>Sipoon ampumaradan melusuojaukset</h3><dl><div><dt>Haaste</dt><dd>Ampumaradan melu piti saada hallintaan, jotta toiminta voi jatkua.</dd></div><div><dt>Ratkaisu</dt><dd>Oma suunnittelu teknisille ratkaisuille, aikatauluille ja logistiikalle sekä kiertotalousmateriaalien ja ylijäämämaiden hyödyntäminen.</dd></div><div><dt>Lopputulos</dt><dd>Melusuojaus parantaa alueen ympäristöolosuhteita.</dd></div></dl><span class="b-link">Lue referenssi</span></div></a>
+  <div class="hf-cards">
+    <a class="hf-card" href="tyhja.html?s=K%C3%A4sittelykeskuksen%20aluekehityshanke"><div class="ph"></div><p class="meta">Lappeenranta · vuodesta 2020</p><h3>Käsittelykeskuksen aluekehityshanke</h3><p>Kenttien, infrastruktuurin ja rakennusten rakentaminen suunnittelusta toteutukseen: louhintaa, kiertotalousmateriaaleja, putkituksia, sähköistyksiä ja asfaltointia.</p><span class="b-link b-link--sm">Lue referenssi</span></a>
+    <a class="hf-card" href="tyhja.html?s=Lintuvaaran%20kaatopaikka"><div class="ph"></div><p class="meta">Espoo · Espoon kaupunki · 05/2017-07/2018</p><h3>Lintuvaaran kaatopaikka</h3><p>Vanhan kaatopaikan sulkeminen pintarakenteilla noin 2,3 hehtaarin alueella sekä maisemointi, ulkoilureitit ja katu yleisen liikenteen keskellä.</p><span class="b-link b-link--sm">Lue referenssi</span></a>
+  </div>
+  <p class="b-linkrow"><a class="b-link" href="referenssit.html">Katso kaikki kiertotalouskohteet</a></p>
+</div></section>
+
+
+<section class="b-section" id="nain-hanke-etenee" style="padding-top:0"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Näin hanke etenee</h2></div>
+  <ol class="b-steps">
+    <li class="b-step"><h3>Suunnittelu yhdessä</h3><p>Kerro materiaalista, määrästä ja aikataulusta, niin katsomme luvat ja sopivan paikan. Isommat määrät kannattaa varata ajoissa.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="kiertotalous-ja-vastaanotto.html#yhteyshenkilot">Soita myyntiin</a></p></li>
+    <li class="b-step"><h3>Analyysit ja sopimus</h3><p>Lähetä analyysit, niin tarkistamme ne ympäristölupaa vasten. Isoissa määrissä teemme sopimuksen.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="tarjouspyynto.html">Pyydä tarjous</a></p></li>
+    <li class="b-step"><h3>Vastaanotto tai toteutus</h3><p>Tuot kuorman sovittuun paikkaan, tai käsittelemme materiaalin omalla toimipisteelläsi.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="vastaanottopaikat.html">Etsi lähin vastaanottopaikka</a></p></li>
+    <li class="b-step"><h3>Luovutus ja takuu</h3><p>Ympäristörakentamisessa luovutamme valmiin kohteen dokumentteineen ja vastaamme työstä takuuajan.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="laatu-ja-turvallisuus.html">Katso laatu ja turvallisuus</a></p></li>
+  </ol>
+</div></section>
+
+<section class="b-section sy" id="suunnittelu"><div class="b-inner">
+  <div class="sy-top">
+    <div class="sy-intro">
+      <h2 class="b-h2">Suunnitelma vielä kesken? Suunnitellaan yhdessä</h2>
+      <p class="b-lead">Suunnittelemme alueen tai meluvallin kiertomateriaaleista ja hoidamme tarvittaessa luvituksen.</p>
+    </div>
+    <aside class="sy-person" aria-label="Suunnitteluapu">
+      <p class="sy-label">Suunnitteluapu</p>
+      <div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Sami Immonen</p><p class="b-person__role">Johtaja, tekniset palvelut</p><p class="b-person__ch"><a href="tel:+358504147236"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 414 7236</a><a href="mailto:sami.immonen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>sami.immonen@grk.fi</a></p></div></div>
+      <div class="b-btns"><a class="b-btn" href="tel:+358504147236">Soita asiantuntijalle</a><a class="b-link" href="tarjouspyynto.html">Lähetä luonnos</a></div>
+    </aside>
+  </div>
+  <ul class="sy-ways">
+    <li><h3>Apua suunnitteluun</h3><p>Käymme luonnoksen läpi kanssasi ja ehdotamme ratkaisuja, jotka on helpompi ja edullisempi rakentaa.</p></li>
+    <li><h3>Suunnittelukumppani koko hankkeeseen</h3><p>KVR-urakassa (kokonaisvastuurakentaminen) ja ST-urakassa (suunnittele ja toteuta) suunnittelemme itse tai yhdessä suunnittelijasi kanssa. Suunnittelijamme on mukana käyttöönottoon asti.</p></li>
+    <li><h3>Sopiiko menetelmä suunnitelmaasi?</h3><p>Suunnittelijana voit tarkistaa menetelmän suoraan asiantuntijalta ennen kuin viet sen suunnitelmaan.</p></li>
+  </ul>
+</div></section>
+
+<section class="b-section b-why" id="miksi-grk"><div class="b-inner">
+  <div class="b-head" style="margin-bottom: 64px;"><h2 class="b-h2">Iso konserni, nimetty asiantuntija</h2></div>
+  <div class="b-why__grid">
+    <div class="b-why__col"><p class="b-why__num">6</p><p class="b-why__label">palvelua samassa talossa</p><h3 class="b-why__title">Kokonaisuus yhdeltä</h3><p class="b-why__text">Vastaanotto, jalostus ja rakentaminen samassa talossa.</p></div>
+    <div class="b-why__col"><p class="b-why__num">3</p><p class="b-why__label">maata: Suomi, Ruotsi ja Viro</p><h3 class="b-why__title">Ympäristöluvat voimassa</h3><p class="b-why__text">Toimipisteemme toimivat ympäristöluvalla.</p></div>
+    <div class="b-why__col"><p class="b-why__num">1</p><p class="b-why__label">puhelu myyntiin riittää</p><h3 class="b-why__title">Nimetty asiantuntija</h3><p class="b-why__text">Myynti vastaa puhelimeen ja ohjaa oikeaan paikkaan.</p></div>
+  </div>
+  <div class="b-why__certs"><span class="b-why__cert">ISO 45001 Työterveys ja -turvallisuus</span><span class="b-why__cert">ISO 9001 Laatu</span><span class="b-why__cert">ISO 14001 Ympäristö</span><span class="b-why__cert">Kiviaines SFS-EN 13043</span></div>
+  <p class="b-linkrow"><a class="b-link" href="laatu-ja-turvallisuus.html">Lue laadusta ja turvallisuudesta</a></p>
+</div></section>
+
+
+
+<section class="b-section b-section--gray" id="toimialat"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Datakeskus-, teollisuus- tai väylähanke?</h2><p class="b-body">Näin toteutamme koko hankkeen toimialoittain.</p></div>
+  <div class="t3"><a class="t3__p" href="datakeskukset.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Datakeskushankkeen työmaa"><div class="t3__c"><h3>Datakeskukset</h3><p>Tontin esirakentamisesta verkkoliityntään.</p></div></a><a class="t3__p" href="teollisuus.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Helsingin telakan väliporttityömaa"><div class="t3__c"><h3>Teollisuus</h3><p>Tehtaat, sähköistys, raiteet ja satamat.</p></div></a><a class="t3__p" href="kaupungit-ja-vaylat.html"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mäkelänkadun peruskorjaus ja raitiotie"><div class="t3__c"><h3>Kaupungit ja väylät</h3><p>Kadut, tiet, sillat ja raitiotiet.</p></div></a></div>
+</div></section>
+
+<section class="b-section" id="usein-kysytyt"><div class="b-inner b-faq">
+  <div class="b-head" style="margin: 0;"><h2 class="b-h2">Usein kysytyt</h2></div>
+  <div><details class="b-acc"><summary><span>Mitä materiaaleja otatte vastaan?</span><i></i></summary><div class="b-acc__body">Esimerkiksi ylijäämämaat, pilaantuneet maat, betoni- ja tiilijätteen, asbestin, tuhkat, kuonat ja petihiekat sekä orgaaniset jätejakeet. Jos jakeesi ei ole listalla, soita myyntiin.</div></details><details class="b-acc"><summary><span>Pitääkö pilaantuneesta maasta toimittaa analyysit?</span><i></i></summary><div class="b-acc__body">Kyllä. Tarkistamme analyysit ympäristölupaa vasten ennen tuontia.</div></details><details class="b-acc"><summary><span>Voiko jätteet käsitellä omalla toimipisteellämme?</span><i></i></summary><div class="b-acc__body">Kyllä. Käsittelemme jätteet ja sivuvirrat myös asiakkaan toimipisteessä.</div></details><details class="b-acc"><summary><span>Myyttekö kiviainesta?</span><i></i></summary><div class="b-acc__body">Kyllä, CE-merkittyä kiviainesta yrityksille ja yksityisille Loviisan, Nurmijärven ja Sipoon kiviainespisteistä.</div></details><details class="b-acc"><summary><span>Onko betonimurske CE-merkitty?</span><i></i></summary><div class="b-acc__body">EEJ-betonimurskeelle on CE-todistus Nurmijärven toimipisteestä.</div></details></div>
+</div></section>
+
+<section class="b-section b-section--gray" id="yhteyshenkilot"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Yhteyshenkilöt</h2><p class="b-body">Soita ensin myyntiin. Myynti tietää, mikä paikka ottaa jakeesi vastaan.</p></div>
+  <div class="b-people">
+    <div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Petri Kuutti</p><p class="b-person__role">Myyntipäällikkö</p><p class="b-person__ch"><a href="tel:+358447234250"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 44 723 4250</a><a href="mailto:petri.kuutti@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>petri.kuutti@grk.fi</a></p></div></div>
+    <div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Tinja Harjunen</p><p class="b-person__role">Asiakaspäällikkö</p><p class="b-person__ch"><a href="tel:+358405428712"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 542 8712</a><a href="mailto:tinja.harjunen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>tinja.harjunen@grk.fi</a></p></div></div>
+    <div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Sami Seppälä</p><p class="b-person__role">Kiviainespalvelut</p><p class="b-person__ch"><a href="tel:+358407734030"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 773 4030</a><a href="mailto:sami.seppala@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>sami.seppala@grk.fi</a></p></div></div>
+    <div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Tero Seppälä</p><p class="b-person__role">Kiviainespalvelut</p><p class="b-person__ch"><a href="tel:+358442380657"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 44 238 0657</a><a href="mailto:tero.seppala@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>tero.seppala@grk.fi</a></p></div></div>
+    <div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Petri Ilama</p><p class="b-person__role">Johtaja</p><p class="b-person__ch"><a href="tel:+358407254435"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 725 4435</a><a href="mailto:petri.ilama@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>petri.ilama@grk.fi</a></p></div></div>
+  </div>
+  <div style="margin-top: 32px;"><details class="b-acc"><summary><span>Aluepäälliköt</span><i></i></summary><div class="b-acc__body">Etelä-Suomi: Henna Välikangas, <a href="tel:+358442569917">+358 44 256 9917</a><br>Väli-Suomi: Mikko Ronkanen, <a href="tel:+358504307447">+358 50 430 7447</a><br>Itä-Suomi: Henri Kaila, <a href="tel:+358408407522">+358 40 840 7522</a><br>Pohjois-Suomi: Okko Kanniainen, <a href="tel:+358442172519">+358 44 217 2519</a></div></details></div>
+  <p style="margin-top: 32px;"><a class="b-link" href="yhteystiedot.html#vastuuhenkilot">Kaikki yhteyshenkilöt</a></p>
+  <div class="b-lightform">
+  <div class="b-head" style="margin: 0; align-content: start;"><h3 class="b-h3">Kerro hankkeestasi</h3><p class="b-body">Muutama lause riittää. Oikea asiantuntija ottaa yhteyttä.</p></div>
+  <form class="b-form">
+    <div class="b-field"><label for="in-nimi">Nimi *</label><input class="b-input" id="in-nimi" type="text" autocomplete="name"></div>
+    <div class="b-field"><label for="in-yht">Puhelin tai sähköposti *</label><input class="b-input" id="in-yht" type="text" autocomplete="email"></div>
+    <div class="b-field b-field--full"><label for="in-hanke">Hankkeesi lyhyesti *</label><textarea class="b-textarea" id="in-hanke" placeholder="Esimerkiksi sijainti, laajuus ja aikataulu."></textarea></div>
+    <p class="b-small b-field--full">Käsittelemme tietoja <a href="tyhja.html?s=Tietosuojaseloste">tietosuojaselosteen</a> mukaisesti.</p>
+    <div class="b-form__foot"><button class="b-btn" type="button">Lähetä</button></div>
+  </form>
+</div>
+</div></section>
+
+<section class="hf-edge hf-edge--dark" id="toihin">
+  <div class="tx">
+    <h2 class="hf-h2">Töihin GRK:lle</h2>
+    <p class="hf-lead">Infra on kasvuala, ja työn jälki näkyy pitkään. Meillä saa vastuuta niin paljon kuin uskaltaa ottaa.</p>
+    <div class="acts acts--stack"><a class="b-btn b-btn--secondary" href="avoimet-tyopaikat.html">Avoimet työpaikat</a><ul class="hf-linklist"><li><a href="ura.html#harjoittelu">Harjoittelu ja kesätyö</a></li><li><a href="ura.html#tehtavat">Työ GRK:lla</a></li></ul></div>
+  </div>
+  <div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n asfalttityöntekijät päällystystyössä"></div>
+</section>
+
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="assets/dd89f49e86320a5c7298b6a8f8e527bf.svg" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="paallystys-ja-asfaltointi.html">Päällystys ja asfaltointi</a></li><li><a href="pohjarakentaminen-ja-paalutus.html">Pohjarakentaminen ja paalutus</a></li><li><a href="rautatiet-ja-raitiotiet.html">Rautatiet ja raitiotiet</a></li><li><a href="sahkoverkot-ja-sahkoasemat.html">Sähköverkot ja sähköasemat</a></li><li><a href="kiertotalous-ja-vastaanotto.html">Kiertotalous ja vastaanotto</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h">Toimialat</h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="energia.html">Energia</a></li><li><a href="teollisuus.html">Teollisuus</a></li><li><a href="kaupungit-ja-vaylat.html">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h">Yritys</h2><ul>
+        <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="ura.html">Töihin meille</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="tyhja.html?s=Tietosuoja">Tietosuoja</a><a href="tyhja.html?s=Ev%C3%A4steasetukset">Evästeasetukset</a><a href="tyhja.html?s=Ilmoituskanava">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="index.html" aria-current="true">FI</a><a href="tyhja.html?s=GRK%20Sverige" lang="sv">SE</a><a href="tyhja.html?s=GRK%20Eesti" lang="et">EE</a><a href="tyhja.html?s=GRK%20Group%20%28English%29" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tämä toiminto ei ole käytössä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+})();
+</script>
+<script src="assets/nav.js"></script>
+</body>
+</html>
