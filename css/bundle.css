@@ -2049,3 +2049,33 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 @media (max-width:900px){.b-stick{left:0;right:0;bottom:0;justify-content:space-between;padding:8px 8px 8px 16px}}
 .t3--2{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media (max-width:900px){.t3--2{grid-template-columns:1fr}}
+
+/* UX/UI-audit 30.10.: mobiilikorjaukset ja kontrasti */
+@media (max-width:900px){.ve-refs--tasa{grid-template-columns:1fr}}
+.pk-person { --ink-2: var(--ink-2-strong); }
+@media (max-width:600px){
+  .b-crumbs a, .b-person__ch a, .pk-ch a, .b-link--sm, .hf-foot li a, a.hf-foot__h, .hf-foot__more, .hf-foot__tel { display:inline-flex; align-items:center; min-height:44px; }
+  .b-crumbs { row-gap:0; }
+}
+/* Kohdekortit: 2 korttia täyttää rivin, yksi kortti vaakana */
+@media (min-width:901px){
+  .hf-cards:has(> .hf-card:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hf-cards > .hf-card:only-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:32px;align-content:start}
+  .hf-cards > .hf-card:only-child > .ph{grid-row:1/span 8}
+}
+/* Kaksi valkoista osiota peräkkäin: ei tuplaväliä */
+#toteutusmallit:not(.b-section--gray) + #miksi-grk:not(.b-section--gray){padding-top:0}
+@media (max-width:900px){
+  .hf-hero--page .hf-hero__text{padding-top:72px}
+  .hf-edge > .ph{min-height:0;aspect-ratio:4/3}
+  .hf-edge .tx,#toihin .tx{padding:56px 20px}
+  .t3__p{height:280px}
+  .t3--6{grid-auto-rows:auto}
+  ul.tm-lyhyt{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hf-mx .hf-mx__i > summary,.hf-mx .hf-mx__i[open] > summary{grid-template-columns:40px minmax(0,1fr) 44px;gap:16px}
+  .hf-mx .hf-mx__ic,.hf-mx .hf-mx__ic img{width:40px;height:40px}
+  .hf-mx .hf-mx__t p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+  .b-root :is(h2,.b-h2,.hf-h2){hyphens:manual;overflow-wrap:break-word}
+}
+@media (max-width:600px){ ul.tm-lyhyt{grid-template-columns:1fr} }
+@media (max-width:600px){ .tm-lyhyt h3 a, .hf-foot__bottom a, .b-footer__bottom a { display:inline-flex; align-items:center; min-height:44px; } }
