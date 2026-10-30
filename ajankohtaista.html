@@ -178,7 +178,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
     <div class="aj-media__txt"><h2 class="b-h2">Medialle</h2><p>Mediapankista saat GRK:n logot ja hankekuvat. Mediayhteyshenkilö vastaa haastattelupyyntöihin.</p><a class="b-btn" href="tyhja.html?s=Siirry%20mediasivulle">Siirry mediasivulle</a></div>
     <div class="aj-media__cards">
       <a class="aj-mcard" href="tyhja.html?s=Mediapankki"><span class="aj-mcard__img" aria-hidden="true"></span><b>Mediapankki</b><small>Logot, hankekuvat ja johdon kuvat</small></a>
-      <div class="aj-mcard aj-person"><span class="aj-person__img" aria-hidden="true"></span><div><small>Mediayhteyshenkilö</small><b>GRK:n viestintä</b><span>Vaihde +358 10 321 4110</span><a class="b-link" href="#">Soita</a></div></div>
+      <div class="aj-mcard aj-person"><span class="aj-person__img" aria-hidden="true"></span><div><small>Mediayhteyshenkilö</small><b>Saana Paju</b><span>Viestinnän asiantuntija, mediayhteydet</span><a class="b-link" href="tel:+358449012628">+358 44 9012 628</a><a class="b-link" href="mailto:saana.paju@grk.fi">saana.paju@grk.fi</a></div></div>
     </div>
   </div>
 </div></section>
@@ -239,6 +239,9 @@ function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTi
 document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tämä toiminto ei ole käytössä prototyypissä.')}
 var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
 document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+var st=document.querySelector('.b-stick');if(st){document.documentElement.classList.add('js-stick');var yh=document.getElementById('yhteyshenkilot'),ft=document.querySelector('footer');
+function chk(){var vh=innerHeight,on=scrollY>vh*0.9;[yh,ft].forEach(function(el){if(el){var r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0)on=false}});st.classList.toggle('is-on',on)}
+addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);chk()}
 })();
 </script>
 <script src="assets/nav.js"></script>

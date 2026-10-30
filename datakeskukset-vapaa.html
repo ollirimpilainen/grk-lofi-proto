@@ -61,6 +61,12 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .tm-lyhyt h3 a{color:var(--ink);text-decoration:none}
 .tm-lyhyt h3 a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
 .tm-lyhyt p{margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+<style>/* 30.10. TK 25: Uran kapea yhteyspalkki myös toimialasivulle (kopio Ura.dc.html:n säännöistä) */
+.ura-ask{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;margin:32px 0 0;padding:20px 24px;background:var(--surface-2);font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.ura-ask b{color:var(--ink);font-weight:700}
+.ura-ask a{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);text-decoration:none}
+.ura-ask a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.ura-ask .b-ico{width:20px;height:20px}
 #toihin.hf-edge{min-height:400px}
 #toihin .tx{padding:64px 80px}
 .sh-list{border-bottom:1px solid var(--line)}
@@ -222,7 +228,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
       </article></div>
     </details>
     <details class="hf-mx__i" name="tyolaji" id="sahkoasema">
-      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/139d0d256a7e3658f9279e841a616d1f.svg" alt=""></span><span class="hf-mx__t"><h3>Sähköasema ja verkkoliityntä</h3><p>Rakennamme 110 kV:n sähköaseman suunnittelusta käyttöönottoon ja teemme kaapeliyhteydet perustuksineen.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
+      <summary><span class="hf-mx__ic" aria-hidden="true"><img src="assets/41087b9de9b47a08e374cb10d3f4ff84.svg" alt=""></span><span class="hf-mx__t"><h3>Sähköasema ja verkkoliityntä</h3><p>Rakennamme 110 kV:n sähköaseman suunnittelusta käyttöönottoon ja teemme kaapeliyhteydet perustuksineen.</p></span><i class="hf-mx__x" aria-hidden="true"></i></summary>
       <div class="hf-mx__b"><article class="ve">
         <div class="ve-top">
           <div><dl class="ve-facts"><div><dt>Lue lisää</dt><dd><a class="b-link b-link--sm" href="sahkoverkot-ja-sahkoasemat.html">Sähköverkot ja sähköasemat</a></dd></div></dl></div>
@@ -242,6 +248,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
       </article></div>
     </details>
   </div>
+  <p class="ura-ask"><span>Etkö löytänyt työlajia?</span><span><b>Jaakko Mäkelä</b>, liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</span><a href="tel:+358503775152"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jaakko.makela@grk.fi</a></p>
 </div></section>
 
 <section class="b-section" id="vaativat-kohteet" style="padding-top:0"><div class="b-inner">
@@ -255,7 +262,15 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </div></section>
 
 
-<section class="b-section" id="nain-hanke-etenee" style="padding-top:0"><div class="b-inner">
+<section class="hf-edge" id="opit">
+  <div class="ph"></div>
+  <div class="tx">
+    <h2 class="hf-h2">Kansainvälisen tilaajan vaatimukset ovat meille tuttuja</h2>
+    <p class="hf-lead">Datakeskuksessa turvallisuus, järjestys ja dokumentointi tehdään kansainvälisen tilaajan tasolla. Perehdytämme jokaisen tekijän tilaajan sääntöihin ennen töiden alkua.</p>
+  </div>
+</section>
+
+<section class="b-section" id="nain-hanke-etenee"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Näin hanke etenee</h2></div>
   <ol class="b-steps">
     <li class="b-step"><h3>Suunnittelu yhdessä</h3><p>Tunnemme Suomen vaatimukset ja suunnittelemme ratkaisut niiden mukaan, avaimet käteen.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="datakeskukset.html#yhteyshenkilot">Soita asiantuntijalle</a></p></li>
@@ -278,29 +293,30 @@ a{color:#3f4c55}a:hover{color:#252d32}
     </aside>
   </div>
   <ul class="sy-ways">
-    <li><h3>Apua suunnitteluun</h3><p>Käymme luonnoksen läpi kanssasi ja ehdotamme ratkaisuja, jotka on helpompi ja edullisempi rakentaa.</p></li>
-    <li><h3>Suunnittelukumppani koko hankkeeseen</h3><p>KVR- ja ST-urakassa suunnittelemme itse tai yhdessä suunnittelijasi kanssa. Suunnittelijamme on mukana käyttöönottoon asti.</p></li>
+    <li><h3>Apua suunnitteluun</h3><p>Käymme luonnoksen läpi kanssasi ja ehdotamme ratkaisuja, jotka on helpompi ja edullisempi rakentaa. Mukana on työmaan ihminen, joka tietää, miten ratkaisu oikeasti tehdään.</p></li>
+    <li><h3>Suunnittelukumppani koko hankkeeseen</h3><p>KVR- ja ST-urakassa suunnittelemme itse tai yhdessä suunnittelijasi kanssa. Suunnittelijamme on mukana käyttöönottoon asti ja päivittää suunnitelman nopeasti, kun työmaalla jokin menee toisin kuin suunniteltiin.</p></li>
     <li><h3>Sopiiko menetelmä suunnitelmaasi?</h3><p>Suunnittelijana voit tarkistaa menetelmän suoraan asiantuntijalta ennen kuin viet sen suunnitelmaan.</p></li>
   </ul>
 </div></section>
 
 <section class="b-section" id="toteutusmallit"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Toteutusmallit</h2><p class="b-body">Sovimme toteutusmallin hankkeen mukaan. Mitä aiemmin olemme mukana, sitä enemmän voimme vaikuttaa ratkaisuihin ja kustannuksiin.</p></div>
-  <ul class="tm-lyhyt"><li><h3><a href="tyhja.html?s=Kokonaisurakka">Kokonaisurakka</a></h3><p>Tilaaja teettää suunnitelmat, ja GRK rakentaa koko kohteen yhdellä sopimuksella.</p></li><li><h3><a href="tyhja.html?s=KVR-urakka">KVR-urakka</a></h3><p>GRK vastaa sekä suunnittelusta että toteutuksesta. Tilaaja määrittelee lopputuloksen.</p></li><li><h3><a href="tyhja.html?s=ST-urakka">ST-urakka</a></h3><p>Perusratkaisut on päätetty. GRK tekee toteutussuunnittelun yhdessä suunnittelijan kanssa ja rakentaa.</p></li><li><h3><a href="tyhja.html?s=Allianssi">Allianssi</a></h3><p>Tilaaja, suunnittelijat ja GRK muodostavat yhteisen organisaation ja jakavat tavoitteet ja riskit.</p></li></ul>
+  <ul class="tm-lyhyt"><li><h3><a href="tyhja.html?s=KVR-urakka">KVR-urakka</a></h3><p>GRK vastaa sekä suunnittelusta että toteutuksesta. Tilaaja määrittelee lopputuloksen.</p></li><li><h3><a href="tyhja.html?s=ST-urakka">ST-urakka</a></h3><p>Perusratkaisut on päätetty. GRK tekee toteutussuunnittelun yhdessä suunnittelijan kanssa ja rakentaa.</p></li><li><h3><a href="tyhja.html?s=Allianssi">Allianssi</a></h3><p>Tilaaja, suunnittelijat ja GRK muodostavat yhteisen organisaation ja jakavat tavoitteet ja riskit.</p></li><li><h3><a href="tyhja.html?s=Kokonaisurakka">Kokonaisurakka</a></h3><p>Tilaaja teettää suunnitelmat, ja GRK rakentaa koko kohteen yhdellä sopimuksella.</p></li></ul>
   <p class="b-linkrow"><a class="b-link" href="tyhja.html?s=Toteutusmallit%20tarkemmin">Toteutusmallit tarkemmin</a></p>
 </div></section>
 
 <section class="b-section b-why" id="miksi-grk"><div class="b-inner">
-  <div class="b-head" style="margin-bottom: 64px;"><h2 class="b-h2">Iso konserni, nimetty asiantuntija</h2></div>
+  <div class="b-head" style="margin-bottom: 64px;"><h2 class="b-h2">Ennen kuin valitset urakoitsijan</h2></div>
   <div class="b-why__grid">
-    <div class="b-why__col"><p class="b-why__num">5</p><p class="b-why__label">palvelua samassa konsernissa</p><h3 class="b-why__title">Kokonaisuus yhdeltä</h3><p class="b-why__text">Tontista sähköasemaan samassa konsernissa.</p></div>
-    <div class="b-why__col"><p class="b-why__num">3</p><p class="b-why__label">maata: Suomi, Ruotsi ja Viro</p><h3 class="b-why__title">Sovittu tehdään</h3><p class="b-why__text">Pidämme aikataulun ja vastaamme lopputuloksesta, joten sinun ei tarvitse huolehtia.</p></div>
-    <div class="b-why__col"><p class="b-why__num">1</p><p class="b-why__label">yhteyshenkilö koko hankkeelle</p><h3 class="b-why__title">Nimetty asiantuntija</h3><p class="b-why__text">Yksi ihminen vastaa hankkeestasi alusta loppuun.</p></div>
+    <div class="b-why__col"><p class="b-why__num">5</p><p class="b-why__label">palvelua samassa konsernissa</p><h3 class="b-why__title">Kuinka suuren osan hankkeesta hoidatte?</h3><p class="b-why__text">Esirakentamisen, perustukset, maanalaisen tekniikan, sähköaseman ja ylijäämämassat konsernin omin voimin.</p></div>
+    <div class="b-why__col"><p class="b-why__num">2</p><p class="b-why__label">datakeskushanketta käynnissä</p><h3 class="b-why__title">Onko teillä kokemusta?</h3><p class="b-why__text">Teemme parhaillaan kahta datakeskushanketta Suomessa.</p></div>
+    <div class="b-why__col"><p class="b-why__num">1</p><p class="b-why__label">yhteyshenkilö koko hankkeelle</p><h3 class="b-why__title">Kuka vastaa?</h3><p class="b-why__text">Nimetty asiantuntija vastaa hankkeesta alusta loppuun. Pidämme aikataulun ja vastaamme lopputuloksesta, joten sinun ei tarvitse huolehtia.</p></div>
   </div>
   <div class="b-why__certs"><span class="b-why__cert">ISO 45001 Työterveys ja -turvallisuus</span><span class="b-why__cert">ISO 9001 Laatu</span><span class="b-why__cert">ISO 14001 Ympäristö</span><span class="b-why__cert">Tukesin sähköurakointipätevyys S1</span></div>
   <p class="b-linkrow"><a class="b-link" href="laatu-ja-turvallisuus.html">Lue laadusta ja turvallisuudesta</a></p>
 </div></section>
 
+<a class="b-stick" href="datakeskukset.html#yhteyshenkilot"><span class="b-stick__who"><b>Jaakko Mäkelä</b>Liiketoimintajohtaja</span><span class="b-stick__btn">Ota yhteyttä</span></a>
 
 
 <section class="b-section b-section--gray" id="toimialat"><div class="b-inner">
@@ -310,7 +326,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 <section class="b-section" id="usein-kysytyt"><div class="b-inner b-faq">
   <div class="b-head" style="margin: 0;"><h2 class="b-h2">Usein kysytyt</h2></div>
-  <div><details class="b-acc"><summary><span>Voiko GRK toteuttaa datakeskuksen maanrakennuksen Suomessa?</span><i></i></summary><div class="b-acc__body">Kyllä. Toteutamme parhaillaan datakeskusalueen valmistelevat työt, massansiirrot ja louhinnan teknologiayritykselle.</div></details><details class="b-acc"><summary><span>Teettekö myös betonirakenteet?</span><i></i></summary><div class="b-acc__body">Kyllä. Konserniin kuuluva KSBR toteuttaa datakeskusten maanalaista tekniikkaa ja betonirakenteita.</div></details><details class="b-acc"><summary><span>Rakennatteko sähköaseman?</span><i></i></summary><div class="b-acc__body">Kyllä. Rakennamme 110 kV:n sähköasemia suunnittelusta käyttöönottoon.</div></details><details class="b-acc"><summary><span>Missä maissa toimitte?</span><i></i></summary><div class="b-acc__body">Suomessa, Ruotsissa ja Virossa.</div></details></div>
+  <div><details class="b-acc"><summary><span>Voiko GRK toteuttaa datakeskuksen maanrakennuksen Suomessa?</span><i></i></summary><div class="b-acc__body">Kyllä. Toteutamme parhaillaan datakeskusalueen valmistelevat työt, massansiirrot ja louhinnan teknologiayritykselle.</div></details><details class="b-acc"><summary><span>Teettekö myös betonirakenteet?</span><i></i></summary><div class="b-acc__body">Kyllä. Konserniin kuuluva KSBR toteuttaa datakeskusten maanalaista tekniikkaa ja betonirakenteita.</div></details><details class="b-acc"><summary><span>Rakennatteko sähköaseman?</span><i></i></summary><div class="b-acc__body">Kyllä. Rakennamme 110 kV:n sähköasemia suunnittelusta käyttöönottoon.</div></details><details class="b-acc"><summary><span>Kuinka nopeasti pääsette aloittamaan?</span><i></i></summary><div class="b-acc__body">Kerro hankkeen aikataulu, niin asiantuntija arvioi, milloin pääsemme aloittamaan.</div></details><details class="b-acc"><summary><span>Missä maissa toimitte?</span><i></i></summary><div class="b-acc__body">Suomessa, Ruotsissa ja Virossa.</div></details></div>
 </div></section>
 
 <section class="b-section b-section--gray" id="yhteyshenkilot"><div class="b-inner">
@@ -390,6 +406,9 @@ function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTi
 document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tämä toiminto ei ole käytössä prototyypissä.')}
 var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
 document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+var st=document.querySelector('.b-stick');if(st){document.documentElement.classList.add('js-stick');var yh=document.getElementById('yhteyshenkilot'),ft=document.querySelector('footer');
+function chk(){var vh=innerHeight,on=scrollY>vh*0.9;[yh,ft].forEach(function(el){if(el){var r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0)on=false}});st.classList.toggle('is-on',on)}
+addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);chk()}
 })();
 </script>
 <script src="assets/nav.js"></script>

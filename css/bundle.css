@@ -2036,3 +2036,14 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 .t3--4 .t3__c>p,.t3--6 .t3__c>p{white-space:normal;overflow:visible}
 .t3--4 .t3__c h3,.t3--6 .t3__c h3{font-size:22px;line-height:28px}
 @media (max-width:900px){.t3--4,.t3--6{grid-template-columns:1fr}}
+/* 30.10. N1 Kiinteä yhteyspainike (työpajat T:30, PT:467): pitkällä laskeutumissivulla Ota yhteyttä aina yhden painalluksen päässä.
+   Merkintä: <a class="b-stick" href="Sivu-2.dc.html#yhteyshenkilot"><span class="b-stick__who"><b>Nimi</b>Rooli</span><span class="b-stick__btn">Ota yhteyttä</span></a>
+   Protossa näkyy, kun sivun yläosa on vieritetty pois, ja piiloutuu Yhteyshenkilöt-osion kohdalla (.is-on). Kankaalla näkyy sivun alakulmassa. */
+.b-stick{position:fixed;z-index:50;right:24px;bottom:24px;display:flex;align-items:center;gap:16px;padding:8px 8px 8px 20px;background:var(--surface-dark);color:#fff;text-decoration:none;box-shadow:0 8px 24px rgba(22,28,32,.24)}
+.b-stick__who{display:grid;font-size:14px;line-height:20px;color:#d3d8db}
+.b-stick__who b{color:#fff;font-weight:700}
+.b-stick__btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;background:var(--accent);color:#fff;font-weight:700;font-size:16px;line-height:24px}
+.b-stick:hover .b-stick__btn{filter:brightness(.92)}
+.js-stick .b-stick{opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .25s cubic-bezier(.22,1,.36,1),transform .25s cubic-bezier(.22,1,.36,1)}
+.js-stick .b-stick.is-on{opacity:1;transform:none;pointer-events:auto}
+@media (max-width:900px){.b-stick{left:0;right:0;bottom:0;justify-content:space-between;padding:8px 8px 8px 16px}}
