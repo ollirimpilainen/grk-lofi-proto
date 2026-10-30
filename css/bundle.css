@@ -2054,8 +2054,10 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 @media (max-width:900px){.ve-refs--tasa{grid-template-columns:1fr}}
 .pk-person { --ink-2: var(--ink-2-strong); }
 @media (max-width:600px){
-  .b-crumbs a, .b-person__ch a, .pk-ch a, .b-link--sm, .hf-foot li a, a.hf-foot__h, .hf-foot__more, .hf-foot__tel { display:inline-flex; align-items:center; min-height:44px; }
-  .b-crumbs { row-gap:0; }
+  .b-crumbs a, .b-person__ch a, .pk-ch a, .b-link--sm, .hf-foot li a, a.hf-foot__h, .hf-foot__more { display:inline-flex; align-items:center; min-height:44px; }
+  .hf-foot__tel a { display:inline-block; padding:10px 0; }
+  .b-crumbs { row-gap:0; align-items:center; }
+  .hf-foot__legal { display:flex; flex-wrap:wrap; align-items:center; column-gap:16px; }
 }
 /* Kohdekortit: 2 korttia täyttää rivin, yksi kortti vaakana */
 @media (min-width:901px){
@@ -2075,7 +2077,12 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
   .hf-mx .hf-mx__i > summary,.hf-mx .hf-mx__i[open] > summary{grid-template-columns:40px minmax(0,1fr) 44px;gap:16px}
   .hf-mx .hf-mx__ic,.hf-mx .hf-mx__ic img{width:40px;height:40px}
   .hf-mx .hf-mx__t p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
-  .b-root :is(h2,.b-h2,.hf-h2){hyphens:manual;overflow-wrap:break-word}
+  .b-root :is(h2,.b-h2,.hf-h2),.b-root .hf-mx__t h3,.b-root .hf-card :is(h3,h4),.b-root .hf-feature__tx h3,.hf-hero--page .b-lead{hyphens:manual;overflow-wrap:break-word}
+  .b-root #toihin .tx{padding:56px 20px}
+  .lofi .t3 .t3__p{background-position:center 18%}
+  .b-root .t3__c h3{hyphens:manual;overflow-wrap:break-word}
+  .sy-person .b-person__ch a{font-size:14px;line-height:20px}
 }
 @media (max-width:600px){ ul.tm-lyhyt{grid-template-columns:1fr} }
 @media (max-width:600px){ .tm-lyhyt h3 a, .hf-foot__bottom a, .b-footer__bottom a { display:inline-flex; align-items:center; min-height:44px; } }
+@media (min-width:901px){ .hf-edge :is(h2,.hf-h2){hyphens:manual} }
