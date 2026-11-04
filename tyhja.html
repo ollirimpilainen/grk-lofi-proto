@@ -95,13 +95,13 @@ a{color:#3f4c55}a:hover{color:#252d32}
 /* 28.10. ilta: 8 asteen kuva (Olli: matalampi), laatta sisältöalueen marginaaleihin, vyöhykeväli = hakemiston sarakeväli */
 .b-svcmap--tasa .b-svcmap__fig{width:calc(100cqw * 1.025796);max-width:none;margin-left:calc(100cqw * -0.012590)}
 .b-svcmap--tasa{grid-template-columns:minmax(0,1fr)}
-.b-svcmap--tasa .b-svcmap__index--row{width:100cqw;max-width:none;margin-left:0;grid-template-columns:repeat(5,calc(100cqw * .154648 - 24px)) minmax(0,1fr);column-gap:24px} /* 29.10.: viisi saraketta vyöhykeväliin, viimeinen venyy oikeaan reunaan (Olli: ei tyhjää oikealle) */
+.b-svcmap--tasa .b-svcmap__index--row{width:100cqw;max-width:none;margin-left:0;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:24px} /* 3.11. (Olli): kuusi tasaleveää saraketta koko leveydelle */
 /* 28.10. ilta (Olli): hakemisto tasattu vasempaan reunaan; viivat merkistä sarakkeen palloon GRK:n vinossa kulmassa
    (pysty, vino 50° vaakatasosta, kuten kirjaston b-svcmap__lead, multisite/hifi.css r. 383, pysty). Sarakeväli = vyöhykeväli,
    joten kaikki vinot ovat yhtä pitkiä ja samansuuntaisia. */
-.b-svcmap--tasa .b-svcmap__lead{--fh:calc(100cqw * 0.337587);--px2:calc(100cqw * 0.060128 + var(--c) * 100cqw * 0.154648);--dx:calc(100cqw * 0.060128 - var(--dot,13px));--dd:calc(var(--dx) * 1.1918);--ye:calc(var(--fh) + 64px - 18px);--ys:calc(var(--ye) - var(--dd))}
+.b-svcmap--tasa .b-svcmap__lead{--fh:calc(100cqw * 0.337587);--px2:calc(100cqw * 0.060128 + var(--c) * 100cqw * 0.154648);--dx:calc(100cqw * 0.060128 - var(--c) * (100cqw * 0.012019 + 4px) - var(--dot,13px));--adx:max(var(--dx),calc(var(--dx) * -1));--dd:calc(var(--adx) * 1.1918);--ye:calc(var(--fh) + 64px - 18px);--ys:calc(var(--ye) - var(--dd))}
 .b-svcmap--tasa .b-svcmap__lead::before{left:calc(var(--px2) - 1px);top:calc(var(--y) / 100 * var(--fh));height:calc(var(--ys) - var(--y) / 100 * var(--fh));border-left-width:2px}
-.b-svcmap--tasa .b-svcmap__lead::after{display:block;left:var(--px2);top:var(--ys);width:calc(var(--dx) * 1.5557);border-top-width:2px;transform-origin:0 0;transform:rotate(130deg)}
+.b-svcmap--tasa .b-svcmap__lead::after{display:block;left:var(--px2);top:var(--ys);width:calc(var(--adx) * 1.5557);border-top-width:2px;transform-origin:0 0;transform:rotate(var(--rot,130deg))} /* 3.11.: tasaleveissä sarakkeissa sarakkeet 5 ja 6 ovat merkin oikealla puolella, --rot:50deg */
 .b-svcmap--tasa .b-svcmap__lead i{display:block;left:calc(var(--px2) - var(--dx) - 1px);top:var(--ye);height:18px;border-left-width:2px}
 }
 /* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
@@ -126,7 +126,6 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .t3--4 .t3__c>p{white-space:normal;overflow:visible}
 @media (max-width:900px){.t3--4{grid-template-columns:1fr}}
 /* 28.10. palvelut ja toimialat ovat molemmat valkoisia: ei kaksinkertaista osioväliä */
-#toimialat.b-section{padding-top:0}
 /* 28.10. neljän kortin otsikot yhdelle riville: H4 22/28 */
 .hf .t3--4 .t3__c h3{font-size:22px;line-height:28px}
 #hero.hf-hero{min-height:720px}
@@ -213,7 +212,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
     <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
     <nav class="b-nav__menu" aria-label="Päävalikko">
       <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
-      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Toimialat">Toimialat</a>
+      <a class="b-nav__item b-nav__item--menu" href="toimialat.html">Toimialat</a>
       <a class="b-nav__item" href="referenssit.html">Referenssit</a>
       <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
       <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys">Yritys</a>
@@ -241,9 +240,9 @@ document.querySelectorAll('.b-nav__item,.b-nav__contact').forEach(function(a){a.
     </div>
     <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
       <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
-        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="paallystys-ja-asfaltointi.html">Päällystys ja asfaltointi</a></li><li><a href="pohjarakentaminen-ja-paalutus.html">Pohjarakentaminen ja paalutus</a></li><li><a href="rautatiet-ja-raitiotiet.html">Rautatiet ja raitiotiet</a></li><li><a href="sahkoverkot-ja-sahkoasemat.html">Sähköverkot ja sähköasemat</a></li><li><a href="kiertotalous-ja-vastaanotto.html">Kiertotalous ja vastaanotto</a></li>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="paallystys-ja-asfaltointi.html">Päällystys ja asfaltointi</a></li><li><a href="pohjarakentaminen-ja-paalutus.html">Pohjarakentaminen ja paalutus</a></li><li><a href="rautatiet-ja-raitiotiet.html">Rautatiet ja raitiotiet</a></li><li><a href="sahkoverkot-ja-sahkoasemat.html">Sähköverkot ja sähköasemat</a></li><li><a href="kiertotalous-ja-vastaanotto.html">Kiertotalous ja vastaanotto</a></li><li><a href="suunnitteluyhteistyo.html">Suunnitteluyhteistyö</a></li>
       </ul></div>
-      <div><h2 class="hf-foot__h">Toimialat</h2><ul>
+      <div><h2 class="hf-foot__h"><a href="toimialat.html">Toimialat</a></h2><ul>
         <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="energia.html">Energia</a></li><li><a href="teollisuus.html">Teollisuus</a></li><li><a href="kaupungit-ja-vaylat.html">Kaupungit ja väylät</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h">Yritys</h2><ul>

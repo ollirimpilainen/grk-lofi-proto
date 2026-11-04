@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Toteutusmallit · GRK lo-fi -prototyyppi</title>
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<link rel="stylesheet" href="css/nav.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+/* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
+.hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
+/* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
+.hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
+.hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
+.hf .hf-card h3,.hf .b-step h3,.hf .b-why__title,.hf .hf-work__group,.hf .hf-news h3{font-size:22px;line-height:28px}
+.hf .b-why__num,.hf .why-num,.hf .hf-herostats b{font-size:64px;line-height:1}
+.hf .hf-strip h2{font-weight:900;font-size:40px;line-height:48px}
+.hf .hf-work__group{font-weight:900}
+.hf .b-person__name,.hf .me-contact b{font-size:22px;line-height:28px;font-weight:900}
+.hf .en-co__name{font-size:28px;line-height:33px}
+.hf .b-lead,.hf .lead{font-size:22px;line-height:34px}
+.hf .b-head .b-body{font-size:18px;line-height:28px}
+.hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
+.hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
+.hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
+/* 3.11. Toteutusmallit-sivu: mallien vertailu ja välilehdet (rakenne KSBR-Toteutusmallit) */
+.tv-table th[scope=col]{white-space:nowrap}
+.tv-table th[scope=row]{padding:20px 24px 20px 0;border-bottom:1px solid var(--line);font-weight:400;vertical-align:top;width:22%}
+.tv-table th[scope=row] b{display:block;font:900 22px/28px var(--font-head);color:var(--ink)}
+.tv-table th[scope=row] span{display:block;margin-top:4px;font-size:14px;line-height:20px;color:var(--ink-2-strong)}
+.tv-table td{padding:20px 24px 20px 0}
+.tv-table td:first-child{font-weight:400}
+.tv-table tr{scroll-margin-top:24px}
+.tv-grk{display:inline-flex;align-items:center;gap:8px;font-weight:700}
+.tv-grk::before{content:"";width:8px;height:8px;background:var(--accent);flex:none}
+.tm .b-panel__text dd .b-link{font-size:18px}
+.tv-ex{display:block;margin-top:8px}.tv-ex>span{display:block;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.tm .b-panel__text .b-body{font-size:18px;line-height:28px}
+.tv-table td:nth-child(3),.tv-table td:nth-child(4){white-space:nowrap}
+@media (max-width:900px){.tv-table{min-width:880px}}
+@media (max-width:900px){
+  .km-c{grid-template-columns:1fr!important;gap:32px!important}
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr 1fr!important;row-gap:40px}
+  .hf-sm,.hf-mx__b .b-method{grid-template-columns:1fr!important}
+  .t3__c>p{white-space:normal}
+}
+@media (max-width:600px){
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr!important}
+  .b-root :where(h1,h2,h3),.b-root :where(h1,h2,h3) a{hyphens:auto;-webkit-hyphens:auto}
+}
+
+</style>
+</head>
+<body>
+<div class="b-root hf lofi" style="width: 100%;">
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__util-r"><a href="https://ollirimpilainen.github.io/ksbr-lofi-proto/">KSBR ↗</a><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="tyhja.html?s=Media">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html" aria-current="page">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="toimialat.html">Toimialat</a>
+      <a class="b-nav__item" href="referenssit.html">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="tyhja.html?s=Yritys">Yritys</a>
+      <a class="b-nav__item" href="ura.html">Töihin meille</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+  </div>
+</header>
+<ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="palvelut.html">Palvelut</a></li><li aria-current="page">Toteutusmallit</li></ol>
+
+<header class="b-pagehead">
+  <div><h1 class="b-h1">Toteutusmallit: kokonaisurakka, KVR, ST ja allianssi</h1><p class="b-lead">Sovimme toteutusmallin hankkeen mukaan. Ero on siinä, kuka suunnittelee ja kuka kantaa vastuun. Mitä aiemmin olemme mukana, sitä enemmän voimme vaikuttaa ratkaisuihin ja kustannuksiin.</p>
+  <div class="b-btns"><a class="b-btn" href="#yhteyshenkilot">Ota yhteyttä</a><a class="b-btn b-btn--secondary" href="suunnitteluyhteistyo.html">Suunnitteluyhteistyö</a></div></div>
+  <nav class="b-toc" aria-label="Tällä sivulla"><p class="b-toc__label">Tällä sivulla</p><ul><li><a href="#vertailu">Mallit rinnakkain</a></li><li><a href="#mallit">Mallit tarkemmin</a></li><li><a href="#usein-kysytyt">Usein kysyttyä</a></li><li><a href="#yhteyshenkilot">Yhteyshenkilöt</a></li></ul></nav>
+</header>
+
+<section class="b-section b-section--gray" id="vertailu"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Mallit rinnakkain</h2><p class="b-body">Kuka vastaa missäkin vaiheessa, montako sopimusta tilaajalla on ja kuinka paljon GRK voi vaikuttaa ratkaisuihin.</p></div>
+  <div class="b-tablebox"><table class="b-table tv-table">
+    <thead><tr><th scope="col">Toteutusmalli</th><th scope="col">Suunnittelu</th><th scope="col">Toteutus</th><th scope="col">Käyttöönotto</th><th scope="col">Sopimukset</th><th scope="col">Vaikutus ratkaisuihin</th></tr></thead>
+    <tbody><tr id="kokonaisurakka"><th scope="row"><b>Kokonaisurakka</b><span>tilaajan suunnitelmilla</span></th><td>Tilaajan suunnittelija</td><td><span class="tv-grk">GRK</span></td><td>Tilaaja</td><td>Kaksi erillistä</td><td>Pieni: suunnitelma on jo valmis</td></tr><tr id="kvr"><th scope="row"><b>KVR-urakka</b><span>kokonaisvastuurakentaminen</span></th><td><span class="tv-grk">GRK</span> (suunnittelija alihankkijana)</td><td><span class="tv-grk">GRK</span></td><td>Tilaaja</td><td>Yksi, tilaaja ja GRK</td><td>Suuri: suunnittelu ja toteutus samassa kädessä</td></tr><tr id="st"><th scope="row"><b>ST-urakka</b><span>suunnittele ja toteuta</span></th><td>Suunnittelija ja <span class="tv-grk">GRK</span> yhdessä</td><td><span class="tv-grk">GRK</span></td><td>Tilaaja</td><td>Kaksi, GRK ohjaa suunnittelua</td><td>Suuri: rakennettavuus mukana suunnittelussa</td></tr><tr id="allianssi"><th scope="row"><b>Allianssi</b><span>yhteinen organisaatio</span></th><td>Kaikki yhdessä</td><td>Kaikki yhdessä</td><td>Kaikki yhdessä</td><td>Yksi yhteinen</td><td>Suurin: ratkaisut kehitetään yhdessä</td></tr></tbody>
+    <caption>Kaikissa malleissa tarpeen määrittelee tilaaja. Vaikutus ratkaisuihin ja kustannuksiin on yleinen periaate: mitä aiemmin toteuttaja on mukana, sitä enemmän se voi vaikuttaa.</caption>
+  </table></div>
+</div></section>
+
+<section class="b-section" id="mallit"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Mallit tarkemmin</h2></div>
+  <div class="tm"><input class="tm-r" type="radio" name="tm" id="tm-ku" checked=""><input class="tm-r" type="radio" name="tm" id="tm-kvr"><input class="tm-r" type="radio" name="tm" id="tm-st"><input class="tm-r" type="radio" name="tm" id="tm-al"><div class="b-tabs" role="tablist"><label class="b-tab" for="tm-ku" role="tab">Kokonaisurakka</label><label class="b-tab" for="tm-kvr" role="tab">KVR-urakka</label><label class="b-tab" for="tm-st" role="tab">ST-urakka</label><label class="b-tab" for="tm-al" role="tab">Allianssi</label></div><div class="b-panel tm-p tm-p--ku" role="tabpanel"><div class="b-panel__text"><h3 class="b-h3">Kokonaisurakka (tilaajan suunnitelmilla)</h3><p class="b-body">Tilaaja teettää suunnitelmat, ja GRK rakentaa koko kohteen yhdellä urakkasopimuksella. Suunnittelu ja urakka ovat kaksi erillistä sopimusta, ja suunnitteluriski on tilaajalla.</p><dl><dt>Sopii, kun</dt><dd>Suunnitelmat ovat valmiit, ja koko kohde halutaan rakentaa yhdellä urakalla.</dd><dt>Esimerkki</dt><dd>Useimmat pohjarakentamisurakkamme ovat kokonaisurakoita.<span class="tv-ex"><a class="b-link b-link--sm" href="pohjarakentaminen-ja-paalutus.html">Verkkosaaren pohjoisosa, Helsinki</a><span>Helsingin kaupunki</span></span></dd></dl></div><div class="b-panel__fig"><img src="assets/d9a364ccee85b4b8a4283ab44968e223.svg" alt="Kokonaisurakka. Tarve: vastaa: tilaaja; Suunnittelu: vastaa: suunnittelija; Toteutus: vastaa: grk; Käyttöönotto: vastaa: tilaaja." width="652" height="157"></div></div><div class="b-panel tm-p tm-p--kvr" role="tabpanel"><div class="b-panel__text"><h3 class="b-h3">KVR-urakka (kokonaisvastuurakentaminen)</h3><p class="b-body">GRK vastaa sekä suunnittelusta että toteutuksesta. Tilaaja määrittelee lopputuloksen ja vaatimukset, ja suunnittelija toimii GRK:n alihankkijana. Sopimuksia on yksi, ja suunnitteluriski on GRK:lla.</p><dl><dt>Sopii, kun</dt><dd>Suunnittelulle ja rakentamiselle halutaan yksi vastuutaho.</dd></dl></div><div class="b-panel__fig"><img src="assets/33f9fe36477c7c8a4c19c4ace231d924.svg" alt="KVR-urakka. Tarve: vastaa: tilaaja; Suunnittelu: vastaa: grk; Toteutus: vastaa: grk; Käyttöönotto: vastaa: tilaaja." width="652" height="157"></div></div><div class="b-panel tm-p tm-p--st" role="tabpanel"><div class="b-panel__text"><h3 class="b-h3">ST-urakka (suunnittele ja toteuta)</h3><p class="b-body">Perusratkaisut on päätetty. GRK tekee toteutussuunnittelun yhdessä suunnittelijan kanssa ja rakentaa, joten rakennettavuus on mukana jo suunnittelussa. Sopimuksia on kaksi, ja GRK ohjaa suunnittelua.</p><dl><dt>Sopii, kun</dt><dd>Perusratkaisut on päätetty, ja toteutussuunnitteluun halutaan rakentajan näkemys.</dd><dt>Esimerkki</dt><dd><span class="tv-ex"><a class="b-link b-link--sm" href="paallystys-ja-asfaltointi.html">Vt 21, Enontekiö</a><span>Suunnittelusta vastaa A-Insinöörit ja rakentamisesta GRK</span></span><span class="tv-ex"><a class="b-link b-link--sm" href="sahkoverkot-ja-sahkoasemat.html">Kalkkimaan energiapuiston sähköasema, Tornio</a><span>Oomi Solar Oy</span></span></dd></dl></div><div class="b-panel__fig"><img src="assets/a92e755a4d84540e75d64187ef92bf86.svg" alt="ST-urakka. Tarve: vastaa: tilaaja; Suunnittelu: suunnittelija + grk; Toteutus: vastaa: grk; Käyttöönotto: vastaa: tilaaja." width="652" height="157"></div></div><div class="b-panel tm-p tm-p--al" role="tabpanel"><div class="b-panel__text"><h3 class="b-h3">Allianssi</h3><p class="b-body">Tilaaja, suunnittelijat ja GRK muodostavat yhteisen organisaation ja jakavat tavoitteet ja riskit. Sopimus on yksi ja yhteinen, ja osapuolet ovat mukana kehitysvaiheesta asti. Riskit ja hyödyt jaetaan osapuolten kesken.</p><dl><dt>Sopii, kun</dt><dd>Tilaaja haluaa kehittää ratkaisut yhdessä suunnittelijoiden ja rakentajan kanssa ja olla osapuolena koko hankkeen ajan.</dd><dt>Esimerkki</dt><dd><span class="tv-ex"><a class="b-link b-link--sm" href="referenssi-hailuoto.html">Hailuodon kiinteä yhteys</a><span>Väylävirasto, AFRY ja A-Insinöörit</span></span><span class="tv-ex"><a class="b-link b-link--sm" href="rautatiet-ja-raitiotiet.html">Raitiotie Kalasatamasta Pasilaan</a><span>Karaatti-allianssi: GRK ja AFRY</span></span></dd></dl></div><div class="b-panel__fig"><img src="assets/e8d1948b627d6854f2bcb760186f2b29.svg" alt="Allianssi. Tarve: vastaa: tilaaja; Suunnittelu: vastaa: kaikki yhdessä; Toteutus: vastaa: kaikki yhdessä; Käyttöönotto: vastaa: kaikki yhdessä." width="652" height="157"></div></div></div>
+</div></section>
+
+<section class="b-section b-section--gray" id="usein-kysytyt"><div class="b-inner b-faq">
+  <div class="b-head" style="margin: 0;"><h2 class="b-h2">Usein kysyttyä toteutusmalleista</h2></div>
+  <div>
+    <details class="b-acc" open="open"><summary><span>Millä urakkamalleilla toimitte?</span><i></i></summary><div class="b-acc__body">Toteutamme kokonaisurakoita, KVR- ja ST-urakoita, projektinjohtourakoita ja allianssihankkeita. Esimerkiksi Jätkäsaaren kannaksen silta Helsingissä on projektinjohtourakka.</div></details>
+    <details class="b-acc"><summary><span>Mitä eroa on KVR- ja ST-urakalla?</span><i></i></summary><div class="b-acc__body">KVR-urakassa GRK vastaa sekä suunnittelusta että toteutuksesta, ja tilaaja määrittelee lopputuloksen. ST-urakassa perusratkaisut on päätetty, ja GRK tekee toteutussuunnittelun yhdessä suunnittelijan kanssa ja rakentaa.</div></details>
+    <details class="b-acc"><summary><span>Voiko kanssanne keskustella jo suunnitteluvaiheessa?</span><i></i></summary><div class="b-acc__body">Kyllä, ja se kannattaa. Mitä aiemmin olemme mukana, sitä paremmin voimme ehdottaa toteutettavia ja kustannustehokkaita ratkaisuja. KVR-, ST- ja allianssihankkeissa suunnittelu kuuluu urakkaan. <a href="suunnitteluyhteistyo.html">Lue lisää suunnitteluyhteistyöstä</a></div></details>
+    <details class="b-acc"><summary><span>Teettekö EPC-toimituksia?</span><i></i></summary><div class="b-acc__body">Kyllä. Teemme 110-400&nbsp;kV:n voimajohdot ja sähköasemat myös EPC-toimituksina, jolloin suunnittelu, hankinta ja rakentaminen tulevat yhdeltä toimittajalta. <a href="sahkoverkot-ja-sahkoasemat.html">Sähköverkot ja sähköasemat</a></div></details>
+  </div>
+</div></section>
+
+<section class="b-section" id="yhteyshenkilot"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Yhteyshenkilöt</h2><p class="b-body">Mallista sovitaan aina hankkeen mukaan. Soita suunnittelusta vastaavalle johtajalle tai oman palvelusi liiketoimintajohtajalle.</p></div>
+  <div class="b-people"><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Sami Immonen</p><p class="b-person__role">Johtaja, tekniset palvelut</p><p class="b-person__ch"><a href="tel:+358504147236"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 414 7236</a><a href="mailto:sami.immonen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>sami.immonen@grk.fi</a></p></div></div><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Jaakko Mäkelä</p><p class="b-person__role">Liiketoimintajohtaja, taito- ja väylärakentaminen sekä päällystys</p><p class="b-person__ch"><a href="tel:+358503775152"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 377 5152</a><a href="mailto:jaakko.makela@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jaakko.makela@grk.fi</a></p></div></div><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Mikko Nyhä</p><p class="b-person__role">Rataliiketoimintajohtaja</p><p class="b-person__ch"><a href="tel:+358408630450"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 863 0450</a><a href="mailto:mikko.nyha@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>mikko.nyha@grk.fi</a></p></div></div></div>
+  <div class="b-lightform">
+    <div class="b-head" style="margin: 0; align-content: start;"><h3 class="b-h3">Kerro hankkeestasi</h3><p class="b-body">Muutama lause riittää. Ehdotamme hankkeelle sopivaa toteutusmallia.</p></div>
+    <form class="b-form">
+      <div class="b-field"><label for="tm-nimi">Nimi *</label><input class="b-input" id="tm-nimi" type="text" autocomplete="name"></div>
+      <div class="b-field"><label for="tm-yht">Puhelin tai sähköposti *</label><input class="b-input" id="tm-yht" type="text" autocomplete="email"></div>
+      <div class="b-field b-field--full"><label for="tm-hanke">Hankkeesi lyhyesti *</label><textarea class="b-textarea" id="tm-hanke" placeholder="Esimerkiksi kohde, vaihe ja toivottu aikataulu."></textarea></div>
+      <p class="b-small b-field--full">Käsittelemme tietoja <a href="tyhja.html?s=Tietosuojaseloste">tietosuojaselosteen</a> mukaisesti.</p>
+      <div class="b-form__foot"><button class="b-btn" type="button">Lähetä</button></div>
+    </form>
+  </div>
+</div></section>
+
+<section class="hf-edge hf-edge--dark" id="toihin">
+  <div class="tx">
+    <h2 class="hf-h2">Töihin GRK:lle</h2>
+    <p class="hf-lead">Infra on kasvuala, ja työn jälki näkyy pitkään. Meillä saa vastuuta niin paljon kuin uskaltaa ottaa.</p>
+    <div class="acts acts--stack"><a class="b-btn b-btn--secondary" href="avoimet-tyopaikat.html">Avoimet työpaikat</a><ul class="hf-linklist"><li><a href="ura.html#harjoittelu">Harjoittelu ja kesätyö</a></li><li><a href="ura.html">Työ GRK:lla</a></li></ul></div>
+  </div>
+  <div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n asfalttityöntekijät päällystystyössä"></div>
+</section>
+
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="assets/dd89f49e86320a5c7298b6a8f8e527bf.svg" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="paallystys-ja-asfaltointi.html">Päällystys ja asfaltointi</a></li><li><a href="pohjarakentaminen-ja-paalutus.html">Pohjarakentaminen ja paalutus</a></li><li><a href="rautatiet-ja-raitiotiet.html">Rautatiet ja raitiotiet</a></li><li><a href="sahkoverkot-ja-sahkoasemat.html">Sähköverkot ja sähköasemat</a></li><li><a href="kiertotalous-ja-vastaanotto.html">Kiertotalous ja vastaanotto</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="toimialat.html">Toimialat</a></h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="energia.html">Energia</a></li><li><a href="teollisuus.html">Teollisuus</a></li><li><a href="kaupungit-ja-vaylat.html">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h">Yritys</h2><ul>
+        <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="ura.html">Töihin meille</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="tyhja.html?s=Tietosuoja">Tietosuoja</a><a href="tyhja.html?s=Ev%C3%A4steasetukset">Evästeasetukset</a><a href="tyhja.html?s=Ilmoituskanava">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="index.html" aria-current="true">FI</a><a href="https://ollirimpilainen.github.io/grk-se-lofi-proto/" lang="sv">SE</a><a href="https://ollirimpilainen.github.io/grk-ee-lofi-proto/" lang="et">EE</a><a href="tyhja.html?s=GRK%20Group%20%28English%29" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tämä toiminto ei ole käytössä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+var st=document.querySelector('.b-stick');if(st){document.documentElement.classList.add('js-stick');var yh=document.getElementById('yhteyshenkilot'),ft=document.querySelector('footer');
+function chk(){var vh=innerHeight,on=scrollY>vh*0.9;[yh,ft].forEach(function(el){if(el){var r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0)on=false}});st.classList.toggle('is-on',on)}
+addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);chk()}
+})();
+</script>
+<script src="assets/nav.js"></script>
+</body>
+</html>
