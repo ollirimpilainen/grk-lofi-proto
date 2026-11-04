@@ -164,13 +164,15 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </div></section>
 
 <section class="b-section" id="vastuuhenkilot"><div class="b-inner">
-  <div class="b-head"><h2 class="b-h2">Hae yhteyshenkilöä</h2><p class="b-body">Hae nimellä, palvelulla tai paikkakunnalla.</p></div>
-  <form class="filters" role="search" action="Yhteyshenkilot.dc.html">
+  <div class="b-head"><h2 class="b-h2">Hae yhteyshenkilöä</h2><p class="b-body">Hae nimellä, palvelulla tai paikkakunnalla, tai rajaa palvelun, aiheen ja alueen mukaan.</p></div>
+    <form class="filters" role="search" action="Yhteyshenkilot.dc.html">
     <div class="b-field"><label for="yt-haku">Hae nimellä, palvelulla tai paikkakunnalla</label><div class="searchbox"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input class="b-input" id="yt-haku" type="search" placeholder="Esim. päällystys Jyväskylä"></div></div>
+    <div class="b-field"><label for="yt-aihe">Palvelu tai aihe</label><select class="b-select" id="yt-aihe"><option>Kaikki palvelut ja aiheet</option><optgroup label="Palvelut"><option>Infra- ja maarakentaminen</option><option>Päällystys ja asfaltointi</option><option>Pohjarakentaminen ja paalutus</option><option>Rautatiet ja raitiotiet</option><option>Sähköverkot ja sähköasemat</option><option>Kiertotalous ja vastaanotto</option></optgroup><optgroup label="Muut aiheet"><option>Tarjouspyyntö tai uusi hanke</option><option>Käynnissä oleva työmaa</option><option>Hankinnat ja alihankinta</option><option>Laatu, turvallisuus ja riskienhallinta</option><option>Media ja viestintä</option><option>Liiketoimintojen johto</option></optgroup></select></div>
+    <div class="b-field"><label for="yt-maa">Alue</label><select class="b-select" id="yt-maa"><option>Kaikki alueet</option><option>Suomi</option><option>Ruotsi</option><option>Viro</option></select></div>
   </form>
+  <div class="chips" aria-label="Pikavalinnat"><span>Usein haettu:</span><a href="#" data-ei-sivu>Päällystys</a><a href="#" data-ei-sivu>Tarjouspyynnöt</a><a href="#" data-ei-sivu>Rata</a><a href="#" data-ei-sivu>Media</a><a href="#" data-ei-sivu>Johto</a></div>
   <p class="b-linkrow"><a class="b-link" href="yhteyshenkilot.html">Kaikki yhteyshenkilöt</a></p>
 </div></section>
-
 <section class="b-section b-section--gray"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">GRK Suomessa, Ruotsissa ja Virossa</h2></div>
   <div class="countries">
