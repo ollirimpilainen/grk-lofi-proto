@@ -25,6 +25,10 @@ header.b-nav{position:relative;z-index:50}
 .nv-col li a:hover,.nv-list a:hover,.nv-h:hover{text-decoration:underline;text-underline-offset:4px}
 .nv-ext{color:var(--ink-2)}
 .nv-list{list-style:none;margin:0;padding:24px 0 0;border-top:1px solid var(--line);columns:var(--sar);column-gap:32px;max-width:calc(var(--sar) * 300px)}
+.nv-list--grp{columns:1;max-width:340px}
+.nv-grp>a{font-weight:600!important}
+.nv-grp ul{list-style:none;margin:0 0 8px;padding:0 0 0 16px}
+.nv-grp ul a{padding:4px 0!important;color:var(--ink-2-strong)}
 .nv-list li{break-inside:avoid}
 .nv-list small{display:block;font:400 14px/20px var(--font-sans);color:var(--ink-2-strong)}
 .nv-panel a:focus-visible,.nv-sheet a:focus-visible,.nv-sheet button:focus-visible,.nv-mb:focus-visible{outline:3px solid var(--accent);outline-offset:2px}

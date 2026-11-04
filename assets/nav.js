@@ -36,6 +36,14 @@
           '<a class="nv-h" href="' + href(c, ylin) + '">' + esc(clean(c.label)) + '</a>' +
           '<ul>' + kids(c).map(function (k) { return '<li><a href="' + href(k, ylin, c) + '">' + esc(clean(k.label)) + ulos(k) + '</a></li>'; }).join('') + '</ul></div>';
       }).join('') + '</div>';
+    } else if (kids(n).some(function (k) { return kids(k).length; })) {
+      // 4.11. (Olli: "ksbr:n navigaatio on perseestä protossa"): kankaan KSBR-Navigaatio-artboardin mukaan ryhmät ja
+      // niiden alasivut/osiot samassa kapeassa pudotusvalikossa (Energia → Tuulivoima …, Betonirakentaminen → osiot)
+      h += '<ul class="nv-list nv-list--grp">' + kids(n).map(function (k) {
+        var alla = kids(k);
+        return '<li class="nv-grp"><a href="' + href(k, ylin) + '">' + esc(clean(k.label)) + ulos(k) + '</a>' +
+          (alla.length ? '<ul>' + alla.map(function (a) { return '<li><a href="' + href(a, ylin, k) + '">' + esc(clean(a.label)) + ulos(a) + '</a></li>'; }).join('') + '</ul>' : '') + '</li>';
+      }).join('') + '</ul>';
     } else {
       var lista = kids(n), sar = lista.length > 12 ? 4 : lista.length > 6 ? 2 : 1;
       h += '<ul class="nv-list" style="--sar:' + sar + '">' + lista.map(function (k) {
