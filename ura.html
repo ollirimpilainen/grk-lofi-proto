@@ -18,7 +18,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .hf-hero>.b-crumbs{position:absolute;z-index:2;top:32px;left:0;right:0;margin:0;padding:0 80px;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.45)}
 .hf-hero>.b-crumbs a{color:#fff;text-decoration-color:rgba(255,255,255,.5)}
 @media (max-width:900px){.hf-hero>.b-crumbs{padding:0 20px;top:20px}}
-/* Työpaikkalista: kopioitu Avoimet-tyopaikat.dc.html:stä (tp-*) */
+/* Työpaikkalista: kopioitu #avoimet:stä (tp-*) */
 .tp-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:32px 0 0;padding:16px 0;border-top:1px solid var(--line);font-size:16px;line-height:24px}
 .tp-bar b{font-weight:700}
 .tp-table{border-top:2px solid var(--ink)}
@@ -35,7 +35,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .tp-soft{font-size:14px}
 .tp-go{justify-self:end;width:9px;height:9px;border:solid var(--accent);border-width:2px 2px 0 0;transform:rotate(45deg)}
 @media (max-width:900px){.tp-th{display:none}.tp-row{grid-template-columns:1fr 24px;gap:4px 12px}.tp-row .tp-tcell{grid-column:1;margin-bottom:6px}.tp-row span[data-l]{grid-column:1;font-size:14px}.tp-row span[data-l]::before{content:attr(data-l) ": ";font-weight:700}.tp-go{grid-column:2;grid-row:1}}
-/* Reittikortit kuvalla: kopioitu Avoimet-tyopaikat.dc.html:stä (tp-summer) */
+/* Reittikortit kuvalla: kopioitu #avoimet:stä (tp-summer) */
 .tp-summer{display:grid;grid-template-columns:1fr;background:#fff;text-decoration:none;color:var(--ink);position:relative}
 .tp-summer__ph{aspect-ratio:16/6;overflow:hidden}.tp-summer__ph img{width:100%;height:100%;object-fit:cover;display:block}
 .tp-summer__tx{display:grid;gap:6px;padding:24px 72px 24px 28px}
@@ -43,7 +43,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 .tp-summer span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
 .tp-summer>svg{position:absolute;right:28px;bottom:32px;width:24px;height:24px;flex:none;fill:none;stroke:var(--accent);stroke-width:2.25}
 .tp-summer:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
-/* Miksi GRK:lle ja lainaukset: kopioitu Avoimet-tyopaikat.dc.html:stä (tp-why, tp-quotes) */
+/* Miksi GRK:lle ja lainaukset: kopioitu #avoimet:stä (tp-why, tp-quotes) */
 .tp-why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
 .tp-why div{display:grid;gap:10px;align-content:start;padding-top:20px;border-top:2px solid var(--ink)}
 .tp-why h3{margin:0;font:900 22px/28px var(--font-head)}
@@ -147,6 +147,51 @@ a{color:#3f4c55}a:hover{color:#252d32}
 /* Töihin meille: Tällä sivulla -ankkurit heron oikealla (Laadun mallilla) */
 .ura-hero .hf-hero__text{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:64px;align-items:start}
 .ura-hero .b-toc{margin-top:8px}
+/* 4.11. (Olli): Avoimet työpaikat yhdistetty Ura-sivulle, tyylit Avoimet-sivulta */
+.tp-head{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:24px 80px;align-items:end;padding:24px 80px 40px}
+.tp-head .b-lead{margin:16px 0 0;max-width:60ch}
+.tp-count{justify-self:end;text-align:right}
+.tp-count p{margin:0;font:900 64px/1 var(--font-head);color:var(--accent)}
+.tp-count small{display:block;margin-top:8px;font:400 14px/20px var(--font-sans);color:var(--ink-2-strong)}
+.tp-filters{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;align-items:end;padding:28px;background:var(--surface-2)}
+.tp-filters .b-field{min-width:0}
+.tp-search{position:relative}
+.tp-search .b-ico{position:absolute;left:16px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:var(--ink-2-strong)}
+.tp-search .b-input{padding-left:48px}
+.tp-sort{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-2-strong)}
+.tp-sort .b-select{min-height:44px;width:auto;font-size:16px}
+.tp-more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:16px}
+.tp-group{margin-top:48px}.tp-group h3{margin:0;font:900 22px/28px var(--font-head)}
+.tp-more a{display:grid;gap:8px;align-content:start;padding:28px;background:#fff;text-decoration:none;color:var(--ink)}
+.tp-more b{font:900 22px/28px var(--font-head)}
+.tp-more span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.tp-more a:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+.tp-paths{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px;align-items:stretch}
+.tp-open{display:grid;align-content:center;gap:20px;padding:64px;background:#252d32;color:#fff}
+.tp-open__eyebrow{margin:0;display:inline-flex;align-items:center;gap:10px;font:700 12px/16px var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.tp-open__eyebrow::before{content:"";width:8px;height:8px;background:var(--accent)}
+.tp-open__h{margin:0;font:900 40px/48px var(--font-head);text-wrap:balance}
+.tp-open__p{margin:0;max-width:46ch;font-size:18px;line-height:28px;color:#d3d8db}
+.tp-open .b-btns{margin-top:8px}
+.tp-side2{display:grid;gap:24px;grid-template-rows:1fr 1fr}
+.tp-summer b,.tp-link b{font:900 22px/28px var(--font-head)}
+.tp-summer span,.tp-link span span{font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.tp-summer>svg{position:absolute;right:28px;bottom:32px}
+.tp-link{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 28px;background:#fff;text-decoration:none;color:var(--ink)}
+.tp-link>span{display:grid;gap:4px}
+.tp-link--wide{margin-top:24px;justify-content:flex-start;gap:20px}
+.tp-link--wide>span{flex:1}
+.tp-li{display:grid;place-items:center;width:44px;height:44px;flex:none;background:var(--ink)}
+.lofi .tp-link .tp-li{opacity:1;background:var(--ink);flex:none;width:44px}
+.tp-link .tp-li svg{width:22px;height:22px;fill:#fff;stroke:none}
+.tp-paths svg,.tp-link svg{width:24px;height:24px;flex:none;fill:none;stroke:var(--accent);stroke-width:2.25}
+.tp-summer:hover b,.tp-link:hover b{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+@media (max-width:900px){.tp-paths{grid-template-columns:1fr}.tp-open{padding:40px 24px}.tp-open__h{font-size:40px;line-height:48px}}
+@media (max-width:900px){.tp-head,.tp-filters,.tp-job,.tp-more,.tp-why,.tp-quotes{grid-template-columns:1fr}.tp-head{padding:24px 20px 32px}.tp-count{justify-self:start;text-align:left}}
+.tp-open .b-btn:hover{background:#c45500;color:#fff}
+/* Työpaikkalista: kopioitu Ura.dc.html#avoimet:stä (tp-*) */
+/* Reittikortit kuvalla: kopioitu Ura.dc.html#avoimet:stä (tp-summer) */
+/* Miksi GRK:lle ja lainaukset: kopioitu Ura.dc.html#avoimet:stä (tp-why, tp-quotes) */
 /* 3.11. (Olli): sitaattien yläpuolelle kuvapaikka oikeista ihmisistä (sanojan kuva) */
 .tp-q{margin:0;display:grid;gap:20px;align-content:start}
 .tp-q__ph{aspect-ratio:4/5;margin:0;background:var(--surface)}
@@ -192,13 +237,39 @@ a{color:#3f4c55}a:hover{color:#252d32}
 
 <section class="b-section" id="avoimet"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Avoimet työpaikat</h2><p class="b-body">Haet paikkaa TalentAdore-palvelussa. Jos sopivaa ei ole auki, jätä avoin hakemus.</p></div>
-  <div class="tp-bar" role="status"><span><b>2 avointa paikkaa</b></span><a class="b-link" href="avoimet-tyopaikat.html">Kaikki avoimet työpaikat ja haku</a></div>
-  <div class="tp-table" role="table" aria-label="Avoimet työpaikat"><div class="tp-th" role="row"><span role="columnheader">Tehtävä</span><span role="columnheader">Tehtäväalue</span><span role="columnheader">Sijainti</span><span role="columnheader">Haku päättyy</span><span aria-hidden="true"></span></div><a class="tp-row" role="row" href="https://ats.talentadore.com/apply/tyomaapaallikoita-ja-tyonjohtajia-taito-ja-vaylarakentamisen-infrakohteisiin-pohjois-suomeen-ja-pohjois-ruotsiin/DPVEMw"><span class="tp-tcell" role="cell"><h3 class="tp-t">Työmaapäälliköitä ja työnjohtajia taito- ja väylärakentamisen infrakohteisiin Pohjois-Suomeen ja Pohjois-Ruotsiin</h3><span class="tp-co">GRK Suomi Oy ja GRK Sverige AB</span></span><span role="cell" data-l="Tehtäväalue">Työmaa ja työnjohto</span><span role="cell" data-l="Sijainti">Pohjois-Suomi ja Pohjois-Ruotsi</span><span class="tp-dl" role="cell" data-l="Haku päättyy">31.10.2026</span><span class="tp-go" aria-hidden="true"></span></a><a class="tp-row" role="row" href="https://ats.talentadore.com/apply/rautateiden-termiittihitsaajia/DapqRy"><span class="tp-tcell" role="cell"><h3 class="tp-t">Rautateiden termiittihitsaajia</h3><span class="tp-co">GRK Suomi Oy</span></span><span role="cell" data-l="Tehtäväalue">Ammattilaiset</span><span role="cell" data-l="Sijainti">Suomi ja Viro</span><span class="tp-dl tp-soft" role="cell" data-l="Haku päättyy">Täytetään sopivan löydyttyä</span><span class="tp-go" aria-hidden="true"></span></a></div>
-  <p class="ura-ask"><span>Kysyttävää ennen kuin haet?</span><span><b>Johanna Korhonen</b>, henkilöstöjohtaja</span><a href="tel:+358504761076"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 476 1076</a><a href="mailto:johanna.korhonen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>johanna.korhonen@grk.fi</a></p>
-  <p class="b-linkrow"><a class="b-link" href="avoimet-tyopaikat.html#avoin-hakemus">Jätä avoin hakemus</a><a class="b-link b-link--ext" href="https://www.linkedin.com/company/grk-infra/">Seuraa uusia paikkoja LinkedInissä</a></p>
+
+  <form class="tp-filters" role="search" aria-label="Hae ja suodata työpaikkoja">
+    <div class="b-field"><label for="tp-q">Hae tehtävää</label><div class="tp-search"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input class="b-input" id="tp-q" type="search" placeholder="Esim. työnjohtaja, hitsaaja"></div></div>
+    <div class="b-field"><label for="tp-ala">Tehtäväalue</label><select class="b-select" id="tp-ala"><option>Kaikki</option><option>Työmaa ja työnjohto</option><option>Ammattilaiset</option><option>Toimihenkilöt</option></select></div>
+    <div class="b-field"><label for="tp-maa">Alue</label><select class="b-select" id="tp-maa"><option>Kaikki alueet</option><option>Suomi</option><option>Ruotsi</option><option>Viro</option></select></div>
+  </form>
+  <div class="tp-bar" role="status"><span><b>2 avointa paikkaa</b></span><span class="tp-sort"><label for="tp-s">Järjestä</label><select class="b-select" id="tp-s"><option>Haku päättyy ensin</option><option>Uusimmat ensin</option></select></span></div>
+  <div class="tp-table" role="table" aria-label="Avoimet työpaikat"><div class="tp-th" role="row"><span role="columnheader">Tehtävä</span><span role="columnheader">Tehtäväalue</span><span role="columnheader">Sijainti</span><span role="columnheader">Haku päättyy</span><span aria-hidden="true"></span></div><a class="tp-row" role="row" href="https://ats.talentadore.com/apply/tyomaapaallikoita-ja-tyonjohtajia-taito-ja-vaylarakentamisen-infrakohteisiin-pohjois-suomeen-ja-pohjois-ruotsiin/DPVEMw"><span class="tp-tcell" role="cell"><h2 class="tp-t">Työmaapäälliköitä ja työnjohtajia taito- ja väylärakentamisen infrakohteisiin Pohjois-Suomeen ja Pohjois-Ruotsiin</h2><span class="tp-co">GRK Suomi Oy ja GRK Sverige AB</span></span><span role="cell" data-l="Tehtäväalue">Työmaa ja työnjohto</span><span role="cell" data-l="Sijainti">Pohjois-Suomi ja Pohjois-Ruotsi</span><span class="tp-dl" role="cell" data-l="Haku päättyy">31.10.2026</span><span class="tp-go" aria-hidden="true"></span></a><a class="tp-row" role="row" href="https://ats.talentadore.com/apply/rautateiden-termiittihitsaajia/DapqRy"><span class="tp-tcell" role="cell"><h2 class="tp-t">Rautateiden termiittihitsaajia</h2><span class="tp-co">GRK Suomi Oy</span></span><span role="cell" data-l="Tehtäväalue">Ammattilaiset</span><span role="cell" data-l="Sijainti">Suomi ja Viro</span><span class="tp-dl tp-soft" role="cell" data-l="Haku päättyy">Täytetään sopivan löydyttyä</span><span class="tp-go" aria-hidden="true"></span></a></div>
+</div></section>
+<section class="b-section b-section--gray tp-paths-sec" id="avoin-hakemus"><div class="b-inner">
+  <div class="tp-paths">
+    <div class="tp-open">
+      <h2 class="tp-open__h">Etkö löytänyt sopivaa paikkaa?</h2>
+      <p class="tp-open__p">Jätä avoin hakemus. Kerro, millaiset tehtävät ja mikä alue sinua kiinnostavat, niin otamme yhteyttä, kun sopiva paikka aukeaa.</p>
+      <div class="b-btns"><a class="b-btn" href="ura.html#avoin-hakemus">Jätä avoin hakemus</a></div>
+    </div>
+    <div class="tp-side2">
+      <a class="tp-summer" href="tyhja.html?s=Kes%C3%A4ty%C3%B6%20ja%20harjoittelu"><div class="tp-summer__ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n asfalttityöntekijät päällystystyössä"></div><div class="tp-summer__tx"><b>Kesätyö ja harjoittelu</b><span>Kesätyöpaikat ja harjoittelut opiskelijoille.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="tp-summer" href="tyhja.html?s=Ty%C3%B6%20GRK%3Alla"><div class="tp-summer__ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n työntekijät valavat Huikun sillan kantta Hailuodossa"></div><div class="tp-summer__tx"><b>Työ GRK:lla</b><span>Millaista työ on työmaalla ja toimistolla.</span></div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      
+    </div>
+  </div>
+  <a class="tp-link tp-link--wide" href="https://www.linkedin.com/company/grk-infra/"><span class="tp-li" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></span><span><b>Seuraa LinkedInissä</b><span>Uudet paikat julkaistaan myös LinkedInissä.</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <div class="tp-group"><h3>Konsernin muut avoimet paikat</h3>
+    <div class="tp-more">
+      <a href="https://ollirimpilainen.github.io/grk-se-lofi-proto/lediga-jobb.html"><b>GRK Sverige ↗</b><span>Lediga jobb i Sverige</span></a>
+      <a href="https://ollirimpilainen.github.io/grk-ee-lofi-proto/toopakkumised.html"><b>GRK Eesti ↗</b><span>Vabad töökohad Eestis</span></a>
+      <a href="https://ollirimpilainen.github.io/ksbr-lofi-proto/"><b>KSBR ↗</b><span>Betonirakentamisen avoimet paikat</span></a>
+    </div>
+  </div>
 </div></section>
 
-<section class="b-section" id="eteneminen" style="padding-top:0"><div class="b-inner">
+<section class="b-section" id="eteneminen"><div class="b-inner">
   <div class="b-head"><h2 class="b-h2">Näin etenet</h2><p class="b-body">Teemme sekä pieniä että suuria urakoita, joten vastuuta voi kasvattaa askel kerrallaan. Moni harjoittelijamme jatkaa seuraavina kesinä ja jää vakituiseen työhön.</p></div>
   <ol class="b-steps">
     <li class="b-step"><h3>Kesätyö tai harjoittelu</h3><p>Pääset oikeisiin töihin työmaalle tai toimistoon jo opiskeluaikana.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="#harjoittelu">Harjoittelu ja kesätyö</a></p></li>
@@ -231,7 +302,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
   <p class="hk-status">Kesän 2026 haku on päättynyt</p>
   <ol class="b-steps hk-steps">
     <li class="b-step"><h3>Haku aukeaa</h3><p>Ilmoitus julkaistaan Avoimet työpaikat -sivulla ja LinkedInissä.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="https://www.linkedin.com/company/grk-infra/">Seuraa LinkedInissä</a></p></li>
-    <li class="b-step"><h3>Hae TalentAdoressa</h3><p>Kerro hakemuksessa, millaisesta työstä ja miltä alueelta olet kiinnostunut.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="avoimet-tyopaikat.html">Avoimet työpaikat</a></p></li>
+    <li class="b-step"><h3>Hae TalentAdoressa</h3><p>Kerro hakemuksessa, millaisesta työstä ja miltä alueelta olet kiinnostunut.</p><p class="b-step__cta"><a class="b-link b-link--sm" href="#avoimet">Avoimet työpaikat</a></p></li>
     <li class="b-step"><h3>Sovitaan kesä</h3><p>Kun paikka löytyy, sovimme työmaan ja aloituksen. Harjoittelu pyritään järjestämään lähelle kotia.</p></li>
   </ol>
   <p class="ura-ask"><span>Kysyttävää hausta?</span><span><b>Jere Hänninen</b>, harjoittelu ja kesätyöt</span><a href="tel:+358405594046"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 40 559 4046</a><a href="mailto:jere.hanninen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>jere.hanninen@grk.fi</a></p>
@@ -286,7 +357,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
 </div></section>
 
 <section class="b-section b-section--gray" id="yhteyshenkilo"><div class="b-inner lt-contact">
-  <div><h2 class="b-h2">Soita ennen kuin haet</h2><p class="b-lead">Moni soittaa ensin, ja se kannattaa. Kerromme tehtävistä, työmaista ja siitä, millainen paikka sopisi sinulle.</p><p style="margin-top:20px;display:flex;flex-wrap:wrap;gap:12px 32px"><a class="b-link" href="avoimet-tyopaikat.html">Avoimet työpaikat</a><a class="b-link" href="avoimet-tyopaikat.html#avoin-hakemus">Jätä avoin hakemus</a></p></div>
+  <div><h2 class="b-h2">Soita ennen kuin haet</h2><p class="b-lead">Moni soittaa ensin, ja se kannattaa. Kerromme tehtävistä, työmaista ja siitä, millainen paikka sopisi sinulle.</p><p style="margin-top:20px;display:flex;flex-wrap:wrap;gap:12px 32px"><a class="b-link" href="ura.html#avoimet">Avoimet työpaikat</a><a class="b-link" href="ura.html#avoin-hakemus">Jätä avoin hakemus</a></p></div>
   <div class="b-people" style="grid-template-columns:1fr"><div class="b-person"><div class="b-person__img" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></div><div><p class="b-person__name">Johanna Korhonen</p><p class="b-person__role">Henkilöstöjohtaja</p><p class="b-person__ch"><a href="tel:+358504761076"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"></path></svg>+358 50 476 1076</a><a href="mailto:johanna.korhonen@grk.fi"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>johanna.korhonen@grk.fi</a></p></div></div></div>
 </div></section>
 
@@ -309,7 +380,7 @@ a{color:#3f4c55}a:hover{color:#252d32}
         <li><a href="tyhja.html?s=GRK%20lyhyesti">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="tyhja.html?s=Konserni">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="ura.html">Töihin meille</a></li>
       </ul></div>
       <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
-        <li><a href="yhteystiedot.html#vastuuhenkilot">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
+        <li><a href="yhteyshenkilot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyhja.html?s=Ty%C3%B6maatiedotteet">Työmaatiedotteet</a></li><li><a href="tyhja.html?s=Sponsorointi">Sponsorointi</a></li>
       </ul></div>
     </nav>
   </div>
