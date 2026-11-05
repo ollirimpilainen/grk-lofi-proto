@@ -1767,8 +1767,9 @@ a.hf-sm__ref:hover b{text-decoration:underline;text-decoration-color:var(--accen
 
 /* ---------- Kuvat paikkamerkeiksi: kuva piiloon, pinta + ohut kuvaikoni */
 .lofi :is(.ph, .b-media, .hf-edge .ph, .t3__p) {
-  background-color: var(--surface);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23b4bbc0' stroke-width='1.5'%3E%3Crect x='6' y='10' width='36' height='28'/%3E%3Ccircle cx='17' cy='20' r='3.5'/%3E%3Cpath d='M6 34l11-10 8 7 6-5 11 9'/%3E%3C/svg%3E");
+  /* 4.11.: kuvapaikalla oma, tummempi harmaa, ettei se sekoitu harmaisiin osiotaustoihin (--surface, --surface-2) */
+  background-color: #d2d8dc !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23939ea5' stroke-width='1.5'%3E%3Crect x='6' y='10' width='36' height='28'/%3E%3Ccircle cx='17' cy='20' r='3.5'/%3E%3Cpath d='M6 34l11-10 8 7 6-5 11 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: center; background-size: 48px;
 }
 .lofi :is(.ph, .b-media, .t3__p) > img:not(.hf-oldico) { opacity: 0; }
