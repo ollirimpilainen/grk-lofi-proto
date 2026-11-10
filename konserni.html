@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Konserni · GRK lo-fi -prototyyppi</title>
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/bundle.css">
+<link rel="stylesheet" href="css/nav.css">
+<style>
+@font-face{font-family:"Lofi Head";src:url(assets/archivo.woff2) format("woff2");font-weight:700 700;font-stretch:104% 104%;font-display:swap}
+@font-face{font-family:"Lofi Sans";src:url(assets/archivo.woff2) format("woff2");font-weight:400 700;font-stretch:100% 100%;font-display:swap}
+body{margin:0;background:#fff}
+a{color:#3f4c55}a:hover{color:#252d32}
+.lt-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:24px 96px;align-items:end;padding:24px 80px 72px}
+.lt-head .b-lead{margin:20px 0 0;max-width:52ch}
+.lt-head .b-btns{margin-top:32px}
+.lt-story{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:80px;align-items:start}
+.lt-story .b-h2{margin:0}
+.lt-story .b-lead{margin:0 0 32px}
+.lt-contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:80px;align-items:center}
+.lt-contact .b-h2{margin:0}
+.lt-story .b-h2,.lt-contact .b-h2{font-size:40px;line-height:48px;text-wrap:balance}
+.lt-contact .b-lead{margin:16px 0 0}
+@media (max-width:900px){.lt-head,.lt-story{grid-template-columns:1fr}.lt-head{padding:24px 20px 48px}}
+/* UUSI 28.10. kn-*: konsernirakenne. Emoyhtiö ylhäällä, neljä yhtiökorttia alla ja ohut 1,5 px graniittiviiva niiden välillä. */
+.kn-parent{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center;max-width:860px;margin:0 auto;padding:28px 32px;border:2px solid var(--ink);background:#fff}
+.kn-parent em,.kn-co em{font:700 12px/16px var(--font-sans);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2-strong)}
+.kn-parent h3{margin:6px 0 8px;font:900 28px/33px var(--font-head)}
+.kn-parent p{margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.kn-cos{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-top:48px}
+.kn-cos::before{content:"";position:absolute;top:0;left:50%;height:24px;border-left:1.5px solid var(--ink)}
+.kn-cos::after{content:"";position:absolute;top:24px;left:calc((100% - 72px) / 8);right:calc((100% - 72px) / 8);border-top:1.5px solid var(--ink)}
+.kn-co{position:relative;display:grid;grid-template-rows:auto auto auto 1fr auto;gap:10px;align-content:start;padding:28px;background:var(--surface-2)}
+.kn-co::before{content:"";position:absolute;top:-24px;left:50%;height:24px;border-left:1.5px solid var(--ink)}
+.kn-co h3{margin:0;font:900 22px/28px var(--font-head)}
+.kn-co>p{margin:0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.kn-co dl{margin:8px 0 0;border-top:1px solid var(--line)}
+.kn-co dl div{display:grid;gap:2px;padding:12px 0;border-bottom:1px solid var(--line)}
+.kn-co dt{font:700 14px/20px var(--font-sans);color:var(--ink-2-strong)}
+.kn-co dd{margin:0;font-size:16px;line-height:24px}
+.kn-co dd a{font-weight:700;color:var(--ink);text-decoration:none}
+.kn-co .b-link{justify-self:start;font-size:16px}
+.kn-more{margin:32px 0 0;font-size:16px;line-height:24px;color:var(--ink-2-strong)}
+.kn-more b{color:var(--ink)}
+@media (max-width:900px){.kn-parent{grid-template-columns:1fr}.kn-cos{grid-template-columns:1fr}.kn-cos::after,.kn-co::before{display:none}}
+/* Taste 22.10.: osio-H2 40 px, hierarkia painolla */
+.hf .b-h2{font-size:40px;line-height:48px;letter-spacing:-.01em}
+/* Tyyppiasteikko 22.10. (Olli: vain määritellyt koot): H1 80/93 · H2 40/48 · H3 28/33 · H4 22/28 · H5 18/24 · leipä 16/24 ja 18/28 · pieni 14/20 · tagi 12/16 · luku 64 */
+.hf .b-h2,.hf .hf-h2{font-size:40px;line-height:48px}
+.hf .b-h3,.hf .hf-mx__t h3,.hf .hf-stack__c h3,.hf .hf-feature__tx h3,.hf .b-svccard h3,.hf .t3__c h3,.hf .pa h3{font-size:28px;line-height:33px}
+.hf .hf-card h3,.hf .b-step h3,.hf .b-why__title,.hf .hf-work__group,.hf .hf-news h3{font-size:22px;line-height:28px}
+.hf .b-why__num,.hf .why-num,.hf .hf-herostats b{font-size:64px;line-height:1}
+.hf .hf-strip h2{font-weight:900;font-size:40px;line-height:48px}
+.hf .hf-work__group{font-weight:900}
+.hf .b-person__name,.hf .me-contact b{font-size:22px;line-height:28px;font-weight:900}
+.hf .en-co__name{font-size:28px;line-height:33px}
+.hf .b-lead,.hf .lead{font-size:22px;line-height:34px}
+.hf .b-head .b-body{font-size:18px;line-height:28px}
+.hf .hf-card .meta,.hf .hf-feature .meta,.hf .hf-pins__pin{font-size:14px;line-height:20px}
+.hf .en-co__num b,.hf .b-svcmap__pin span{font-size:12px;line-height:16px}
+.hf .hf-card p:not(.meta){font-size:16px;line-height:24px}
+@media (max-width:900px){
+  .km-c{grid-template-columns:1fr!important;gap:32px!important}
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr 1fr!important;row-gap:40px}
+  .hf-sm,.hf-mx__b .b-method{grid-template-columns:1fr!important}
+  .t3__c>p{white-space:normal}
+}
+@media (max-width:600px){
+  .b-why__grid,#miksi-grk .b-why__grid{grid-template-columns:1fr!important}
+  .b-root :where(h1,h2,h3),.b-root :where(h1,h2,h3) a{hyphens:auto;-webkit-hyphens:auto}
+}
+
+</style>
+</head>
+<body>
+<div class="b-root hf lofi" style="width: 100%;">
+
+<header class="b-nav">
+  <div class="b-nav__util b-nav__util--v2"><span class="b-nav__util-r"><a href="https://ollirimpilainen.github.io/ksbr-lofi-proto/">KSBR ↗</a><a href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a><a href="media.html">Media</a><span class="b-nav__util-sep" aria-hidden="true"></span><a class="b-nav__util-search" href="#"><svg class="b-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>Haku</a><a class="b-nav__country" href="#" aria-label="Maa: Suomi">Suomi</a></span></div>
+  <div class="b-nav__bar">
+    <a class="b-nav__brand" href="index.html"><img src="assets/95a040812eb54d3defb819e1e7fa2b22.svg" alt="GRK" width="99" height="32"></a>
+    <nav class="b-nav__menu" aria-label="Päävalikko">
+      <a class="b-nav__item b-nav__item--menu" href="palvelut.html">Palvelut</a>
+      <a class="b-nav__item b-nav__item--menu" href="toimialat.html">Toimialat</a>
+      <a class="b-nav__item" href="referenssit.html">Referenssit</a>
+      <a class="b-nav__item" href="ajankohtaista.html">Ajankohtaista</a>
+      <a class="b-nav__item b-nav__item--menu" href="yritys.html" aria-current="page">Yritys</a>
+      <a class="b-nav__item" href="ura.html">Töihin meille</a>
+    </nav>
+    <a class="b-nav__contact" href="yhteystiedot.html">Yhteystiedot</a>
+  </div>
+</header>
+<ol class="b-crumbs"><li><a href="index.html">Etusivu</a></li><li><a href="yritys.html">Yritys</a></li><li aria-current="page">Konserni</li></ol>
+<header class="b-pagehead">
+  <div><h1 class="b-h1">Konserni</h1><p class="b-lead">GRK-konserniin kuuluvat emoyhtiö GRK Infra Oyj, maayhtiöt Suomessa, Ruotsissa ja Virossa sekä KSBR. Asiakkaalle olemme yksi GRK, ja työt jaetaan talon sisällä.</p>
+  <div class="b-btns"><a class="b-btn" href="#yhtiot">Ota yhteyttä</a></div></div>
+  <nav class="b-toc" aria-label="Tällä sivulla"><p class="b-toc__label">Tällä sivulla</p><ul><li><a href="#yhtiot">Yhtiöt ja yhteystiedot</a></li><li><a href="#yksi-grk">Asiakkaalle yksi GRK</a></li></ul></nav>
+</header>
+
+<section class="b-section" id="yhtiot" style="padding-top:48px"><div class="b-inner">
+  <div class="b-head"><h2 class="b-h2">Yhtiöt ja yhteystiedot</h2><p class="b-body">Emoyhtiö vastaa konsernin hallinnosta ja rahoituksesta. Liiketoiminta on maayhtiöissä ja KSBR:ssä, joilla kullakin on oma johtonsa.</p></div>
+  <div class="kn-parent"><div><em>Emoyhtiö</em><h3>GRK Infra Oyj</h3><p>Konsernihallinto ja rahoitus. Osake on listattu Nasdaq Helsingissä vuodesta 2025.</p></div><a class="b-btn b-btn--secondary" href="tyhja.html?s=Sijoittajat">Sijoittajat ↗</a></div>
+  <div class="kn-cos"><article class="kn-co"><em>Suomi</em><h3>GRK Suomi Oy</h3><p>Infra- ja maarakentaminen, päällystys, rata, sähköverkot ja kiertotalous Suomessa.</p><dl><div><dt>Toimitusjohtaja</dt><dd>Mika Mäenpää</dd></div><div><dt>Puhelinvaihde</dt><dd><a href="tel:+358103214110">+358 10 321 4110</a></dd></div><div><dt>Osoite</dt><dd>Jaakonkatu 2, 01620 Vantaa</dd></div><div><dt>Y-tunnus</dt><dd>2810844-3</dd></div></dl><a class="b-link" href="yhteystiedot.html">Yhteyshenkilöt</a></article><article class="kn-co"><em>Ruotsi</em><h3>GRK Sverige AB</h3><p>Infra- ja väylärakentaminen, päällystys ja rata Ruotsissa.</p><dl><div><dt>Toimitusjohtaja</dt><dd>Carl Andersson</dd></div><div><dt>Puhelin</dt><dd><a href="tel:+46703840099">+46 70 384 00 99</a></dd></div><div><dt>Osoite</dt><dd>Teknikvägen 13, 961 50 Boden</dd></div><div><dt>Org.nr</dt><dd>556859-2918</dd></div></dl><a class="b-link" href="tyhja.html?s=GRK%20Sverige%20p%C3%A5%20svenska" lang="sv">GRK Sverige på svenska</a></article><article class="kn-co"><em>Viro</em><h3>GRK Eesti AS</h3><p>Infra- ja väylärakentaminen, päällystys ja rata Virossa.</p><dl><div><dt>Toimitusjohtaja</dt><dd>Tiit Roben</dd></div><div><dt>Puhelinvaihde</dt><dd><a href="tel:+3727333250">+372 733 3250</a></dd></div><div><dt>Osoite</dt><dd>Spektri 6, 50411 Tartu</dd></div><div><dt>Registrikood</dt><dd>12579850</dd></div></dl><a class="b-link" href="tyhja.html?s=GRK%20Eesti%20eesti%20keeles" lang="et">GRK Eesti eesti keeles</a></article><article class="kn-co"><em>Suomi</em><h3>KSBR</h3><p>Keski-Suomen Betonirakenne Oy. Rakentamisen kokonaispalvelut uusiutuvan energian, teollisuuden ja infran kohteisiin.</p><dl><div><dt>Toimitusjohtaja</dt><dd>Marko Leppänen</dd></div><div><dt>Puhelin</dt><dd><a href="tel:+358505675198">+358 50 567 5198</a></dd></div><div><dt>Osoite</dt><dd>Asematie 5, 44800 Pihtipudas</dd></div><div><dt>Y-tunnus</dt><dd>1875126-7</dd></div></dl><a class="b-link" href="https://ollirimpilainen.github.io/ksbr-lofi-proto/">ksbr.fi ↗</a></article></div>
+  <p class="kn-more"><b>Muut konserniyhtiöt:</b> ASM Kiviainespalvelu Oy ja Pirkan Rakentajapalvelu Oy Suomessa sekä A-Kaabel OÜ ja Novus Initium Investments OÜ Virossa.</p>
+</div></section>
+
+<section class="b-section b-section--gray" id="yksi-grk"><div class="b-inner">
+  <div class="lt-story">
+    <div><h2 class="b-h2">Asiakkaalle yksi GRK</h2><p class="b-body" style="margin-top:16px">Yhtiöt toimivat käytännössä samana talona. Asiakkaan kannalta ei ole merkitystä, kumpi yhtiö työn tekee.</p></div>
+    <div><p class="b-lead">Kun otat yhteyttä GRK:hon tai KSBR:ään, ohjaamme asian talon sisällä oikealle tekijälle.</p>
+    <ul class="b-check" style="grid-template-columns:1fr">
+      <li><div><b>Yhteiset tarjoukset</b><p>GRK ja KSBR tarjoavat samaan hankkeeseen yhdessä, maanrakennuksesta betonirakenteisiin.</p></div></li>
+      <li><div><b>Yhteydenotto oikealle tekijälle</b><p>Kumpaan tahansa yhtiöön otat yhteyttä, asia ohjataan talon sisällä oikein.</p></div></li>
+      <li><div><b>Paikallinen maayhtiö</b><p>Suomessa, Ruotsissa ja Virossa työstä vastaa oma maayhtiö omalla johdollaan.</p></div></li>
+    </ul>
+    <p style="margin-top:24px;display:flex;gap:32px;flex-wrap:wrap"><a class="b-link" href="datakeskukset.html">Datakeskukset: GRK ja KSBR samassa hankkeessa</a><a class="b-link" href="grk-lyhyesti.html#johto">Johtoryhmä</a></p></div>
+  </div>
+</div></section>
+
+<section class="hf-edge hf-edge--dark" id="toihin">
+  <div class="tx">
+    <h2 class="hf-h2">Töihin GRK:lle</h2>
+    <p class="hf-lead">Infra on kasvuala, ja työn jälki näkyy pitkään. Meillä saa vastuuta niin paljon kuin uskaltaa ottaa.</p>
+    <div class="acts acts--stack"><a class="b-btn b-btn--secondary" href="ura.html#avoimet">Avoimet työpaikat</a><ul class="hf-linklist"><li><a href="ura.html#harjoittelu">Harjoittelu ja kesätyö</a></li><li><a href="ura.html">Työ GRK:lla</a></li></ul></div>
+  </div>
+  <div class="ph"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="GRK:n asfalttityöntekijät päällystystyössä"></div>
+</section>
+
+<footer class="b-footer hf-foot">
+  <div class="hf-foot__top">
+    <div class="hf-foot__brand">
+      <a class="hf-foot__logo" href="index.html"><img class="b-footer__logo" src="assets/dd89f49e86320a5c7298b6a8f8e527bf.svg" alt="GRK" width="96" height="72"></a>
+      <p class="hf-foot__tag">Rakennamme toimivaa yhteiskuntaa Suomessa, Ruotsissa ja Virossa.</p>
+      <p class="hf-foot__tel">Vaihde <a href="tel:+358103214110">+358 10 321 4110</a></p>
+      <div class="hf-foot__acts"><a class="b-btn" href="yhteystiedot.html">Ota yhteyttä</a><a class="hf-foot__more" href="tarjouspyynto.html">Pyydä tarjous</a></div>
+    </div>
+    <nav class="hf-foot__nav" aria-label="Alatunnisteen valikko">
+      <div><h2 class="hf-foot__h"><a href="palvelut.html">Palvelut</a></h2><ul>
+        <li><a href="infra.html">Infra- ja maarakentaminen</a></li><li><a href="paallystys-ja-asfaltointi.html">Päällystys ja asfaltointi</a></li><li><a href="pohjarakentaminen-ja-paalutus.html">Pohjarakentaminen ja paalutus</a></li><li><a href="rautatiet-ja-raitiotiet.html">Rautatiet ja raitiotiet</a></li><li><a href="sahkoverkot-ja-sahkoasemat.html">Sähköverkot ja sähköasemat</a></li><li><a href="kiertotalous-ja-vastaanotto.html">Kiertotalous ja vastaanotto</a></li><li><a href="suunnitteluyhteistyo.html">Suunnitteluyhteistyö</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="toimialat.html">Toimialat</a></h2><ul>
+        <li><a href="datakeskukset.html">Datakeskukset</a></li><li><a href="energia.html">Energia</a></li><li><a href="teollisuus.html">Teollisuus</a></li><li><a href="kaupungit-ja-vaylat.html">Kaupungit ja väylät</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h">Yritys</h2><ul>
+        <li><a href="grk-lyhyesti.html">GRK lyhyesti</a></li><li><a href="laatu-ja-turvallisuus.html">Laatu ja turvallisuus</a></li><li><a href="vastuullisuus.html">Vastuullisuus</a></li><li><a href="konserni.html">Konserni</a></li><li><a href="ajankohtaista.html">Ajankohtaista</a></li><li><a class="hf-foot__ext" href="tyhja.html?s=Sijoittajat">Sijoittajat</a></li><li><a href="ura.html">Töihin meille</a></li>
+      </ul></div>
+      <div><h2 class="hf-foot__h"><a href="yhteystiedot.html">Yhteystiedot</a></h2><ul>
+        <li><a href="yhteyshenkilot.html">Yhteyshenkilöt</a></li><li><a href="tarjouspyynto.html">Tarjouspyyntö</a></li><li><a href="yhteystiedot.html#laskutus">Toimittajille ja laskutus</a></li><li><a href="tyomaatiedotteet.html">Työmaatiedotteet</a></li><li><a href="sponsorointi.html">Sponsorointi</a></li>
+      </ul></div>
+    </nav>
+  </div>
+  <div class="hf-foot__bottom">
+    <p class="hf-foot__legal"><span>© 2026 GRK Infra Oyj</span><a href="tyhja.html?s=Tietosuoja">Tietosuoja</a><a href="tyhja.html?s=Ev%C3%A4steasetukset">Evästeasetukset</a><a href="tyhja.html?s=Ilmoituskanava">Ilmoituskanava</a></p>
+    <nav class="hf-foot__langs" aria-label="Kieli"><a href="index.html" aria-current="true">FI</a><a href="https://ollirimpilainen.github.io/grk-se-lofi-proto/" lang="sv">SE</a><a href="https://ollirimpilainen.github.io/grk-ee-lofi-proto/" lang="et">EE</a><a href="tyhja.html?s=GRK%20Group%20%28English%29" lang="en">EN</a></nav>
+    <ul class="hf-foot__some">
+      <li><a href="#" aria-label="GRK LinkedInissä"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3zM9.5 9.75h3.8v1.6h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.55 4.78 5.87v5.48h-4v-4.86c0-1.16-.02-2.65-1.66-2.65-1.66 0-1.92 1.26-1.92 2.57v4.94h-4z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Facebookissa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3.1h-3V8.5c0-.9.25-1.5 1.55-1.5h1.6V4.2c-.3-.04-1.24-.12-2.34-.12-2.3 0-3.9 1.4-3.9 4v2.3H7.8v3.1h2.6V21z"></path></svg></a></li>
+      <li><a href="#" aria-label="GRK Instagramissa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor" stroke="none"></circle></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+</div>
+<div class="proto-note" role="status" aria-live="polite"></div>
+<style>
+.proto-note{position:fixed;left:50%;bottom:24px;z-index:100;transform:translate(-50%,16px);max-width:min(520px,calc(100% - 32px));padding:14px 20px;background:#252d32;color:#f4f5f6;font:400 15px/22px "Lofi Sans",Archivo,Arial,sans-serif;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.proto-note.is-on{opacity:1;transform:translate(-50%,0)}
+</style>
+<script>
+(function(){var n=document.querySelector('.proto-note'),t;
+function say(m){n.textContent=m;n.classList.add('is-on');clearTimeout(t);t=setTimeout(function(){n.classList.remove('is-on')},2600)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a){e.preventDefault();say('Tämä toiminto ei ole käytössä prototyypissä.')}
+var b=e.target.closest('button[type="button"],button:not([type])');if(b&&b.closest('form')){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')}});
+document.addEventListener('submit',function(e){e.preventDefault();say('Lomake ei lähetä tietoja prototyypissä.')});
+var st=document.querySelector('.b-stick');if(st){document.documentElement.classList.add('js-stick');var yh=document.getElementById('yhteyshenkilot'),ft=document.querySelector('footer');
+function chk(){var vh=innerHeight,on=scrollY>vh*0.9;[yh,ft].forEach(function(el){if(el){var r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0)on=false}});st.classList.toggle('is-on',on)}
+addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);chk()}
+})();
+</script>
+<script src="assets/nav.js"></script>
+</body>
+</html>
